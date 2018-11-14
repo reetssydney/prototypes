@@ -1,5 +1,6 @@
 body {
   background-color: #f6f6f6;
+  font-family: sans-serif;
 }
 
 .mw-body {
@@ -7,7 +8,7 @@ body {
     border: 1px solid #a7d7f9;
     border-right-width: 0;
     margin-top: 80px;
-    padding: 1em;
+    padding: 1.5em;
     background-color: #ffffff;
     color: #222222;
     direction: ltr;
@@ -24,6 +25,10 @@ body {
     top: 0;
     right: 0;
     width: 100%;
+    background: -moz-linear-gradient(top, rgba(255,255,255,1) 50%, rgba(246,246,246,1) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, rgba(255,255,255,1) 50%, rgba(246,246,246,1) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, rgba(255,255,255,1) 50%, rgba(246,246,246,1) 100%);; /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f6f6f6',GradientType=0 ); /* IE6-9 */
 }
 
 #left-navigation {
@@ -68,4 +73,75 @@ body {
   margin-top: 0;
   padding: 0.75em;
   direction: ltr;
+}
+
+
+.mw-body h1, .mw-body-content h1, .mw-body-content h2 {
+font-family: 'Linux Libertine','Georgia','Times',serif;
+    line-height: 1.3;
+    margin-bottom: 0.25em;
+    padding: 0;
+}
+
+.mw-body h1, .mw-body-content h1 {
+    font-size: 1.8em;
+}
+
+
+/* Vector styles */
+h1, h2, h3, h4, h5, h6 {
+    color: #000;
+    background: none;
+    margin: 0;
+    overflow: hidden;
+    padding-top: 0.5em;
+    padding-bottom: 0.17em;
+}
+h1, h2{
+    font-weight:normal;
+    border-bottom: 1px solid #a2a9b1;
+}
+
+/*welcome form elements*/
+.welcome-Q1 {
+  margin-top:1em;
+  max-width: 800px;
+}
+
+.welcome-Q1 .oo-ui-fieldLayout-header {
+  padding-top: .5em;
+}
+
+
+.welcome-Q1 .oo-ui-checkboxMultioptionWidget {
+display:inline-block;
+width:inherit;
+margin-right:1em;
+}
+
+.welcome-Q1 .oo-ui-image-invert.oo-ui-icon-check {
+    background-image: url(../images/check-invert.png);
+    background-image: linear-gradient(transparent, transparent), /* @embed */ url(../../OOUI/node_modules/oojs-ui/demos/dist/themes/wikimediaui/images/icons/check-invert.svg);
+}
+.welcome-Q1 .oo-ui-icon-check {
+    background-image: url(../images/check.png);
+    background-image: linear-gradient(transparent, transparent), /* @embed */ url(../../OOUI/node_modules/oojs-ui/demos/dist/themes/wikimediaui/images/icons/check.svg);
+}
+
+
+.welcome-Q1 .oo-ui-icon-close {
+  background-image: url(../../OOUI/node_modules/oojs-ui/demos/dist/themes/wikimediaui/images/icons/close.png);
+  background-image: linear-gradient(transparent, transparent), /* @embed */ url(../../OOUI/node_modules/oojs-ui/demos/dist/themes/wikimediaui/images/icons/close.png);
+}
+
+/*Remove space between pre-selected topics and self-input topics*/
+.welcome-Q1 .oo-ui-fieldLayout:nth-child(4) {
+  margin-top:0;
+}
+
+/*Add divider before submit button*/
+.welcome-Q1 .oo-ui-fieldLayout:nth-child(8) {
+  margin-top:1.5em;
+  padding-top:1em;
+  border-top:solid 1px #A2A9B1;
 }

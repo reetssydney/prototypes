@@ -4,15 +4,29 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
 	<meta property="og:title" content="WMF Growth team - Welcome form  - test">
 	<link rel="stylesheet" href="css/WMFstylelite.css">
+  <!-- jQuery -->
+  <script src="../OOUI/node_modules/jquery/dist/jquery.min.js"></script>
+  <!-- OOjs -->
+  <script src="../OOUI/node_modules/oojs/dist/oojs.jquery.min.js"></script>
+  <!-- OOUI -->
+  <script src="../OOUI/node_modules/oojs-ui/dist/oojs-ui.min.js"></script>
+  <!-- OOUI theme -->
+  <script src="../OOUI/node_modules/oojs-ui/dist/oojs-ui-wikimediaui.min.js"></script>
+  <link rel="stylesheet" href="../OOUI/node_modules/oojs-ui/dist/oojs-ui-wikimediaui.min.css">
+
+  <!-- ToDo app custom -->
+  <script src="assets/welcome-init.js"></script>
+
+
 	<title>Wikipedia - welcome survey - test</title>
 </head>
 
 <body>
-    <div id="content" class="mw-body" role="main">
-        <div>
-          <h1> Test survey</h1>
-        </div>
-    </div>
+  <div id="content" class="mw-body" role="main">
+    <h1>Welcome NewUser!</h1>
+    <div class="welcome-Q1"></div>
+  </div>
+
     <div id="mw-navigation">
       <div id="mw-head">
         <div id="left-navigation">
