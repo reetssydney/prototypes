@@ -1,3 +1,82 @@
+/*Help pane demo page*/
+#helpPaneCTA {
+	display:block;
+	position:fixed;
+	z-index:9999;
+	bottom:0;
+	right:0;
+  margin:1em 1em 2em;
+  padding: 0;
+}
+
+#helpPaneCTA .helpPaneCTAbtn {
+  background-color:#36c;
+	padding:.75em 1em .75em 3em;
+  margin: 0;
+	border-radius:1.5em;
+	font-size:.875em;
+  line-height: 1em;
+	color:#fff;
+	font-weight:bolder;
+	font-family: Helvetica, Arial, sans-serif;
+  box-shadow:0px 1px 2px rgba(0,0,0,.5);
+}
+
+#helpPaneCTA .helpPaneCTAbtn span:before {
+  content: "";
+  position: absolute;
+  top: -.25em;
+  left: 1em;
+  bottom:0;
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Ctitle%3EIcon-AskQuestion%3C/title%3E%3Cdefs%3E%3Cpath d='M38 14a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H24l-4 4V16a2 2 0 0 1 2-2h16zm-7.962 2.605a3 3 0 0 0-.33 0 2.826 2.826 0 0 0-2.706 2.934h1.524v-.102a1.38 1.38 0 0 1 1.428-1.332h.102a1.26 1.26 0 0 1 1.248 1.284c0 .708-.27 1.086-1.074 1.626a2.304 2.304 0 0 0-1.2 2.304v.486h1.506v-.408c0-.708.24-1.074 1.092-1.626a2.754 2.754 0 0 0 1.374-2.448c0-1.584-1.2-2.718-2.964-2.718zm-1.236 9.6a1.128 1.128 0 0 0 1.2 1.2 1.122 1.122 0 0 0 1.2-1.2 1.122 1.122 0 0 0-1.2-1.2h-.138c-.624.038-1.1.575-1.062 1.2z' id='a'/%3E%3C/defs%3E%3Cg transform='translate(-20 -14)' fill='none' fill-rule='evenodd'%3E%3Cuse fill='%23FFF' xlink:href='%23a'/%3E%3C/g%3E%3C/svg%3E");
+  background-position: 100% 50%;
+  background-repeat: no-repeat;
+  opacity: 1;
+  width: 20px;
+  height: 20px;
+}
+
+.helpPaneCTAAnimateIn {
+  animation-duration: 800ms;
+  animation-name: slidein;
+}
+
+@keyframes slidein {
+  from {
+    bottom:-3em;
+    opacity:.5;
+  }
+
+  20% {
+  bottom:-3em;
+  opacity:.5;
+  }
+
+  70% {
+	bottom:0.25em;
+  opacity:.9;
+  }
+
+  to {
+	bottom:0;
+  opacity:1;
+  }
+}
+
+/* Faking editing page elements */
+.dimcontent {
+  opacity: .5;
+}
+
+.wikitext-editor {
+  font-family: monospace;
+  line-height: 1.5em;
+  font-size: 1em;
+}
+
+
+
+/* Wikipedia page chrome */
 body {
   background-color: #f6f6f6;
   font-family: sans-serif;
@@ -41,7 +120,7 @@ body {
 #p-personal h3
 {
   color:#f0f;
-  font-size:.75em;  
+  font-size:.75em;
 }
 
 #left-navigation {
@@ -247,32 +326,4 @@ h1, h2, h3, h4, h5, h6 {
 h1, h2{
     font-weight:normal;
     border-bottom: 1px solid #a2a9b1;
-}
-
-/*page elements*/
-.dimcontent {
-  opacity: .5;
-}
-
-.wikitext-editor {
-  font-family: monospace;
-  line-height: 1.5em;
-  font-size: 1em;
-}
-
-#helpPaneCTA {
-	display:block;
-	position:fixed;
-	z-index:9999;
-	bottom:0;
-	right:0;
-	background-color:#36c;
-	padding:.5em 1em;
-	border-radius:1em;
-	font-size:.875em;
-	color:#fff;
-	font-weight:bolder;
-	font-family: Helvetica, Arial, sans-serif;
-	margin:1em;
-	box-shadow:0px 1px 2px rgba(0,0,0,.5);
 }
