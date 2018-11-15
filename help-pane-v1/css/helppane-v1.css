@@ -32,6 +32,18 @@ body {
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f6f6f6',GradientType=0 ); /* IE6-9 */
 }
 
+#p-personal {
+    position: absolute;
+    top: 0.33em;
+    right: 0.75em;
+    z-index: 100;
+}
+#p-personal h3
+{
+  color:#f0f;
+  font-size:.75em;  
+}
+
 #left-navigation {
   float: left;
   position: absolute;
