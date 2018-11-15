@@ -4,9 +4,10 @@ var dropdownInput1 = new OO.ui.DropdownInputWidget( {
     options: [
         { data: 'a', label: 'Please select...' },
         { data: 'b', label: 'To fix a typo or error in a Wikipedia article'},
-        { data: 'c', label: 'To add information to a Wikipedia article ' },
-				{ data: 'd', label: 'To read Wikipedia' },
-				{ data: 'e', label: 'Other (please describe)' }
+        { data: 'c', label: 'To add information to a Wikipedia article '},
+        { data: 'd', label: 'To create a new Wikipedia article ' },
+				{ data: 'e', label: 'To read Wikipedia' },
+				{ data: 'f', label: 'Other (please describe)' }
     ]
 } );
 var dropdownInput2 = new OO.ui.DropdownInputWidget( {
