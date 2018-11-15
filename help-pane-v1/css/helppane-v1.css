@@ -1,0 +1,266 @@
+body {
+  background-color: #f6f6f6;
+  font-family: sans-serif;
+  margin:0;
+}
+
+.mw-body {
+    margin-left: 11em;
+    border: 1px solid #a7d7f9;
+    border-right-width: 0;
+    margin-top: 80px;
+    padding: 1.5em;
+    background-color: #ffffff;
+    color: #222222;
+    direction: ltr;
+    display: block;
+  }
+
+#mw-navigation {
+  position: inherit;
+  display: block;
+}
+
+#mw-head {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    background: -moz-linear-gradient(top, rgba(255,255,255,1) 50%, rgba(246,246,246,1) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, rgba(255,255,255,1) 50%, rgba(246,246,246,1) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, rgba(255,255,255,1) 50%, rgba(246,246,246,1) 100%);; /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f6f6f6',GradientType=0 ); /* IE6-9 */
+}
+
+#left-navigation {
+  float: left;
+  position: absolute;
+  margin-left: 9.4em;
+  margin-top: 2.5em;
+  background: none;
+}
+
+.vectorTabs {
+float: left;
+height: 2.5em;
+background-position: bottom left;
+background-repeat: no-repeat;
+margin-left: 1.6em;
+}
+
+.vectorTabs ul {
+    float: left;
+    height: 100%;
+    list-style: none none;
+    margin: 0;
+    padding: 0;
+    border-left:solid 1px #a7d7f9;
+}
+
+.vectorTabs ul li {
+    float: left;
+    line-height: 1.125em;
+    display: block;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-position: bottom left;
+    background-repeat: repeat-x;
+    white-space: nowrap;
+    border-right: solid 1px #a7d7f9;
+    background: -moz-linear-gradient(top, #fafafa 50%, #E8F2F8 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #fafafa 50%, #E8F2F8 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #fafafa 50%, #E8F2F8 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fafafa', endColorstr='#E8F2F8',GradientType=0 ); /* IE6-9 */
+}
+
+.vectorTabs li {
+    display: block;
+    height: 1.9em;
+    cursor: pointer;
+    font-size: 0.8125em;
+    color: #0645ad;
+}
+
+.vectorTabs li.selected {
+    background: #ffffff;
+    border-bottom: solid 1px #ffffff;
+    color: #222;
+}
+
+.vectorTabs span {
+  float: left;
+  display: block;
+background-position: bottom right;
+background-repeat: no-repeat;
+height: 100%;
+position: relative;
+padding-top: 1.25em;
+padding-left: 0.615em;
+padding-right: 0.615em;
+}
+
+#right-navigation {
+  float: right;
+  margin-left: 10em;
+  margin-top: 2.5em;
+}
+
+h3.nav-dropdown {
+      font-size: 0.8125em;
+      font-weight: normal;
+      color: #444;
+      padding: 0;
+      float: left;
+    }
+h3.nav-dropdown span {
+  padding-right: 2em;
+}
+
+h3.nav-dropdown span:after {
+    content: '';
+    position: absolute;
+    top: 0em;
+    right: .75em;
+    bottom: .75em;
+    left: 0;
+    background-image: url('https://en.wikipedia.org/w/skins/Vector/images/arrow-down.png?42edd');
+    background-image: linear-gradient(transparent,transparent),url(data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%221…035 3.86-3.947-3.86L1.05 3.996l5 5 5-5%22 fill=%22%23222%22/%3E %3C/svg%3E);
+    background-position: 100% 50%;
+    background-repeat: no-repeat;
+    opacity: 0.85;
+}
+
+#p-search{
+  float: left;
+  margin-right: 1em;
+}
+#simpleSearch {
+    background-color: #fff;
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAQCAIAAABY/YLgAAAAJUlEQVQIHQXBsQEAAAjDoND/73UWdnerhmHVsDQZJrNWVg3Dqge6bgMe6bejNAAAAABJRU5ErkJggg==);
+    background-image: url(/w/skins/Vector/images/search-fade.png?50f7b)!ie;
+    background-position: top left;
+    background-repeat: repeat-x;
+    color: #000;
+    display: block;
+    width: 12.6em;
+    width: 20vw;
+    min-width: 5em;
+    max-width: 20em;
+    padding-right: 1.4em;
+    height: 1.4em;
+    margin-top: 0.65em;
+    position: relative;
+    min-height: 1px;
+    border: 1px solid #a2a9b1;
+    border-radius: 2px;
+    -webkit-transition: border-color 250ms;
+    -moz-transition: border-color 250ms;
+    transition: border-color 250ms;
+}
+
+#simpleSearch #searchInput {
+    width: 100%;
+    padding: 0.2em 0 0.2em 0.2em;
+    font-size: 0.8125em;
+    direction: ltr;
+    -webkit-appearance: textfield;
+}
+
+#simpleSearch input {
+    background-color: transparent;
+    color: #000;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+#simpleSearch #searchButton {
+    background-image: url('https://en.wikipedia.org/w/skins/Vector/images/search-ltr.png?39f97');
+    background-image: linear-gradient(transparent,transparent),url(data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%221…4%22/%3E %3Ccircle cx=%225%22 cy=%225%22 r=%224%22/%3E %3C/g%3E %3C/svg%3E);
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+#simpleSearch #searchButton, #simpleSearch #mw-searchButton {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 1.65em;
+    height: 100%;
+    cursor: pointer;
+    text-indent: -99999px;
+    direction: ltr;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+#mw-panel {
+    font-size: inherit;
+    position: absolute;
+    top: 0;
+    width: 10em;
+    left: 0;
+  }
+
+.footer {
+  margin-left: 10em;
+  margin-top: 0;
+  padding: 0.75em;
+  direction: ltr;
+}
+
+
+.mw-body h1, .mw-body-content h1, .mw-body-content h2 {
+font-family: 'Linux Libertine','Georgia','Times',serif;
+    line-height: 1.3;
+    margin-bottom: 0.25em;
+    padding: 0;
+}
+
+.mw-body h1, .mw-body-content h1 {
+    font-size: 1.8em;
+}
+
+
+/* Vector styles */
+h1, h2, h3, h4, h5, h6 {
+    color: #000;
+    background: none;
+    margin: 0;
+    overflow: hidden;
+    padding-top: 0.5em;
+    padding-bottom: 0.17em;
+}
+h1, h2{
+    font-weight:normal;
+    border-bottom: 1px solid #a2a9b1;
+}
+
+/*page elements*/
+.dimcontent {
+  opacity: .5;
+}
+
+.wikitext-editor {
+  font-family: monospace;
+  line-height: 1.5em;
+  font-size: 1em;
+}
+
+#helpPaneCTA {
+	display:block;
+	position:fixed;
+	z-index:9999;
+	bottom:0;
+	right:0;
+	background-color:#36c;
+	padding:.5em 1em;
+	border-radius:1em;
+	font-size:.875em;
+	color:#fff;
+	font-weight:bolder;
+	font-family: Helvetica, Arial, sans-serif;
+	margin:1em;
+	box-shadow:0px 1px 2px rgba(0,0,0,.5);
+}
