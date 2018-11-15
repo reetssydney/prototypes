@@ -139,8 +139,13 @@ margin-right:1em;
   margin-top:0;
 }
 
+.welcome-Q1 .oo-ui-buttonElement-frameless {
+  float: right;
+  margin-top: 2.5em;
+}
+
 /*Add divider before submit button*/
-.welcome-Q1 .oo-ui-fieldLayout:nth-child(8) {
+.welcome-Q1 .oo-ui-fieldLayout:nth-child(9) {
   margin-top:1.5em;
   padding-top:1em;
   border-top:solid 1px #A2A9B1;

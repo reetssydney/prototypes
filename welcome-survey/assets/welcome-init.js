@@ -113,8 +113,17 @@ fieldset.addItems( [
 			label: 'Yes I\'m interested'
 		} ),
 
+    new OO.ui.ButtonWidget( {
+      framed: false,
+      flags: [
+    		'destructive'
+    	],
+      label: 'Skip this survey'
+    } ),
+
     new OO.ui.FieldLayout( submit )
 ] );
+
 var form = new OO.ui.FormLayout( {
     items: [ fieldset ],
     action: '/api/formhandler',
