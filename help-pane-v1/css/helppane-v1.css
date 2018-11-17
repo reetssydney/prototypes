@@ -1,4 +1,10 @@
 /*Help pane demo page*/
+button {
+	border:none;
+	margin:0;
+	padding:0;
+}
+
 #helpPaneCTA {
 	display:block;
 	position:fixed;
@@ -7,6 +13,8 @@
 	right:0;
   margin:1em 1em 2em;
   padding: 0;
+  cursor:pointer;
+  z-index:1;
 }
 
 #helpPaneCTA .helpPaneCTAbtn {
@@ -25,11 +33,11 @@
 #helpPaneCTA .helpPaneCTAbtn span:before {
   content: "";
   position: absolute;
-  top: -.25em;
+  top: .5em;
   left: 1em;
   bottom:0;
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Ctitle%3EIcon-AskQuestion%3C/title%3E%3Cdefs%3E%3Cpath d='M38 14a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H24l-4 4V16a2 2 0 0 1 2-2h16zm-7.962 2.605a3 3 0 0 0-.33 0 2.826 2.826 0 0 0-2.706 2.934h1.524v-.102a1.38 1.38 0 0 1 1.428-1.332h.102a1.26 1.26 0 0 1 1.248 1.284c0 .708-.27 1.086-1.074 1.626a2.304 2.304 0 0 0-1.2 2.304v.486h1.506v-.408c0-.708.24-1.074 1.092-1.626a2.754 2.754 0 0 0 1.374-2.448c0-1.584-1.2-2.718-2.964-2.718zm-1.236 9.6a1.128 1.128 0 0 0 1.2 1.2 1.122 1.122 0 0 0 1.2-1.2 1.122 1.122 0 0 0-1.2-1.2h-.138c-.624.038-1.1.575-1.062 1.2z' id='a'/%3E%3C/defs%3E%3Cg transform='translate(-20 -14)' fill='none' fill-rule='evenodd'%3E%3Cuse fill='%23FFF' xlink:href='%23a'/%3E%3C/g%3E%3C/svg%3E");
-  background-position: 100% 50%;
+  background-position: center center;
   background-repeat: no-repeat;
   opacity: 1;
   width: 20px;
@@ -46,32 +54,157 @@
     bottom:-3em;
     opacity:.5;
   }
-
   20% {
   bottom:-3em;
   opacity:.5;
   }
-
   70% {
 	bottom:0.25em;
   opacity:.9;
   }
-
   to {
 	bottom:0;
   opacity:1;
   }
 }
 
-/* Faking editing page elements */
-.dimcontent {
-  opacity: .5;
+#helpPane {
+  transition: transform .8s cubic-bezier(0.42, 0, 0.15, 1.4);
+  position: fixed;
+  margin: 1em;
+  right: 0;
+  bottom:0;
+}
+.showHPane {
+  opacity:1;
+  bottom: 0;
+  z-index:10;
+  animation-duration: 400ms;
+  animation-name: slidePane;
 }
 
-.wikitext-editor {
-  font-family: monospace;
-  line-height: 1.5em;
-  font-size: 1em;
+@keyframes slidePane {
+  from {
+    bottom:-2em;
+    opacity:0;
+  }
+  to {
+	bottom:0;
+  opacity:1;
+  }
+}
+
+.hideHPane {
+  bottom: -2em;
+  opacity:0;
+  display: none;
+  z-index:0;
+}
+
+.hideCTA {
+  display:none;
+  opacity:0;
+}
+
+
+#helpPane .helpPane-inner {
+/*oo-ui-popup basic styling*/
+  background-color: #fff;
+  max-width: 22.5em;
+  min-width: 16em;
+  border: 1px solid #c8ccd1;
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.25);
+  border-radius: 2px;
+/*helppane proposed styling*/
+  float: right;
+  position: relative;
+  width: 22.5em;
+}
+
+.helpPane-close {
+  display:inline-block;
+  position:absolute;
+  width:20px;
+  height:20px;
+  right:1em;
+  top:.75em;
+  opacity:.5;
+}
+
+.oo-ui-iconElement-icon {
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+}
+
+.oo-ui-icon-close {
+      background-image: url(https://doc.wikimedia.org/oojs-ui/master/demos/dist/themes/wikimediaui/images/icons/close.png');
+    background-image: linear-gradient(transparent, transparent), /* @embed */ url('https://doc.wikimedia.org/oojs-ui/master/demos/dist/themes/wikimediaui/images/icons/close.svg');
+}
+
+
+#helpPaneHead {
+  height:2em;
+  background-color:#EAF3FF;
+  margin:0;
+  padding:1em 1em 0 3em;
+}
+
+#helpPane h3 {
+  font-size: .875em;
+	font-family: Helvetica, Arial, sans-serif;
+  margin:0;
+  padding:0 0 .5em;
+	color:#54595D;
+	font-weight: bold;
+	line-height: 1;
+}
+
+#helpPaneHead h3:before {
+  content: "";
+  position: absolute;
+  top: 1em;
+  left: 1em;
+  bottom:0;
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Ctitle%3EIcon-AskQuestion%3C/title%3E%3Cdefs%3E%3Cpath d='M38 14a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H24l-4 4V16a2 2 0 0 1 2-2h16zm-7.962 2.605a3 3 0 0 0-.33 0 2.826 2.826 0 0 0-2.706 2.934h1.524v-.102a1.38 1.38 0 0 1 1.428-1.332h.102a1.26 1.26 0 0 1 1.248 1.284c0 .708-.27 1.086-1.074 1.626a2.304 2.304 0 0 0-1.2 2.304v.486h1.506v-.408c0-.708.24-1.074 1.092-1.626a2.754 2.754 0 0 0 1.374-2.448c0-1.584-1.2-2.718-2.964-2.718zm-1.236 9.6a1.128 1.128 0 0 0 1.2 1.2 1.122 1.122 0 0 0 1.2-1.2 1.122 1.122 0 0 0-1.2-1.2h-.138c-.624.038-1.1.575-1.062 1.2z' id='a'/%3E%3C/defs%3E%3Cg transform='translate(-20 -14)' fill='none' fill-rule='evenodd'%3E%3Cuse fill='%2326c' xlink:href='%23a'/%3E%3C/g%3E%3C/svg%3E");
+  background-position: center center;
+  background-repeat: no-repeat;
+  opacity: 1;
+  width: 20px;
+  height: 20px;
+}
+#helpPane p, li {
+font-size: .875em;
+padding: 0 0 .5em 0;
+margin:0;
+}
+
+#helpPane-searchBar {
+  padding:1em 0;
+  margin:0 1em;
+  border-bottom: solid 1px #c8ccd1;
+}
+
+#helpPane-main {
+  padding:1em 0;
+  margin:0 1em;
+}
+
+#helpPane ul{
+	margin: 0;
+	padding:0 0 0 2em;
+}
+
+#helpPane ul li {
+	padding-top: .5em;
+}
+
+#helpPane-askQ {
+  border-top: solid 1px #c8ccd1;
+  padding:1em 1em 0;
 }
 
 
@@ -81,6 +214,14 @@ body {
   background-color: #f6f6f6;
   font-family: sans-serif;
   margin:0;
+}
+
+a, a:active, a:link {
+	color:#36c;
+	text-decoration: none;
+}
+a:hover{
+	text-decoration: underline;
 }
 
 .mw-body {
@@ -326,4 +467,16 @@ h1, h2, h3, h4, h5, h6 {
 h1, h2{
     font-weight:normal;
     border-bottom: 1px solid #a2a9b1;
+}
+
+
+
+.oo-ui-icon-search {
+background-image: url(../images/search.png);
+background-image: linear-gradient(transparent, transparent), /* @embed */ url(../../OOUI/node_modules/oojs-ui/demos/dist/themes/wikimediaui/images/icons/search.svg);
+}
+
+.searchFAQ .oo-ui-icon-search {
+	opacity: .4;
+	top:.5em;
 }
