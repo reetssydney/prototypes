@@ -1,3 +1,13 @@
+/*page elements*/
+.dimcontent {
+  opacity: .5;
+}
+ .wikitext-editor {
+  font-family: monospace;
+  line-height: 1.5em;
+  font-size: 1em;
+}
+
 /*Help pane demo page*/
 button {
 	border:none;
