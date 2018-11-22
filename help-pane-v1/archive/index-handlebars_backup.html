@@ -1,0 +1,151 @@
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+	<meta property="og:title" content="WMF Growth team - Help pane v1 - test">
+  <!-- jQuery -->
+  <script src="../OOUI/node_modules/jquery/dist/jquery.min.js"></script>
+  <!-- OOjs -->
+  <script src="../OOUI/node_modules/oojs/dist/oojs.jquery.min.js"></script>
+  <!-- OOUI -->
+  <script src="../OOUI/node_modules/oojs-ui/dist/oojs-ui.min.js"></script>
+  <!-- OOUI theme -->
+  <script src="../OOUI/node_modules/oojs-ui/dist/oojs-ui-wikimediaui.min.js"></script>
+  <link rel="stylesheet" href="../OOUI/node_modules/oojs-ui/dist/oojs-ui-wikimediaui.min.css">
+
+  <!-- this proto custom -->
+  <link rel="stylesheet" href="css/helppane-v1.css">
+
+
+	<title>Wikipedia - Edit mode -  Help pane v1 - test</title>
+</head>
+
+<body>
+  <div id="content" class="mw-body" role="main">
+    <div id="handlebarcontent">
+    </div>
+    <h1 class="dimcontent">Article title</h1>
+    <div class="wikitext-editor" contenteditable="true">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas odio risus, luctus nec efficitur quis, lacinia ornare turpis. Nulla a dapibus tellus. Aliquam pellentesque laoreet nunc nec posuere. Suspendisse dapibus, enim a fermentum tincidunt, mi massa hendrerit ligula, quis porttitor tellus quam id dolor. Donec porttitor tellus felis, non ullamcorper diam lobortis sit amet. Integer efficitur, orci eu rutrum lacinia, nisi ante ultricies augue, sed placerat velit est id augue. Curabitur tempus aliquam eros, quis varius lectus malesuada non. Ut nec metus in lectus cursus pellentesque in sit amet est. Etiam mauris mauris, rhoncus ac iaculis id, tempus interdum mi. Nunc libero justo, euismod sit amet libero eget, suscipit luctus arcu.
+      </p>
+      <p>
+        In hac habitasse platea dictumst. Phasellus in ligula felis. Integer sed efficitur elit. Nam lectus turpis, mattis non varius ac, gravida nec nulla. Sed id risus sit amet justo faucibus mattis et in ante. Praesent a quam facilisis, euismod enim ut, placerat erat. Quisque maximus tempor augue, ut consequat erat auctor gravida. Sed lobortis vitae nulla sed suscipit. Ut massa enim, hendrerit eu nibh sed, ultrices cursus nulla. Sed finibus, magna sed faucibus facilisis, lacus neque gravida eros, ut suscipit purus arcu ut nibh. Nullam vel libero justo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In nec volutpat tortor. Curabitur non accumsan justo. Sed auctor aliquam lacus, vitae pulvinar lectus ornare eu.
+      </p>
+      <p>Vivamus efficitur scelerisque tellus vel sollicitudin. Aenean ullamcorper vulputate tellus non vehicula. Donec imperdiet, ante vitae sodales consequat, elit nibh aliquam velit, ut elementum nibh nibh ut felis. Sed posuere dui eget nunc commodo pulvinar. Cras a blandit ex. Vivamus viverra maximus velit quis egestas. Vestibulum eget elit nec libero vestibulum volutpat. Phasellus varius arcu aliquet elit blandit, a porttitor augue fermentum. Morbi odio nulla, vulputate eget lobortis quis, tempus cursus mauris. Nam tristique tempus arcu quis fringilla. Sed vulputate, purus sed auctor tincidunt, sapien dui faucibus dolor, ac dapibus nisl magna vitae dui. Donec viverra, lorem nec semper dignissim, ex enim gravida orci, vel rutrum massa quam et nulla. Morbi finibus mattis elementum. Cras libero lorem, sodales quis erat iaculis, tristique ultrices massa. Maecenas suscipit cursus lacus, id ornare metus ultricies non. Aliquam maximus rutrum urna et fringilla.
+      </p>
+      <p>
+        Mauris porttitor metus dui, a vulputate neque pellentesque fringilla. Aenean eget bibendum sem, scelerisque auctor velit. Nam blandit, elit et mattis bibendum, nunc ex lobortis nunc, sit amet commodo dolor dolor nec eros. Nam a semper velit. Aliquam egestas lorem sed justo ullamcorper, ut cursus turpis lacinia. Nulla facilisi. Integer sodales at elit non gravida. Duis eu nulla vehicula, finibus leo ut, porttitor nisl. Maecenas non neque orci. In pellentesque efficitur felis, eget pulvinar tellus consequat nec. Integer mollis odio sem, sit amet interdum risus ultricies aliquet. Sed quis ligula non nisi consectetur efficitur. Pellentesque consequat sed dolor ut gravida. Suspendisse aliquam porttitor justo, sit amet commodo augue vestibulum nec. Duis odio enim, faucibus nec dolor in, semper dapibus orci. Proin sed dui eu leo posuere tempor non vel elit.
+      </p>
+      <p>Nam gravida molestie urna quis consectetur. Aliquam tempor eros pellentesque congue congue. Integer lectus erat, consectetur id augue tempus, imperdiet maximus nunc. Donec et orci in turpis laoreet tristique. Nulla vestibulum facilisis neque, nec vulputate turpis lobortis vitae. Nam imperdiet nunc risus, eget lacinia diam pharetra eget. Sed molestie nulla eu orci pellentesque pulvinar. Fusce sed blandit risus. Morbi egestas nibh odio, non venenatis urna aliquam vitae. Praesent interdum a arcu a consectetur.
+      </p>
+    </div>
+  </div>
+
+    <div id="mw-navigation">
+      <div id="mw-head">
+        <div id="p-personal">
+          <h3>NOTE: This is purely a demo for help pane that can be accessed in edit mode. See Phab task <a href="https://phabricator.wikimedia.org/T206717" target="_blank">T206717</a> for more details</h3>
+        </div>
+        <div id="left-navigation">
+	          <div class="vectorTabs">
+              <ul>
+                <li class="selected"><span><a>Article</a></span></li>
+                <li class=""><span><a>Talk</a></span></li>
+              </ul>
+            </div>
+					</div>
+          <div id="right-navigation">
+            <div class="vectorTabs">
+              <ul>
+                <li class=""><span><a>Read</a></span></li>
+                <li class="selected"><span><a>Edit source</a></span></li>
+                <li class=""><span><a>View history</a></span></li>
+                <li class=""><span><a><img src="https://en.wikipedia.org/w/skins/Vector/images/watch-icon.png?e1b42" /></a></span></li>
+              </ul>
+              <h3 class="nav-dropdown"><span><a>More</a></span></h3>
+              <div id="p-search">
+                <div id="simpleSearch">
+    								<input type="search" name="search" placeholder="Search Wikipedia" id="searchInput">
+                    <input type="hidden" value="Special:Search" name="title">
+                    <input type="submit" name="go" value="Go" id="searchButton" class="searchButton">
+                </div>
+              </div>
+            </div>
+        </div>
+      </div>
+
+      <div id="mw-panel">
+        <img alt="mw-panel image" src="images/mw-panel.png" height="800px" width="176px">
+      </div>
+    </div>
+
+    <footer id="footer" class="footer">
+      <img alt="footer image" src="images/mw-footer.png" height="80px" width="1104px">
+    </footer>
+
+    <script id="tabletop-handlebars-template" type="text/x-handlebars-template">
+      <div id="helpPaneCTA" class="helpPaneCTAAnimateIn">
+        <button class="helpPaneCTAbtn" >
+          <span>{{hpCTA}}</span>
+        </button>
+      </div>
+      <div id="helpPane" class="hideHPane">
+         <div class="helpPane-inner">
+           <div class="helpPane-close">
+            <button href="" class="closebtn"><span class="oo-ui-iconElement-icon oo-ui-icon-close"></span></button>
+           </div>
+           <div class="helpPane-contents">
+             <div id="helpPaneHead">
+               <h3>Get help with editing</h3>
+             </div>
+             <div id="helpPane-searchBar" class="searchFAQ">
+               <h3>Search FAQs</h3>
+            </div>
+             <div id="helpPane-main">
+               <h3>Basics of editing</h3>
+               <ul>
+                 <li><a href="{{hp-wikitext-link-href-1}}">{{hp-wikitext-link-label-1}}</a></li>
+                 <li><a href="{{hp-wikitext-link-href-2}}">{{hp-wikitext-link-label-2}}</a></li>
+                 <li><a href="{{hp-wikitext-link-href-3}}">{{hp-wikitext-link-label-3}}</a></li>
+                 <li><a href="{{hp-wikitext-link-href-4}}">{{hp-wikitext-link-label-4}}</a></li>
+                 <li><a href="{{hp-wikitext-link-href-5}}">{{hp-wikitext-link-label-5}}</a></li>
+               </ul>
+               <p><b><a href="" target="_blank">View more articles on Help</a></b></p>
+             </div>
+             <div id="helpPane-askQ" class="AskQform">
+               <h3>Ask a question instead</h3>
+               </div>
+             </p>
+           </div>
+        </div>
+      </div>
+    </script>
+
+    <!-- tabletop and gsheets test  -->
+    <!-- Don't need jQuery for Tabletop, but using it for this example -->
+    <script type="text/javascript" src="assets/handlebars.js"></script>
+    <script type="text/javascript" src="assets/tabletop.js"></script>
+    <script type="text/javascript">
+      var public_spreadsheet_url = 'https://docs.google.com/spreadsheet/pub?hl=en_US&hl=en_US&key=1qc0rAIxJaOHgPsZDcQwIluFmV0DQXBmEN-cHQXJvDTQ&output=html';
+
+      $(document).ready( function() {
+        Tabletop.init( { key: public_spreadsheet_url,
+                         callback: showInfo,
+                         parseNumbers: true } );
+      });
+
+      function showInfo(data, tabletop) {
+        var source   = $("#tabletop-handlebars-template").html();
+        var template = Handlebars.compile(source);
+
+        $.each( tabletop.sheets("en-copy-transposed").all(), function(i, test) {
+          var html = template(test);
+          $("#handlebarcontent").append(html);
+        });
+      }
+    </script>
+
+    <script type="text/javascript" src="assets/helppane-v1-init.js"></script>
+
+</body>
+</html>

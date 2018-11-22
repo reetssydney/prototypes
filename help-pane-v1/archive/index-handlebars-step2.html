@@ -17,14 +17,14 @@
   <link rel="stylesheet" href="css/helppane-v1.css">
 
 
-	<title>Wikipedia - Edit mode -  Help pane v1 - handlebars version</title>
+	<title>Wikipedia - Edit mode -  Help pane v1 - test</title>
 </head>
 
 <body>
   <div id="content" class="mw-body" role="main">
     <div id="handlebarcontent">
     </div>
-    <h1 class="dimcontent">Profiterole</h1>
+    <h1 class="dimcontent">Profiteroles</h1>
     <div class="wikitext-editor" contenteditable="true">
       <div class="ve-ce-branchNode ve-ce-documentNode mw-content-ltr mw-parser-output" contenteditable="true" spellcheck="true" data-gramm="false" lang="en" dir="ltr">
         <p class="ve-ce-branchNode ve-ce-contentBranchNode ve-ce-paragraphNode">{{Infobox prepared food</p>
@@ -81,207 +81,116 @@
         </div>
     </div>
   </div>
-  <div id="mw-navigation">
-    <div id="mw-head">
-      <div id="p-personal">
-        <h3>NOTE: This is purely a demo for help pane that can be accessed in edit mode. See Phab task <a href="https://phabricator.wikimedia.org/T206717" target="_blank">T206717</a> for more details</h3>
-      </div>
-      <div id="left-navigation">
-        <div class="vectorTabs">
-          <ul>
-            <li class="selected"><span><a>Article</a></span></li>
-            <li class=""><span><a>Talk</a></span></li>
-          </ul>
-        </div>
-      </div>
-      <div id="right-navigation">
-        <div class="vectorTabs">
-          <ul>
-          <li class=""><span><a>Read</a></span></li>
-          <li class="selected"><span><a>Edit source</a></span></li>
-          <li class=""><span><a>View history</a></span></li>
-          <li class=""><span><a><img src="https://en.wikipedia.org/w/skins/Vector/images/watch-icon.png?e1b42" /></a></span></li>
-          </ul>
-          <h3 class="nav-dropdown"><span><a>More</a></span></h3>
-          <div id="p-search">
-          <div id="simpleSearch">
-            <input type="search" name="search" placeholder="Search Wikipedia" id="searchInput">
-            <input type="hidden" value="Special:Search" name="title">
-            <input type="submit" name="go" value="Go" id="searchButton" class="searchButton">
-          </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div id="mw-panel">
-      <img alt="mw-panel image" src="images/mw-panel.png" height="800px" width="176px">
-    </div>
-  </div>
-  <footer id="footer" class="footer">
-      <img alt="footer image" src="images/mw-footer.png" height="80px" width="1104px">
-    </footer>
 
-<!-- start handlebar content -->
-  <script id="tabletop-handlebars-template" type="text/x-handlebars-template">
-    <div id="helpPaneCTA" class="helpPaneCTAAnimateIn">
-      <button class="helpPaneCTAbtn" >
-        <span>{{hpCTA}}</span>
-      </button>
-    </div>
-    <div id="helpPane" class="hideHPane">
-      <div class="helpPane-close">
-        <button href="" class="closebtn"><span class="oo-ui-iconElement-icon oo-ui-icon-close"></span></button>
-      </div>
-      <div class="helpPane-contents">
-<!-- step 1 -->
-        <div id="hp-step1" class="showHP-step">
-          <div id="helpPaneHead">
-            <h3>{{hp-step1-title}}</h3>
-          </div>
-          <div id="helpPane-searchBar" class="searchFAQ">
-            <h3>{{hp-search-label}}</h3>
-            <div class="oo-ui-fieldsetLayout-group">
-              <div class="oo-ui-layout oo-ui-fieldLayout oo-ui-fieldLayout-align-top">
-                <div class="oo-ui-fieldLayout-body">
-                  <span class="oo-ui-fieldLayout-header">
-                    <label class="oo-ui-labelElement-label" for="ooui-1"></label>
-                  </span>
-                  <div class="oo-ui-fieldLayout-field">
-                    <div class="oo-ui-widget oo-ui-widget-enabled oo-ui-inputWidget oo-ui-iconElement oo-ui-textInputWidget oo-ui-textInputWidget-type-search" aria-disabled="false">
-                      <input type="search" tabindex="0" aria-disabled="false" class="oo-ui-inputWidget-input" value="" placeholder="{{hp-search-label-hint}}" id="search-hp-widget">
-                      <span class="oo-ui-iconElement-icon oo-ui-icon-search"></span>
-                      <span class="oo-ui-indicatorElement-indicator oo-ui-indicatorElement-noIndicator"></span>
-                    </div>
-                  </div>
+    <div id="mw-navigation">
+      <div id="mw-head">
+        <div id="p-personal">
+          <h3>NOTE: This is purely a demo for help pane that can be accessed in edit mode. See Phab task <a href="https://phabricator.wikimedia.org/T206717" target="_blank">T206717</a> for more details</h3>
+        </div>
+        <div id="left-navigation">
+	          <div class="vectorTabs">
+              <ul>
+                <li class="selected"><span><a>Article</a></span></li>
+                <li class=""><span><a>Talk</a></span></li>
+              </ul>
+            </div>
+					</div>
+          <div id="right-navigation">
+            <div class="vectorTabs">
+              <ul>
+                <li class=""><span><a>Read</a></span></li>
+                <li class="selected"><span><a>Edit source</a></span></li>
+                <li class=""><span><a>View history</a></span></li>
+                <li class=""><span><a><img src="https://en.wikipedia.org/w/skins/Vector/images/watch-icon.png?e1b42" /></a></span></li>
+              </ul>
+              <h3 class="nav-dropdown"><span><a>More</a></span></h3>
+              <div id="p-search">
+                <div id="simpleSearch">
+    								<input type="search" name="search" placeholder="Search Wikipedia" id="searchInput">
+                    <input type="hidden" value="Special:Search" name="title">
+                    <input type="submit" name="go" value="Go" id="searchButton" class="searchButton">
                 </div>
               </div>
             </div>
-          </div>
-          <div id="helpPane-main">
-            <h3>{{hp-link-title}}</h3>
-            <ul>
-              <li><a href="{{hp-wikitext-link-href-1}}">{{hp-wikitext-link-label-1}}</a></li>
-              <li><a href="{{hp-wikitext-link-href-2}}">{{hp-wikitext-link-label-2}}</a></li>
-              <li><a href="{{hp-wikitext-link-href-3}}">{{hp-wikitext-link-label-3}}</a></li>
-              <li><a href="{{hp-wikitext-link-href-4}}">{{hp-wikitext-link-label-4}}</a></li>
-              <li><a href="{{hp-wikitext-link-href-5}}">{{hp-wikitext-link-label-5}}</a></li>
-            </ul>
-            <p><b><a href="{{hp-link-more-help-href}}" target="_blank">{{hp-link-more-help-label}}</a></b></p>
-          </div>
-          <div id="helpPane-askQ" class="AskQform">
-            <h3>{{hp-askq-title}}</h3>
-            <form class="oo-ui-layout oo-ui-formLayout" method="get" action="/api/formhandler">
-              <fieldset class="oo-ui-layout oo-ui-fieldsetLayout">
-                <div class="oo-ui-fieldsetLayout-group">
-                  <div class="oo-ui-widget oo-ui-widget-enabled oo-ui-inputWidget oo-ui-textInputWidget oo-ui-textInputWidget-type-text" aria-disabled="false">
-                    <textarea tabindex="0" aria-disabled="false" class="oo-ui-inputWidget-input oo-ui-textInputWidget-autosized" placeholder="{{hp-askq-input-hint}}" rows="3" id="hp-askq-textarea"></textarea>
-                  </div>
-                </div>
-                <div class="oo-ui-layout oo-ui-fieldLayout oo-ui-fieldLayout-align-left">
-                  <div class="oo-ui-fieldLayout-body">
-                    <span class="oo-ui-widget oo-ui-widget-enabled oo-ui-flaggedElement-primary oo-ui-flaggedElement-progressive oo-ui-inputWidget oo-ui-buttonElement oo-ui-buttonElement-framed oo-ui-labelElement oo-ui-buttonInputWidget" aria-disabled="false">
-                      <button type="button" onclick="saveQinput()" class="gotoStep2 oo-ui-inputWidget-input oo-ui-buttonElement-button" tabindex="0" aria-disabled="false">
-                        <span class="oo-ui-labelElement-label">{{hp-askq-step1-CTA}}</span>
-                      </button>
-                    </span>
-                  </div>
-                </div>
-              </fieldset>
-            </form>
-          </div>
         </div>
-<!-- step 2 -->
-        <div id="hp-step2" class="hideHP-step">
-          <div id="helpPaneHead">
-           <h3>{{hp-step2-title}}</h3>
-          </div>
-          <div id="helpPane-main">
-            <p>{{{hp-step-2-intro}}}</p>
-          </div>
-          <div id="helpPane-askQflow" class="AskQform">
-           <h3>{{hp-step-2-username-label}}</h3>
-           <span class="oo-ui-inputWidget-input askQinput">{{hp-step-2-username-field}}</span>
-           <h3>{{hp-step-2-email-label}}</h3>
-           <span class="oo-ui-inputWidget-input askQinput">{{hp-step-2-email-field}}</span>
-           <p><span class="assistivetext">{{{hp-step-2-email-assistive-text}}}</span></p>
-           <h3>{{hp-step-2-askq-label}}</h3>
-           <form class="oo-ui-layout oo-ui-formLayout" method="get" action="/api/formhandler">
-              <fieldset class="oo-ui-layout oo-ui-fieldsetLayout">
-                <div class="oo-ui-fieldsetLayout-group">
-                  <div class="oo-ui-widget oo-ui-widget-enabled oo-ui-inputWidget oo-ui-textInputWidget oo-ui-textInputWidget-type-text" aria-disabled="false">
-                   <textarea tabindex="0" aria-disabled="false" class="oo-ui-inputWidget-input oo-ui-textInputWidget-autosized" id="hp-confirmq-textarea" value="" rows="3"></textarea>
-                 </div>
-                </div>
-                <div class="oo-ui-fieldLayout-body" style="padding-top:.5em">
-                    <span class="oo-ui-widget oo-ui-widget-enabled oo-ui-inputWidget oo-ui-checkboxInputWidget" aria-disabled="false">
-                      <input type="checkbox" tabindex="0" aria-disabled="false" class="oo-ui-inputWidget-input" value="" checked="" id="ooui-3">
-                      <span class="oo-ui-checkboxInputWidget-checkIcon oo-ui-widget oo-ui-widget-enabled oo-ui-iconElement oo-ui-iconElement-icon oo-ui-icon-check oo-ui-labelElement-invisible oo-ui-iconWidget oo-ui-image-invert" aria-disabled="false">
-                      </span>
-                    </span>
-                  <span class="oo-ui-fieldLayout-header">
-                    <label class="oo-ui-labelElement-label" for="ooui-41">Include article title with my question</label>
-                  </span>
-                </div>
-                <div class="stickyformbtns oo-ui-layout oo-ui-fieldLayout oo-ui-fieldLayout-align-left">
-                  <div class="oo-ui-fieldLayout-body">
-                    <span class="oo-ui-widget oo-ui-widget-enabled oo-ui-buttonElement oo-ui-buttonElement-framed oo-ui-labelElement oo-ui-buttonWidget" aria-disabled="false">
-                      <button type="button" class="gotoStep1 oo-ui-inputWidget-input oo-ui-buttonElement-button" tabindex="0" aria-disabled="false">
-                        <span class="oo-ui-labelElement-label">{{hp-step-2-CTA-back}}</span>
-                      </button>
-                    </span>
-                    <span class="oo-ui-widget oo-ui-widget-enabled oo-ui-flaggedElement-primary oo-ui-flaggedElement-progressive oo-ui-inputWidget oo-ui-buttonElement oo-ui-buttonElement-framed oo-ui-labelElement oo-ui-buttonInputWidget" aria-disabled="false">
-                      <button type="button" class="gotoStep3 oo-ui-inputWidget-input oo-ui-buttonElement-button" tabindex="0" aria-disabled="false">
-                        <span class="oo-ui-labelElement-label">{{hp-step-2-CTA-submit}}</span>
-                      </button>
-                    </span>
-                  </div>
-                 </div>
-             </fieldset>
-           </form>
-          </div>
-        </div>
-<!-- step 3 -->
-        <div id="hp-step3" class="hideHP-step">
-          <div id="helpPaneHead">
-            <h3>{{hp-step3-title}}</h3>
-          </div>
-          <div id="helpPane-main">
-            <h3><span class="successmsg">{{hp-step3-success-heading}}</span></h3>
-              {{{hp-step3-success-message}}}
-           <ul>
-             <li><a href="{{hp-step3-success-help-desk-link-href}}">{{hp-step3-success-help-desk-link-label}}</a></li>
-             <li><a href="{{hp-step3-success-HPinfo-link-href}}">{{hp-step3-success-HPinfo-link-label}}</a></li>
-           </ul>
-          </div>
-          <div id="helpPane-askQflow">
-            <form class="oo-ui-layout oo-ui-formLayout" method="get" action="/api/formhandler">
-              <div class="stickyformbtns oo-ui-fieldLayout-body">
-                <span class="oo-ui-widget oo-ui-widget-enabled oo-ui-buttonElement oo-ui-buttonElement-framed oo-ui-labelElement oo-ui-buttonWidget" aria-disabled="false">
-                  <button type="button" onclick="clearQinput()" class="gotoStep1 closebtn oo-ui-inputWidget-input oo-ui-buttonElement-button" tabindex="0" aria-disabled="false">
-                    <span class="oo-ui-labelElement-label">{{hp-step-2-CTA-close}}</span>
-                  </button>
-                </span>
-              </div>
-            </form>
-          </div>
-        </div>
-<!-- end step 3 -->
+      </div>
+
+      <div id="mw-panel">
+        <img alt="mw-panel image" src="images/mw-panel.png" height="800px" width="176px">
       </div>
     </div>
-  </script>
 
-  <script>
-  function saveQinput() {
-      var x = document.getElementById("hp-askq-textarea").value;
-      document.getElementById("hp-confirmq-textarea").value = x;
-  }
-  function clearQinput() {
-      document.getElementById("hp-askq-textarea").value = "";
-  }
-  </script>
+    <footer id="footer" class="footer">
+      <img alt="footer image" src="images/mw-footer.png" height="80px" width="1104px">
+    </footer>
 
-<!-- tabletop and gsheets test  -->
-<!-- Don't need jQuery for Tabletop, but using it for this example -->
+    <script id="tabletop-handlebars-template" type="text/x-handlebars-template">
+      <div id="helpPaneCTA" class="helpPaneCTAAnimateIn">
+        <button class="helpPaneCTAbtn hideCTA">
+          <span>{{hpCTA}}</span>
+        </button>
+      </div>
+      <div id="helpPane" class="showHPane">
+         <div class="helpPane-inner">
+           <div class="helpPane-close">
+            <button href="" class="closebtn"onclick="location.href='index-handlebars.html'"><span class="oo-ui-iconElement-icon oo-ui-icon-close"></span></button>
+           </div>
+           <div class="helpPane-contents">
+             <div id="helpPaneHead">
+               <h3>Ask a question</h3>
+             </div>
+             <div id="helpPane-main">
+               <p>{{{hp-step-2-intro}}}</p>
+             </div>
+             <div id="helpPane-askQflow">
+               <h3>Username</h3>
+               <span class="oo-ui-inputWidget-input askQinput">NewToWiki</span>
+               <h3>Email</h3>
+               <span class="oo-ui-inputWidget-input askQinput">youremail@emailaddress.com</span>
+<p><span class="assistivetext">NOTE: You’ll be notified via email when a response is posted, but your email remains anonymous. </span></p>
+               <h3>Your question</h3>
+               <form class="oo-ui-layout oo-ui-formLayout" method="get" action="/api/formhandler">
+                 <fieldset class="oo-ui-layout oo-ui-fieldsetLayout">
+                   <div class="oo-ui-fieldsetLayout-group">
+                     <div class="oo-ui-widget oo-ui-widget-enabled oo-ui-inputWidget oo-ui-textInputWidget oo-ui-textInputWidget-type-text" aria-disabled="false">
+<textarea tabindex="0" aria-disabled="false" class="oo-ui-inputWidget-input oo-ui-textInputWidget-autosized" placeholder="" rows="3" id="ooui-2-posted">This should contain the text entered in the previous screen by the user.</textarea>
+                     </div>
+                   </div>
+                   <div class="oo-ui-fieldLayout-body" style="padding-top:.5em">
+                       <span class="oo-ui-widget oo-ui-widget-enabled oo-ui-inputWidget oo-ui-checkboxInputWidget" aria-disabled="false">
+                         <input type="checkbox" tabindex="0" aria-disabled="false" class="oo-ui-inputWidget-input" value="" checked="" id="ooui-3">
+                         <span class="oo-ui-checkboxInputWidget-checkIcon oo-ui-widget oo-ui-widget-enabled oo-ui-iconElement oo-ui-iconElement-icon oo-ui-icon-check oo-ui-labelElement-invisible oo-ui-iconWidget oo-ui-image-invert" aria-disabled="false">
+                         </span>
+                       </span>
+                     <span class="oo-ui-fieldLayout-header">
+                       <label class="oo-ui-labelElement-label" for="ooui-41">Include article title with my question</label>
+                     </span>
+                   </div>
+
+                   <div class="oo-ui-layout oo-ui-fieldLayout oo-ui-fieldLayout-align-left">
+                     <div class="oo-ui-fieldLayout-body">
+                       <span class="oo-ui-widget oo-ui-widget-enabled oo-ui-buttonElement oo-ui-buttonElement-framed oo-ui-labelElement oo-ui-buttonWidget" aria-disabled="false">
+                         <button type="button" onclick="location.href='index-handlebars-paneopen.html'" tabindex="0" aria-disabled="false" class="oo-ui-inputWidget-input oo-ui-buttonElement-button">
+                           <span class="oo-ui-labelElement-label">Back</span>
+                         </button>
+                       </span>
+                       <span class="oo-ui-widget oo-ui-widget-enabled oo-ui-flaggedElement-primary oo-ui-flaggedElement-progressive oo-ui-inputWidget oo-ui-buttonElement oo-ui-buttonElement-framed oo-ui-labelElement oo-ui-buttonInputWidget" aria-disabled="false">
+                         <button type="button" onclick="location.href='index-handlebars-step3.html'" tabindex="0" aria-disabled="false" class="oo-ui-inputWidget-input oo-ui-buttonElement-button">
+                           <span class="oo-ui-labelElement-label">Submit my question</span>
+                         </button>
+                       </span>
+                     </div>
+                   </div>
+                 </div>
+               </fieldset>
+             </form>
+           </div>
+        </div>
+      </div>
+    </script>
+
+    <!-- tabletop and gsheets test  -->
+    <!-- Don't need jQuery for Tabletop, but using it for this example -->
     <script type="text/javascript" src="assets/handlebars.js"></script>
     <script type="text/javascript" src="assets/tabletop.js"></script>
     <script type="text/javascript">
@@ -303,8 +212,6 @@
         });
       }
     </script>
-
-    <script type="text/javascript" src="assets/helppane-v1-init.js"></script>
 
 </body>
 </html>

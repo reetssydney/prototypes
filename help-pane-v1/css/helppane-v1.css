@@ -1,4 +1,4 @@
-/*page elements*/
+/*Help page background elements*/
 .dimcontent {
   opacity: .5;
 }
@@ -8,13 +8,22 @@
   font-size: 1em;
 }
 
-/*Help pane demo page*/
-button {
-	border:none;
-	margin:0;
-	padding:0;
+.ve-ce-paragraphNode {
+    line-height: 1.5em;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+    word-break: normal;
+    -webkit-hyphens: manual;
+    -moz-hyphens: manual;
+    -ms-hyphens: manual;
+    hyphens: manual;
+    -webkit-font-variant-ligatures: contextual;
+    font-variant-ligatures: contextual;
+    font-weight: normal !important;
+    margin: 0;
 }
 
+/* Help pane CTA styling */
 #helpPaneCTA {
 	display:block;
 	position:fixed;
@@ -78,13 +87,40 @@ button {
   }
 }
 
+/*Help PANE styling*/
 #helpPane {
   transition: transform .8s cubic-bezier(0.42, 0, 0.15, 1.4);
   position: fixed;
   margin: 1em;
   right: 0;
   bottom:0;
+  width: 22.5em;
+/*oo-ui-popup basic styling*/
+  background-color: #fff;
+  max-width: 22.5em;
+  min-width: 16em;
+  border: 1px solid #c8ccd1;
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.25);
+  border-radius: 2px;
+  min-height: 28em;
+  max-height: 36em;
 }
+
+/*
+#helpPane .helpPane-inner {
+  background-color: #fff;
+  max-width: 22.5em;
+  min-width: 16em;
+  border: 1px solid #c8ccd1;
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.25);
+  border-radius: 2px;
+
+  float: right;
+  position: relative;
+  width: 22.5em;
+}
+*/
+
 .showHPane {
   opacity:1;
   bottom: 0;
@@ -117,19 +153,33 @@ button {
 }
 
 
-#helpPane .helpPane-inner {
-/*oo-ui-popup basic styling*/
-  background-color: #fff;
-  max-width: 22.5em;
-  min-width: 16em;
-  border: 1px solid #c8ccd1;
-  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.25);
-  border-radius: 2px;
-/*helppane proposed styling*/
-  float: right;
-  position: relative;
-  width: 22.5em;
+
+
+/* START toggle help pane contents*/
+.showHP-step {
+  opacity:1;
+  z-index:10;
+  animation-duration: 200ms;
+  animation-name: fadeHPstep;
 }
+
+@keyframes fadeHPstep {
+  from {
+    opacity:0;
+  }
+  to {
+    opacity:1;
+  }
+}
+
+.hideHP-step {
+  opacity:0;
+  display: none;
+  z-index:0;
+}
+
+/* END toggle help pane contents*/
+
 
 .helpPane-close {
   display:inline-block;
@@ -139,6 +189,8 @@ button {
   right:1em;
   top:.75em;
   opacity:.5;
+  cursor: pointer;
+  z-index: 100; /*ensures it is on top of help pane contents */
 }
 
 .oo-ui-iconElement-icon {
@@ -155,12 +207,31 @@ button {
     background-image: linear-gradient(transparent, transparent), /* @embed */ url('https://doc.wikimedia.org/oojs-ui/master/demos/dist/themes/wikimediaui/images/icons/close.svg');
 }
 
+.helpPane-contents {
+  max-height: 36em;
+  min-height: 28em;
+  overflow: scroll;
+}
 
 #helpPaneHead {
   height:2em;
   background-color:#EAF3FF;
   margin:0;
   padding:1em 1em 0 3em;
+  position:absolute;
+  width: 18.5em;
+}
+
+#helpPaneHead + div {
+  padding-top:4em;
+}
+
+.stickyformbtns {
+  padding: 1em 1em 0.5em;
+  height: 2em;
+  width: 22.5em;
+  margin: 1em -1em 0em -1em;
+  border-top: solid 1px #c8ccd1;
 }
 
 #helpPane h3 {
@@ -188,8 +259,10 @@ button {
 }
 #helpPane p, li {
 font-size: .875em;
-padding: 0 0 .5em 0;
+padding: 0 0 .25em 0;
 margin:0;
+line-height: 1.5;
+color:#222;
 }
 
 #helpPane-searchBar {
@@ -217,7 +290,52 @@ margin:0;
   padding:1em 1em 0;
 }
 
+#helpPane-askQflow {
+  border: none;
+  padding:0em 1em;
+}
 
+.askQinput {
+  padding-bottom: 1em;
+  display: block;
+  font-size: .875em;
+}
+
+.assistivetext {
+  font-size: .875em;
+  color: #54595D;
+  display: block;
+  margin-top:-.5em;
+  padding-bottom:1em;
+}
+
+.successmsg {
+  font-size: 1.125em;
+  padding: 0.25em 0 1em 2em;
+  display: block;
+  position: relative;
+  margin-top:.5em;
+}
+.successmsg:before {
+  content: "";
+  position: absolute;
+  top: 0em;
+  left: 0em;
+  bottom:0;
+  background-image: url("data:image/svg+xml;charset=utf8,%3C?xml version='1.0' encoding='UTF-8'?%3E%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20'%3E%3Cg fill='%2314866d'%3E%3Ctitle%3E check %3C/title%3E%3Cpath d='M7 14.17L2.83 10l-1.41 1.41L7 17 19 5l-1.41-1.42L7 14.17z'/%3E%3C/g%3E%3C/svg%3E");
+  background-position: center center;
+  background-repeat: no-repeat;
+  opacity: 1;
+  width: 20px;
+  height: 20px;
+}
+
+#hp-step3 #helpPane-main ul{
+  list-style-type:none;
+  padding:0;
+  margin-bottom:6em;
+  margin-top:1em;
+}
 
 /* Wikipedia page chrome */
 body {
@@ -465,7 +583,9 @@ font-family: 'Linux Libertine','Georgia','Times',serif;
 }
 
 
-/* Vector styles */
+/* Global and Vector styles */
+
+
 h1, h2, h3, h4, h5, h6 {
     color: #000;
     background: none;
@@ -479,8 +599,14 @@ h1, h2{
     border-bottom: 1px solid #a2a9b1;
 }
 
+button {
+	border:none;
+	margin:0;
+	padding:0;
+}
 
 
+/*OOUI styling*/
 .oo-ui-icon-search {
 background-image: url(../images/search.png);
 background-image: linear-gradient(transparent, transparent), /* @embed */ url(../../OOUI/node_modules/oojs-ui/demos/dist/themes/wikimediaui/images/icons/search.svg);
@@ -489,4 +615,13 @@ background-image: linear-gradient(transparent, transparent), /* @embed */ url(..
 .searchFAQ .oo-ui-icon-search {
 	opacity: .4;
 	top:.5em;
+}
+
+.oo-ui-image-invert.oo-ui-icon-check {
+    background-image: url(../images/check-invert.png);
+    background-image: linear-gradient(transparent, transparent), /* @embed */ url(../../OOUI/node_modules/oojs-ui/demos/dist/themes/wikimediaui/images/icons/check-invert.svg);
+}
+.oo-ui-icon-check {
+    background-image: url(../images/check.png);
+    background-image: linear-gradient(transparent, transparent), /* @embed */ url(../../OOUI/node_modules/oojs-ui/demos/dist/themes/wikimediaui/images/icons/check.svg);
 }

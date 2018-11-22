@@ -1,28 +1,51 @@
-$( document ).ready( function () {
-// Toggle help pane
-  var showHPBtn = document.querySelector('.helpPaneCTAbtn');
-  var helpPane = document.querySelector('#helpPane');
-  var hideHPBtn = document.querySelector('.closebtn');
+$(document).ready(function () {
+	/* Toggle help pane
+    var showHPBtn = document.querySelector('.helpPaneCTAbtn');
+    var helpPane = document.querySelector('#helpPane');
+    var hideHPBtn = document.querySelector('.closebtn');
 
-  showHPBtn.addEventListener('click', function() {
-  helpPane.classList.toggle('hideHPane'); helpPane.classList.toggle('showHPane');
-  showHPBtn.classList.toggle('hideCTA');
-  });
+    showHPBtn.addEventListener('click', function() {
+    helpPane.classList.toggle('hideHPane'); helpPane.classList.toggle('showHPane');
+    showHPBtn.classList.toggle('hideCTA');
+    });
 
-  hideHPBtn.addEventListener('click', function() {
-  helpPane.classList.toggle('hideHPane'); helpPane.classList.toggle('showHPane');
-  showHPBtn.classList.toggle('hideCTA');
-  });
+    hideHPBtn.addEventListener('click', function() {
+    helpPane.classList.toggle('hideHPane'); helpPane.classList.toggle('showHPane');
+    showHPBtn.classList.toggle('hideCTA');
+    });
 
-  /*with jquery
-  $('.helpPaneCTAbtn').on('click', function(){
-    $('#helpPane').toggleClass('showHPane');  $('#helpPane').toggleClass('hideHPane');
-  });
+    /*
+    /*with jquery*/
+    $('body').on('click','.helpPaneCTAbtn', function(){
+      $('#helpPane').toggleClass('showHPane');  $('#helpPane').toggleClass('hideHPane');
+    });
 
-  $('.closebtn').on('click', function(){
-    $('#helpPane').toggleClass('showHPane');  $('#helpPane').toggleClass('hideHPane');
-  });
-  */
+    $('body').on('click','.closebtn', function(){
+      $('#helpPane').toggleClass('showHPane');  $('#helpPane').toggleClass('hideHPane');
+    });
+
+    $('body').on('click','.gotoStep1', function(){
+      $('#hp-step1').addClass('showHP-step');  $('#hp-step1').removeClass('hideHP-step');
+      $('#hp-step2').removeClass('showHP-step');  $('#hp-step2').addClass('hideHP-step');
+      $('#hp-step3').removeClass('showHP-step');  $('#hp-step3').addClass('hideHP-step');
+    });
+
+    $('body').on('click','.gotoStep2', function(){
+      $('#hp-step2').addClass('showHP-step');  $('#hp-step2').removeClass('hideHP-step');
+      $('#hp-step1').removeClass('showHP-step');  $('#hp-step1').addClass('hideHP-step');
+      $('#hp-step3').removeClass('showHP-step');  $('#hp-step3').addClass('hideHP-step');
+    });
+
+    $('body').on('click','.gotoStep3', function(){
+      $('#hp-step3').addClass('showHP-step');  $('#hp-step3').removeClass('hideHP-step');
+      $('#hp-step1').removeClass('showHP-step');  $('#hp-step1').addClass('hideHP-step');
+      $('#hp-step2').removeClass('showHP-step');  $('#hp-step2').addClass('hideHP-step');
+    });
+
+    console.log("some text")
+
+
+//OOUI bits
 var searchHelp = new OO.ui.SearchInputWidget({})
 
 var searchHelpwLabel = new OO.ui.FieldsetLayout({
