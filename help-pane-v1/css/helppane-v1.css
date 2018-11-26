@@ -1,3 +1,119 @@
+/*sticky edit toolbar*/
+#editToolbar {
+  overflow: hidden;
+  height: 40px;
+  z-index: 1;
+  margin-top: -1.5em;
+  margin-left: -1.5em;
+  margin-right:  -1.5em;
+  margin-bottom: 1em;
+  box-shadow: 0px 0px 1px rgba(0,0,0,.25);
+  border-bottom: 1px solid #c8ccd1;
+  background-color: #fff;
+}
+
+.sticky{
+  position: fixed;
+  top: 0;
+  width: inherit;
+  left:11em;
+  right: 0em;
+  margin-top: 0em!important;
+  margin-left: 0em!important;
+  margin-right: 0em!important;
+}
+
+#editToolbar .righttool {
+  float: right;
+  display: block;
+}
+
+#editToolbar .lefttool {
+  float: left;
+  display: block;
+}
+
+
+#p-personal ul {
+    list-style: none none;
+    margin: 0;
+    padding-left: 10em;
+}
+
+#p-personal li {
+    float: left;
+    margin-left: 0.75em;
+    padding-top: 0.5em;
+    font-size: 0.75em;
+    line-height: 1.16666667em;
+    white-space: nowrap;
+}
+
+#pt-notifications-alert .mw-echo-notifications-badge, #pt-notifications-notice .mw-echo-notifications-badge {
+    position: relative;
+    display: block;
+    width: 20px;
+    height: 20px;
+    margin: 0 2px;
+    top: -1005px;
+    cursor: pointer;
+    text-decoration: none;
+    line-height: normal;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+#pt-notifications-alert .mw-echo-notifications-badge:before {
+    background-image:url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2220%22 height=%2220%22 viewBox=%220 0 20 20%22%3E %3Ctitle%3E bell %3C/title%3E %3Cpath d=%22M16 7a5.38 5.38 0 0 0-4.46-4.85C11.6 1.46 11.53 0 10 0S8.4 1.46 8.46 2.15A5.38 5.38 0 0 0 4 7v6l-2 2v1h16v-1l-2-2zm-6 13a3 3 0 0 0 3-3H7a3 3 0 0 0 3 3z%22/%3E %3C/svg%3E");
+}
+
+#pt-notifications-notice .mw-echo-notifications-badge:before {
+  background-image:url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2220%22 height=%2220%22 viewBox=%220 0 20 20%22%3E %3Ctitle%3E tray %3C/title%3E %3Cpath d=%22M17 1H3a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2zm0 12h-4l-1 2H8l-1-2H3V3h14z%22/%3E %3C/svg%3E")
+}
+
+#pt-notifications-alert .mw-echo-notifications-badge:before, #pt-notifications-notice .mw-echo-notifications-badge:before {
+    position: absolute;
+    display: inline-block;
+    cursor: pointer;
+    opacity: 0.87;
+    content: '';
+    background-repeat: no-repeat;
+    top: 1000px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#pt-notifications-alert .mw-echo-notifications-badge:after, #pt-notifications-notice .mw-echo-notifications-badge:after {
+    position: absolute;
+    display: inline-block;
+    cursor: pointer;
+    top: 1009px;
+    left: 55%;
+    font-size: 0.9em;
+    font-weight: bold;
+    padding: 0 0.3em;
+    border: 1px solid #fff;
+    border-radius: 2px;
+    background-color: #72777d;
+    content: attr(data-counter-text);
+    color: #fff;
+}
+
+#pt-userpage a {
+    background-image: url(../../OOUI/node_modules/oojs-ui/demos/dist/themes/wikimediaui/images/icons/userAvatar.svg);
+    background-image: linear-gradient(transparent,transparent),url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2220%22 height=%2220%22 viewBox=%220 0 20 20%22%3E %3Cg fill=%22%2354595d%22%3E %3Cpath d=%22M10 11c-5.92 0-8 3-8 5v3h16v-3c0-2-2.08-5-8-5z%22/%3E %3Ccircle cx=%2210%22 cy=%225.5%22 r=%224.5%22/%3E %3C/g%3E %3C/svg%3E");
+    background-position: left 0.33333333em;
+    background-repeat: no-repeat;
+    background-size: 1.16666667em 1.16666667em;
+    padding-top: 0.5em !important;
+    padding-left: 16px !important;
+}
+/* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
+.sticky + #content {
+  padding-top: 80px;
+}
+
 /*Help page background elements*/
 .dimcontent {
   opacity: .5;
@@ -203,7 +319,7 @@
 }
 
 .oo-ui-icon-close {
-      background-image: url(https://doc.wikimedia.org/oojs-ui/master/demos/dist/themes/wikimediaui/images/icons/close.png');
+      background-image: url('https://doc.wikimedia.org/oojs-ui/master/demos/dist/themes/wikimediaui/images/icons/close.png');
     background-image: linear-gradient(transparent, transparent), /* @embed */ url('https://doc.wikimedia.org/oojs-ui/master/demos/dist/themes/wikimediaui/images/icons/close.svg');
 }
 
@@ -442,10 +558,10 @@ margin-left: 1.6em;
     color: #0645ad;
 }
 
-.vectorTabs li.selected {
+.vectorTabs li.selected, .vectorTabs li.selected a {
     background: #ffffff;
     border-bottom: solid 1px #ffffff;
-    color: #222;
+    color: #222!important;
 }
 
 .vectorTabs span {
@@ -580,6 +696,59 @@ font-family: 'Linux Libertine','Georgia','Times',serif;
 
 .mw-body h1, .mw-body-content h1 {
     font-size: 1.8em;
+}
+
+#articlebody p, #articlebody dl {
+    line-height: 1.6;
+    font-size: 14px;
+  }
+
+#articlebody .toc {
+    display: table;
+    padding: .5em 1em 0em;
+    border: 1px solid #a2a9b1;
+    background-color: #f8f9fa;
+    font-size: 90%;
+    }
+
+    .toc ul {
+    list-style-type: none;
+    list-style-image: none;
+    margin-left: 0;
+    padding: 0;
+    text-align: left;
+}
+.toctitle {font-size: .625em;font-weight: bold;}
+
+#articlebody h2{
+    font-size: 1.5em;
+    font-family: 'Linux Libertine','Georgia','Times',serif;
+    line-height: 1.3;
+    margin-bottom: 0.25em;
+    padding: 1em 0 0;
+}
+
+.mw-editsection, .mw-editsection-like {
+    font-size: small;
+    font-weight: normal;
+    margin-left: 1em;
+    vertical-align: baseline;
+    line-height: 1em;
+    font-family: sans-serif;
+}
+
+.cite-accessibility-label {top: -99999px;
+    clip: rect(1px 1px 1px 1px);
+    clip: rect(1px,1px,1px,1px);
+    position: absolute !important;
+    padding: 0 !important;
+    border: 0 !important;
+    height: 1px !important;
+    width: 1px !important;
+    overflow: hidden;
+}
+.reflist{
+  font-size:.875em;
 }
 
 

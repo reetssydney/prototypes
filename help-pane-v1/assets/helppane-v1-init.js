@@ -42,7 +42,7 @@ $(document).ready(function () {
       $('#hp-step2').removeClass('showHP-step');  $('#hp-step2').addClass('hideHP-step');
     });
 
-    console.log("some text")
+//    console.log("some text")
 
 
 //OOUI bits
@@ -103,3 +103,21 @@ var form1 = new OO.ui.FormLayout( {
 	$( '.searchFAQ' ).append( searchHelpwLabel.$element );
   $( '.AskQform' ).append( form1.$element );
 } );
+
+
+// When the user scrolls the page, execute stickyToolbar function
+window.onscroll = function() {stickyToolbar()};
+// Get the sticky element
+var navbar = document.getElementById("editToolbar");
+
+// Get the offset position of the sticky element
+var sticky = editToolbar.offsetTop;
+
+// Add the sticky class to the sticky element when you reach its scroll position. Remove "sticky" when you leave the scroll position
+function stickyToolbar() {
+  if (window.pageYOffset >= sticky) {
+    editToolbar.classList.add("sticky");
+  } else {
+    editToolbar.classList.remove("sticky");
+  }
+}
