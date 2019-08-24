@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Wikipedia Suggestions</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/static/index.css">
+    <link rel="stylesheet" href="../static/index.css">
+    <!--<script src="script.js"></script>-->
+    <script>
+        function qc_image(){
+            var size = '16'
+            $(".qc_A").append('<img src="//upload.wikimedia.org/wikipedia/commons/thumb/2/25/Symbol_a_class.svg/64px-Symbol_a_class.svg.png" alt="A-Class article" title="A-Class article" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/2/25/Symbol_a_class.svg/23px-Symbol_a_class.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/2/25/Symbol_a_class.svg/31px-Symbol_a_class.svg.png 2x" data-file-width="180" data-file-height="185" height="'+size+'" width="'+size+'">');
+
+            $('.qc_GA').append('<img alt="Good article" src="//upload.wikimedia.org/wikipedia/en/thumb/9/94/Symbol_support_vote.svg/16px-Symbol_support_vote.svg.png" title="Good article" srcset="//upload.wikimedia.org/wikipedia/en/thumb/9/94/Symbol_support_vote.svg/23px-Symbol_support_vote.svg.png 1.5x, //upload.wikimedia.org/wikipedia/en/thumb/9/94/Symbol_support_vote.svg/31px-Symbol_support_vote.svg.png 2x" data-file-width="180" data-file-height="185" height="'+size+'" width="'+size+'">');
+            
+            $('.qc_FA').append('<img alt="Featured article" src="//upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Featured_article_star.svg/16px-Featured_article_star.svg.png" title="Featured article" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Featured_article_star.svg/24px-Featured_article_star.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Featured_article_star.svg/32px-Featured_article_star.svg.png 2x" data-file-width="180" data-file-height="180" height="'+size+'" width="'+size+'">');
+            $('.qc_B').append('<img alt="B-Class article" src="//upload.wikimedia.org/wikipedia/en/thumb/5/5f/Symbol_b_class.svg/16px-Symbol_b_class.svg.png" title="B-Class article" srcset="//upload.wikimedia.org/wikipedia/en/thumb/5/5f/Symbol_b_class.svg/23px-Symbol_b_class.svg.png 1.5x, //upload.wikimedia.org/wikipedia/en/thumb/5/5f/Symbol_b_class.svg/31px-Symbol_b_class.svg.png 2x" data-file-width="180" data-file-height="185" height="'+size+'" width="'+size+'">');
+
+            $('.qc_C').append('<img alt="C-Class article" src="//upload.wikimedia.org/wikipedia/en/thumb/e/e6/Symbol_c_class.svg/16px-Symbol_c_class.svg.png" title="C-Class article" srcset="//upload.wikimedia.org/wikipedia/en/thumb/e/e6/Symbol_c_class.svg/23px-Symbol_c_class.svg.png 1.5x, //upload.wikimedia.org/wikipedia/en/thumb/e/e6/Symbol_c_class.svg/31px-Symbol_c_class.svg.png 2x" data-file-width="180" data-file-height="185" height="'+size+'" width="'+size+'">');
+            $('.qc_Start').append('<img alt="Start-Class article" src="//upload.wikimedia.org/wikipedia/en/thumb/a/a4/Symbol_start_class.svg/16px-Symbol_start_class.svg.png" title="Start-Class article" srcset="//upload.wikimedia.org/wikipedia/en/thumb/a/a4/Symbol_start_class.svg/23px-Symbol_start_class.svg.png 1.5x, //upload.wikimedia.org/wikipedia/en/thumb/a/a4/Symbol_start_class.svg/31px-Symbol_start_class.svg.png 2x" data-file-width="180" data-file-height="185" height="'+size+'" width="'+size+'">');
+
+                
+
+        }
+    function toggle_qc(qc, checked){
+        if (checked){
+            $('.qc_display_'+qc).css('display','inline');
+        }else{
+            $('.qc_display_'+qc).css('display','none');
+        }
+    }
+    function refresh_search(){
+        search_term = $('#search_text').val();
+        result_html = "";
+        $.get("/navlink-recommendation/search/source/"+search_term.replace(' ', '_')+"/").done(function(data){
+            console.log(data);
+            for (var index in data['results']){
+                
+                result = data['results'][index]
+                if (result['num_links'] > 0){
+                    var num_link_class = "recommended";
+                }else{
+                    var num_link_class = "not-recommended";
+                }
+                result_html+='<div class="col-md-12 '+num_link_class+'"><a href="/navlink-recommendation/edit/'+result['page_link']+'"><h4>'+result['title']+' <span class= "badge" data-placement="right" title=" links suggested">'+result['num_links']+' </span></h4></a><p>'+result['snippet']+'</p></div>';
+            }
+            $("#search-results").html(result_html);
+        });
+        
+        
+    }
+    function show_zero_recommendations(checked){
+        if (checked){
+            $('.not-recommended').css('display','inline');
+        }else{
+            $('.not-recommended').css('display','none');
+        }
+    }
+</script>
+  </head>
+  <body>
+  <div class="wiki-header">
+  <div class="container">
+      <div class="col-md-8">
+          <span class="brand-subtitle">Wikipedia</span>
+          <h3 class="brand-title">Suggestions</h3>
+      </div>
+      <div class="col-md-4">switcher here </div>
+  </div>
+  </div>
+  
+  <div class="category-switcher">
+    <div class="container">
+    <div class="col-md-12">
+
+            <!--<form class="form-inline">
+                   <a href="https://en.wikipedia.org/wiki/Wikipedia:Vital_articles"><h2 >Vital Articles </h2></a>
+              <div class="form-group">
+                <label>
+                       Filter by Article Quality: 
+                </label>
+                <div class="btn-group" data-toggle="buttons" >
+                   
+                  <label class="btn btn-default active">
+                    <input type="checkbox" autocomplete="off" onchange="toggle_qc('FA', this.checked)" checked > <div class='qc_FA'></div>
+                  </label>
+                  
+                  <label class="btn btn-default active">
+                    <input type="checkbox" autocomplete="off" onchange="toggle_qc('A', this.checked)" checked > <div class='qc_A'></div>
+                  </label>
+                  
+                  <label class="btn btn-default active">
+                    <input type="checkbox" autocomplete="off" onchange="toggle_qc('GA', this.checked)" checked > <div class='qc_GA'></div>
+                  </label>
+                  
+                  <label class="btn btn-default active">
+                    <input type="checkbox" autocomplete="off" onchange="toggle_qc('B', this.checked)" checked > <div class='qc_B'></div>
+                  </label>
+                  
+                  <label class="btn btn-default active">
+                    <input type="checkbox" autocomplete="off" onchange="toggle_qc('C', this.checked)" checked > <div class='qc_C'></div>
+                  </label>
+                  
+                  <label class="btn btn-default active">
+                    <input type="checkbox" autocomplete="off" onchange="toggle_qc('Start', this.checked)" checked > <div class='qc_Start'></div>
+                  </label>
+                  
+                </div>
+              </div>
+            </form>-->
+            <ul class="nav nav-pills category-pills">
+                <li role="presentation" class="active"><a href="#All" data-toggle="tab">All</a></li>
+                
+            </ul>
+            </div>
+            </div>
+            </div>
+  <div class = "container">
+    
+    
+    
+    <!--- search -->
+     
+      <!--div class = "row">
+          <div class="col-md-12">
+
+            <p class="lead text-center">This is a tool for link recommendation in articles based on human navigational patterns</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="input-group">
+              <input id="search_text" type="text" class="form-control" placeholder="Search for articles ...">
+              <span class="input-group-btn">
+                <button class="btn btn-default" type="button" onclick="refresh_search()">Go!</button>
+              </span>
+            </div>
+        </div>
+    </div-->
+    
+        <!--div class="row">
+        <div class="col-md-4 col-md-offset-8">
+            <div class="btn-group pull-right" data-toggle="buttons" >
+                  <label class="btn btn-default">
+                    <input class="pull-right" type="checkbox" autocomplete="off" 
+        onchange="show_zero_recommendations(this.checked)"
+        > Articles with no recommendations</input>
+                  </label>
+                        
+            </div>
+        </div>
+    </div-->
+    
+   <!--  search end -->
+    
+    
+    
+    
+    
+
+    <div id = "search-results" class="row">
+            
+                
+    </div>
+
+    <div class="row">
+        
+            <div class="tab-content">
+                <div class="tab-pane active" id = "All">
+                    <div class="col-md-12">
+                    
+                    </div>
+                </div>
+
+                
+            </div>
+        </div>
+    </div>
+</div>
+<script> qc_image() </script>
+  </body>

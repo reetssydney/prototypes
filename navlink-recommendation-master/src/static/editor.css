@@ -1,0 +1,42 @@
+html, body { height: 100%; , width:100%;}
+input[type='checkbox'].icon-checkbox{display:none}
+input[type='checkbox'].icon-checkbox+label .unchecked{display:inline}
+input[type='checkbox'].icon-checkbox+label .checked{display:none}
+input[type='checkbox']:checked.icon-checkbox{display:none}
+input[type='checkbox']:checked.icon-checkbox+label .unchecked{display:none}
+input[type='checkbox']:checked.icon-checkbox+label .checked{display:inline}
+.list-group-item{
+    padding: 5px 5px 5px 5px;
+}
+.well{
+    padding: 0px;
+    margin-bottom: 0px;
+}
+#sidebar{
+    position: fixed; 
+    height: 150px; 
+    left: 0; 
+    top: 400px; 
+    width: 1000px; 
+    padding-top:1em; 
+    margin-left:1em; 
+    background-color:white;
+    overflow-x:scroll;
+    padding-top:0px;
+    border:2px solid; 
+    border-color:#555;
+}
+.panel-body {
+        padding: 5px;
+}
+
+
+
+.VEframe {
+    width: 1175px;
+    height:400px;
+    position: absolute;
+    left: -177px;
+    border: none !important;
+}
+

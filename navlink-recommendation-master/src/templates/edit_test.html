@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Edit -- {{ article }}</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='editor.css') }}">
+
+  </head>
+  <body>
+	 <iframe id="VEframe" frameBorder="0" class="VEframe" src="https://en.wikipedia.org/wiki/{{ article }}?veaction=edit"></iframe>
+	<div  id="sidebar">
+		<div id="suggestions" class="panel-group" style="width:500px;">
+
+		    {% for item in recommendations %}
+              <div class="panel panel-default">
+				<div class='panel-heading' style="width:200px; float:left;" role="button" data-toggle="collapse" data-parent="#suggestions" data-target="#collapse{{ loop.index }}" aria-expanded="false" aria-controls="collapse{{ loop.index }}"  >
+<table style="width:100%"><tr><td>
+                        <a href="https://en.wikipedia.org/wiki/{{ item.target }}" target="_blank">
+                            {{ item.target.replace('_',' ') }}
+                    </a></td>
+                    <td style="text-align:right">
+                        <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span>
+                     </td></tr></table>
+				</div>
+						<div id="collapse{{ loop.index }}" class="panel-collapse collapse well"  aria-labelledby="{{ item.target }}">
+							<div class="panel-body">
+                                <!--<a href="https://en.wikipedia.org/wiki/{{ item.target }}" target="_blank">
+                                    Open page
+                                    <div style='float:right' class="glyphicon glyphicon glyphicon-new-window" aria-hidden="true"></div>
+                                </a>-->
+								<b data-toggle="tooltip" data-placement="top" title="Algorithmically predicted probablility of being clicked">Click rate:</b> {{ "{:.2f}".format(item.expected_clickthrough*100)}}%</br>
+								<b data-toggle="tooltip" data-placement="top" title="Pages which could help relate the predicted link" >Related Pages: </b>
+								<a href="https://en.wikipedia.org/wiki/{{ item.related_pages[0] }}" target="_blank">
+									{{ item.related_pages[0].replace('_',' ') }}
+								</a>
+								{% for p in item.related_pages[1:] %}
+										, <a href="https://en.wikipedia.org/wiki/{{ p }}" target="_blank">
+											{{ p.replace('_',' ') }}
+										</a>
+								
+                                        {% endfor %}</br>
+                            <input id="{{ item.target }}-downvote" class="icon-checkbox" type="checkbox" />
+                            <label  for="{{ item.target }}-downvote" data-toggle="tooltip" data-placement="bottom" title="Bad link feedback">
+                                    <span class='glyphicon glyphicon-thumbs-down unchecked'></span>
+                                    <span style = "color: red" class='glyphicon glyphicon-thumbs-down checked'></span>
+                            </label>
+                            <!--<div class="btn-group text-center" data-toggle="buttons">
+                                <label class="btn btn-link">
+                                    <input type="checkbox" class="downvote" autocomplete="off" > <span style='float:right' class="glyphicon glyphicon-thumbs-down" aria-hidden="true"></span>
+                                </label>
+                            </div>-->
+							</div>
+						</div> 
+                    </div>
+		    {% endfor %}
+		</div>
+	</div>
+	<script type="text/javascript">
+    $('#VEframe').contents().find('#mw-head').css({
+            background : 'red'
+        });
+    </script>
+ </body>
+</html>
