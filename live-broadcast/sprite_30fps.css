@@ -12,7 +12,7 @@
   animation-iteration-count:infinite;
   width: 20px;
   height: 20px;
-  background-image: url(sprite_30fps.svg);
+  background-image: url(livebroadcast-anim.svg);
   background-repeat: no-repeat;
 }
 .shapeshifter.play {
