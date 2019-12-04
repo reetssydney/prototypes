@@ -1,0 +1,483 @@
+
+
+/* ^^^^^ MOBILE ONLY ^^^^^  */
+/* ^^^^^ 1. Mobile summary layout  */
+
+body.mw-special-Homepage.growthexperiments-homepage-mobile-summary .growthexperiments-homepage-container > a > .growthexperiments-homepage-module {
+  padding: 0 16px 16px 16px; /* change from 0 0.6875em 0.6875em 0.6875em */
+}
+
+/* ** Hide icons ** */
+.growthexperiments-homepage-module-mobile-summary .growthexperiments-homepage-module-header-icon {
+  display:none; /* no longer show icons before module headers */
+}
+
+.growthexperiments-homepage-module-mobile-summary h2.growthexperiments-homepage-module-section-header.growthexperiments-homepage-module-header {
+  margin: 12px 0px!important;
+  padding:0!important;
+}
+
+/* ** Fix header padding on all mobile summary modules **  */
+.growthexperiments-homepage-module-mobile-summary .growthexperiments-homepage-module-header-text{
+  padding:0!important;
+}
+
+.growthexperiments-homepage-module-mobile-summary.growthexperiments-homepage-module {
+  box-shadow: none; /* remove box-shadow  */
+}
+
+body.mw-special-Homepage.growthexperiments-homepage-mobile-summary .growthexperiments-homepage-container > a > .growthexperiments-homepage-module h2.growthexperiments-homepage-module-section-header .growthexperiments-homepage-module-header-text{
+  font-size:14px; /*change from 0.875em */
+  line-height:20px;
+}
+
+/* ^^^^^ 2. MOBILE Start summary ^^^^^ */
+.growthexperiments-homepage-module-start .growthexperiments-homepage-module-section.growthexperiments-homepage-module-section-body.growthexperiments-homepage-module-body{
+  padding-left:0!important;
+  padding-right:0!important;
+}
+
+.growthexperiments-homepage-module-mobile-summary.growthexperiments-homepage-module-start-startediting-completed{
+border:solid 1px rgba(234,243,255,.5)!important;  /* this makes the border the same color as the background around the start module when start editing is completed */
+}
+
+.growthexperiments-homepage-module-start.growthexperiments-homepage-module-mobile-summary > .growthexperiments-homepage-module-section-body .growthexperiments-homepage-module{
+  flex-basis:25%; /* change from 50% */
+}
+
+.growthexperiments-homepage-module-start.growthexperiments-homepage-module-mobile-summary > .growthexperiments-homepage-module-section-body .growthexperiments-homepage-module{
+ margin-top:0px;  /* change from .5em */
+ padding:8px 4px 24px;   /* change from padding:0 0.5em */
+}
+
+ /* shift position of icons inside start submodules */
+.growthexperiments-homepage-module-mobile-summary.growthexperiments-homepage-module-start > .growthexperiments-homepage-module-body .growthexperiments-homepage-module-header-icon span{
+  left:0px;
+  top:4px;
+}
+
+ /* Add connecting lines in the middle of circular icons  */
+.growthexperiments-homepage-module-start.growthexperiments-homepage-module-mobile-summary > .growthexperiments-homepage-module-section-body .growthexperiments-homepage-module:nth-child(1) {
+  background-repeat: no-repeat;
+  background-image:
+    linear-gradient(#54595d 100%, transparent 0);
+    background-size:
+    33% 1px;
+    background-position:
+    100% 24px;
+}
+.growthexperiments-homepage-module-start.growthexperiments-homepage-module-mobile-summary > .growthexperiments-homepage-module-section-body .growthexperiments-homepage-module:nth-child(2), .growthexperiments-homepage-module-start.growthexperiments-homepage-module-mobile-summary > .growthexperiments-homepage-module-section-body .growthexperiments-homepage-module:nth-child(3) {
+  background-repeat: no-repeat;
+  background-image:
+    linear-gradient(#54595d 100%, transparent 0),
+    linear-gradient(#54595d 100%, transparent 0);
+    background-size:
+    33% 1px,
+    33% 1px;
+    background-position:
+    0% 24px,
+    100% 24px;
+}
+.growthexperiments-homepage-module-start.growthexperiments-homepage-module-mobile-summary > .growthexperiments-homepage-module-section-body .growthexperiments-homepage-module:nth-child(4) {
+  background-repeat: no-repeat;
+  background-image:
+    linear-gradient(#54595d 100%, transparent 0);
+    background-size:
+    33% 1px;
+    background-position:
+    0% 24px;
+}
+
+ /* Re-position text for each submodule below the icons as if inline  */
+.growthexperiments-homepage-module-start.growthexperiments-homepage-module-mobile-summary > .growthexperiments-homepage-module-section-body {
+  position:relative;
+}
+
+.growthexperiments-homepage-module-mobile-summary.growthexperiments-homepage-module-start > .growthexperiments-homepage-module-body .growthexperiments-homepage-module-header-text{
+  font-size:12px;
+  position:absolute;
+  white-space:nowrap;
+  overflow:hidden;
+  width:50%;
+  background-color:transparent;
+}
+
+.growthexperiments-homepage-module-mobile-summary.growthexperiments-homepage-module-start > .growthexperiments-homepage-module-body .growthexperiments-homepage-module-header-text::before {
+content:'•';
+margin-right:10px;
+}
+
+.growthexperiments-homepage-module.growthexperiments-homepage-module-start-account .growthexperiments-homepage-module-header-text {
+  top:48px;
+  left:8px;
+}
+
+.growthexperiments-homepage-module.growthexperiments-homepage-module-start-email .growthexperiments-homepage-module-header-text {
+  top:48px;
+  right:8px;
+}
+
+.growthexperiments-homepage-module.growthexperiments-homepage-module-start-tutorial .growthexperiments-homepage-module-header-text {
+  top:64px;
+  left:8px;
+}
+
+.growthexperiments-homepage-module.growthexperiments-homepage-module-start-startediting .growthexperiments-homepage-module-header-text {
+  top:64px;
+  right:8px;
+}
+
+ /* Change bullet to tick and text to green30 for completed items*/
+.growthexperiments-homepage-module-mobile-summary .growthexperiments-homepage-module-completed.growthexperiments-homepage-module .growthexperiments-homepage-module-header-text {
+color:#14866D;
+}
+
+.growthexperiments-homepage-module-mobile-summary .growthexperiments-homepage-module-completed.growthexperiments-homepage-module .growthexperiments-homepage-module-header-text.growthexperiments-homepage-module-header-text::before {
+content:'✓';
+}
+
+/* Change bullet to tick and text to green30 for completed items*/
+.growthexperiments-homepage-module-mobile-summary .growthexperiments-homepage-module-completed, .growthexperiments-homepage-module-completed .growthexperiments-homepage-module-header-text{
+  background-color:transparent;
+}
+
+
+/* ^^^^^ 3. MOBILE Mentor summary  */
+.growthexperiments-homepage-module.growthexperiments-homepage-module-mentorship {
+  background-color: #F8F9FA;
+}
+.growthexperiments-homepage-module-mobile-summary .growthexperiments-homepage-mentorship-userlink{
+  font-size:16px;  /* change from font-size:1.2em */
+}
+
+.growthexperiments-homepage-module-mobile-summary .growthexperiments-homepage-mentorship-editcount, .growthexperiments-homepage-mentorship-lastactive {
+  font-size:12.8px; /* change from font-size:0.85em */
+  color:#54595d;  /* change from #72777d */
+}
+
+.growthexperiments-homepage-module-mobile-summary .growthexperiments-homepage-module-text-light{
+    color:#54595d!important;  /* change from #72777d */
+    font-size:14.8px; /* change from font-size:0.85em */
+}
+
+/* ^^^^^ 4. MOBILE Help summary  */
+/* ** Make help heading in mobile summary a row  **  */
+.growthexperiments-homepage-module-mobile-summary.growthexperiments-homepage-module-help .growthexperiments-homepage-module-section-header.growthexperiments-homepage-module-header{
+flex-direction:row;
+}
+/* ** Hide icon **  */
+.growthexperiments-homepage-module-mobile-summary.growthexperiments-homepage-module-help .growthexperiments-homepage-module-header-icon {
+display:none;
+}
+
+
+/*
+^^^^^ 5. MOBILE Structural updates
+* change icon on the top right on the summary header from OOUI 'next' icon to 'arrowNext'
+*/
+
+
+/* ^^^^^ 6. MOBILE Suggested edits summary */
+.growthexperiments-homepage-module-mobile-summary .suggested-edits-main {
+ padding:8px 16px 8px 0!important;
+}
+
+
+
+
+/* ^^^^^ 7. MOBILE Start module ^^^^^ */
+.homepage-module-overlay .growthexperiments-homepage-module-suggested-edits{
+  background-color:rgba(234,243,255,.5)!important;
+}
+
+
+body.mw-special-Homepage .overlay-content .growthexperiments-homepage-module-mobile-overlay .growthexperiments-homepage-module-section-header{
+margin-top:0;  /* change from .5em */
+margin-bottom:0;  /* change from .5em */
+}
+
+
+.growthexperiments-homepage-module-start.growthexperiments-homepage-module-mobile-overlay .growthexperiments-homepage-module-section .growthexperiments-homepage-module-section-body{
+  margin: 0px 8px 0px 48px;
+}
+
+.growthexperiments-homepage-module-start.growthexperiments-homepage-module-mobile-overlay > .growthexperiments-homepage-module-section-body .growthexperiments-homepage-module .growthexperiments-homepage-module-section-body{
+  padding-left:48px;/* change from 46px */
+}
+
+.growthexperiments-homepage-module-start.growthexperiments-homepage-module-mobile-overlay > .growthexperiments-homepage-module-section-body .growthexperiments-homepage-module-start-account .growthexperiments-homepage-module-section-userinfo {
+  margin-bottom: 0;/* change from 1em */
+}
+
+.growthexperiments-homepage-module-start.growthexperiments-homepage-module-mobile-overlay {
+  background-color:rgba(234,243,255,0.5)!important;
+  box-shadow:0 0 0 3em rgba(234,243,255,0.5)!important;
+}
+
+
+.growthexperiments-homepage-module-mobile-overlay .growthexperiments-homepage-module-completed{
+  background-color:rgba(234,243,255,1)!important;
+}
+
+.growthexperiments-homepage-module-mobile-overlay .growthexperiments-homepage-module-completed:first-child{
+  box-shadow:0 -24px 0 0 rgba(234,243,255,1)!important;
+  margin-top:8px!important;
+}
+
+.growthexperiments-homepage-module-start.growthexperiments-homepage-module-mobile-overlay > .growthexperiments-homepage-module-section-body .growthexperiments-homepage-module{
+  border-bottom:#fff 1px solid; /* change from border-bottom: #c8ccd1 1px solid */
+  padding:16px 16px 24px; /* change from padding:1em 0 1.85em 0 */
+}
+
+
+.growthexperiments-homepage-module.growthexperiments-homepage-module-start-startediting.growthexperiments-homepage-module-mobile-overlay {
+  padding-bottom: 32px!important;
+}
+
+.growthexperiments-homepage-module-start.growthexperiments-homepage-module-mobile-overlay > .growthexperiments-homepage-module-body .growthexperiments-homepage-module-header-icon{
+  width:32px;
+  height:32px;
+  margin-right: 16px;
+  min-width: 32px;
+}
+
+.growthexperiments-homepage-module-start.growthexperiments-homepage-module-mobile-overlay > .growthexperiments-homepage-module-body .growthexperiments-homepage-module-header-icon span{
+width:20px;
+height:20px;
+  left:0px; /* change from left:6px */
+  top:2px;
+}
+
+.growthexperiments-homepage-module-start.growthexperiments-homepage-module-mobile-overlay .growthexperiments-homepage-module-header-text{
+  font-size:18.2px!important;
+}
+
+.growthexperiments-homepage-module-start.growthexperiments-homepage-module-mobile-overlay .growthexperiments-homepage-module-editcount {
+  margin: 8px 0 0 -44px!important;
+}
+
+.growthexperiments-homepage-module-start.growthexperiments-homepage-module-mobile-overlay > .growthexperiments-homepage-module-section-body .growthexperiments-homepage-module-start-account .growthexperiments-homepage-module-section-accountage{
+  font-size:13.6px;
+  margin:0;
+  padding:0;
+}
+
+/* ^^^^^ 8. MOBILE Mentor module ^^^^^ */
+
+.growthexperiments-homepage-module-mobile-overlay.growthexperiments-homepage-module-mentorship{
+  height:calc(100vh - 48px);
+  background-color:#F8F9FA!important;
+}
+
+.growthexperiments-homepage-module-mobile-overlay .growthexperiments-homepage-mentorship-intro {
+font-family:'Charter', 'Georgia', serif;
+line-height:1.65;
+}
+
+
+.growthexperiments-homepage-module-mobile-overlay .growthexperiments-homepage-mentorship-intro{
+  margin: 8px;
+  padding: 8px 16px;
+  background-color: #fff;
+  box-shadow: 0 -1em 0 88px #fff;
+}
+
+
+.growthexperiments-homepage-module-mobile-overlay .recent-questions-growthexperiments-mentor-questions-list{
+  margin-top:8px;
+}
+
+.growthexperiments-homepage-module-mobile-overlay.growthexperiments-homepage-module-mentorship {
+ padding: 16px!important;
+}
+
+/* ^^^^^ 9. MOBILE Suggested edits module ^^^^^ */
+.growthexperiments-homepage-module-mobile-overlay.growthexperiments-homepage-module-suggested-edits{
+  height:calc(100vh - 48px);
+  background-color:rgba(234,243,255,.5)!important;
+}
+
+.growthexperiments-homepage-module-mobile-overlay .suggested-edits-footer{
+  margin-top:16px!important;
+}
+
+
+/* ==== APPLICABLE DESKTOP UPDATES APPLIED FROM https://phabricator.wikimedia.org/T232546 === */
+/* ==== 1. Homepage layout updates */
+h2.growthexperiments-homepage-module-section-header.growthexperiments-homepage-module-header {
+  font-size: 16.8px;
+  line-height: 1;
+  padding-bottom: 16px; /* change from padding-bottom: 0.76923077em */
+  margin-bottom: 0px; /* change from margin-bottom: 0.76923077em */
+  border-bottom: none; /* remove border-bottom:1px solid #c8ccd1*/
+}
+
+/* ==== 2. Start module updates */
+.growthexperiments-homepage-module-start:not(.growthexperiments-homepage-module-completed){
+  -webkit-box-shadow: none;  /* remove -webkit-box-shadow: 0 5px 10px 0 rgba(0,0,0,0.15);  */
+  box-shadow: none; /* remove box-shadow: 0 5px 10px 0 rgba(0,0,0,0.15);  */
+  border: solid 1px #3366cc;
+  background-color: rgba(234,243,255,.5);
+}
+.growthexperiments-homepage-module-start-startediting-completed{
+ border:none!important;  /* this removes the border around the start module when start editing is completed */
+}
+
+.growthexperiments-homepage-module-start > .growthexperiments-homepage-module-body .growthexperiments-homepage-module {
+  border:none;
+  padding:16px 16px 8px;
+  text-align:left;
+}
+.growthexperiments-homepage-module-completed,  .growthexperiments-homepage-module-completed .growthexperiments-homepage-module-header-text {
+  background-color:#EAF3FF; /*makes start submodule slightly darker blue backgroundto indicate completed */
+  color:#222;
+}
+
+
+/* ===== 2a. Start submodule icons */
+.growthexperiments-homepage-module-start > .growthexperiments-homepage-module-body .growthexperiments-homepage-module-header-icon {
+  display:block; /*  shows the icons before the start sub-module headers */
+  width: 28px; /*change from 34px */
+  height: 28px; /*change from 34px */
+  background-color: transparent; /* change from #d5fdf4 */
+  border:solid 1px #54595D; /* change from #c8ccd1 */
+  margin-right: 8px;  /* change from margin-right:10px */
+  min-width: 28px;
+}
+
+.growthexperiments-homepage-module-start > .growthexperiments-homepage-module-body .growthexperiments-homepage-module-header-icon .oo-ui-iconElement {
+  width: 16px; /*change from 34px */
+  height: 16px; /*change from 34px */
+  background-size: contain;  /*change from unset */
+  min-width: 16px;
+  position: relative;
+  left: 6px;
+}
+
+.growthexperiments-homepage-module-start > .growthexperiments-homepage-module-body .growthexperiments-homepage-module-start-email.growthexperiments-homepage-email-unconfirmed .growthexperiments-homepage-module-header-icon{
+  background-color:transparent;  /* change from #3366cc */
+  border-color: #54595D; /* change from #3366cc */
+}
+
+/* ===== 2b. Start submodule inner content */
+.growthexperiments-homepage-module-start > .growthexperiments-homepage-module-body .growthexperiments-homepage-module-header {
+  margin-bottom:8px;  /*change from 1em */
+}
+
+.growthexperiments-homepage-module-start > .growthexperiments-homepage-module-body .growthexperiments-homepage-module-header-text {
+font-size: 12.4px;
+}
+
+.growthexperiments-homepage-module-start > .growthexperiments-homepage-module-body .growthexperiments-homepage-module-body {
+  padding-top:8px;  /*change from 1em */
+}
+
+/* ===== 2c. Account submodule */
+
+.growthexperiments-homepage-module-section-userinfo {
+  display: flex; /*this makes the username sit on the same row as the avatar icon */
+}
+
+.growthexperiments-homepage-module-start > .growthexperiments-homepage-module-body .growthexperiments-homepage-module-start-account .growthexperiments-homepage-module-section-userinfo .oo-ui-iconElement{
+height: 30px;  /*change from 42px */
+width: 30px;  /*change from 42px */
+border-radius: 0; /* change from border-radius: 50%; */
+background-size: contain;;  /*change from unset */
+background-color:transparent; /* remove background-color: #54595d; */
+opacity:0.65;
+margin:0 8px 0 0;
+}
+
+.growthexperiments-homepage-module-start > .growthexperiments-homepage-module-body .growthexperiments-homepage-module-start-account .growthexperiments-homepage-module-section-userinfo .growthexperiments-homepage-module-section-username{
+color:#222; /*change from #000 */
+font-family:'Helvetica Neue','Helvetica','Arial',sans-serif; /*change from 'Georgia',serif */
+font-weight: bold;
+font-size:14px; /*change from 1.3em */
+height: 24px;
+margin-top: 6px;
+}
+
+.growthexperiments-homepage-module-editcount {margin: 8px 0 0 -38px!important; /*change from margin:0 0 0.5em 0; */color:#54595D!important; /*change from #72777D */padding-bottom:4px;padding-right: -4px;}
+
+.growthexperiments-homepage-module-section-accountage{
+color:#54595D!important; /*change from #72777D */
+}
+
+/* ==== 3. Mentor module */
+.growthexperiments-homepage-mentorship-userlink .oo-ui-iconElement {width: 40px;   /*change from 20px */height: 40px;   /*change from 20px */opacity: 0.65;   /*change from 0.6 */margin-right: 0.5em;   /*change from 0.5em */}
+
+.growthexperiments-homepage-mentorship-username {
+vertical-align: bottom; /*change from middle */
+}
+
+.growthexperiments-homepage-mentorship-intro {margin: 0 8px 16px;  /* change from margin: 0.5em 0 1.1em 1.1em; */font-size:14px; /* change from font-size: 1.2em; */border-left: solid 4px #A2A9B1;padding: 8px;font-style: normal; /* change from font-style: italic; */color: #222;  /* change from #54595d */}
+
+.growthexperiments-homepage-mentorship-cta{
+margin-left:0; /* change from margin-left:1.4em; */
+}
+
+.recent-questions-growthexperiments-mentor-questions{background-color:#f8f9fa;margin: 24px -16px 0px;padding:16px;}
+
+.recent-questions-growthexperiments-mentor-questions h3 {
+margin-top:0px!important; /* change from margin-top:1.4em; */
+}
+
+/* Remove the background border and color when mentor module is on the sidebar (after adding SE module) */
+.growthexperiments-homepage-group-sidebar .growthexperiments-homepage-module.growthexperiments-homepage-module-mentorship.growthexperiments-homepage-module-desktop {
+  border:none;
+}
+
+
+/* ==== 4. Help module */
+/* Remove the background border and color */
+.growthexperiments-homepage-module.growthexperiments-homepage-module-help.growthexperiments-homepage-module-desktop {
+border:none;
+background-color:transparent;
+}
+
+/* Show the "?" header icon larger, above the help header */
+.growthexperiments-homepage-module-help .growthexperiments-homepage-module-header-icon {
+  display:block;
+  align-self:start;
+  }
+
+.growthexperiments-homepage-module-help .growthexperiments-homepage-module-header-icon span{
+width:40px!important;
+height:40px!important;
+opacity:0.65;
+}
+
+.growthexperiments-homepage-module-help .growthexperiments-homepage-module-section-header.growthexperiments-homepage-module-header{
+display:flex;
+flex-direction:column;
+}
+
+.growthexperiments-homepage-module-help .growthexperiments-homepage-module-header-text{
+  align-self:start;
+  padding-top:24px;
+}
+
+/*
+
+====5. Structural updates
+===== Start module
+Account avatar email icon should no longer use the white icon, swap the class .oo-ui-image-invert with .oo-ui-image in the relevant <span>.
+Shorten the copy before "account age"
+
+Confirm email icon should no longer use the white icon, swap the class .oo-ui-image-invert with .oo-ui-image in the relevant <span>.
+Confirm email submodule - confirmation email address and "change" link is in the same text block.
+
+Additional changes related to the Start module being collapsible on Desktop detailed on T219391
+
+===== Structural updates to Mentor module
+Change the avatar icon for the mentor to the new mentor icon
+
+===== Structural updates to Help module
+Change the help module header icon from "oo-ui-icon-helpNotice" to "oo-ui-icon-help"
+*/
+
+
+/* ==== 6. Suggested edits updates */
+.suggested-edits-footer {
+  margin: 0 -16px -16px!important; /* changed from margin: 0 -1.11111111em -1.11111111em */
+}
