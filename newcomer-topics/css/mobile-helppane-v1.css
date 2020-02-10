@@ -1,0 +1,991 @@
+body {
+    font-family: 'Helvetica Neue','Helvetica','Nimbus Sans L','Arial','Liberation Sans',sans-serif;
+    font-size: 100%;
+    line-height: 1.4;
+    color: #222222;
+    background: #fff;
+    -webkit-tap-highlight-color: rgba(0,0,0,0.2);
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    vertical-align: baseline;
+    display: block;
+}
+
+#mw-mf-viewport {
+    position: relative;
+    height: 100%;
+}
+
+#mw-mf-page-center {
+    width: 100%;
+    position: relative;
+    background-color: #eaecf0;
+    z-index: 0;
+}
+
+
+.header {
+    display: table;
+    width: 100%;
+    height: 3.35em;
+    white-space: nowrap;
+    border-top: 1px solid #c8ccd1;
+    margin-top: -1px;
+    border-spacing: 0;
+    border-collapse: collapse;
+    margin-bottom: 0;
+}
+
+.header > div {
+    width: 3.35em;
+    position: relative;
+    vertical-align: middle;
+    display: table-cell;
+}
+.mw-ui-icon {
+    position: relative;
+    line-height: 1.5em;
+    min-height: 1.5em;
+    min-width: 1.5em;
+}
+
+.mw-ui-icon.mw-ui-icon-element {
+    text-indent: -999px;
+    overflow: hidden;
+    width: 3.5em;
+    min-width: 3.5em;
+    max-width: 3.5em;
+}
+
+.header > div a {
+    display: block;
+}
+.mw-ui-icon.mw-ui-icon-before:before, .mw-ui-icon.mw-ui-icon-element:before {
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    float: left;
+    display: block;
+    min-height: 1.5em;
+    content: '';
+}
+
+.mw-ui-icon-minerva-mainmenu:before {
+    left: 0;
+    right: 0;
+    position: absolute;
+    margin: 0 1em;
+    background-image: url("https://en.m.wikipedia.org/w/load.php?modules=skins.minerva.icons.images&image=mainmenu&format=rasterized&lang=en&skin=minerva");
+    background-image: linear-gradient(transparent,transparent),url("https://en.m.wikipedia.org/w/load.php?modules=skins.minerva.icons.images&image=mainmenu&format=original&lang=en&skin=minerva");
+}
+
+.mw-ui-icon.mw-ui-icon-element:before {
+    left: 0;
+    right: 0em;
+    position: absolute;
+    margin: 0 1em 0em 1em;
+}
+
+
+.mw-ui-icon-minerva-magnifying-glass:before {
+    background-image: url("https://en.m.wikipedia.org/w/load.php?modules=skins.minerva.content.styles.images&image=input.search%2C.mw-ui-icon-minerva-magnifying-glass%3Abefore&format=rasterized&lang=en&skin=minerva");
+    background-image: linear-gradient(transparent,transparent),url("https://en.m.wikipedia.org/w/load.php?modules=skins.minerva.content.styles.images&image=input.search%2C.mw-ui-icon-minerva-magnifying-glass%3Abefore&format=original&lang=en&skin=minerva");
+    width: 2em;
+    height:1.6em;
+}
+
+
+.header > div:last-child {
+    padding-right: 0.31em;
+}
+
+.mw-ui-icon-minerva-notifications:before {
+    background-image: url("https://en.m.wikipedia.org/w/load.php?modules=skins.minerva.icons.loggedin&image=notifications&format=rasterized&lang=en&skin=minerva");
+    background-image: linear-gradient(transparent,transparent),url("https://en.m.wikipedia.org/w/load.php?modules=skins.minerva.icons.loggedin&image=notifications&format=original&lang=en&skin=minerva");
+}
+
+.header-container.header-chrome {
+    background-color: #eaecf0;
+    border: 0;
+    box-shadow: inset 0 -1px 3px rgba(0,0,0,0.08);
+}
+
+.header .branding-box {
+    width: auto;
+}
+
+
+/* Main content styles */
+
+#content {
+    border-top: 1px solid transparent;
+    padding-bottom: 32px;
+    background-color:#ffffff;
+}
+.talk-overlay .comment .comment-content, .backtotop, .image-list, .pre-content, #mw-content-text > form > .oo-ui-fieldLayout > .oo-ui-fieldLayout-body, #mw-content-text > form > .oo-ui-widget, .content, .post-content {
+    margin: 0 16px;
+}
+
+.heading-holder {
+    padding: 0px 0 3.6em;
+    position: relative;
+}
+
+#page-actions {
+    font-size: 1.1em;
+    float: none;
+    border: 0;
+    overflow: hidden;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    border-top: 1px solid #eaecf0;
+    border-bottom: 1px solid #c8ccd1;
+    padding: 0.5em 0;
+}
+
+.hlist {
+    margin: 0 !important;
+    padding: 8px 0 !important;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+#page-actions #ca-edit {
+    margin-right: -1em;
+}
+
+.mw-ui-icon-minerva-edit-enabled:before {
+    background-image: url("https://en.m.wikipedia.org/w/load.php?modules=skins.minerva.icons.images&image=edit-enabled&format=rasterized&lang=en&skin=minerva");
+    background-image: linear-gradient(transparent,transparent),url("https://en.m.wikipedia.org/w/load.php?modules=skins.minerva.icons.images&image=edit-enabled&format=original&lang=en&skin=minerva");
+pointer-events: none
+}
+
+.mw-ui-icon-minerva-watch:before {
+    background-image: url("https://en.m.wikipedia.org/w/load.php?modules=skins.minerva.icons.images&image=watch&format=rasterized&lang=en&skin=minerva");
+    background-image: linear-gradient(transparent,transparent),url("https://en.m.wikipedia.org/w/load.php?modules=skins.minerva.icons.images&image=watch&format=original&lang=en&skin=minerva");
+}
+
+.mw-ui-icon-minerva-download:before {
+    background-image: url("https://en.m.wikipedia.org/w/load.php?modules=skins.minerva.icons.images.scripts.misc&image=download&format=rasterized&lang=en&skin=minerva&version=02vkrie");
+    background-image: linear-gradient(transparent,transparent),url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2224%22 height=%2224%22 viewBox=%220 0 24 24%22%3E%3Cpath fill=%22%2354595d%22 fill-rule=%22evenodd%22 d=%22M19.778 14.222H22v5.556A2.223 2.223 0 0 1 19.778 22H4.222A2.223 2.223 0 0 1 2 19.778v-5.556h2V20h16v-5.436l-.222-.342zM12 18l-5.611-7h11.11L12 18zm1-16v9h-2V2h2z%22/%3E%3C/svg%3E");
+}
+
+#page-actions .language-selector {
+    float: left;
+    margin-left: -1em;
+}
+
+.mw-ui-icon-minerva-language-switcher:before {
+    background-image: url("https://en.m.wikipedia.org/w/load.php?modules=skins.minerva.icons.images&image=language-switcher&format=rasterized&lang=en&skin=minerva");
+    background-image: linear-gradient(transparent,transparent),url("https://en.m.wikipedia.org/w/load.php?modules=skins.minerva.icons.images&image=language-switcher&format=original&lang=en&skin=minerva");
+}
+
+#page-actions li:first-child {
+    margin-top: 0;
+}
+
+#page-actions li {
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    margin-right: 0;
+    margin-bottom: 0;
+    float: right;
+}
+
+#section_0 {
+    padding-top: 0;
+    padding-bottom: 0;
+    border-bottom: 0;
+}
+
+.pre-content h1, .content h1, .content h2, h3, h4, h5, h6 {
+    line-height: 1.3;
+    word-wrap: break-word;
+    word-break: break-word;
+}
+
+.pre-content h1, .content h1, .content h2 {
+    font-family: 'Linux Libertine','Georgia','Times',serif;
+font-size: 1.7em;
+font-weight: normal;
+}
+
+.heading-holder .tagline {
+    color: #54595d;
+    font-size: 0.85em;
+    margin: 2px 0 0;
+}
+
+
+.content p {
+    margin: 0.5em 0 1em 0;
+    line-height: 1.65em;
+    font-size: 1em;
+}
+
+a {
+    text-decoration: none;
+    color: #3366cc;
+}
+
+
+.content table.infobox {
+    font-size: 90%;
+    position: relative;
+    border: 1px solid #eaecf0;
+    margin-bottom: 2em;
+    background-color: #f8f9fa;
+    display: flex;
+    flex: 1 1 100%;
+    flex-flow: column nowrap;
+}
+
+
+.toc-mobile, .toc, .client-nojs .toc-mobile, .client-js .mw-redirectedfrom, .printfooter, .jsonly {
+    display: none;
+}
+
+.content .mw-parser-output > h2 .indicator, .content .section-heading .indicator {
+    font-size: 0.4em;
+    margin-left: -1em;
+}
+
+.client-js .collapsible-heading .indicator {
+    float: left;
+    margin-top: 0.7em;
+    font-size: 0.4em;
+}
+
+.mw-ui-icon-minerva-edit-enabled:before {
+    background-image: url("https://en.m.wikipedia.org/w/load.php?modules=skins.minerva.icons.images&image=edit-enabled&format=rasterized&lang=en&skin=minerva");
+    background-image: linear-gradient(transparent,transparent),url("https://en.m.wikipedia.org/w/load.php?modules=skins.minerva.icons.images&image=edit-enabled&format=original&lang=en&skin=minerva");
+}
+
+.content .mw-parser-output > h1 > span, .content .mw-parser-output > h2 > span, .content .mw-parser-output > h3 > span, .content .mw-parser-output > h4 > span, .content .mw-parser-output > h5 > span, .content .section-heading > span, .content .in-block > span {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.content .collapsible-heading.open-block .edit-page {
+    visibility: visible;
+}
+
+.content h2 .edit-page {
+    font-size: 0.66666667em;
+}
+
+.content .edit-page {
+    display: inline-block;
+}
+
+.content .mw-parser-output > h1 .mw-headline, .content .mw-parser-output > h2 .mw-headline, .content .mw-parser-output > h3 .mw-headline, .content .mw-parser-output > h4 .mw-headline, .content .mw-parser-output > h5 .mw-headline, .content .section-heading .mw-headline, .content .in-block .mw-headline {
+    width: 100%;
+}
+
+h2 .mw-headline {
+  font-size: .9em;
+}
+
+.thumbinner {
+  display: none;
+}
+
+button {
+  border: 0;
+  background-color: transparent;
+}
+
+
+
+/* Edit tools */
+.ve-init-mw-mobileArticleTarget-editTools > .oo-ui-barToolGroup {
+    text-align: center;
+}
+
+.ve-init-mw-mobileArticleTarget-pageTools > .oo-ui-toolGroup, .ve-init-mw-mobileArticleTarget-editTools > .oo-ui-toolGroup, .ve-init-mw-mobileArticleTarget-pageTools > .ve-init-mw-mobileArticleTarget-title-container, .ve-init-mw-mobileArticleTarget-editTools > .ve-init-mw-mobileArticleTarget-title-container {
+    display: table-cell;
+}
+
+.oo-ui-toolGroup {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    border-right: 1px solid #eaecf0;
+}
+
+.ve-init-mw-mobileArticleTarget-editTools > .oo-ui-barToolGroup > .oo-ui-toolGroup-tools > .oo-ui-tool {
+    width: 100%;
+}
+
+.ve-init-mw-mobileArticleTarget-editTools {
+    width: 100%;
+}
+
+.ve-init-mw-mobileArticleTarget-pageTools, .ve-init-mw-mobileArticleTarget-editTools {
+    display: table;
+}
+
+
+.oo-ui-barToolGroup-tools > .oo-ui-tool {
+    display: inline-block;
+    position: relative;
+    vertical-align: top;
+}
+
+.ve-init-mw-mobileArticleTarget-editTools > .oo-ui-barToolGroup > .oo-ui-toolGroup-tools > .oo-ui-tool > .oo-ui-tool-link {
+    padding: 0.875em;
+}
+
+.oo-ui-barToolGroup-tools > .oo-ui-tool > .oo-ui-tool-link {
+    display: block;
+}
+
+.ve-init-mw-mobileArticleTarget-editTools > .oo-ui-barToolGroup > .oo-ui-toolGroup-tools > .oo-ui-tool > .oo-ui-tool-link > .oo-ui-iconElement-icon:not(.oo-ui-tool-checkIcon) {
+    position: static;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 0.25em;
+}
+.ve-init-mw-mobileArticleTarget-toolbar .oo-ui-iconElement-icon {
+    -webkit-background-size: 20px 20px;
+    background-size: 20px 20px;
+}
+
+.oo-ui-tool.oo-ui-widget-enabled .oo-ui-iconElement-icon {
+    opacity: 0.87;
+    -webkit-transition: opacity 100ms;
+    -moz-transition: opacity 100ms;
+    transition: opacity 100ms;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+}
+
+.oo-ui-tool .oo-ui-iconElement-icon {
+    display: block;
+    left: 0.78571429em;
+}
+
+.oo-ui-iconElement-icon {
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 0;
+    min-width: 20px;
+    width: 1.42857143em;
+    min-height: 20px;
+    height: 100%;
+}
+.oo-ui-barToolGroup-tools > .oo-ui-tool > .oo-ui-tool-link .oo-ui-tool-accel {
+    display: none;
+}
+
+.ve-init-mw-mobileArticleTarget-editTools > .oo-ui-barToolGroup > .oo-ui-toolGroup-tools > .oo-ui-tool > .oo-ui-tool-link > .oo-ui-tool-title {
+    display: none !important;
+}
+
+.oo-ui-icon-undo, .mw-ui-icon-undo:before {
+    background-image: url("https://en.m.wikipedia.org/w/load.php?modules=oojs-ui.styles.icons-editing-core&image=undo&format=rasterized&lang=en&skin=minerva&version=1ykics3");
+    background-image: linear-gradient(transparent,transparent),url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2220%22 height=%2220%22 viewBox=%220 0 20 20%22%3E%3Ctitle%3Eundo%3C/title%3E%3Cpath d=%22M1 8.5L8 3v11L1 8.5zM8 7v3h1c4 0 7 2 7 6v1h3v-1c0-6-5-9-10-9z%22/%3E%3C/svg%3E");
+}
+
+
+.oo-ui-popupToolGroup.oo-ui-iconElement.oo-ui-indicatorElement .oo-ui-popupToolGroup-handle {
+    padding-left: 3em;
+}
+
+.oo-ui-popupToolGroup.oo-ui-indicatorElement .oo-ui-popupToolGroup-handle {
+    padding-right: 1.14285714em;
+}
+.oo-ui-popupToolGroup {
+    position: relative;
+    min-width: 3em;
+}
+
+.oo-ui-popupToolGroup-handle {
+    display: block;
+    cursor: pointer;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+
+.oo-ui-icon-textStyle, .mw-ui-icon-textStyle:before {
+    background-image: url("https://en.m.wikipedia.org/w/load.php?modules=oojs-ui.styles.icons-editing-styling&image=textStyle&format=rasterized&lang=en&skin=minerva&version=1ykics3");
+    background-image: linear-gradient(transparent,transparent),url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2220%22 height=%2220%22 viewBox=%220 0 20 20%22%3E%3Ctitle%3Etext style%3C/title%3E%3Cpath d=%22M2 17h16v2H2zm9.34-15h3.31l2 14h-3.19l-.29-2.88H8L6.43 16H3.37zm-2 8.71h3.55l-.61-5.51z%22/%3E%3C/svg%3E");
+    background-size: 20px 20px;
+    -webkit-background-size: 20px 20px;
+    left:50%;
+}
+
+.oo-ui-indicatorElement-indicator {
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 0;
+    min-width: 12px;
+    width: 0.85714286em;
+    min-height: 12px;
+    height: 100%;
+}
+
+
+.oo-ui-indicator-down {
+    background-image: url("https://en.m.wikipedia.org/w/load.php?modules=oojs-ui.styles.indicators&image=down&format=rasterized&lang=en&skin=minerva&version=1ykics3");
+    background-image: linear-gradient(transparent,transparent),url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2212%22 height=%2212%22 viewBox=%220 0 12 12%22%3E%3Ctitle%3Edown%3C/title%3E%3Cpath d=%22M11.05 3.996l-.965-1.053-4.035 3.86-3.947-3.86L1.05 3.996l5 5 5-5%22/%3E%3C/svg%3E");
+    left:50%;
+}
+
+.editor-overlay-ve .overlay-header-container {
+    box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+}
+
+
+.oo-ui-icon-link, .mw-ui-icon-link:before {
+    background-image: url("https://en.m.wikipedia.org/w/load.php?modules=oojs-ui.styles.icons-editing-core&image=link&format=rasterized&lang=en&skin=minerva&version=1ykics3");
+    background-image: linear-gradient(transparent,transparent),url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2220%22 height=%2220%22 viewBox=%220 0 20 20%22%3E%3Ctitle%3Elink%3C/title%3E%3Cpath d=%22M4.83 15h2.91a4.88 4.88 0 0 1-1.55-2H5a3 3 0 1 1 0-6h3a3 3 0 0 1 2.82 4h2.1a4.82 4.82 0 0 0 .08-.83v-.34A4.83 4.83 0 0 0 8.17 5H4.83A4.83 4.83 0 0 0 0 9.83v.34A4.83 4.83 0 0 0 4.83 15z%22/%3E%3Cpath d=%22M15.17 5h-2.91a4.88 4.88 0 0 1 1.55 2H15a3 3 0 1 1 0 6h-3a3 3 0 0 1-2.82-4h-2.1a4.82 4.82 0 0 0-.08.83v.34A4.83 4.83 0 0 0 11.83 15h3.34A4.83 4.83 0 0 0 20 10.17v-.34A4.83 4.83 0 0 0 15.17 5z%22/%3E%3C/svg%3E");
+}
+
+.oo-ui-icon-quotes, .mw-ui-icon-quotes:before {
+    background-image: url("https://en.m.wikipedia.org/w/load.php?modules=oojs-ui.styles.icons-editing-advanced&image=quotes&format=rasterized&lang=en&skin=minerva&version=1qjswwn");
+    background-image: linear-gradient(transparent,transparent),url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2220%22 height=%2220%22 viewBox=%220 0 20 20%22%3E%3Ctitle%3Equotes%3C/title%3E%3Cpath d=%22M7 6l1-2H6C3.79 4 2 6.79 2 9v7h7V9H5c0-3 2-3 2-3zm7 3c0-3 2-3 2-3l1-2h-2c-2.21 0-4 2.79-4 5v7h7V9z%22/%3E%3C/svg%3E");
+}
+
+.oo-ui-icon-check, .mw-ui-icon-check:before {
+    background-image: url("https://en.m.wikipedia.org/w/load.php?modules=oojs-ui.styles.icons-interactions&image=check&format=rasterized&lang=en&skin=minerva&version=1ykics3");
+    background-image: linear-gradient(transparent,transparent),url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2220%22 height=%2220%22 viewBox=%220 0 20 20%22%3E%3Ctitle%3Echeck%3C/title%3E%3Cpath d=%22M7 14.17L2.83 10l-1.41 1.41L7 17 19 5l-1.41-1.42L7 14.17z%22/%3E%3C/svg%3E");
+}
+
+.oo-ui-tool > .oo-ui-tool-link > .oo-ui-tool-checkIcon {
+    display: none;
+}
+
+/*article edit mode styles*/
+.overlay.editor-overlay.editor-overlay-ve.visible.ve-init-target-visual.ve-init-target.ve-init-mw-target.ve-init-mw-articleTarget.ve-init-mw-mobileArticleTarget.ve-init-mw-mobileFrontendArticleTarget {
+  position: absolute;
+    z-index: 2;
+}
+
+.overlay-header-container.header-container.position-fixed {
+  position: fixed;
+  width: 100%;
+  background-color: #fff;
+  margin-top:-1px;
+}
+
+.overlay-content {
+  margin-top:4em;
+}
+
+th {
+text-align: left;
+}
+
+figcaption, .thumbcaption {
+    margin: 0.5em 0 0;
+    font-size: 0.8em;
+    line-height: 1.5;
+    padding: 0 !important;
+    color: #54595d;
+}
+
+.overlay-content .surface p {
+    margin: 0.5em 1em 1em 1em;
+    line-height: 1.5em;
+}
+
+.overlay-content .surface h2 {
+    font-family: 'Linux Libertine','Georgia','Times',serif;
+    font-weight: normal;
+    line-height: 1.3;
+    word-wrap: break-word;
+    word-break: break-word;
+    border-bottom: 1px solid #eaecf0;
+    margin-bottom: 0.5em;
+    margin-left:16px;
+    margin-right:16px;
+    padding: 0.5em 0;
+}
+
+
+/*help pane*/
+/* Help pane CTA styling */
+#helpPaneCTA {
+	display:block;
+	position:fixed;
+	z-index:9999;
+	bottom:0;
+	right:0;
+  /*desktop  margin:1em 1em 2em; */
+  margin: 1em;
+  padding: 0;
+  cursor:pointer;
+  z-index:1;
+}
+
+#helpPaneCTA .helpPaneCTAbtn {
+  background-color:#36c;
+  padding:1.5em;
+/*desktop	padding:.75em 1em .75em 3em; */
+  margin: 0;
+	border-radius:1.5em;
+	font-size:.875em;
+  line-height: 1em;
+	color:#fff;
+	font-weight:bolder;
+	font-family: Helvetica, Arial, sans-serif;
+  box-shadow:0px 1px 2px rgba(0,0,0,.5);
+}
+
+#helpPaneCTA .helpPaneCTAbtn span:before {
+  content: "";
+  position: absolute;
+/*desktop
+  top: .5em;
+  left: 1em;
+  */
+  top: 25%;
+  left: 25%;
+  bottom:0;
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Ctitle%3EIcon-AskQuestion%3C/title%3E%3Cdefs%3E%3Cpath d='M38 14a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H24l-4 4V16a2 2 0 0 1 2-2h16zm-7.962 2.605a3 3 0 0 0-.33 0 2.826 2.826 0 0 0-2.706 2.934h1.524v-.102a1.38 1.38 0 0 1 1.428-1.332h.102a1.26 1.26 0 0 1 1.248 1.284c0 .708-.27 1.086-1.074 1.626a2.304 2.304 0 0 0-1.2 2.304v.486h1.506v-.408c0-.708.24-1.074 1.092-1.626a2.754 2.754 0 0 0 1.374-2.448c0-1.584-1.2-2.718-2.964-2.718zm-1.236 9.6a1.128 1.128 0 0 0 1.2 1.2 1.122 1.122 0 0 0 1.2-1.2 1.122 1.122 0 0 0-1.2-1.2h-.138c-.624.038-1.1.575-1.062 1.2z' id='a'/%3E%3C/defs%3E%3Cg transform='translate(-20 -14)' fill='none' fill-rule='evenodd'%3E%3Cuse fill='%23FFF' xlink:href='%23a'/%3E%3C/g%3E%3C/svg%3E");
+  background-position: center center;
+  background-repeat: no-repeat;
+  opacity: 1;
+  width: 20px;
+  height: 20px;
+}
+
+.helpPaneCTAAnimateIn {
+  animation-duration: 800ms;
+  animation-name: slidein;
+}
+
+@keyframes slidein {
+  from {
+    bottom:-3em;
+    opacity:.5;
+  }
+  20% {
+  bottom:-3em;
+  opacity:.5;
+  }
+  70% {
+	bottom:0.25em;
+  opacity:.9;
+  }
+  to {
+	bottom:0;
+  opacity:1;
+  }
+}
+
+/*Help PANE styling MOBILE*/
+#helpPane {
+  transition: transform .8s cubic-bezier(0.42, 0, 0.15, 1.4);
+  position: fixed;
+  margin: 0em;
+  /*desktop version  margin: 1em; */
+  right: 0;
+  bottom:0;
+/*oo-ui-popup basic styling*/
+  background-color: #fff;
+  width: 100%;
+  /*desktop version
+  max-width: 22.5em;
+  min-width: 16em;
+  border: 1px solid #c8ccd1;
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.25);
+  border-radius: 2px;
+  min-height: 28em;
+  max-height: 36em;
+*/
+  height: 100%;
+}
+
+/*
+#helpPane .helpPane-inner {
+  background-color: #fff;
+  max-width: 22.5em;
+  min-width: 16em;
+  border: 1px solid #c8ccd1;
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.25);
+  border-radius: 2px;
+
+  float: right;
+  position: relative;
+  width: 22.5em;
+}
+*/
+
+.showHPane {
+  opacity:1;
+  bottom: 0;
+  z-index:10;
+  animation-duration: 400ms;
+  animation-name: slidePane;
+}
+
+@keyframes slidePane {
+  from {
+    bottom:-2em;
+    opacity:0;
+  }
+  to {
+	bottom:0;
+  opacity:1;
+  }
+}
+
+.hideHPane {
+  bottom: -2em;
+  opacity:0;
+  display: none;
+  z-index:0;
+}
+
+.hideCTA {
+  display:none;
+  opacity:0;
+}
+
+
+
+
+/* START toggle help pane contents*/
+.showHP-step {
+  opacity:1;
+  z-index:10;
+  animation-duration: 200ms;
+  animation-name: fadeHPstep;
+}
+
+@keyframes fadeHPstep {
+  from {
+    opacity:0;
+  }
+  to {
+    opacity:1;
+  }
+}
+
+.hideHP-step {
+  opacity:0;
+  display: none;
+  z-index:0;
+}
+
+/* END toggle help pane contents*/
+
+
+.helpPane-close {
+  display:inline-block;
+  position:absolute;
+  width:20px;
+  height:20px;
+  top:.75em;
+  opacity:.5;
+  cursor: pointer;
+  z-index: 100; /*ensures it is on top of help pane contents */
+/*desktop  right:1em; */
+left: .75em;
+}
+
+.oo-ui-icon-previous {
+    background-image: url('https://doc.wikimedia.org/oojs-ui/master/demos/dist/themes/wikimediaui/images/icons/previous-ltr.png');
+    background-image: linear-gradient(transparent, transparent), /* @embed */ url('https://doc.wikimedia.org/oojs-ui/master/demos/dist/themes/wikimediaui/images/icons/previous-ltr.svg');
+}
+
+
+.oo-ui-iconElement-icon {
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+}
+
+.oo-ui-icon-close {
+      background-image: url('https://doc.wikimedia.org/oojs-ui/master/demos/dist/themes/wikimediaui/images/icons/close.png');
+    background-image: linear-gradient(transparent, transparent), /* @embed */ url('https://doc.wikimedia.org/oojs-ui/master/demos/dist/themes/wikimediaui/images/icons/close.svg');
+}
+
+.helpPane-contents {
+  max-height: 36em;
+  min-height: 28em;
+  overflow: scroll;
+}
+
+#helpPaneHead {
+  margin:0;
+  padding:1em 0 0;
+  position:absolute;
+  width: 100%;
+  /*desktop
+  padding:1em 1em 0 3em;
+  width: 18.5em;
+  background-color:#EAF3FF;
+ */
+ height:2em;
+  background-color:#FFF;
+  border-bottom: solid 1px #C8CCD1;
+}
+
+#helpPaneHead + div {
+  padding-top:4em;
+}
+
+.stickyformbtns {
+  padding: 1em 1em 0.5em;
+  height: 2em;
+  width: 22.5em;
+  margin: 1em -1em 0em -1em;
+  border-top: solid 1px #c8ccd1;
+}
+
+#helpPaneHead h3 {
+  text-align: center;
+  color: #222!important;
+}
+
+#helpPane h3 {
+  font-size: .875em;
+	font-family: Helvetica, Arial, sans-serif;
+  margin:0;
+  padding:0 0 .5em;
+	color:#54595D;
+	font-weight: bold;
+	line-height: 1;
+}
+/*
+#helpPaneHead h3:before {
+  content: "";
+  position: absolute;
+  top: 1em;
+  left: 1em;
+  bottom:0;
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Ctitle%3EIcon-AskQuestion%3C/title%3E%3Cdefs%3E%3Cpath d='M38 14a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H24l-4 4V16a2 2 0 0 1 2-2h16zm-7.962 2.605a3 3 0 0 0-.33 0 2.826 2.826 0 0 0-2.706 2.934h1.524v-.102a1.38 1.38 0 0 1 1.428-1.332h.102a1.26 1.26 0 0 1 1.248 1.284c0 .708-.27 1.086-1.074 1.626a2.304 2.304 0 0 0-1.2 2.304v.486h1.506v-.408c0-.708.24-1.074 1.092-1.626a2.754 2.754 0 0 0 1.374-2.448c0-1.584-1.2-2.718-2.964-2.718zm-1.236 9.6a1.128 1.128 0 0 0 1.2 1.2 1.122 1.122 0 0 0 1.2-1.2 1.122 1.122 0 0 0-1.2-1.2h-.138c-.624.038-1.1.575-1.062 1.2z' id='a'/%3E%3C/defs%3E%3Cg transform='translate(-20 -14)' fill='none' fill-rule='evenodd'%3E%3Cuse fill='%2326c' xlink:href='%23a'/%3E%3C/g%3E%3C/svg%3E");
+  background-position: center center;
+  background-repeat: no-repeat;
+  opacity: 1;
+  width: 20px;
+  height: 20px;
+}
+*/
+
+#helpPane p, li {
+font-size: .875em;
+padding: 0 0 .25em 0;
+margin:0;
+line-height: 1.5;
+color:#222;
+}
+
+#helpPane-searchBar {
+  padding:1em 0;
+  margin:0 1em;
+  border-bottom: solid 1px #c8ccd1;
+}
+
+#helpPane-main {
+  padding:1em 0;
+  margin:0 1em;
+}
+
+#helpPane ul{
+	margin: 0;
+	padding:0 0 0 1em;
+  list-style-type: disc;
+}
+
+#helpPane ul li {
+	padding-top: .5em;
+  padding-left: .5em;
+}
+
+#helpPane-askQ {
+  border-top: solid 1px #c8ccd1;
+  padding:1em 1em 0;
+}
+
+#helpPane-askQflow {
+  border: none;
+  padding:0em 1em;
+}
+
+.askQinput {
+  padding-bottom: 1em;
+  display: block;
+  font-size: .875em;
+}
+
+.assistivetext {
+  font-size: .875em;
+  color: #54595D;
+  display: block;
+  margin-top:-.5em;
+  padding-bottom:1em;
+}
+
+.successmsg {
+  font-size: 1.125em;
+  padding: 0.25em 0 1em 2em;
+  display: block;
+  position: relative;
+  margin-top:.5em;
+}
+.successmsg:before {
+  content: "";
+  position: absolute;
+  top: 0em;
+  left: 0em;
+  bottom:0;
+  background-image: url("data:image/svg+xml;charset=utf8,%3C?xml version='1.0' encoding='UTF-8'?%3E%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20'%3E%3Cg fill='%2314866d'%3E%3Ctitle%3E check %3C/title%3E%3Cpath d='M7 14.17L2.83 10l-1.41 1.41L7 17 19 5l-1.41-1.42L7 14.17z'/%3E%3C/g%3E%3C/svg%3E");
+  background-position: center center;
+  background-repeat: no-repeat;
+  opacity: 1;
+  width: 20px;
+  height: 20px;
+}
+
+#hp-step3 #helpPane-main ul{
+  list-style-type:none;
+  padding:0;
+  margin-bottom:6em;
+  margin-top:1em;
+}
+
+/*OOUI styling*/
+.oo-ui-icon-search {
+background-image: url(../images/search.png);
+background-image: linear-gradient(transparent, transparent), /* @embed */ url(../../OOUI/node_modules/oojs-ui/demos/dist/themes/wikimediaui/images/icons/search.svg);
+}
+
+.searchFAQ .oo-ui-icon-search {
+	opacity: .4;
+}
+
+.oo-ui-image-invert.oo-ui-icon-check {
+    background-image: url(../images/check-invert.png);
+    background-image: linear-gradient(transparent, transparent), /* @embed */ url(../../OOUI/node_modules/oojs-ui/demos/dist/themes/wikimediaui/images/icons/check-invert.svg);
+}
+.oo-ui-icon-check {
+    background-image: url(../images/check.png);
+    background-image: linear-gradient(transparent, transparent), /* @embed */ url(../../OOUI/node_modules/oojs-ui/demos/dist/themes/wikimediaui/images/icons/check.svg);
+}
+
+
+/*help desk additional styles*/
+table .hlist ul li {
+    display: inline-block;
+    padding-left: 0px;
+    font-size: 1em;
+    /* list-style-type: disc; */
+}
+
+table .hlist ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: disc;
+    padding-left: 8px;
+    display: inline;
+}
+
+table .hlist ul li:after {
+    content: " · ";
+    font-weight: bold;
+}
+
+table .hlist ul ul li:last-child:after {
+    content: " ) ";
+    font-weight: normal;
+}
+
+table .hlist ul ul li:first-child:before {
+    content: " ( ";
+    font-weight: normal;
+}
+
+table.wikitable {
+    border: 1px solid #54595d;
+    border-color: rgba(84,89,93,0.3);
+}
+.mw-ui-input {
+    background-color: #fff;
+    color: #000000;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    border: 1px solid #a2a9b1;
+    border-radius: 2px;
+    padding: 0.57142857em 0.57142857em 0.5em;
+    box-shadow: inset 0 0 0 0.1em #fff;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: 1.07142857em;
+    vertical-align: middle;
+}
+.mw-ui-button {
+    font-family: inherit;
+    font-size: 1em;
+    display: inline-block;
+    min-width: 4em;
+    max-width: 28.75em;
+    padding: 0.546875em 1em;
+    line-height: 1.286;
+    margin: 0;
+    border-radius: 2px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    *display: inline;
+    zoom: 1;
+    vertical-align: middle;
+    background-color: #f8f9fa;
+    color: #222222;
+    border: 1px solid #a2a9b1;
+    text-align: center;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+
+#mobHelpdeskQs dl + h2, #mobHelpdeskQs h2:first-child {
+  border-bottom: solid 1px #c8ccd1;
+}
+
+
+#mobHelpdeskQs span.mw-editsection {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+#mobHelpdeskQs span.mw-editsection a{
+  left: 1em;
+  bottom: .25em;
+}
+
+#mobHelpdeskQs span.mw-headline {
+    width: 100%;
+    display: table-cell;
+}
+
+.minerva-footer {
+  background-color: #eaecf0;
+  border-top: solid 1px #c8ccd1;
+  overflow: auto;
+  padding-bottom: 6px;
+}
