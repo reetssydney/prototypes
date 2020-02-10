@@ -1,0 +1,282 @@
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+	<meta property="og:title" content="WMF Growth team - newcomer task topics - test">
+  <!-- jQuery -->
+  <script src="../OOUI/node_modules/jquery/dist/jquery.min.js"></script>
+  <!-- this proto custom -->
+  <link rel="stylesheet" href="css/newcomer-topics.css">
+
+
+	<title>Wikipedia - newcomer task topics</title>
+</head>
+
+<body>
+  <div id="handlebarcontent">
+  </div>
+
+  <div id="content" class="mw-body" role="main">
+    <h1>Demo of topic selection overlays</h1>
+    <p>This is a demo only.</p>
+      <button class="topics-CTA" >
+        <span>Open topics overlay - in Czech</span>
+      </button>
+      <!-- start handlebar content -->
+      <script id="tabletop-handlebars-template" type="text/x-handlebars-template">
+        <div id="dialog" class="hideDialog">
+          <div class="dialog-close">
+            <button href="" class="closebtn"><span class="oo-ui-iconElement-icon oo-ui-icon-close"></span></button>
+          </div>
+          <div class="dialog-done">
+            <button href="" class="closebtn">Done</span></button>
+          </div>
+          <div class="dialog-contents">
+    <!-- step 1 -->
+            <div id="hp-step1" class="showHP-step">
+              <div id="dialogHead">
+                <h3>Select interests</h3>
+              </div>
+              <div id="dialog-main">
+                <p>Choose some topics you are interested in editing. We'll try to suggest articles that match your interests.</p>
+                <div class="topicGroup">
+                  <h4 class="topicHeader">{{TopicHeader1}}<span class="selectAllTopics">select all</span></h4>
+                  <div class="container">
+                    <input id="TH1-01" type="checkbox">
+                    <label for="TH1-01">{{TH1-01}}</label>
+                    <span class="checkmark"></span>
+                  </div>
+                  <div class="container">
+                    <input id="TH1-02" type="checkbox">
+                    <label for="TH1-02">{{TH1-02}}</label>
+                    <span class="checkmark"></span>
+                  </div>
+                  <div class="container">
+                    <input id="TH1-03" type="checkbox">
+                    <label for="TH1-03">{{TH1-03}}</label>
+                    <span class="checkmark"></span>
+                  </div>
+                  <div class="container">
+                    <input id="TH1-04" type="checkbox">
+                    <label for="TH1-04">{{TH1-04}}</label>
+                    <span class="checkmark"></span>
+                  </div>
+                  <div class="container">
+                    <input id="TH1-05" type="checkbox">
+                    <label for="TH1-05">{{TH1-05}}</label>
+                    <span class="checkmark"></span>
+                  </div>
+                  <div class="container">
+                    <input id="TH1-06" type="checkbox">
+                    <label for="TH1-06">{{TH1-06}}</label>
+                    <span class="checkmark"></span>
+                  </div>
+                  <div class="container">
+                    <input id="TH1-07" type="checkbox">
+                    <label for="TH1-07">{{TH1-07}}</label>
+                    <span class="checkmark"></span>
+                  </div>
+                  <div class="container">
+                    <input id="TH1-08" type="checkbox">
+                    <label for="TH1-08">{{TH1-08}}</label>
+                    <span class="checkmark"></span>
+                  </div>
+                  <div class="container">
+                    <input id="TH1-09" type="checkbox">
+                    <label for="TH1-09">{{TH1-09}}</label>
+                    <span class="checkmark"></span>
+                  </div>
+                  <div class="container">
+                    <input id="TH1-10" type="checkbox">
+                    <label for="TH1-10">{{TH1-10}}</label>
+                    <span class="checkmark"></span>
+                  </div>
+                  <div class="container">
+                    <input id="TH1-11" type="checkbox">
+                    <label for="TH1-11">{{TH1-11}}</label>
+                    <span class="checkmark"></span>
+                  </div>
+                </div>
+                <div class="topicGroup">
+                  <h4 class="topicHeader">{{TopicHeader2}}<span class="selectAllTopics">select all</span></h4>
+                  <div class="container">
+                    <input id="TH2-01" type="checkbox">
+                    <label for="TH2-01">{{TH2-01}}</label>
+                    <span class="checkmark"></span>
+                  </div>
+                  <div class="container">
+                    <input id="TH2-02" type="checkbox">
+                    <label for="TH2-02">{{TH2-02}}</label>
+                    <span class="checkmark"></span>
+                  </div>
+                  <div class="container">
+                    <input id="TH2-03" type="checkbox">
+                    <label for="TH2-03">{{TH2-03}}</label>
+                    <span class="checkmark"></span>
+                  </div>
+                  <div class="container">
+                    <input id="TH2-04" type="checkbox">
+                    <label for="TH2-04">{{TH2-04}}</label>
+                    <span class="checkmark"></span>
+                  </div>
+                  <div class="container">
+                    <input id="TH2-05" type="checkbox">
+                    <label for="TH2-05">{{TH2-05}}</label>
+                    <span class="checkmark"></span>
+                  </div>
+                  <div class="container">
+                    <input id="TH2-06" type="checkbox">
+                    <label for="TH2-06">{{TH2-06}}</label>
+                    <span class="checkmark"></span>
+                  </div>
+                  <div class="container">
+                    <input id="TH2-07" type="checkbox">
+                    <label for="TH2-07">{{TH2-07}}</label>
+                    <span class="checkmark"></span>
+                  </div>
+                </div>
+                <div class="topicGroup">
+                  <h4 class="topicHeader">{{TopicHeader3}}<span class="selectAllTopics">select all</span></h4>
+                  <div class="container">
+                    <input id="TH3-01" type="checkbox">
+                    <label for="TH3-01">{{TH3-01}}</label>
+                    <span class="checkmark"></span>
+                  </div>
+                  <div class="container">
+                    <input id="TH3-02" type="checkbox">
+                    <label for="TH3-02">{{TH3-02}}</label>
+                    <span class="checkmark"></span>
+                  </div>
+                  <div class="container">
+                    <input id="TH3-03" type="checkbox">
+                    <label for="TH3-03">{{TH3-03}}</label>
+                    <span class="checkmark"></span>
+                  </div>
+                  <div class="container">
+                    <input id="TH3-04" type="checkbox">
+                    <label for="TH3-04">{{TH3-04}}</label>
+                    <span class="checkmark"></span>
+                  </div>
+                  <div class="container">
+                    <input id="TH3-05" type="checkbox">
+                    <label for="TH3-05">{{TH3-05}}</label>
+                    <span class="checkmark"></span>
+                  </div>
+                  <div class="container">
+                    <input id="TH3-06" type="checkbox">
+                    <label for="TH3-06">{{TH3-06}}</label>
+                    <span class="checkmark"></span>
+                  </div>
+                  <div class="container">
+                    <input id="TH3-07" type="checkbox">
+                    <label for="TH3-07">{{TH3-07}}</label>
+                    <span class="checkmark"></span>
+                  </div>
+                  <div class="container">
+                    <input id="TH3-08" type="checkbox">
+                    <label for="TH3-08">{{TH3-08}}</label>
+                    <span class="checkmark"></span>
+                  </div>
+                  <div class="container">
+                    <input id="TH3-09" type="checkbox">
+                    <label for="TH3-09">{{TH3-09}}</label>
+                    <span class="checkmark"></span>
+                  </div>
+                  <div class="container">
+                    <input id="TH3-10" type="checkbox">
+                    <label for="TH3-10">{{TH3-10}}</label>
+                    <span class="checkmark"></span>
+                  </div>
+                  <div class="container">
+                    <input id="TH3-11" type="checkbox">
+                    <label for="TH3-11">{{TH3-11}}</label>
+                    <span class="checkmark"></span>
+                  </div>
+                </div>
+                <div class="topicGroup">
+                  <h4 class="topicHeader">{{TopicHeader4}}<span class="selectAllTopics">select all</span></h4>
+                  <div class="container">
+                    <input id="TH4-01" type="checkbox">
+                    <label for="TH4-01">{{TH4-01}}</label>
+                    <span class="checkmark"></span>
+                  </div>
+                  <div class="container">
+                    <input id="TH4-02" type="checkbox">
+                    <label for="TH4-02">{{TH4-02}}</label>
+                    <span class="checkmark"></span>
+                  </div>
+                  <div class="container">
+                    <input id="TH1-03" type="checkbox">
+                    <label for="TH1-03">{{TH1-03}}</label>
+                    <span class="checkmark"></span>
+                  </div>
+                  <div class="container">
+                    <input id="TH4-04" type="checkbox">
+                    <label for="TH4-04">{{TH4-04}}</label>
+                    <span class="checkmark"></span>
+                  </div>
+                  <div class="container">
+                    <input id="TH4-05" type="checkbox">
+                    <label for="TH4-05">{{TH4-05}}</label>
+                    <span class="checkmark"></span>
+                  </div>
+                  <div class="container">
+                    <input id="TH4-06" type="checkbox">
+                    <label for="TH4-06">{{TH4-06}}</label>
+                    <span class="checkmark"></span>
+                  </div>
+                  <div class="container">
+                    <input id="TH4-07" type="checkbox">
+                    <label for="TH4-07">{{TH4-07}}</label>
+                    <span class="checkmark"></span>
+                  </div>
+                  <div class="container">
+                    <input id="TH4-08" type="checkbox">
+                    <label for="TH4-08">{{TH4-08}}</label>
+                    <span class="checkmark"></span>
+                  </div>
+                  <div class="container">
+                    <input id="TH4-09" type="checkbox">
+                    <label for="TH4-09">{{TH4-09}}</label>
+                    <span class="checkmark"></span>
+                  </div>
+                  <div class="container">
+                    <input id="TH4-10" type="checkbox">
+                    <label for="TH4-10">{{TH4-10}}</label>
+                    <span class="checkmark"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        </script>
+</div>
+<!-- tabletop and gsheets test  -->
+<!-- Don't need jQuery for Tabletop, but using it for this example -->
+    <script type="text/javascript" src="assets/handlebars.js"></script>
+    <script type="text/javascript" src="assets/tabletop.js"></script>
+    <script type="text/javascript">
+      var public_spreadsheet_url = 'https://docs.google.com/spreadsheets/d/1xI0MVrzwwwqwQ41YtivDZ69BIGXun2tlSD-JNa4Nl08/edit?usp=sharing';
+
+      $(document).ready( function() {
+        Tabletop.init( { key: public_spreadsheet_url,
+                         callback: showInfo,
+                         parseNumbers: true } );
+      });
+
+      function showInfo(data, tabletop) {
+        var source   = $("#tabletop-handlebars-template").html();
+        var template = Handlebars.compile(source);
+
+        $.each( tabletop.sheets("Topics-CS-transposed").all(), function(i, test) {
+          var html = template(test);
+          $("#handlebarcontent").append(html);
+        });
+      }
+    </script>
+
+    <script type="text/javascript" src="assets/newcomertopics-init.js"></script>
+
+</body>
+</html>
