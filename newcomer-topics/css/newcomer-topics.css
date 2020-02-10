@@ -181,6 +181,15 @@ color:#222;
   margin-top: -18px;
   font-size: 14px;
 }
+
+.selectAllTopicsRTL {
+  color: #36c;
+  text-align: left;
+  display: block;
+  padding: 0 8px;
+  margin-top: -18px;
+  font-size: 14px;
+}
 /* Checkbox restyled */
 /* The checkbox container */
 .container {
