@@ -24,23 +24,22 @@
       </button>
       <!-- start handlebar content -->
       <script id="tabletop-handlebars-template" type="text/x-handlebars-template">
-        <div id="dialog" class="hideDialog">
+        <div id="dialog1" class="dialog hideDialog">
           <div class="dialog-close">
             <button href="" class="closebtn"><span class="oo-ui-iconElement-icon oo-ui-icon-close"></span></button>
           </div>
           <div class="dialog-done">
-            <button href="" class="closebtn">Done</span></button>
+            <button href="" class="closebtn">{{closeButton}}</span></button>
           </div>
+          <!-- filter dialog -->
           <div class="dialog-contents" dir="rtl">
-    <!-- step 1 -->
-            <div id="hp-step1" class="showHP-step">
-              <div id="dialogHead">
-                <h3>Select interests</h3>
+              <div class="dialogHead">
+                <h3>{{topicDialogHeader}}</h3>
               </div>
-              <div id="dialog-main">
-                <p>Choose some topics you are interested in editing. We'll try to suggest articles that match your interests.</p>
+              <div class="dialog-main">
+                <p>{{topicDialogText}}</p>
                 <div class="topicGroup">
-                  <h4 class="topicHeader">{{TopicHeader1}}<span class="selectAllTopicsRTL">select all</span></h4>
+                  <h4 class="topicHeader">{{TopicHeader1}}<span class="selectAllTopicsRTL">{{linkSelectAll}}</span></h4>
                   <div class="container">
                     <input id="TH1-01" type="checkbox">
                     <label for="TH1-01">{{TH1-01}}</label>
@@ -98,7 +97,7 @@
                   </div>
                 </div>
                 <div class="topicGroup">
-                  <h4 class="topicHeader">{{TopicHeader2}}<span class="selectAllTopicsRTL">select all</span></h4>
+                  <h4 class="topicHeader">{{TopicHeader2}}<span class="selectAllTopicsRTL">{{linkSelectAll}}</span></h4>
                   <div class="container">
                     <input id="TH2-01" type="checkbox">
                     <label for="TH2-01">{{TH2-01}}</label>
@@ -136,7 +135,7 @@
                   </div>
                 </div>
                 <div class="topicGroup">
-                  <h4 class="topicHeader">{{TopicHeader3}}<span class="selectAllTopicsRTL">select all</span></h4>
+                  <h4 class="topicHeader">{{TopicHeader3}}<span class="selectAllTopicsRTL">{{linkSelectAll}}</span></h4>
                   <div class="container">
                     <input id="TH3-01" type="checkbox">
                     <label for="TH3-01">{{TH3-01}}</label>
@@ -194,7 +193,7 @@
                   </div>
                 </div>
                 <div class="topicGroup">
-                  <h4 class="topicHeader">{{TopicHeader4}}<span class="selectAllTopicsRTL">select all</span></h4>
+                  <h4 class="topicHeader">{{TopicHeader4}}<span class="selectAllTopicsRTL">{{linkSelectAll}}</span></h4>
                   <div class="container">
                     <input id="TH4-01" type="checkbox">
                     <label for="TH4-01">{{TH4-01}}</label>
@@ -247,7 +246,6 @@
                   </div>
                 </div>
               </div>
-            </div>
           </div>
         </div>
         </script>
