@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="103px" height="42px" viewBox="0 0 103 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 56.3 (81716) - https://sketch.com -->
+    <title>arrow-longer</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Discovery-aid" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Homepage-Discovery---After-account-creation---Go-to-Homepage---Mobile-(landscape---small)" transform="translate(-16.000000, -71.000000)">
+            <g id="Group-2">
+                <g id="banner-mobile" transform="translate(0.000000, 52.000000)">
+                    <g id="arrow-longer" transform="translate(66.000000, 38.500000) scale(1, -1) translate(-66.000000, -38.500000) translate(15.000000, 18.000000)">
+                        <path d="M2,31 L14,31 C15.1045695,31 16,31.8954305 16,33 C16,34.1045695 15.1045695,35 14,35 L2,35 C0.8954305,35 1.3527075e-16,34.1045695 0,33 C-1.3527075e-16,31.8954305 0.8954305,31 2,31 Z" id="Rectangle-Copy-7" fill="#3366CC" transform="translate(8.000000, 33.000000) rotate(-315.000000) translate(-8.000000, -33.000000) "></path>
+                        <path d="M12,31 L24,31 C25.1045695,31 26,31.8954305 26,33 C26,34.1045695 25.1045695,35 24,35 L12,35 C10.8954305,35 10,34.1045695 10,33 C10,31.8954305 10.8954305,31 12,31 Z" id="Rectangle-Copy-8" fill="#3366CC" transform="translate(18.000000, 33.000000) scale(-1, 1) rotate(-315.000000) translate(-18.000000, -33.000000) "></path>
+                        <path d="M13,38 C11.6666667,12.6666667 23.6666667,-3.63797881e-12 49,-3.63797881e-12 C87,-3.63797881e-12 102,-3.63797881e-12 102,-3.63797881e-12" id="Line" stroke="#3366CC" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

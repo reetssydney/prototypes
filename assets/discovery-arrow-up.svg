@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64px" height="54px" viewBox="0 0 64 54" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55.2 (78181) - https://sketchapp.com -->
+    <title>Group 4 Copy 2</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Discovery-aid" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Homepage-Discovery---After-account-creation---Go-to-Reading-ctxt---Mobile" transform="translate(-16.000000, -141.000000)">
+            <g id="banner-mobile" transform="translate(0.000000, 122.000000)">
+                <g id="Group-4-Copy-2" transform="translate(46.500000, 44.500000) scale(1, -1) translate(-46.500000, -44.500000) translate(15.000000, 18.000000)">
+                    <path d="M2,43 L14,43 C15.1045695,43 16,43.8954305 16,45 C16,46.1045695 15.1045695,47 14,47 L2,47 C0.8954305,47 1.3527075e-16,46.1045695 0,45 C-1.3527075e-16,43.8954305 0.8954305,43 2,43 Z" id="Rectangle-Copy-7" fill="#3366CC" transform="translate(8.000000, 45.000000) rotate(-315.000000) translate(-8.000000, -45.000000) "></path>
+                    <path d="M12,43 L24,43 C25.1045695,43 26,43.8954305 26,45 C26,46.1045695 25.1045695,47 24,47 L12,47 C10.8954305,47 10,46.1045695 10,45 C10,43.8954305 10.8954305,43 12,43 Z" id="Rectangle-Copy-8" fill="#3366CC" transform="translate(18.000000, 45.000000) scale(-1, 1) rotate(-315.000000) translate(-18.000000, -45.000000) "></path>
+                    <path d="M13,50 C12.3333333,34 16,21.3333333 24,12 C36,-2 63,1 63,1" id="Line" stroke="#3366CC" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
