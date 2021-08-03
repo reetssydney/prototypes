@@ -21,7 +21,7 @@ function updateHtml(page, hash) {
 	}
 	// add the buttons which are page dependent
 	if (page === 'start.html') {
-		$('a').attr("href", `/edit.html#${hash}`);
+		$('a#edit').attr("href", `/edit.html#${hash}`);
 	} else if (page === 'edit.html') {
 		$('a#next').attr("href", `/publish.html#${hash}`);
 		$('a#no').attr("href", `/reject.html#${hash}`);
@@ -56,6 +56,33 @@ $(document).ready(function() {
 
 });
 
+
+// Pop-up info
+// Get the modal
+var modal = document.getElementById("PopUp_TaskInfo");
+
+// Get the button that opens the modal
+var btn = document.getElementById("openPopUp");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("closeModal")[0];
+
+// When the user clicks on the button, open the modal
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
 
 /*/◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊//
 //••••••••••••••••••••••••••  B I G  H E A D E R  ••••••••••••••••••••••••••//

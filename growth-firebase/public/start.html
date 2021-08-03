@@ -21,8 +21,11 @@
   <div id="suggested-edits-module-wrapper">
     <div id="se_count"></div>
     <div class="suggested-edits-card">
-      <a href="">
-        <div id="se_card_image"></div>
+      <a id="edit" href="">
+        <div id="card-imgWrapper">
+          <div id="se-card-imgScrim"></div>
+          <div id="se_card_image"></div>
+        </div>
         <div class="se-card-text">
           <div id="title"></div>
           <div id="description"></div>
@@ -31,15 +34,30 @@
       </a>
     </div>
     <div class="se-task-explanation-wrapper">
-       <div class="se-taskname">Add an image <span class="icon"><img src="img/icon/info.svg" /></span></div>
+       <div class="se-taskname">Add an image <span class="icon" id="openPopUp"><img src="img/icon/info.svg" /></span></div>
        <div class="se-task-difficulty-and-time structured medium"><span class="medium">MEDIUM</span>3 - 5 minutes</div>
        <div class="se-task-short-description">Evaluate whether a machine-suggested image should be used on this article.</div>
      </div>
   </div>
-  <footer class="se-footer">
+
+  <div id="PopUp_TaskInfo" class="modal drawer">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+      <span class="closeModal">&times;</span>
+      <div class="se-taskname">Add an image</div>
+      <div class="se-task-difficulty-and-time structured medium"><span class="medium">MEDIUM</span>3 - 5 minutes</div>
+      <p>Images can help enrich and extend someone’s understanding of a subject.</p>
+      <p>Decide whether an image suggested by a machine should be added to this article.</p>
+    </div>
+
+  </div>
+
+    <footer class="se-footer">
     <button class="icon"><img src="img/icon/arrowPrevious.svg" /></button>
-    <a href=""><button class="ooui-btn primary-progressive"><img src="img/icon/edit-white.svg" />&nbsp;&nbsp;Edit</button></a>
+    <a id="edit" href=""><button class="ooui-btn primary-progressive"><img src="img/icon/edit-white.svg" />&nbsp;&nbsp;Edit</button></a>
     <button class="icon"><img src="img/icon/arrowNext.svg" /></button>
+
   </footer>
   <script
     src="https://code.jquery.com/jquery-3.6.0.min.js"

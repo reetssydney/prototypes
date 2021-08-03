@@ -192,9 +192,26 @@ a {
 
 #se_card_image {
   height:128px;
-  background-color: #eaecf0;
+  background: url(../img/icon/imageSE-Add.svg) #72777D no-repeat 50% 50%;
   box-shadow: inset 0 0 2px #c8ccd1;
   border-radius: 2px 2px 0px 0px;
+}
+
+#se-card-imgScrim {
+  border: dashed 2px #fff;
+  position: absolute;
+  margin: 2px;
+  width: 248px;
+  height: 120px;
+  background-color: rgba(255,255,255,.25);
+  border-radius: 2px 2px 0 0;
+}
+
+#se-card-imgScrim::before {
+  content: url(../img/icon/robot-in-circle-white.svg);
+  position: absolute;
+  top: 36px;
+  left: 98px;
 }
 
 #se_card_image img {
@@ -299,6 +316,45 @@ a {
   box-shadow: 0px -1px 0px #C8CCD1;
   overflow: hidden;
   justify-content: center;
+}
+
+
+/******* TEST POPUP CSS *******/
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.2); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fff;
+  padding: 16px;
+  position: absolute;
+  bottom: 0;
+}
+
+/* The Close Button */
+.closeModal {
+  content: url(../img/icon/expand.svg);
+  font-weight: bold;
+  position: relative;
+  left:50%;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 /************======== EDIT PAGE ========************/
