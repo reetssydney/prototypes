@@ -1,10 +1,11 @@
 var church = {
 	title: 'Church',
 	description: 'Church order is the systematically organized set of rules drawn up by a qualified body for the church.',
-	text: 'church church Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+	text: '<p><b>Church order</b> is the systematically organized set of rules drawn up by a qualified body for the church.<sup>[1]</sup> From the point of view of civil law, the church order can be described as the internal law of the church.<sup>[1]</sup> A church order explains precisely what a document is, in a clinical and matter of fact tone, without conveying the spiritual nature of the document.<sup>[1]</sup></p><h3>Authority</h3><p>The authority of a church order is very closely linked to its relationship to Scriptures and the confessional texts of a church.<sup>[1]</sup> The fact that a church order provision is supported directly or indirectly by the Scriptures will to some degree, though not essentially, affect its authority.<sup>[1]</sup></p>',
 	se_count: '<b>1</b> of <b>8</b> suggestions',
 	pageviews: '223 views',
 	se_card_image: '<img src="/img/Sofia_kyrka.jpeg" />',
+	suggestion_reason:'<b>Suggestion reason:</b> Image was found on the same article in Indonesian Wikipedia.',
 	imgName: 'Sofia kyrka.jpg',
 	imgDescription: 'Sofia Church in Stockholm. The description will wrap after a few more lines until it reaches the image heig...',
 	imgFile: '<img src="/img/church.jpg" />',

@@ -12,26 +12,36 @@
   <header class="overlay-header">
     <button class="icon"><img src="img/icon/Close.svg" /></button>
     <h1>Suggestions mode</h1>
-    <button class="icon disabled"><img src="img/icon/info.svg" /></button>
+    <button class="fake-dropdown-btn"><img src="img/icon/edit.svg" /></button>
+    <a id="next" onclick="handleAddComment()" href=""><button class="icon disabled"><img src="img/icon/next-white.svg" /></button></a>
   </header>
 
-  <a id="next" onclick="handleAddComment()" href=""><button>Next ></button></a>
-  <h3 id="title"></h3>
   <div id="article-container">
-    <p id="text"></p>
+    <h2 id="title"></h2>
+    <div id="text"></div>
     <div id="form-container"></div>
   </div>
   <div id="bottom-sheet">
-    <h4>1 suggested image found</h4>
-    <p>Suggestion reason:  Image was found on the same article in Indonesian Wikipedia.</p>
-    <div id="image-grid">
-      <div id="imgFile" class="row-span"></div>
-      <p id="imgName"></p>
-      <p id="imgDescription"></p>
+    <div class="se-inspector-header">
+      <button class="icon"><img src="img/icon/robot.svg" /></button>
+      <h2>1 suggested image found</h2>
+      <button class="icon"><img src="img/icon/help.svg" /></button>
     </div>
-    <div id="skipButton"></div>
-    <a id="no" href=""><button>No</button></a>
-    <button onclick="handleImageSelection()">Yes</button>
+    <div class="se-inspector-content">
+      <p id="suggestion_reason"></p>
+      <div id="image-info-wrapper">
+        <div id="imgFile" class="inspector-image"></div>
+        <div class="inspector-imgMetadata">
+          <p id="imgName"></p>
+          <p id="imgDescription"></p>
+        </div>
+      </div>
+    </div>
+    <div class="se-inspector-actions">
+      <button class="ooui-btn" onclick="handleImageSelection()"><img src="img/icon/check.svg" />&nbsp;Yes</button>
+      <a id="no" class="flexgrow" href=""><button class="ooui-btn margin8left"><img src="img/icon/Close.svg" />&nbsp;No</button></a>
+      <button id="skipButton" class="ooui-btn quiet-neutral">Skip</button>
+    </div>
   </div>
 
 
