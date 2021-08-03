@@ -1,0 +1,221 @@
+@charset "UTF-8";
+/*/◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊//
+//••••••••••••••••••••••••••  B I G  H E A D E R  ••••••••••••••••••••••••••//
+//◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊/*/
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  color:#202122;
+}
+
+#bottom-sheet {
+  border-top: 1px solid black;
+}
+
+#image-grid {
+  display: grid;
+  grid-template-columns: auto auto;
+}
+#image-grid .row-span {
+  grid-row: 1/span 2;
+}
+
+/************======== S M A L L  H E A D E R ========************/
+
+/*# sourceMappingURL=style.css.map */
+
+/* ========== Suggested edits module ========== */
+.SE-module {
+  background: linear-gradient(0deg, rgba(234, 243, 255, 0.5), rgba(234, 243, 255, 0.5)), #FFFFFF;
+  margin:0;
+  padding: 0;
+}
+
+.overlay-header {
+  width: 100%;
+  background-color: #fff;
+  display:flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0px;
+  position: absolute;
+  height: 48px;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  box-shadow: 0px 1px 0px #C8CCD1;
+  overflow: hidden;
+}
+
+
+header h1 {
+  flex-grow:1;
+  font-weight: bold;
+  font-size: 17.6px;
+  line-height: 1;
+}
+
+button.icon{
+  width: 20px;
+  height: 20px;
+  padding: 0px;
+  margin:14px 16px;
+  border:none;
+  background:transparent;
+}
+
+
+.suggested-edits-filters {
+  width: 100%;
+  background-color: #F8F9FA;
+  display:flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0px;
+  position: absolute;
+  height: 48px;
+  left: 0px;
+  right: 0px;
+  top: 48px;
+  box-shadow: 0px 1px 0px #C8CCD1, 0px 2px 2px rgba(0, 0, 0, 0.1), 0px -1px 0px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.fake-dropdown-btn {
+  width: 100%;
+  height: 48px;
+  margin: 0;
+  padding:0 16px;
+  background-color: transparent;
+  border: none;
+  box-shadow: 1px -1px 0px #C8CCD1;
+  font-size: 16px;
+  text-align: left;
+  display:flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.fake-dropdown-btn::after {
+  content: url(../img/icon/OOUI-Dropdown.svg);
+  height:20px;
+}
+
+.fake-dropdown-btn img {
+  padding:0px 8px 0px 0px;
+}
+
+.dropdown-text {
+  flex-grow: 1;
+}
+
+
+#suggested-edits-module-wrapper {
+  padding:120px 16px 48px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#suggested-edits-pager {
+  font-size: 12.8px;
+  text-align: center;
+  padding-bottom:16px;
+}
+
+.suggested-edits-card {
+  width: 256px;
+  max-height: 280px;
+  background: #FFFFFF;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  border-radius: 2px;
+  padding:0px;
+}
+
+a {
+  text-decoration: none;
+  color:inherit;
+}
+
+.se-card-image {
+  height:128px;
+  background-color: #eaecf0;
+  box-shadow: inset 0 0 2px #c8ccd1;
+  border-radius: 2px 2px 0px 0px;
+}
+
+.se-card-text {
+  padding: 8px 16px;
+}
+
+.se-card-text #title {
+  font-weight: bold;
+}
+
+.se-card-text #description, #se-card-pageviews  {
+  font-size: 13px;
+  line-height: 1.5;
+  color: #54595D;
+  padding-top: 8px;
+}
+
+.se-card-text #se-card-pageviews::before {
+  content: url(../img/icon/chart-graph.svg);
+  padding-right:8px;
+  position: relative;
+  top:2px;
+}
+
+.se-taskname {
+  font-weight: bold;
+}
+
+.se-task-difficulty-and-time{
+  font-size: 12px;
+  line-height: 1;
+}
+
+.se-task-difficulty-and-time .medium {
+  color: #AC6600;
+}
+
+.se-task-short-description {
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+
+.se-footer {
+  width: 100%;
+  background-color: #fff;
+  display:flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0px;
+  position: absolute;
+  height: 48px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  box-shadow: 0px -1px 0px #C8CCD1;
+  overflow: hidden;
+  justify-content: center;
+}
+
+.ooui-btn  {
+  padding: 6px 12px;
+  border-radius: 2px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  border: solid 1px #C8CCD1;
+  display: flex;
+flex-direction: row;
+align-items: center;
+}
+
+.primary-progressive {
+  background-color: #36c;
+  color: #fff;
+  border: solid 1px #36c;
+}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Add image demo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/normalize.css">
+</head>
+
+<body class="SE-module">
+  <header class="overlay-header">
+    <button class="icon"><img src="img/icon/arrowPrevious.svg" /></button>
+    <h1>Suggested edits</h1>
+    <button class="icon"><img src="img/icon/info.svg" /></button>
+  </header>
+  <div class="suggested-edits-filters">
+    <button id="topic-filter" class="fake-dropdown-btn"><img src="img/icon/funnel.svg" /><span class="dropdown-text">All topics</span></button>
+    <button id="tasks-filter" class="fake-dropdown-btn"><img src="img/icon/Levels-Mixed.svg" /><span class="dropdown-text">Easy, Medium</span></button>
+  </div>
+  <div id="suggested-edits-module-wrapper">
+    <div id="suggested-edits-pager"><b>1</b> of <b>8</b> suggestions</div>
+    <div class="suggested-edits-card">
+      <a href="">
+      <div class="se-card-image"></div>
+      <div class="se-card-text">
+        <div id="title"></div>
+        <div id="description"></div>
+        <div id="se-card-pageviews">123 views</div>
+      </div>
+      </a>
+    </div>
+      <!-- original <a> link to go to next page
+         <a href=""><button>Edit</button></a>
+       -->
+     <div class="se-task-explanation-wrapper">
+       <div class="se-taskname">Add an image</div>
+       <div class="se-task-difficulty-and-time"></div>
+       <div class="se-task-short-description">Evaluate whether a machine-suggested image should be used on this article.<div>
+     </div>
+  </div>
+  <footer class="se-footer">
+    <button class="icon"><img src="img/icon/arrowPrevious.svg" /></button>
+    <a href=""><button class="ooui-btn primary-progressive"><img src="img/icon/edit-white.svg" />&nbsp;&nbsp;Edit</button></a>
+    <button class="icon"><img src="img/icon/arrowNext.svg" /></button>
+  </footer>
+  <script
+    src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+    crossorigin="anonymous">
+  </script>
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+
+</body>
+</html>

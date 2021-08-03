@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Add image demo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/normalize.css">
+</head>
+
+<body>
+
+  <h1>Editing page...</h1>
+  <a id="next" onclick="handleAddComment()" href=""><button>Next ></button></a>
+  <h3 id="title"></h3>
+  <div id="article-container">
+    <p id="text"></p>
+    <div id="form-container"></div>
+  </div>
+  <div id="bottom-sheet">
+    <h4>1 suggested image found</h4>
+    <p>Suggestion reason:  Image was found on the same article in Indonesian Wikipedia.</p>
+    <div id="image-grid">
+      <div id="imgFile" class="row-span"></div>
+      <p id="imgName"></p>
+      <p id="imgDescription"></p>
+    </div>
+    <div id="skipButton"></div>
+    <a id="no" href=""><button>No</button></a>
+    <button onclick="handleImageSelection()">Yes</button>
+  </div>
+
+
+  <script
+    src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+    crossorigin="anonymous">
+  </script>
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+
+</body>
+</html>
