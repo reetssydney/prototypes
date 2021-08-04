@@ -232,6 +232,9 @@ a {
 
 .se-card-text #title {
   font-weight: bold;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .se-card-text #description, #pageviews  {
@@ -239,6 +242,11 @@ a {
   line-height: 1.5;
   color: #54595D;
   padding-top: 8px;
+  max-height: 56px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
 }
 
 .se-card-text #pageviews::before {
@@ -415,7 +423,7 @@ a {
 }
 
 .se-inspector-content {
-  padding: 8px 16px;
+  padding: 12px 16px;
   font-size: 13px;
   line-height: 1.5;
 }
@@ -444,23 +452,38 @@ a {
   flex-grow: 1;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
   }
 
 .inspector-imgMetadata #imgName {
   font-weight: bold;
   color: #36c;
   font-size: 14.8px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
-.inspector-imgMetadata #imgName::after {
+.inspector-imgMetadata #imgName::before {
   content: url(../img/icon/linkExternal.svg);
   padding-left: 8px;
+  float: right;
 }
 
 .inspector-imgMetadata #imgDescription {
   color: #54595d;
+  max-height: 80px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+  overflow: hidden;
 }
 
+.se-inspector-question {
+  font-size: 13px;
+  font-weight: bold;
+  padding:8px 16px;
+}
 .se-inspector-actions {
   display: flex;
   flex-direction: row;
