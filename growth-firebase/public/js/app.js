@@ -50,6 +50,13 @@ function handleAddComment() {
 	localStorage.setItem(hash, val);
 }
 
+function handleTraverseSuggestions(str) {
+	var hash = window.location.hash.substring(1);
+	var title = window[hash][str];
+	window.location.replace(`start.html#${title}`);
+	updateHtml('start.html', title);
+}
+
 $(document).ready(function() {
 
 	getLocation();

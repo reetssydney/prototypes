@@ -28,7 +28,7 @@
         </div>
         <div class="se-card-text">
           <div id="title"></div>
-          <div id="description"></div>
+          <div id="description" class="flexgrow"></div>
           <div id="pageviews"></div>
         </div>
       </a>
@@ -54,9 +54,9 @@
   </div>
 
     <footer class="se-footer">
-    <button class="icon"><img src="img/icon/arrowPrevious.svg" /></button>
+    <button id="prev" onclick="handleTraverseSuggestions('prevTitle')" class="icon"><img src="img/icon/arrowPrevious.svg" /></button>
     <a id="edit" href=""><button class="ooui-btn primary-progressive"><img src="img/icon/edit-white.svg" />&nbsp;&nbsp;Edit</button></a>
-    <button class="icon"><img src="img/icon/arrowNext.svg" /></button>
+    <button id="next" onclick="handleTraverseSuggestions('nextTitle')" class="icon"><img src="img/icon/arrowNext.svg" /></button>
 
   </footer>
   <script
