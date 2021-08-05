@@ -451,12 +451,36 @@ a {
   border-bottom: 1px solid #eaecf0;
 }
 
+#article-container img {
+  width: 75%;
+}
+
+#article-container textarea {
+  width: calc(100% - 20px);
+  margin: 0 0 20px 0;
+  padding: 10px;
+  background-color: #f1f1f1;
+  border: none;
+  resize: none;
+  line-height: 20px;
+}
+
+#article-container textarea:focus {
+  outline: none;
+}
+
 #bottom-sheet {
+  width: 100%;
   box-shadow: 0px -1px 0px #C8CCD1, 0px -2px 2px rgba(0, 0, 0, 0.1);
-  position: sticky;
+  position: fixed;
   bottom: 0;
-  right: 0;
   background-color: #fff;
+  transition: all 500ms ease;
+}
+
+#bottom-sheet.hide {
+  transform: translateY(100%);
+  box-shadow: none;
 }
 
 .se-inspector-header {
@@ -466,12 +490,7 @@ a {
   flex-direction: row;
   align-items: center;
   padding: 0px;
-  position: sticky;
   height: 44px;
-  left: 0px;
-  right: 0px;
-  top: 0px;
-  overflow: hidden;
 }
 
 .se-inspector-header h2 {
