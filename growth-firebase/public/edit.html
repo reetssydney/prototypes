@@ -13,16 +13,25 @@
     <a id="close" href=""><button class="icon"><img src="img/icon/Close.svg" /></button></a>
     <h1>Suggestions mode</h1>
     <button class="fake-dropdown-btn"><img src="img/icon/edit.svg" /></button>
-    <a id="next" onclick="handleAddComment()" href=""><button class="icon disabled"><img src="img/icon/next-white.svg" /></button></a>
+    <a id="next" class="hide" onclick="handleAddComment()" href=""><button class="icon primary"><img src="img/icon/next-white.svg" /></button></a>
   </header>
 
+  <h2 id="title" class="articleTitle"></h2>
   <div id="article-container" class="mobilePageWrapper">
-    <h2 id="title"></h2>
+<!-- styled concept B placed image and caption
+    <img src="/img/img01_Sofia_kyrka.jpeg" class="placedImage">
+    <div class="overImage">
+      <img src="img/icon/robot.svg" width="16px" height="16px" class="margin8left" />
+      <p id="caption">Add caption below</p>
+      <img src="img/icon/info-inverse.svg" />
+      <textarea id="caption-input" placeholder="Write a short caption here to help explain why the image is relevant to the article..."></textarea>
+    </div>
+ -->
     <div id="text"></div>
     <div id="form-container"></div>
   </div>
   <div id="bottom-sheet">
-    <div class="se-inspector-header">
+    <div class="se-inspector-header"  onclick="handleToggleInspector()">
       <button class="icon"><img src="img/icon/robot.svg" /></button>
       <h2>1 suggested image found</h2>
       <button class="icon"><img src="img/icon/help.svg" /></button>

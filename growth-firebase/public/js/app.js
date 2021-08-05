@@ -23,17 +23,17 @@ function updateHtml(page, hash) {
 	if (page === 'start.html') {
 		$('a#edit').attr("href", `/edit.html#${hash}`);
 	} else if (page === 'edit.html') {
-		$('a#next').attr("href", `/publish.html#${hash}`);
+		$('a#next').attr("href", `/preview.html#${hash}`);
 		$('a#no').attr("href", `/reject.html#${hash}`);
 		$('a#close').attr("href", `/start.html#${hash}`);
 	} else if (page === 'reject.html') {
 		$('a#back').attr("href", `/edit.html#${hash}`);
-		$('a#done').attr("href", `/review.html#${hash}`);
+		$('a#done').attr("href", `/submitted.html#${hash}`);
 		$('#imgCaption').html(`${localStorage.getItem(hash)}`);
-	} else if (page === 'publish.html') {
-		$('a').attr("href", `/review.html#${hash}`);
+	} else if (page === 'preview.html') {
+		$('a').attr("href", `/submitted.html#${hash}`);
 		$('#imgCaption').html(`${localStorage.getItem(hash)}`);
-	} else if (page === 'review.html') {
+	} else if (page === 'submitted.html') {
 		$('a').attr("href", `/start.html#${obj.nextTitle}`);
 	}
 }
@@ -41,12 +41,12 @@ function updateHtml(page, hash) {
 // move image and add input
 function handleImageSelection() {
 	$('#article-container').prepend(
-		$('#imgFile'),
-		'<p id="caption">Add caption</p>',
-		'<textarea id="caption-input"></textarea>'
+		$('#imgFile img').addClass('placedImage'),
+		'<div class="overImage"><img src="img/icon/robot.svg" width="16px" height="16px" class="margin8left" /><p id="caption">Add caption below</p><img src="img/icon/info-inverse.svg" /><textarea id="caption-input" placeholder="Write a short caption here to help explain why the image is relevant to the article..."></textarea></div>'
 	);
 	$('#caption-input').focus();
 	$('#bottom-sheet').hide();
+	$('#next').removeClass('hide');
 }
 
 function handleAddComment() {
@@ -60,6 +60,10 @@ function handleTraverseSuggestions(str) {
 	var title = window[hash][str];
 	window.location.replace(`start.html#${title}`);
 	updateHtml('start.html', title);
+}
+
+function handleToggleInspector() {
+	$('#bottom-sheet').toggleClass('minimise');
 }
 
 $(document).ready(function() {

@@ -103,6 +103,7 @@ button.icon.primary {
   justify-content: flex-end;
   flex-grow: 1;
   white-space:nowrap;
+  max-width: 50%;
 }
 
 .fake-dropdown-btn::after {
@@ -250,34 +251,52 @@ a {
 
 #se_card_image {
   height:128px;
+/** concept A  image style
   background-color: #EAECF0;
-/** concept B image style background: url(../img/icon/imageSE-Add.svg) #72777D no-repeat 50% 50%; **/
+**/
+/** concept B image style **/
+  background: url(../img/icon/imageSE-Add.svg) #72777D no-repeat 50% 50%;
   box-shadow: inset 0 0 2px #c8ccd1;
   border-radius: 2px 2px 0px 0px;
 }
 
-#se-card-imgScrim {
-  border: dashed 2px #fff;
-  position: absolute;
-  margin: 2px;
-  width: 248px;
-  height: 120px;
-  background-color: rgba(255,255,255,.25);
-  border-radius: 2px 2px 0 0;
-}
+/** concept A image style
+  #se-card-imgScrim {
+    border: dashed 2px #fff;
+    position: absolute;
+    margin: 2px;
+    width: 248px;
+    height: 120px;
+    background-color: rgba(255,255,255,.25);
+    border-radius: 2px 2px 0 0;
+  }
 
-#se-card-imgScrim::before {
-  content: url(../img/icon/robot-in-circle-white.svg);
-  position: absolute;
-  top: 36px;
-  left: 98px;
-}
+  #se-card-imgScrim::before {
+    content: url(../img/icon/robot-in-circle-white.svg);
+    position: absolute;
+    top: 36px;
+    left: 98px;
+  }
+**/
+
+/** concept B image style **/
+  #se-card-imgScrim {
+    position: absolute;
+    margin: 0px;
+    width: 256px;
+    height: 128px;
+    background: url(../img/icon/imageSE-Add.svg) #72777D no-repeat 50% 50%;
+    border-radius: 2px 2px 0 0;
+    opacity: .9;
+  }
+
 
 #se_card_image img {
   width: 100%;
   height: 100%;
   border-radius: 2px 2px 0px 0px;
   object-fit: cover;
+  object-position:50% 20%;
 }
 
 .se-card-text {
@@ -417,7 +436,7 @@ a {
   content: url(../img/icon/expand.svg);
   font-weight: bold;
   position: relative;
-  left:50%;
+  left:calc(50% - 10px);
 }
 
 .close:hover,
@@ -428,16 +447,20 @@ a {
 }
 
 /************======== EDIT PAGE ========************/
+#next.hide {
+  display: none;
+}
+
 .mobilePageWrapper {
   padding:16px;
 }
 
-#article-container h2 {
+.articleTitle {
   font-family: Georgia;
   font-weight: normal;
   font-size: 27.2px;
   line-height: 36px;
-  padding: 0 0 16px;
+  padding: 16px 16px 0;
   margin: 0;
 }
 
@@ -451,18 +474,46 @@ a {
   border-bottom: 1px solid #eaecf0;
 }
 
-#article-container img {
-  width: 75%;
+.placedImage {
+  width: calc(100vw - 32px);
+}
+
+.overImage {
+  display: grid;
+  grid-template-columns: 32px auto 24px;
+  grid-template-rows: 24px auto;
+  background-color: rgba(255,255,255,.7);
+  padding: 8px 0;
+  position: relative;
+  top:-36px;
+  font-size: 13px;
+  line-height: 1.5;
+  margin-bottom: -24px;
+}
+
+.overImage p {
+font-weight: bold;
 }
 
 #article-container textarea {
-  width: calc(100% - 20px);
-  margin: 0 0 20px 0;
-  padding: 10px;
-  background-color: #f1f1f1;
-  border: none;
+  width: 100%;
+  min-height: 40px;
+  margin: 8px 0 0 0;
+  padding: 0 0 8px;
+  background-color: #FFF;
+  border-width: 0 0 1px 0;
+  border-color: #36c;
   resize: none;
-  line-height: 20px;
+  grid-column: span 3;
+  grid-row: 2;
+}
+
+#article-container textarea::placeholder {
+  font-style: italic;
+  color: #72777D;
+  background-color: #F4F9FF;
+  padding: 2px 8px 8px 2px;
+  min-height: 40px;
 }
 
 #article-container textarea:focus {
@@ -476,6 +527,10 @@ a {
   bottom: 0;
   background-color: #fff;
   transition: all 500ms ease;
+}
+
+#bottom-sheet.minimise {
+  transform: translateY(calc(100% - 48px));
 }
 
 #bottom-sheet.hide {
