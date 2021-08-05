@@ -621,3 +621,71 @@ font-weight: bold;
   align-items: center;
   padding:8px 16px;
 }
+
+
+/************======== PREVIEW PAGE ========************/
+
+.previewPage img {
+height:180px;
+width: 100%;
+object-fit: contain;
+background-color: #EAECF0;
+}
+
+.editSummary {
+  display: flex;
+  flex-direction: row;
+  justify-content:space-between;
+  font-size: 13px;
+  line-height: 1.5;
+  color: #54595d;
+  border-bottom: solid 1px #EAECF0;
+  padding-bottom: 8px;
+}
+
+.editSummary span {
+  align-self: baseline;
+}
+
+.editSummary span:first-child::before {
+  content: url(../img/icon/robot.svg);
+  opacity: .8;
+  padding-right: 8px;
+  position: relative;
+  top:4px;
+}
+
+.previewPage #imgName {
+  padding:8px 0;
+  font-weight: bold;
+  position: relative;
+}
+
+.previewPage #imgName::before {
+  content: url(../img/icon/image.svg);
+  padding-right: 8px;
+  position:relative;
+  top: 4px;
+  left: 0;
+}
+
+.previewPage #imgName::after {
+  content: url(../img/icon/check.svg);
+  position:absolute;
+  top: 10px;
+  right: 0;
+}
+
+.previewPage #imgCaption {
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.disclaimer {
+  font-size: 13px;
+  line-height: 1.5;
+  color: #54595d;
+  padding-top: 16px;
+  margin-top: 16px;
+  border-top: solid 1px #EAECF0;
+}
