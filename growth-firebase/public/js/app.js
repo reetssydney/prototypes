@@ -25,7 +25,12 @@ function updateHtml(page, hash) {
 	} else if (page === 'edit.html') {
 		$('a#next').attr("href", `/publish.html#${hash}`);
 		$('a#no').attr("href", `/reject.html#${hash}`);
-	} else if (page === 'publish.html' || page === 'reject.html') {
+		$('a#close').attr("href", `/start.html#${hash}`);
+	} else if (page === 'reject.html') {
+		$('a#back').attr("href", `/edit.html#${hash}`);
+		$('a#done').attr("href", `/review.html#${hash}`);
+		$('#imgCaption').html(`${localStorage.getItem(hash)}`);
+	} else if (page === 'publish.html') {
 		$('a').attr("href", `/review.html#${hash}`);
 		$('#imgCaption').html(`${localStorage.getItem(hash)}`);
 	} else if (page === 'review.html') {
@@ -36,8 +41,8 @@ function updateHtml(page, hash) {
 // move image and add input
 function handleImageSelection() {
 	$('#article-container').prepend(
-		$('#imgFile img'),
-		'<p>Add caption</p>',
+		$('#imgFile'),
+		'<p id="caption">Add caption</p>',
 		'<textarea id="caption-input"></textarea>'
 	);
 	$('#caption-input').focus();

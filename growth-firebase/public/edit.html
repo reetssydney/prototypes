@@ -10,13 +10,13 @@
 
 <body>
   <header class="overlay-header">
-    <button class="icon"><img src="img/icon/Close.svg" /></button>
+    <a id="close" href=""><button class="icon"><img src="img/icon/Close.svg" /></button></a>
     <h1>Suggestions mode</h1>
     <button class="fake-dropdown-btn"><img src="img/icon/edit.svg" /></button>
     <a id="next" onclick="handleAddComment()" href=""><button class="icon disabled"><img src="img/icon/next-white.svg" /></button></a>
   </header>
 
-  <div id="article-container">
+  <div id="article-container" class="mobilePageWrapper">
     <h2 id="title"></h2>
     <div id="text"></div>
     <div id="form-container"></div>
