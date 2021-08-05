@@ -37,11 +37,11 @@ function updateHtml(page, hash) {
 function handleImageSelection() {
 	$('#article-container').prepend(
 		$('#imgFile img'),
-		'<p>Add caption</p>',
-		'<textarea id="caption-input"></textarea>'
+		'<p>Add a caption</p>',
+		'<textarea id="caption-input" placeholder="Write a caption to show below the image in this article"></textarea>'
 	);
 	$('#caption-input').focus();
-	$('#bottom-sheet').hide();
+	$('#bottom-sheet').addClass('hide');
 }
 
 function handleAddComment() {
