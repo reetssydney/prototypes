@@ -43,19 +43,21 @@ function updateHtml(page, hash) {
 function handleImageSelection() {
 	$('#article-container').prepend(
 		$('#imgFile img').addClass('placedImage'),
-		'<div class="overImage"><img src="img/icon/robot.svg" width="16px" height="16px" class="margin8left" /><p id="caption">Add caption below</p><img src="img/icon/info-inverse.svg" /><textarea id="caption-input" placeholder="Write a short caption here to help explain why the image is relevant to the article..."></textarea></div>'
+		'<div class="overImage"><img src="img/icon/robot.svg" width="16px" height="16px" class="margin8left" /><p id="caption">Add caption below</p><img src="img/icon/info-inverse.svg" /><textarea id="caption-input" placeholder="Write a short caption here to help explain why the image is relevant to the article..." oninput="checkInput()"></textarea></div>'
 	);
 	$('#caption-input').focus();
 	$('#bottom-sheet').hide();
 	$('#next').removeClass('hide');
 }
 
+// add comment to local storage
 function handleAddComment() {
 	var hash = window.location.hash.substring(1);
 	var val = $('#caption-input').val();
 	localStorage.setItem(hash, val);
 }
 
+// prev/next buttons on homepage
 function handleTraverseSuggestions(str) {
 	var hash = window.location.hash.substring(1);
 	var title = window[hash][str];
@@ -65,6 +67,18 @@ function handleTraverseSuggestions(str) {
 
 function handleToggleInspector() {
 	$('#bottom-sheet').toggleClass('minimise');
+}
+
+// check if there is any text in the textarea
+function checkInput() {
+	target = $(event.target);
+	// if there is text
+	if ( $(target).val() ) {
+		// remove the disabled class on the next button
+		$('#next button').removeClass('disabled');
+	} else {
+		$('#next button').addClass('disabled');
+	}
 }
 
 $(document).ready(function() {

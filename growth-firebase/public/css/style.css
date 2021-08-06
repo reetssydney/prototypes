@@ -87,6 +87,11 @@ button.icon.primary {
   box-shadow: 0 0 0 16px #36c;
 }
 
+button.icon.primary.disabled {
+  background-color: #f0f;
+  box-shadow: 0 0 0 16px #C8CCD1;
+}
+
 
 .fake-dropdown-btn {
   height: 48px;
