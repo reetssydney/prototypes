@@ -35,6 +35,7 @@ function updateHtml(page, hash) {
 		$('#imgCaption').html(`${localStorage.getItem(hash)}`);
 	} else if (page === 'submitted.html') {
 		$('a').attr("href", `/start.html#${obj.nextTitle}`);
+		$('#imgCaption').html(`${localStorage.getItem(hash)}`);
 	}
 }
 

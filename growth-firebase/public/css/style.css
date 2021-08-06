@@ -178,6 +178,71 @@ input.ooui-checkbox:checked + label::after {
   overflow: hidden;
 }
 
+.minerva-header {
+  width: calc(100% - 16px);
+  background-color: #eaecf0;
+  display:flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0px 16px 0 0;
+  height: 56px;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  box-shadow: inset 0px -1px 3px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+}
+
+.minerva-header h1 {
+  font-family: 'Linux Libertine',Georgia,serif;
+  font-weight: normal;
+  font-variant: small-caps;
+  font-size: 24px;
+}
+
+.minerva-header h1 sup {
+  font-size: 12px;
+  color:#f0f;
+}
+
+.minervaTabContainer {
+  white-space: nowrap;
+  overflow-x: auto;
+  margin:8px 16px 0px;
+  z-index: 2;
+}
+
+.minervaTabContainer ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: .85em;
+  font-weight: bold;
+  color: #54595d;
+}
+
+.minervaTabContainer ul li {
+  display: inline-block;
+  margin: 0 10px 0 0;
+  padding-bottom: 6px;
+}
+
+.minervaTabContainer .selected {
+  border-bottom: 2px solid #54595d;
+}
+
+.minervaPageActionsMenu {
+  margin:0 16px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  opacity: .71;
+  border-top: 1px solid #eaecf0;
+  border-bottom: 1px solid #c8ccd1;
+  padding: 12px 0;
+  }
+
+
 
 header h1 {
   flex-grow:10;
@@ -429,6 +494,7 @@ a {
   padding: 16px;
   position: absolute;
   bottom: 0;
+  width:calc(100vw - 32px);
 }
 
 /* The Close Button */
@@ -476,7 +542,9 @@ a {
 
 .placedImage {
   width: calc(100vw - 32px);
+  text-align: center;
 }
+.placedImage img {width: 100%}
 
 .overImage {
   display: grid;
@@ -688,4 +756,69 @@ background-color: #EAECF0;
   padding-top: 16px;
   margin-top: 16px;
   border-top: solid 1px #EAECF0;
+}
+
+/************======== SUBMITTED PAGE ========************/
+
+.drawerScrim{
+position: fixed; /* Stay in place */
+z-index: 1; /* Sit on top */
+left: 0;
+top: 0;
+width: 100%; /* Full width */
+height: 100%; /* Full height */
+overflow: auto; /* Enable scroll if needed */
+background-color: rgb(0,0,0); /* Fallback color */
+background-color: rgba(0,0,0,0.2); /* Black w/ opacity */
+}
+
+
+/* Modal Content/Box */
+.postSubmitContainer {
+  background: linear-gradient(0deg, rgba(234, 243, 255, 0.5), rgba(234, 243, 255, 0.5)), #FFFFFF;
+  box-shadow: 0px -1px 8px rgba(0, 0, 0, 0.35);
+  padding: 0;
+  position: absolute;
+  bottom: 0;
+  width:100%;
+}
+
+.toastMessage {
+  background: #D5FDF4;
+  padding: 16px;
+  border: 1px solid #14866D;
+  border-radius: 2px;
+  margin: 0 16px;
+  position: relative;
+  bottom:68px;
+  width: calc(100vw - 68px);
+  }
+
+.postSubmitDrawer {
+  padding: 0;
+  margin: 0;
+  margin-top:-32px;
+}
+
+.postSubmitDrawer h3 {
+  font-size: 18.28px;
+  line-height: 1.5;
+  font-weight: bold;
+  margin:0 16px;
+  padding: 0 0 8px;
+}
+
+.se-ListItem {
+  display: grid;
+  grid-template-columns: 72px auto;
+  border-radius: 2px;
+  background-color: #fff;
+  box-shadow: 0px 1px 0px #EAECF0;
+  margin: 0 16px;
+}
+
+.se-ListItem img {
+  background-color: black;
+  margin:8px;
+  border-radius: 2px;
 }
