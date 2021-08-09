@@ -768,6 +768,10 @@ font-weight: bold;
   line-height: 1.5;
 }
 
+.se-inspector-content #openPopUpModal {
+  text-decoration: underline;
+}
+
 #image-info-wrapper {
   display: flex;
   flex-direction: row;
