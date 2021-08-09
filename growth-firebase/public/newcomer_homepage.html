@@ -14,44 +14,57 @@
     <h1>Wikipedia<sup>[prototype]</sup></h1>
     <img src="img/icon/RHSminerva.svg" />
   </header>
-  <h2 id="title"  class="articleTitle"></h2>
+  <h2  class="articleTitle">Newbie101</h2>
   <div class="minervaTabContainer">
     <ul>
-      <li class="selected">Article</li>
-      <li>Talk</li>
+      <li class="selected">Homepage</li>
+      <li>User page</li>
+      <li>Discussion</li>
     </ul>
   </div>
-  <div class="minervaPageActionsMenu">
-    <img src="img/icon/language.svg" />
-    <img src="img/icon/download.svg" />
-    <img src="img/icon/star.svg" />
-    <img src="img/icon/history.svg" />
-    <img src="img/icon/edit.svg" />
   </div>
 
   <div id="article-container" class="mobilePageWrapper">
-    <div id="imgFile" class="placedImage"></div>
-    <p id="imgCaption"></p>
-    <p id="text"></p>
-  </div>
-  <div class="drawerScrim">
-    <div class="postSubmitContainer">
-      <div class="toastMessage">You’ve published an edit. Thanks and keep going!</div>
-      <div class="postSubmitDrawer">
-        <h3 id="drawerHeader">Edit another article</h3>
-        <div class="se-ListItem">
-          <img src="img/icon/imageSE-Add.svg" />
-          <div>
-            <h4 id="nextTitle">NextArticletitle</h4>
-            <span id="nextDescription">some short description</span>
-            <span class="se-taskname">Add an imagw</span>
-          </div>
+    <div id="startModule" class="homepageModulePreview">
+        <img src="img/icon/message.svg" />
+        <span id="emailAddress" class="margin8left"><b>new***@*****.com</b>&nbsp;&nbsp; (<a id="confirm" class="destructive">confirm</a>)</span>
+    </div>
+    <div id="seModule" class="homepageModulePreview">
+        <div class="bannerTitle">
+          <img src="img/icon/SE-general.svg">
+          <h4 class="margin8left">Get started with some Suggested edits</h4>
         </div>
-        <a href=""><button>Homepage</button></a>
-        <a href=""><button>Close to view changes (or edit again) </button></a>
+        <p>Help add to the world's knowledge with some easy fixes on Wikipedia articles.</p>
+      <a id="openSE" href=""><button class="ooui-btn primary-progressive">See suggested edits</button></a>
+     </div>
+    <div id="impactModule" class="homepageModulePreview">
+      <header>Your impact</header>
+      <div class="bannerTitle">
+        <img src="img/icon/hearticle.svg">
+        <div><h4 class="margin8left">0 edits so far</h4>
+        <p class="margin8left">Help extend free knowledge to the world by editing topics that matter most to you.</p></div>
+      </div>
+      <footer>Once you start editing, you’ll see here how many people are viewing the articles you’ve edited.</footer>
+    </div>
+    <div id="mentorModule" class="homepageModulePreview">
+      <header>Your mentor</header>
+      <span>
+        You’ve been assigned an experienced editor to answer your questions about editing.
+      </span>
+      <div class="bannerTitle">
+        <img src="img/icon/mentor40x40.svg">
+        <div><h4 class="margin8left">Yoda101</h4>
+        <p class="margin8left">Active 2h ago</p></div>
       </div>
     </div>
+    <div id="helpModule" class="homepageModulePreview">
+      <header>Get help with editing</header>
+      <span>
+        Ask the help desk or read help pages.
+      </span>
+    </div>
   </div>
+
 
   <script
     src="https://code.jquery.com/jquery-3.6.0.min.js"

@@ -20,14 +20,14 @@ function updateHtml(page, hash) {
 		}
 	}
 	// add the buttons which are page dependent
-	if (page === 'newcomer_homepage') {
-		$('a').attr("href", `/suggested_edits.html#${hash}`);
-	} else if (page === 'suggested_edits') {
+	if (page === 'newcomer_homepage.html') {
+		$('a#openSE').attr("href", `/suggested_edits.html#${hash}`);
+	} else if (page === 'suggested_edits.html') {
 		$('a#edit').attr("href", `/edit.html#${hash}`);
 	} else if (page === 'edit.html') {
 		$('a#next').attr("href", `/preview.html#${hash}`);
 		$('a#no').attr("href", `/reject.html#${hash}`);
-		$('a#close').attr("href", `/suggested_edits#${hash}`);
+		$('a#close').attr("href", `/suggested_edits.html#${hash}`);
 	} else if (page === 'reject.html') {
 		$('a#back').attr("href", `/edit.html#${hash}`);
 		$('a#done').attr("href", `/submitted.html#${hash}`);
@@ -36,16 +36,19 @@ function updateHtml(page, hash) {
 		$('a').attr("href", `/submitted.html#${hash}`);
 		$('#imgCaption').html(`${localStorage.getItem(hash)}`);
 	} else if (page === 'submitted.html') {
-		$('a').attr("href", `/suggested_edits#${obj.nextTitle}`);
+		$('a#nextEdit').attr("href", `/edit.html#${obj.nextTitleID}`);
+		$('a#nextSE').attr("href", `/suggested_edits.html#${obj.nextTitleID}`);
 		$('#imgCaption').html(`${localStorage.getItem(hash)}`);
 	}
 }
 
 // move image and add input
 function handleImageSelection() {
-	$('#article-container').prepend(
-		$('#imgFile img').addClass('placedImage'),
-		'<div class="overImage"><img src="img/icon/robot.svg" width="16px" height="16px" class="margin8left" /><p id="caption">Add caption below</p><img src="img/icon/info-inverse.svg" /><textarea id="caption-input" placeholder="Write a short caption here to help explain why the image is relevant to the article..." oninput="checkInput()"></textarea></div>'
+	$('.ButtonOverImage').prepend(
+		$('#imgFile img').addClass('placedImage')
+	);
+	$('.overImage').prepend(
+		'<img src="img/icon/robot.svg" width="16px" height="16px" class="margin8left" /><p id="caption">Add caption below</p><img id="openPopUp2" src="img/icon/info-inverse.svg" /><textarea id="caption-input" placeholder="Write a short caption here to help explain why the image is relevant to the article..." oninput="checkInput()"></textarea>'
 	);
 	$('#caption-input').focus();
 	$('#bottom-sheet').hide();
@@ -63,8 +66,8 @@ function handleAddComment() {
 function handleTraverseSuggestions(str) {
 	var hash = window.location.hash.substring(1);
 	var title = window[hash][str];
-	window.location.replace(`suggested_edits#${title}`);
-	updateHtml('suggested_edits', title);
+	window.location.replace(`suggested_edits.html#${title}`);
+	updateHtml('suggested_edits.html', title);
 }
 
 function handleToggleInspector() {
@@ -90,18 +93,56 @@ $(document).ready(function() {
 });
 
 
-// Pop-up info
+// Pop-up drawer style
+// Get the drawer
+var drawer = document.getElementById("PopUp_Drawer");
+
+// Get the button that opens the drawer
+var popUpBtn = document.getElementById("openPopUp");
+
+// Get the <span> element that closes the drawer
+var span = document.getElementsByClassName("closeDrawer")[0];
+
+// When the user clicks on the button, open the drawer
+popUpBtn.onclick = function() {
+  drawer.style.display = "block";
+	$('.ButtonOverImage').addClass('ImgSelected');
+	$('#captionHelperInfo').append(
+		$('#imgName'),
+		$('#imgDescription'),
+		$('#imgCommonsCaption'),
+		$('#imgDate'),
+		$('#imgCommonsCategories'),
+	);
+}
+
+// When the user clicks on <span> (x), close the drawer
+span.onclick = function() {
+  drawer.style.display = "none";
+	$('.ButtonOverImage').removeClass('ImgSelected');
+	$('#caption-input').focus();
+}
+
+// When the user clicks anywhere outside of the drawer, close it
+window.onclick = function(event) {
+  if (event.target == drawer) {
+    drawer.style.display = "none";
+  }
+}
+
+
+// Pop-up MODAL style
 // Get the modal
-var modal = document.getElementById("PopUp_TaskInfo");
+var modal = document.getElementById("PopUp_Modal");
 
 // Get the button that opens the modal
-var btn = document.getElementById("openPopUp");
+var moreBtn = document.getElementById("openPopUpModal");
 
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("closeModal")[0];
 
 // When the user clicks on the button, open the modal
-btn.onclick = function() {
+moreBtn.onclick = function() {
   modal.style.display = "block";
 }
 
@@ -112,14 +153,7 @@ span.onclick = function() {
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
-  if (event.target == modal) {
+  if (event.target == drawer) {
     modal.style.display = "none";
   }
 }
-
-/*/◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊//
-//••••••••••••••••••••••••••  B I G  H E A D E R  ••••••••••••••••••••••••••//
-//◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊/*/
-
-
-/**** S M A L L  H E A D E R ****/
