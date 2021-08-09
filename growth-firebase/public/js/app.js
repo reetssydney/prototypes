@@ -20,12 +20,14 @@ function updateHtml(page, hash) {
 		}
 	}
 	// add the buttons which are page dependent
-	if (page === 'start.html') {
+	if (page === 'newcomer_homepage') {
+		$('a').attr("href", `/suggested_edits.html#${hash}`);
+	} else if (page === 'suggested_edits') {
 		$('a#edit').attr("href", `/edit.html#${hash}`);
 	} else if (page === 'edit.html') {
 		$('a#next').attr("href", `/preview.html#${hash}`);
 		$('a#no').attr("href", `/reject.html#${hash}`);
-		$('a#close').attr("href", `/start.html#${hash}`);
+		$('a#close').attr("href", `/suggested_edits#${hash}`);
 	} else if (page === 'reject.html') {
 		$('a#back').attr("href", `/edit.html#${hash}`);
 		$('a#done').attr("href", `/submitted.html#${hash}`);
@@ -34,7 +36,7 @@ function updateHtml(page, hash) {
 		$('a').attr("href", `/submitted.html#${hash}`);
 		$('#imgCaption').html(`${localStorage.getItem(hash)}`);
 	} else if (page === 'submitted.html') {
-		$('a').attr("href", `/start.html#${obj.nextTitle}`);
+		$('a').attr("href", `/suggested_edits#${obj.nextTitle}`);
 		$('#imgCaption').html(`${localStorage.getItem(hash)}`);
 	}
 }
@@ -61,8 +63,8 @@ function handleAddComment() {
 function handleTraverseSuggestions(str) {
 	var hash = window.location.hash.substring(1);
 	var title = window[hash][str];
-	window.location.replace(`start.html#${title}`);
-	updateHtml('start.html', title);
+	window.location.replace(`suggested_edits#${title}`);
+	updateHtml('suggested_edits', title);
 }
 
 function handleToggleInspector() {

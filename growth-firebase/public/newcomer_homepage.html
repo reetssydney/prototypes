@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Add image demo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/normalize.css">
+</head>
+
+<body>
+  <header class="minerva-header">
+    <button class="icon"><img src="img/icon/menu.svg" /></button>
+    <h1>Wikipedia<sup>[prototype]</sup></h1>
+    <img src="img/icon/RHSminerva.svg" />
+  </header>
+  <h2 id="title"  class="articleTitle"></h2>
+  <div class="minervaTabContainer">
+    <ul>
+      <li class="selected">Article</li>
+      <li>Talk</li>
+    </ul>
+  </div>
+  <div class="minervaPageActionsMenu">
+    <img src="img/icon/language.svg" />
+    <img src="img/icon/download.svg" />
+    <img src="img/icon/star.svg" />
+    <img src="img/icon/history.svg" />
+    <img src="img/icon/edit.svg" />
+  </div>
+
+  <div id="article-container" class="mobilePageWrapper">
+    <div id="imgFile" class="placedImage"></div>
+    <p id="imgCaption"></p>
+    <p id="text"></p>
+  </div>
+  <div class="drawerScrim">
+    <div class="postSubmitContainer">
+      <div class="toastMessage">You’ve published an edit. Thanks and keep going!</div>
+      <div class="postSubmitDrawer">
+        <h3 id="drawerHeader">Edit another article</h3>
+        <div class="se-ListItem">
+          <img src="img/icon/imageSE-Add.svg" />
+          <div>
+            <h4 id="nextTitle">NextArticletitle</h4>
+            <span id="nextDescription">some short description</span>
+            <span class="se-taskname">Add an imagw</span>
+          </div>
+        </div>
+        <a href=""><button>Homepage</button></a>
+        <a href=""><button>Close to view changes (or edit again) </button></a>
+      </div>
+    </div>
+  </div>
+
+  <script
+    src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+    crossorigin="anonymous">
+  </script>
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+
+</body>
+</html>
