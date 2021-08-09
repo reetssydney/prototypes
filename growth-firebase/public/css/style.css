@@ -188,6 +188,7 @@ input.ooui-checkbox:checked + label::after {
   top: 0px;
   box-shadow: 0px 1px 1px #C8CCD1;
   overflow: hidden;
+  z-index: 2;
 }
 
 .minerva-header {
