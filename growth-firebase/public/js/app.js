@@ -39,7 +39,9 @@ function updateHtml(page, hash) {
 		$('a#nextEdit').attr("href", `/edit.html#${obj.nextTitleID}`);
 		$('a#nextSE').attr("href", `/suggested_edits.html#${obj.nextTitleID}`);
 		$('#imgCaption').html(`${localStorage.getItem(hash)}`);
-	}
+	} else if (page === 'fullscreen-image.html') {
+			$('a#closeFullscreen').attr("href", `/edit.html#${hash}`);
+		}
 }
 
 // move image and add input

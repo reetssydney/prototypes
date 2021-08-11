@@ -869,6 +869,15 @@ display: block;
   font-weight: bold;
 }
 
+/************======== FULLSCREEN IMAGE PAGE ========************/
+.fullScreenImage {
+  background-color: #000;
+}
+
+.overlay-header.fullScreenImage {
+  
+}
+
 /************======== PREVIEW PAGE ========************/
 .previewPage img {
 height:180px;
