@@ -599,9 +599,9 @@ opacity: .71;
   border: 1px solid #A2A9B1;
   padding: 0;
   position: absolute;
-  top:calc(50vh - 280px);
+  top:calc(50vh - 160px);
   left:32px;
-  width:calc(100vw - 96px);
+  width:calc(100vw - 64px);
   overflow: hidden;
 }
 
@@ -795,6 +795,8 @@ font-weight: bold;
 
 .se-inspector-content #openPopUpModal {
   text-decoration: underline;
+  text-align: right;
+  color:#36c;
 }
 
 #image-info-wrapper {
@@ -833,10 +835,9 @@ font-weight: bold;
   text-overflow: ellipsis;
 }
 
-.inspector-imgMetadata #imgName::before {
+.inspector-imgMetadata #imgName::after {
   content: url(../img/icon/linkExternal.svg);
   padding-left: 8px;
-  float: right;
 }
 
 .inspector-imgMetadata #imgDescription {
@@ -902,7 +903,7 @@ display: block;
 }
 
 .fullScreenImage .overlay-header {
-  background-color: #000;
+  background-color: transparent;
   box-shadow: none;
   position: absolute;
 }
@@ -911,7 +912,7 @@ display: block;
   position: absolute;
   right:0;
 }
-.fullScreenImage #imgFile img {
+.fullScreenImage #imgFile img  {
   object-fit: contain;
   width: inherit;
   height: inherit;
@@ -919,23 +920,31 @@ display: block;
 
 #openFullscreenImg {
   position: relative;
-  bottom:40px;
+}
+
+#openFullscreenImg span {
+  position: absolute;
+  bottom:4px;
   right:12px;
   float: right;
-  padding:8px 8px 0;
+  padding:8px;
   background-color: rgba(255,255,255,.5);
   border-radius: 2px;
+  border:none;
+  width:20px;
+  height:20px;
 }
-
-/************======== IMAGE FILEPAGE PAGE ========************/
-
-.commons-page #filepageSummary a, .commons-page #filepageLicensing a {
-  color:#36c;
+/************======== COMMONS IMAGE FILE PAGE ========************/
+.commons-page h1 {
+  font-family: 'Montserrat','Helvetica Neue', Arial, sans-serif;
+  font-weight: bold;
+  color:#72777d;
+  font-size: 18px;
 }
-
-.commons-page #imgCommonsCaption::before{
-content: 'Image caption: ';
-font-weight: bold;
+.commons-page #imgFile img {
+  width:100%;
+  height:inherit;
+  object-fit: contain;
 }
 
 /************======== PREVIEW PAGE ========************/
@@ -1026,8 +1035,6 @@ background-color: rgba(0,0,0,0.2); /* Black w/ opacity */
 
 /* Modal Content/Box */
 .postSubmitContainer {
-  background: linear-gradient(0deg, rgba(234, 243, 255, 0.5), rgba(234, 243, 255, 0.5)), #FFFFFF;
-  box-shadow: 0px -1px 8px rgba(0, 0, 0, 0.35);
   padding: 0;
   position: absolute;
   bottom: 0;
@@ -1039,16 +1046,17 @@ background-color: rgba(0,0,0,0.2); /* Black w/ opacity */
   padding: 16px;
   border: 1px solid #14866D;
   border-radius: 2px;
-  margin: 0 16px;
+  margin: 0 16px 16px;
   position: relative;
-  bottom:84px;
+  bottom:0;
   width: calc(100vw - 66px);
   }
 
 .postSubmitDrawer {
-  padding: 0;
+  padding: 16px 0 0;
   margin: 0;
-  margin-top:-56px;
+  background: linear-gradient(0deg, rgba(234, 243, 255, 0.5), rgba(234, 243, 255, 0.5)), #FFFFFF;
+  box-shadow: 0px -1px 8px rgb(0 0 0 / 35%);
 }
 
 .postSubmitDrawer h3 {
