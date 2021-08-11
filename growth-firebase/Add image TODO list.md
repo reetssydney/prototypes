@@ -56,7 +56,8 @@ https://www.figma.com/file/ULhJr1isDstRbGE5vjYDsr/Add-images-structured-task-Gro
 - [ ] Change disabled next icon in the full-screen caption image to enabled primary icon when a decision is made
 
 ### **Preview page**
-- [ ] tapping back goes back to edit.html
+- [x] tapping back goes back to edit.html
+- [ ] tapping back goes back to edit.html with caption step remembered (low-prio) 
 
 
 ***CONCEPT A ONLY***

@@ -36,7 +36,8 @@ function updateHtml(page, hash) {
 		$('a#done').attr("href", `/submitted.html#${hash}`);
 		$('#imgCaption').html(`${localStorage.getItem(hash)}`);
 	} else if (page === 'preview.html') {
-		$('a').attr("href", `/submitted.html#${hash}`);
+		$('a#back').attr("href", `/edit.html#${hash}`);
+		$('a#done').attr("href", `/submitted.html#${hash}`);
 		$('#imgCaption').html(`${localStorage.getItem(hash)}`);
 	} else if (page === 'submitted.html') {
 		$('a#nextEdit').attr("href", `/edit.html#${obj.nextTitleID}`);
