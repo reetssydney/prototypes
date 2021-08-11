@@ -21,7 +21,7 @@ https://www.figma.com/file/ULhJr1isDstRbGE5vjYDsr/Add-images-structured-task-Gro
 - [x] Add image task info tooltip pop-up
 - [x] Create article card 'carousel'
 - [x] Fix prev/next button actions
-- [ ] 👷 Add swipe gesture
+- [x] 👷 Add swipe gesture
 
 - [ ] Add topic filter modal (low prio)
 - [ ] Add task filter modal (low prio)
