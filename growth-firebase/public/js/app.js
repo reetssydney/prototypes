@@ -70,6 +70,7 @@ function handleTraverseSuggestions(str) {
 	updateHtml('suggested_edits.html', title);
 }
 
+// show/hide the bottom image suggestion 'inspector' panel
 function handleToggleInspector() {
 	$('#bottom-sheet').toggleClass('minimise');
 }
@@ -142,6 +143,7 @@ var moreBtn = document.getElementById("openPopUpModal");
 var span = document.getElementsByClassName("closeModal")[0];
 
 // When the user clicks on the button, open the modal
+
 moreBtn.onclick = function() {
   modal.style.display = "block";
 }

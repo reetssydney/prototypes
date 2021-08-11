@@ -21,7 +21,7 @@ var article01 = {
 	nextTitleID: 'article02',
 	nextTitle: 'Bahaettin Rahmi Bediz',
 	nextDescription: 'Rahmizâde Bahaeddin Bey (1875–1951), also known as Bahaettin Rahmi Bediz and Rahmi Bediz, was a Cretan Turk who was the first Turkish photographer by profession.',
-	prevTitle: 'Storsponen Nunatak'
+	prevTitleID: 'article06'
 }
 
 
@@ -48,7 +48,7 @@ var article02 = {
 	nextTitleID: 'article03',
 	nextTitle: '1843 in sports',
 	nextDescription: '1843 in sports describes the year\'s events in world sport.',
-	prevTitle: 'article01'
+	prevTitleID: 'article01'
 }
 
 var article03 = {
@@ -74,7 +74,7 @@ var article03 = {
 	nextTitleID: 'article04',
 	nextTitle: 'Edward Edwards (Royal Navy officer)',
 	nextDescription: 'Admiral Edward Edwards (1742–1815) was a British naval officer best known as the captain of HMS Pandora, the frigate which the Admiralty sent to the South Pacific in pursuit of the Bounty mutineers.',
-	prevTitle: 'Bahaettin Rahmi Bediz'
+	prevTitleID: 'article02'
 }
 
 var article04 = {
@@ -100,7 +100,7 @@ var article04 = {
 	nextTitleID: 'article05',
 	nextTitle: 'Spark-ignition engine',
 	nextDescription: 'A spark-ignition engine (SI engine) is an internal combustion engine, generally a petrol engine, where the combustion process of the air-fuel mixture is ignited by a spark from a spark plug.',
-	prevTitle: '1843 in sports'
+	prevTitleID: 'article03'
 }
 
 var article05 = {
@@ -123,9 +123,10 @@ var article05 = {
 	imgAuthor: 'UtzOnBike (3D-model & animation: Autodesk Inventor)',
 	imgFile: '<img src="/img/img05_4-Stroke-Engine.gif" />',
 	imgCaption: '',
-	nextTitle: 'article06',
+	nextTitleID: 'article06',
+	nextTitle: 'Storsponen Nunatak',
 	nextDescription: 'Storsponen Nunatak is a nunatak on the west side of Hoggestabben Butte, in the Muhlig-Hofmann Mountains of Queen Maud Land.',
-	prevTitle: 'Edward Edwards (Royal Navy officer)'
+	prevTitleID: 'article04'
 }
 
 
@@ -152,5 +153,5 @@ var article06 = {
 	nextTitleID: 'article01',
 	nextTitle: 'Church order',
 	nextDescription: 'Church order is the systematically organized set of rules drawn up by a qualified body for the church.',
-	prevTitle: 'Spark-ignition engine'
+	prevTitleID: 'article05'
 }

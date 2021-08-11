@@ -10,7 +10,7 @@
 
 <body class="SE-module">
   <header class="overlay-header">
-    <button class="icon"><img src="img/icon/arrowPrevious.svg" /></button>
+    <a id=""><button class="icon"><img src="img/icon/arrowPrevious.svg" /></button></a>
     <h1>Suggested edits</h1>
     <button class="icon"><img src="img/icon/info.svg" /></button>
   </header>
@@ -41,7 +41,6 @@
   </div>
 
   <div id="PopUp_Drawer" class="drawer">
-
     <!-- Drawer content -->
     <div class="drawer-content">
       <span class="closeDrawer">&times;</span>
@@ -54,9 +53,9 @@
   </div>
 
   <footer class="se-footer">
-    <button id="prev" onclick="handleTraverseSuggestions('prevTitle')" class="icon"><img src="img/icon/arrowPrevious.svg" /></button>
+    <button id="prev" onclick="handleTraverseSuggestions('prevTitleID')" class="icon"><img src="img/icon/arrowPrevious.svg" /></button>
     <a id="edit" href=""><button class="ooui-btn primary-progressive"><img src="img/icon/edit-white.svg" />&nbsp;&nbsp;Edit</button></a>
-    <button id="next" onclick="handleTraverseSuggestions('nextTitle')" class="icon"><img src="img/icon/arrowNext.svg" /></button>
+    <button id="next" onclick="handleTraverseSuggestions('nextTitleID')" class="icon"><img src="img/icon/arrowNext.svg" /></button>
 
   </footer>
   <script
