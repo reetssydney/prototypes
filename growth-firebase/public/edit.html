@@ -10,7 +10,7 @@
 
 <body>
   <header class="overlay-header">
-    <a id="close" href=""><button class="icon"><img src="img/icon/Close.svg" /></button></a>
+    <a id="close" href=""><button class="icon"><img src="img/icon/close.svg" /></button></a>
     <h1>Suggestions mode</h1>
     <button class="fake-dropdown-btn"><img src="img/icon/edit.svg" /></button>
     <a id="next" class="hide" onclick="handleAddComment()" href=""><button class="icon primary disabled"><img src="img/icon/next-white.svg" /></button></a>
@@ -32,10 +32,10 @@
     <div class="se-inspector-content">
       <p id="suggestion_reason"></p>
       <div id="image-info-wrapper">
-        <div>
+        <a id="openFullscreenImg"><div>
           <div id="imgFile" class="inspector-image"></div>
-          <a id="openFullscreenImg"><img src="img/icon/fullscreen.svg" /></a>
-        </div>
+          <span><img src="img/icon/fullScreen.svg" /></span>
+        </div></a>
         <div class="inspector-imgMetadata">
           <div id="imgName"></div>
           <p id="imgDescription"></p>
@@ -46,7 +46,7 @@
     <div class="se-inspector-question">Add this image to the start of the article?</div>
     <div class="se-inspector-actions">
       <button class="ooui-btn" onclick="handleImageSelection()"><img src="img/icon/check.svg" />&nbsp;Yes</button>
-      <a id="no" class="flexgrow" href=""><button class="ooui-btn margin8left"><img src="img/icon/Close.svg" />&nbsp;No</button></a>
+      <a id="no" class="flexgrow" href=""><button class="ooui-btn margin8left"><img src="img/icon/close.svg" />&nbsp;No</button></a>
       <button id="skipButton" class="ooui-btn quiet-neutral">Skip</button>
     </div>
   </div>

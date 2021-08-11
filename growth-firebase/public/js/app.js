@@ -23,6 +23,7 @@ function updateHtml(page, hash) {
 	if (page === 'newcomer_homepage.html') {
 		$('a#openSE').attr("href", `/suggested_edits.html#${hash}`);
 	} else if (page === 'suggested_edits.html') {
+		$('a#backHome').attr("href", `/newcomer_homepage.html#${hash}`);
 		$('a#edit').attr("href", `/edit.html#${hash}`);
 	} else if (page === 'edit.html') {
 		$('a#next').attr("href", `/preview.html#${hash}`);
@@ -42,6 +43,7 @@ function updateHtml(page, hash) {
 		$('#imgCaption').html(`${localStorage.getItem(hash)}`);
 	} else if (page === 'fullscreen-image.html') {
 			$('a#closeFullscreen').attr("href", `/edit.html#${hash}`);
+			$('a#closeFullscreenImg').attr("href", `/edit.html#${hash}`);
 		}
 }
 

@@ -37,7 +37,9 @@ https://www.figma.com/file/ULhJr1isDstRbGE5vjYDsr/Add-images-structured-task-Gro
 - [ ] Add functionality to open the image in full-screen
 - [ ] Add functionality to open the file in new tab
 - [ ] 👷 Add onboarding 'guided tour' (style used in Concept B) for making the edit
+- [ ] Fix zooming too far in and lack of sticky header when adding caption (iOS device)
 - [ ] Add onboarding for the caption
+- [ ] remove help icon from the inspector (maybe add chevron instead)
 - ~~[ ] Skip action (low prio)~~
 
 ***CONCEPT B ONLY***
@@ -54,9 +56,10 @@ https://www.figma.com/file/ULhJr1isDstRbGE5vjYDsr/Add-images-structured-task-Gro
 - [ ] Change disabled next icon in the full-screen caption image to enabled primary icon when a decision is made
 
 ### **Preview page**
+- [ ] tapping back goes back to edit.html
+
 
 ***CONCEPT A ONLY***
-
 - [ ] update styling to reflect concept A summary view.
 
 ### **Submitted page**
