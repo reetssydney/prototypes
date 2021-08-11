@@ -872,10 +872,35 @@ display: block;
 /************======== FULLSCREEN IMAGE PAGE ========************/
 .fullScreenImage {
   background-color: #000;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
 }
 
-.overlay-header.fullScreenImage {
-  
+.fullScreenImage .overlay-header{
+  background-color: #000;
+  box-shadow: none;
+  position: absolute;
+}
+
+#closeFullscreen {
+  position: absolute;
+  right:0;
+}
+.fullScreenImage #imgFile img {
+  object-fit: contain;
+  width: inherit;
+  height: inherit;
+}
+
+#openFullscreenImg {
+  position: relative;
+  bottom:40px;
+  right:12px;
+  float: right;
+  padding:8px 8px 0;
+  background-color: rgba(255,255,255,.5);
+  border-radius: 2px;
 }
 
 /************======== PREVIEW PAGE ========************/

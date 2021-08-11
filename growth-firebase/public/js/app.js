@@ -28,6 +28,7 @@ function updateHtml(page, hash) {
 		$('a#next').attr("href", `/preview.html#${hash}`);
 		$('a#no').attr("href", `/reject.html#${hash}`);
 		$('a#close').attr("href", `/suggested_edits.html#${hash}`);
+		$('a#openFullscreenImg').attr("href", `/fullscreen-image.html#${hash}`);
 	} else if (page === 'reject.html') {
 		$('a#back').attr("href", `/edit.html#${hash}`);
 		$('a#done').attr("href", `/submitted.html#${hash}`);
