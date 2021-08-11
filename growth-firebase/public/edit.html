@@ -27,7 +27,7 @@
     <div class="se-inspector-header"  onclick="handleToggleInspector()">
       <button class="icon"><img src="img/icon/robot.svg" /></button>
       <h2>1 suggested image found</h2>
-      <button class="icon"><img src="img/icon/help.svg" /></button>
+      <button id="expand-collapse" class="icon"><img src="img/icon/expand.svg" /></button>
     </div>
     <div class="se-inspector-content">
       <p id="suggestion_reason"></p>
@@ -37,7 +37,7 @@
           <span><img src="img/icon/fullScreen.svg" /></span>
         </div></a>
         <div class="inspector-imgMetadata">
-          <div id="imgName"></div>
+          <a id="openFilepage" target="_blank"><div id="imgName"></div></a>
           <p id="imgDescription"></p>
           <span id="openPopUpModal">Read more</span>
         </div>

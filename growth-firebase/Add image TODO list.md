@@ -34,12 +34,12 @@ https://www.figma.com/file/ULhJr1isDstRbGE5vjYDsr/Add-images-structured-task-Gro
 
 - [x] Toggle bottom sheet open and close
 - [x] Change disabled next icon to enabled primary icon when a decision is made
-- [ ] Add functionality to open the image in full-screen
-- [ ] Add functionality to open the file in new tab
+- [x] Add functionality to open the image in full-screen
+- [x] Add functionality to open the file in new tab
 - [ ] 👷 Add onboarding 'guided tour' (style used in Concept B) for making the edit
 - [ ] Fix zooming too far in and lack of sticky header when adding caption (iOS device)
 - [ ] Add onboarding for the caption
-- [ ] remove help icon from the inspector (maybe add chevron instead)
+- [x] remove help icon from the inspector (maybe add chevron instead)
 - ~~[ ] Skip action (low prio)~~
 
 ***CONCEPT B ONLY***

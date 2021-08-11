@@ -30,6 +30,7 @@ function updateHtml(page, hash) {
 		$('a#no').attr("href", `/reject.html#${hash}`);
 		$('a#close').attr("href", `/suggested_edits.html#${hash}`);
 		$('a#openFullscreenImg').attr("href", `/fullscreen-image.html#${hash}`);
+		$('a#openFilepage').attr("href", `/image-filepage.html#${hash}`);
 	} else if (page === 'reject.html') {
 		$('a#back').attr("href", `/edit.html#${hash}`);
 		$('a#done').attr("href", `/submitted.html#${hash}`);
@@ -78,6 +79,7 @@ function handleTraverseSuggestions(str) {
 // show/hide the bottom image suggestion 'inspector' panel
 function handleToggleInspector() {
 	$('#bottom-sheet').toggleClass('minimise');
+	$('#expand-collapse').toggleClass('collapsed');
 }
 
 // check if there is any text in the textarea

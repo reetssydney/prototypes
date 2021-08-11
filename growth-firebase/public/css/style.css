@@ -787,6 +787,10 @@ font-weight: bold;
   flex-grow: 1;
 }
 
+.collapsed {
+  transform: rotate(180deg);
+}
+
 .se-inspector-content {
   padding: 12px 16px;
   font-size: 13px;
@@ -942,10 +946,30 @@ display: block;
   font-size: 18px;
 }
 .commons-page #imgFile img {
-  width:100%;
+  padding:0 0 0 16px;
+  width:calc(100vw - 32px);
   height:inherit;
   object-fit: contain;
 }
+
+.commons-page #imgCommonsCaption {
+    position: relative;
+    padding:48px 16px 16px;
+    margin: 8px 0 16px;
+    border: 1px solid #a2a9b1;
+}
+
+.commons-page #imgCommonsCaption::before{
+  content:'Image caption ';
+  font-weight: bold;
+  top:16px;
+  position: absolute;
+}
+
+.commons-page #article-container a {
+  color:#36c;
+}
+
 
 /************======== PREVIEW PAGE ========************/
 .previewPage img {
