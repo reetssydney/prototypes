@@ -1,7 +1,9 @@
 PROTOTYPE TODOs
 ===============
 This task list shows items to be done to complete the prototypes for user testing.
-**Last updated: Aug 10,2021**
+**Last updated: Aug 11,2021**
+
+👷 = Growth engineers will work on it
 
 **Concept A vs B**
 ------------------
@@ -19,7 +21,7 @@ https://www.figma.com/file/ULhJr1isDstRbGE5vjYDsr/Add-images-structured-task-Gro
 - [x] Add image task info tooltip pop-up
 - [x] Create article card 'carousel'
 - [x] Fix prev/next button actions
-- [ ] Add swipe gesture
+- [ ] 👷 Add swipe gesture
 
 - [ ] Add topic filter modal (low prio)
 - [ ] Add task filter modal (low prio)
@@ -34,14 +36,14 @@ https://www.figma.com/file/ULhJr1isDstRbGE5vjYDsr/Add-images-structured-task-Gro
 - [x] Change disabled next icon to enabled primary icon when a decision is made
 - [ ] Add functionality to open the image in full-screen
 - [ ] Add functionality to open the file in new tab
-- [ ] Add onboarding 'guided tour' (style used in Concept B) for making the edit
+- [ ] 👷 Add onboarding 'guided tour' (style used in Concept B) for making the edit
 - [ ] Add onboarding for the caption
 - ~~[ ] Skip action (low prio)~~
 
 ***CONCEPT B ONLY***
 
 - [x] More image info bottom sheet for captions
-- [ ] Interstitial 'Loading image...' screen
+- [ ] 👷 Interstitial 'Loading image...' screen
 - [ ] Change header when adding a caption to back arrow (add functionality to back arrow)
 
 ***CONCEPT A ONLY***
@@ -59,9 +61,9 @@ https://www.figma.com/file/ULhJr1isDstRbGE5vjYDsr/Add-images-structured-task-Gro
 
 ### **Submitted page**
 
-- [ ] Add animation to first show the article before then loading the modal and message
-- [ ] Show a different message depending on whether the user has accepted or rejected the image
-- [ ] Do not show 'Close to edit again' CTA in the drawer when coming from Reject flow.
+- [ ] 👷 Add animation to first show the article before then loading the modal and message
+- [ ] 👷 Show a different message depending on whether the user has accepted or rejected the image
+- [ ] 👷 Do not show 'Close to edit again' CTA in the drawer when coming from Reject flow.
 
 ### **Reject overlay**
 
