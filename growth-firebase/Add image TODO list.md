@@ -4,6 +4,7 @@ This task list shows items to be done to complete the prototypes for user testin
 **Last updated: Aug 11,2021**
 
 👷 = Growth engineers will work on it
+🔧 = Rita hacking on it
 
 **Concept A vs B**
 ------------------
@@ -23,8 +24,8 @@ https://www.figma.com/file/ULhJr1isDstRbGE5vjYDsr/Add-images-structured-task-Gro
 - [x] Fix prev/next button actions
 - [x] 👷 Add swipe gesture
 
-- [ ] Add topic filter modal (low prio)
-- [ ] Add task filter modal (low prio)
+- [ ] 🔧 Add topic filter modal (low prio)
+- [ ] 🔧 Add task filter modal (low prio)
 
 ***CONCEPT A ONLY****
 
@@ -57,7 +58,7 @@ https://www.figma.com/file/ULhJr1isDstRbGE5vjYDsr/Add-images-structured-task-Gro
 
 ### **Preview page**
 - [x] tapping back goes back to edit.html
-- [ ] tapping back goes back to edit.html with caption step remembered (low-prio) 
+- [ ] tapping back goes back to edit.html with caption step remembered (low-prio)
 
 
 ***CONCEPT A ONLY***
