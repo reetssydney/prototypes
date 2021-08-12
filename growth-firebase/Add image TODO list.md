@@ -39,7 +39,7 @@ https://www.figma.com/file/ULhJr1isDstRbGE5vjYDsr/Add-images-structured-task-Gro
 - [x] Add functionality to open the image in full-screen
 - [x] Add functionality to open the file in new tab
 - [ ] 👷 Add onboarding 'guided tour' (style used in Concept B) for making the edit
-- [ ] Fix zooming too far in and lack of sticky header when adding caption (iOS device)
+- [x] Fix zooming too far in and lack of sticky header when adding caption (iOS device)
 - [ ] Add onboarding for the caption
 - [x] remove help icon from the inspector (maybe add chevron instead)
 - ~~[ ] Skip action (low prio)~~
