@@ -95,6 +95,12 @@ function checkInput() {
 	}
 }
 
+function animateClass(className) {
+  setTimeout(() => {
+    $('.' + className).removeClass(className + '-pre').addClass(className + '-ready');
+  }, 500);
+}
+
 $(document).ready(function() {
 
 	getLocation();

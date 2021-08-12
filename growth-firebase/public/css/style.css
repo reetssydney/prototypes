@@ -856,9 +856,7 @@ font-weight: bold;
   width: 100%;
   box-shadow: 0px -1px 0px #C8CCD1, 0px -2px 2px rgba(0, 0, 0, 0.1);
   position: fixed;
-  bottom: 0;
   background-color: #fff;
-  transition: all 500ms ease;
 }
 
 #bottom-sheet.minimise {
@@ -868,6 +866,17 @@ font-weight: bold;
 #bottom-sheet.hide {
   transform: translateY(100%);
   box-shadow: none;
+}
+
+.se-inspector-pre,
+.postSubmitContainer-pre {
+  bottom:  -100%;
+}
+
+.se-inspector-ready,
+.postSubmitContainer-ready {
+  bottom: 0;
+  transition: all 500ms ease;
 }
 
 .se-inspector-header {
@@ -1171,22 +1180,30 @@ background-color: #EAECF0;
 }
 
 .drawerScrim{
-position: fixed; /* Stay in place */
-z-index: 1; /* Sit on top */
-left: 0;
-top: 0;
-width: 100%; /* Full width */
-height: 100%; /* Full height */
-overflow: auto; /* Enable scroll if needed */
-background-color: rgb(0,0,0); /* Fallback color */
-background-color: rgba(0,0,0,0.2); /* Black w/ opacity */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.2); /* Black w/ opacity */
+}
+
+.drawerScrim-pre {
+  opacity: 0;
+}
+
+.drawerScrim-ready {
+  opacity: 1;
+  transition:  opacity 500ms ease;
 }
 
 /* Modal Content/Box */
 .postSubmitContainer {
   padding: 0;
   position: absolute;
-  bottom: 0;
   width:100%;
 }
 

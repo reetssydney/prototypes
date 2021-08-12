@@ -34,8 +34,8 @@
     <p id="imgCaption"></p>
     <p id="text"></p>
   </div>
-  <div class="drawerScrim">
-    <div class="postSubmitContainer">
+  <div class="drawerScrim drawerScrim-pre">
+    <div class="postSubmitContainer postSubmitContainer-pre">
       <div class="toastMessage">You’ve published an edit. Thanks and keep going!</div>
       <div class="postSubmitDrawer">
         <h3 id="drawerHeader">Edit another article</h3>
@@ -60,6 +60,12 @@
   </script>
   <script src="js/data.js"></script>
   <script src="js/app.js"></script>
+  <script type="text/javascript">
+    $(document).ready(() => {
+      animateClass('drawerScrim');
+      animateClass('postSubmitContainer');
+    });
+  </script>
 
 </body>
 </html>

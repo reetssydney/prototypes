@@ -25,7 +25,7 @@
     <div id="text"></div>
     <div id="form-container"></div>
   </div>
-  <div id="bottom-sheet">
+  <div id="bottom-sheet" class="se-inspector se-inspector-pre">
     <div class="se-inspector-header"  onclick="handleToggleInspector()">
       <button class="icon"><img src="img/icon/robot.svg" /></button>
       <h2>1 suggested image found</h2>
@@ -34,10 +34,10 @@
     <div class="se-inspector-content">
       <p id="suggestion_reason"></p>
       <div id="image-info-wrapper">
-        <a id="openFullscreenImg"><div>
+        <a id="openFullscreenImg">
           <div id="imgFile" class="inspector-image"></div>
           <span><img src="img/icon/fullScreen.svg" /></span>
-        </div></a>
+        </a>
         <div class="inspector-imgMetadata">
           <a id="openFilepage" target="_blank"><div id="imgName"></div></a>
           <p id="imgDescription"></p>
@@ -156,6 +156,11 @@
   </script>
   <script src="js/data.js"></script>
   <script src="js/app.js"></script>
+  <script type="text/javascript">
+    $(document).ready(() => {
+      animateClass('se-inspector');
+    });
+  </script>
 
 </body>
 </html>
