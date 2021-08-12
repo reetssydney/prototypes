@@ -25,8 +25,8 @@ https://www.figma.com/file/ULhJr1isDstRbGE5vjYDsr/Add-images-structured-task-Gro
 - [x] 👷 Add swipe gesture
 - [x] Add same swipe animation when prev/next buttons are tapped (low prio)
 
-- [ ] 🔧 Add topic filter modal (low prio)
-- [ ] 🔧 Add task filter modal (low prio)
+- [x] Add topic filter modal (low prio)
+- [x] Add task filter modal (low prio)
 
 ***CONCEPT A ONLY****
 

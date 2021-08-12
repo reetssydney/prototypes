@@ -16,7 +16,7 @@
   </header>
   <div class="suggested-edits-filters">
     <button id="topic-filter" class="fake-dropdown-btn"><img src="img/icon/funnel.svg" /><span class="dropdown-text">All topics</span></button>
-    <button id="tasks-filter" class="fake-dropdown-btn"><img src="img/icon/Levels-Mixed.svg" /><span class="dropdown-text">Easy, Medium &nbsp;</span></button>
+    <button id="difficulty-filter" class="fake-dropdown-btn"><img src="img/icon/Levels-Mixed.svg" /><span class="dropdown-text">Easy, Medium &nbsp;</span></button>
   </div>
   <div id="suggested-edits-module-wrapper">
     <div id="se_count"></div>
@@ -58,8 +58,228 @@
     <button id="prev" onclick="handleTraverseSuggestions('prevTitleID')" class="icon"><img src="img/icon/arrowPrevious.svg" /></button>
     <a id="edit" href=""><button class="ooui-btn primary-progressive"><img src="img/icon/edit-white.svg" />&nbsp;&nbsp;Edit</button></a>
     <button id="next" onclick="handleTraverseSuggestions('nextTitleID')" class="icon"><img src="img/icon/arrowNext.svg" /></button>
-
   </footer>
+
+  <div id="topicFilter_fullModal" class="modal">
+    <!-- Modal content -->
+    <div class="fullModal-content">
+      <header class="overlay-header">
+        <button class="icon closeFullModal"><img src="img/icon/close.svg" /></button>
+        <h1>Select interest</h1>
+        <button class="closeFullModal primary-progressive headerbtn">Done</button>
+      </header>
+      <div class="mobilePageWrapper">
+        <h4>Choose some topics you are interested in editing</h4>
+        <p>We'll try to suggest articles that match your interests.</p>
+
+        <div class="topicGroup">
+          <div class="topicGroupHeader">
+            <h4>Culture</h4>
+            <button>Select all</button>
+          </div>
+          <div class="topicGroupTopics">
+            <div class="selectChip">
+              <label>Architecture</label>
+            </div>
+            <div class="selectChip">
+              <label>Art</label>
+            </div>
+            <div class="selectChip">
+              <label>Comics and anime</label>
+            </div>
+            <div class="selectChip">
+              <label>Entertainment</label>
+            </div>
+            <div class="selectChip">
+              <label>Fashion</label>
+            </div>
+            <div class="selectChip">
+              <label>Literature</label>
+            </div>
+            <div class="selectChip">
+              <label>Music</label>
+            </div>
+            <div class="selectChip">
+              <label>Performing arts</label>
+            </div>
+            <div class="selectChip">
+              <label>Sports</label>
+            </div>
+            <div class="selectChip">
+              <label>TV and film</label>
+            </div>
+            <div class="selectChip">
+              <label>Video games</label>
+            </div>
+          </div>
+        </div>
+        <div class="topicGroup">
+          <div class="topicGroupHeader">
+            <h4>History and Society</h4>
+            <button>Select all</button>
+          </div>
+          <div class="topicGroupTopics">
+            <div class="selectChip">
+              <label>Biography (all)</label>
+            </div>
+            <div class="selectChip">
+              <label>Biography(women)</label>
+            </div>
+            <div class="selectChip">
+              <label>Business and economics</label>
+            </div>
+            <div class="selectChip">
+              <label>Education</label>
+            </div>
+            <div class="selectChip">
+              <label>Food and drink</label>
+            </div>
+            <div class="selectChip">
+              <label>History</label>
+            </div>
+            <div class="selectChip">
+              <label>Military and warfare</label>
+            </div>
+            <div class="selectChip">
+              <label>Philosphy and religion</label>
+            </div>
+            <div class="selectChip">
+              <label>Politics and government</label>
+            </div>
+            <div class="selectChip">
+              <label>Society</label>
+            </div>
+            <div class="selectChip">
+              <label>Transportation</label>
+            </div>
+          </div>
+        </div>
+        <div class="topicGroup">
+          <div class="topicGroupHeader">
+            <h4>Science, Technology, and Math</h4>
+            <button>Select all</button>
+          </div>
+          <div class="topicGroupTopics">
+            <div class="selectChip">
+              <label>Biology</label>
+            </div>
+            <div class="selectChip">
+              <label>Chemistry</label>
+            </div>
+            <div class="selectChip">
+              <label>Computers and internet</label>
+            </div>
+            <div class="selectChip">
+              <label>Earth and environment</label>
+            </div>
+            <div class="selectChip">
+              <label>Engineering</label>
+            </div>
+            <div class="selectChip">
+              <label>General science</label>
+            </div>
+            <div class="selectChip">
+              <label>Mathematics</label>
+            </div>
+            <div class="selectChip">
+              <label>Medicine and health</label>
+            </div>
+            <div class="selectChip">
+              <label>Physics</label>
+            </div>
+            <div class="selectChip">
+              <label>Technology</label>
+            </div>
+          </div>
+        </div>
+        <div class="topicGroup">
+          <div class="topicGroupHeader">
+            <h4>Regions</h4>
+            <button>Select all</button>
+          </div>
+          <div class="topicGroupTopics">
+            <div class="selectChip">
+              <label>Africa</label>
+            </div>
+            <div class="selectChip">
+              <label>Asia</label>
+            </div>
+            <div class="selectChip">
+              <label>Cental America</label>
+            </div>
+            <div class="selectChip">
+              <label>Europe</label>
+            </div>
+            <div class="selectChip">
+              <label>North America</label>
+            </div>
+            <div class="selectChip">
+              <label>Oceania</label>
+            </div>
+            <div class="selectChip">
+              <label>South America</label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="fullModalFooter">
+        <img src="img/icon/live-green.svg" style="margin-bottom:-4px;"/><span>&nbsp &nbsp <b>6</b> articles found</span>
+      </div>
+    </div>
+  </div>
+
+  <div id="difficultyFilter_fullModal" class="modal">
+    <!-- Modal content -->
+    <div class="fullModal-content">
+      <header class="overlay-header">
+        <button class="icon closeDifficultyFullModal"><img src="img/icon/close.svg" /></button>
+        <h1>Select types of edits</h1>
+        <button class="closeDifficultyFullModal primary-progressive headerbtn">Done</button>
+      </header>
+      <div class="mobilePageWrapper">
+        <div class="taskDifficultyGroup">
+          <h4 class="easy">Easy</h4>
+          <p><strong>Recommended for when you are first learning to edit.</strong></p>
+          <div class="checkboxGroup">
+            <input type="checkbox" class="ooui-checkbox" id="task1" value="copyedit" checked>
+            <label for="task1">Copyedit (fix spelling, grammar, and tone)</label>
+            <input type="checkbox" class="ooui-checkbox" id="task2" value="addLinks" checked>
+            <label for="task2">Add links between articles</label>
+            <span class="fieldHelpText"><img src="img/icon/robot-16px-Base20.svg"/>&nbsp;&nbsp;Machine suggestions</span>
+          </div>
+        </div>
+        <div class="taskDifficultyGroup">
+          <h4 class="medium">Medium</h4>
+          <p><strong>After you have completed some easy edits.</strong></p>
+          <div class="checkboxGroup">
+            <input type="checkbox" class="ooui-checkbox" id="task3" value="addImage"  checked>
+            <label for="task3">Add an image</label>
+            <span class="fieldHelpText"><img src="img/icon/robot-16px-Base20.svg"/>&nbsp;&nbsp;Machine suggestions</span>
+            <input type="checkbox" class="ooui-checkbox" id="task4" value="findRefs">
+            <label for="task4">Find references (sources for existing articles)</label>
+            <input type="checkbox" class="ooui-checkbox" id="task5" value="updatePages">
+            <label for="task5">Update articles (bring existing articles up-to-date)</label>
+          </div>
+        </div>
+        <div class="taskDifficultyGroup">
+          <h4 class="hard">Hard</h4>
+          <p><strong>When you have learned about Wikipedia best practices.</strong></p>
+          <div class="checkboxGroup">
+            <input type="checkbox" class="ooui-checkbox" id="task6" value="expand">
+            <label for="task6">Expand short articles</label>
+            <input type="checkbox" class="ooui-checkbox" id="task7" value="newPage" disabled>
+            <label for="task7" style="opacity:.6">Create a new article</label>
+            <span class="fieldHelpText">It’s recommended that you try a few hard tasks first before attempting a new article. <u>Learn more</u> about writing a new missing article here.</span>
+          </div>
+        </div>
+      </div>
+      <div class="fullModalFooter">
+        <img src="img/icon/live-green.svg" style="margin-bottom:-4px;"/><span>&nbsp &nbsp <b>6</b> articles found</span>
+      </div>
+    </div>
+  </div>
+
+
   <script
     src="https://code.jquery.com/jquery-3.6.0.min.js"
     integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
@@ -93,6 +313,55 @@
         $('#info_Drawer').removeClass('showDrawer');
       }
     }
+
+    // Pop-up MODALs
+    // Get the Topic filter modal
+    var topicFullModal = document.getElementById("topicFilter_fullModal");
+
+    // Get the button that opens the modal
+    var topicsBtn = document.getElementById("topic-filter");
+
+    // Get the <span> element that closes the modal
+    var spanTopicFilter1 = document.getElementsByClassName("closeFullModal")[0];
+    var spanTopicFilter2 = document.getElementsByClassName("closeFullModal")[1];
+
+    // When the user clicks on the button, open the modal
+      topicsBtn.onclick = function() {
+      topicFullModal.style.display = "block";
+    }
+
+    // When the user clicks on <span> (x), close the drawer
+    spanTopicFilter1.onclick = function() {
+      topicFullModal.style.display = "none";
+    }
+    spanTopicFilter2.onclick = function() {
+      topicFullModal.style.display = "none";
+    }
+
+
+    // Get the Difficulty filter modal
+    var difficultyFullModal = document.getElementById("difficultyFilter_fullModal");
+
+    // Get the button that opens the modal
+    var difficultyBtn = document.getElementById("difficulty-filter");
+
+    // Get the <span> element that closes the modal
+    var spanDifficultFilter1 = document.getElementsByClassName("closeDifficultyFullModal")[0];
+    var spanDifficultFilter2 = document.getElementsByClassName("closeDifficultyFullModal")[1];
+
+    // When the user clicks on the button, open the modal
+      difficultyBtn.onclick = function() {
+      difficultyFullModal.style.display = "block";
+    }
+
+    // When the user clicks on <span> (x), close the drawer
+    spanDifficultFilter1.onclick = function() {
+      difficultyFullModal.style.display = "none";
+    }
+    spanDifficultFilter2.onclick = function() {
+      difficultyFullModal.style.display = "none";
+    }
+
   </script>
   <script src="js/data.js"></script>
   <script src="js/app.js"></script>

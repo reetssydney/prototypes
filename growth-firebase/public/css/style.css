@@ -76,7 +76,9 @@ a.destructive {
   background-color: transparent;
   border:none;
   margin-right:-12px;
+  font-weight: bold;
 }
+
 
 button.icon{
   width: 20px;
@@ -171,6 +173,15 @@ input.ooui-checkbox:checked + label::after {
   left: 6px;
   top:9px;
   content: url(../img/icon/checkedbox.svg);
+}
+
+
+.fieldHelpText {
+  font-size: 13px;
+  color:#54595d;
+  line-height: 1.5;
+  padding-left: 36px;
+  margin: -4px 0 4px;
 }
 
 /************======== GENERAL LAYOUTS AND PATTERNS ========************/
@@ -568,6 +579,84 @@ opacity: .71;
   justify-content: center;
 }
 
+/******* Filters Full modal *****/
+.topicGroupHeader {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: center;
+}
+.topicGroupHeader button {
+  color:#36c;
+  border:none;
+  background: transparent;
+  font-weight: bold;
+}
+
+.topicGroupTopics{
+  margin: 0 0 16px 0;
+}
+
+.selectChip {
+  display: inline-block;
+  transition: color 100ms;
+  background-color: #f8f9fa;
+  border: 1px solid #a2a9b1;
+  color: #202122;
+  cursor: pointer;
+  padding: 6px 20px;
+  border-radius: 18px;
+  white-space: nowrap;
+  margin-right: 0.25em;
+  margin-bottom: 0.5em;
+}
+
+.selectChip label {
+  animation:slideRight 0.2s;
+}
+
+.taskDifficultyGroup {
+  margin-bottom:16px;
+}
+
+.taskDifficultyGroup h4 {
+  position: relative;
+  padding-left: 28px;
+}
+
+h4.easy, p.easy, span.easy {
+  color: #14866D;
+}
+
+h4.medium, p.medium, span.medium {
+  color: #AC6600;
+}
+
+h4.hard, p.hard, span.hard {
+  color: #B32424;
+}
+
+h4.easy::before{
+  content:url(../img/icon/Levels-Easy.svg);
+  position: absolute;
+  left: 0;
+  top: 6px;
+}
+
+h4.medium::before{
+  content:url(../img/icon/Levels-Med.svg);
+  position: absolute;
+  left: 0;
+  top: 6px;
+}
+
+h4.hard::before{
+  content:url(../img/icon/Levels-Hard.svg);
+  position: absolute;
+  left: 0;
+  top: 6px;
+}
+
 /******* POPUPs CSS *******/
 /* The Modal (background) */
 .drawer, .modal {
@@ -620,36 +709,30 @@ opacity: .71;
   overflow: hidden;
 }
 
-.modal-content > div {
-  padding:16px 16px 64px;
-  max-height: 280px;
-  overflow: scroll;
-}
-
-.modal-content h4 {
-  padding:0 0 16px;
-}
-
 .modal-content p {
   padding:0;
   font-size: 13px;
   line-height: 1.5;
 }
 
-.modal-content p:nth-child(4), .modal-content p:nth-child(7) {
-  padding-bottom: 8px;
+
+.fullModal-content {
+  background-color: #fff;
+  padding: 0;
+  position: absolute;
+  top:0;
+  left:0;
+  width:100%;
+  min-height: 100%;
 }
 
-.modal-content p:last-child {
-  margin-top:16px;
-  padding-top: 4px;
-  font-style: italic;
-  border-top:1px solid #eaecf0;
-}
-
-
-.modal-content .metadataLabel {
-  font-weight: bold;
+.fullModalFooter {
+  background-color: #fff;
+  padding:12px 16px 16px;
+  border-top:1px solid #c8ccd1;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
 }
 
 /* The Close Button */
@@ -779,7 +862,7 @@ font-weight: bold;
 }
 
 #bottom-sheet.minimise {
-  transform: translateY(calc(100% - 48px));
+  transform: translateY(calc(100% - 44px));
 }
 
 #bottom-sheet.hide {
@@ -910,6 +993,33 @@ display: block;
 
 #captionHelperInfo #imgCommonsCategories::before {
   content: 'Tags: ';
+  font-weight: bold;
+}
+
+
+#imageDetails {
+  padding:16px 16px 64px;
+  max-height: 280px;
+  overflow: scroll;
+}
+
+#imageDetails h4 {
+  padding:0 0 16px;
+}
+
+#imageDetails p:nth-child(4), #imageDetails p:nth-child(7) {
+  padding-bottom: 8px;
+}
+
+#imageDetails p:last-child {
+  margin-top:16px;
+  padding-top: 4px;
+  font-style: italic;
+  border-top:1px solid #eaecf0;
+}
+
+
+#imageDetails .metadataLabel {
   font-weight: bold;
 }
 
