@@ -374,7 +374,7 @@ opacity: .71;
 }
 
 #suggested-edits-module-wrapper {
-  padding:32px 16px 48px;
+  padding:24px 16px 48px;
   display: flex;
   flex-direction: column;
   align-items: center;
