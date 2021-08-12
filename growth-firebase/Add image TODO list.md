@@ -67,7 +67,7 @@ https://www.figma.com/file/ULhJr1isDstRbGE5vjYDsr/Add-images-structured-task-Gro
 
 ### **Submitted page**
 
-- [ ] 👷 Add animation to first show the article before then loading the modal and message
+- [x] 👷 Add animation to first show the article before then loading the modal and message
 - [ ] 👷 Show a different message depending on whether the user has accepted or rejected the image
 - [ ] 👷 Do not show 'Close to edit again' CTA in the drawer when coming from Reject flow.
 
