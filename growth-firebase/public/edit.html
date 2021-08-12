@@ -11,7 +11,10 @@
 <body>
   <header class="overlay-header">
     <a id="close" href=""><button class="icon"><img src="img/icon/close.svg" /></button></a>
-    <h1>Suggestions mode</h1>
+    <h1 class="header-suggestions">Suggestions mode</h1>
+    <div class="header-loading hidden">
+      Loading image preview...
+    </div>
     <button class="fake-dropdown-btn"><img src="img/icon/edit.svg" /></button>
     <a id="next" class="hide" onclick="handleAddComment()" href=""><button class="icon primary disabled"><img src="img/icon/next-white.svg" /></button></a>
   </header>
@@ -19,8 +22,15 @@
   <h2 id="title" class="articleTitle"></h2>
   <div id="article-container" class="mobilePageWrapper">
     <!--Start hidden until image is added-->
-    <div class="ButtonOverImage" id="openDrawer"></div>
-    <div class="overImage"></div>
+    <div class="ButtonOverImage" id="openDrawer">
+      <div class="placedImage-loading"></div>
+    </div>
+    <div class="overImage hidden">
+      <img src="img/icon/robot.svg" width="16px" height="16px" class="margin8left" />
+      <p id="caption">Add caption below</p>
+      <img id="openPopUp2" src="img/icon/info-inverse.svg" />
+      <textarea id="caption-input" placeholder="Write a short caption here to help explain why the image is relevant to the article..." oninput="checkInput()"></textarea>
+    </div>
     <!-- End hidden content until image is added -->
     <div id="text"></div>
     <div id="form-container"></div>
@@ -155,6 +165,7 @@
     }
   </script>
   <script src="js/data.js"></script>
+  <script src="js/messages.js"></script>
   <script src="js/app.js"></script>
   <script src="js/user-state.js"></script>
   <script type="text/javascript">

@@ -104,6 +104,22 @@ button.icon.primary.disabled {
   box-shadow: 0 0 0 16px #C8CCD1;
 }
 
+.header-loading {
+  flex-grow: 10;
+  display: flex;
+  align-items: center;
+}
+
+.header-loading::before {
+  content: ' ';
+  background-image: url(../img/icon/spinner.gif);
+  width:  20px;
+  height: 20px;
+  display: inline-block;
+  background-size: contain;
+  margin-right: 8px;
+}
+
 .fake-dropdown-btn {
   height: 48px;
   margin: 0;
@@ -182,6 +198,14 @@ input.ooui-checkbox:checked + label::after {
   line-height: 1.5;
   padding-left: 36px;
   margin: -4px 0 4px;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.transparent {
+  opacity: 0 !important;
 }
 
 /************======== GENERAL LAYOUTS AND PATTERNS ========************/
@@ -784,6 +808,17 @@ h4.hard::before{
   padding: 8px 0;
   margin: 0 0 16px;
   border-bottom: 1px solid #eaecf0;
+}
+
+.placedImage-loading {
+  position: absolute;
+  top:  0;
+  bottom:  0;
+  left:  0;
+  right:  0;
+  background:  #eaecf0;
+  opacity: 1;
+  transition: opacity 500ms ease;
 }
 
 .placedImage {

@@ -47,7 +47,7 @@ https://www.figma.com/file/ULhJr1isDstRbGE5vjYDsr/Add-images-structured-task-Gro
 ***CONCEPT B ONLY***
 
 - [x] More image info bottom sheet for captions
-- [ ] 👷 Interstitial 'Loading image...' screen
+- [x] 👷 Interstitial 'Loading image...' screen
 - [ ] Change header when adding a caption to back arrow (add functionality to back arrow)
 
 ***CONCEPT A ONLY***

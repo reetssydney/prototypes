@@ -49,17 +49,35 @@ function updateHtml(page, hash) {
 		}
 }
 
+function showImageLoadingState() {
+	const promise = $.Deferred();
+	$('html, body').animate({ scrollTop: 0 });
+	$('#bottom-sheet').css('bottom', '-100%');
+	$('.header-suggestions').addClass('hidden');
+	$('.header-loading').removeClass('hidden');
+
+	setTimeout(function() {
+		$('.placedImage-loading').addClass('transparent');
+		$('.header-suggestions').text(getMessage('header-add-caption')).removeClass('hidden');
+		$('.header-loading').addClass('hidden');
+		promise.resolve();
+	}, 800);
+
+	return promise;
+}
+
 // move image and add input
 function handleImageSelection() {
 	$('.ButtonOverImage').prepend(
 		$('#imgFile img').addClass('placedImage')
 	);
-	$('.overImage').prepend(
-		'<img src="img/icon/robot.svg" width="16px" height="16px" class="margin8left" /><p id="caption">Add caption below</p><img id="openPopUp2" src="img/icon/info-inverse.svg" /><textarea id="caption-input" placeholder="Write a short caption here to help explain why the image is relevant to the article..." oninput="checkInput()"></textarea>'
-	);
-	$('#caption-input').focus();
-	$('#bottom-sheet').hide();
-	$('#next').removeClass('hide');
+
+	showImageLoadingState().then(() => {
+		$('.overImage').removeClass('hidden');
+		$('#caption-input').focus();
+		$('#bottom-sheet').hide();
+		$('#next').removeClass('hide');
+	});
 }
 
 // add comment to local storage
