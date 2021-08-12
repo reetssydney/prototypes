@@ -601,7 +601,7 @@ opacity: .71;
   position: absolute;
   top:calc(50vh - 160px);
   left:32px;
-  width:calc(100vw - 64px);
+  width:calc(100vw - 72px);
   overflow: hidden;
 }
 
@@ -689,7 +689,7 @@ opacity: .71;
 }
 
 .placedImage {
-  width: calc(100vw - 32px);
+  width: calc(100vw - 48px);
   text-align: center;
   display: block
 }

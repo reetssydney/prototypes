@@ -65,6 +65,34 @@
     integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
     crossorigin="anonymous">
   </script>
+  <script>
+    // Pop-up drawer style
+    // Get the drawer
+    var drawer = document.getElementById("PopUp_Drawer");
+
+    // Get the button that opens the drawer
+    var popUpBtn = document.getElementById("openPopUp");
+
+    // Get the <span> element that closes the drawer
+    var span = document.getElementsByClassName("closeDrawer")[0];
+
+    // When the user clicks on the button, open the drawer
+    popUpBtn.onclick = function() {
+      drawer.style.display = "block";
+    }
+
+    // When the user clicks on <span> (x), close the drawer
+    span.onclick = function() {
+      drawer.style.display = "none";
+    }
+
+    // When the user clicks anywhere outside of the drawer, close it
+    window.onclick = function(event) {
+      if (event.target == drawer) {
+        drawer.style.display = "none";
+      }
+    }
+  </script>
   <script src="js/data.js"></script>
   <script src="js/app.js"></script>
   <script src="js/suggested-edits.js"></script>

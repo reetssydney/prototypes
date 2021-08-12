@@ -123,4 +123,3 @@ $(document).ready(function() {
   swipeCard.setToStartHandler(getSwipeHandler(true));
   swipeCard.setToEndHandler(getSwipeHandler(false));
 });
-

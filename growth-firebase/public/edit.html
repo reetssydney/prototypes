@@ -18,8 +18,10 @@
 
   <h2 id="title" class="articleTitle"></h2>
   <div id="article-container" class="mobilePageWrapper">
-    <div class="ButtonOverImage" id="openPopUp"></div>
+    <!--Start hidden until image is added-->
+    <div class="ButtonOverImage" id="openDrawer"></div>
     <div class="overImage"></div>
+    <!-- End hidden content until image is added -->
     <div id="text"></div>
     <div id="form-container"></div>
   </div>
@@ -51,7 +53,7 @@
     </div>
   </div>
 
-  <div id="PopUp_Drawer" class="drawer">
+  <div id="ImageDeets_Drawer" class="drawer">
     <!-- Drawer content -->
     <div class="drawer-content">
       <span class="closeDrawer">&nbsp</span>
@@ -85,6 +87,73 @@
     src="https://code.jquery.com/jquery-3.6.0.min.js"
     integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
     crossorigin="anonymous">
+  </script>
+  <script>
+    // Pop-up drawer style
+    // Get the drawer
+    var drawer = document.getElementById("ImageDeets_Drawer");
+
+    // Get the button that opens the drawer
+    var drawerBtn = document.getElementById("openDrawer");
+
+    // Get the <span> element that closes the drawer
+    var span = document.getElementsByClassName("closeDrawer")[0];
+
+    // When the user clicks on the button, open the drawer
+    drawerBtn.onclick = function() {
+      drawer.style.display = "block";
+      $('.ButtonOverImage').addClass('ImgSelected');
+      $('#captionHelperInfo').append(
+        $('#imgName'),
+        $('#imgDescription'),
+        $('#imgCommonsCaption'),
+        $('#imgDate'),
+        $('#imgCommonsCategories'),
+      );
+    }
+
+    // When the user clicks on <span> (x), close the drawer
+    span.onclick = function() {
+      drawer.style.display = "none";
+      $('.ButtonOverImage').removeClass('ImgSelected');
+      $('#caption-input').focus();
+    }
+
+    // When the user clicks anywhere outside of the drawer, close it
+    window.onclick = function(event) {
+      if (event.target == drawer) {
+        drawer.style.display = "none";
+      }
+    }
+
+    // Pop-up MODAL style
+    // Get the modal
+    var modal = document.getElementById("PopUp_Modal");
+
+    // Get the button that opens the modal
+    var moreBtn = document.getElementById("openPopUpModal");
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("closeModal")[0];
+
+    // When the user clicks on the button, open the modal
+
+    moreBtn.onclick = function() {
+      modal.style.display = "block";
+    }
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+      modal.style.display = "none";
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+
   </script>
   <script src="js/data.js"></script>
   <script src="js/app.js"></script>
