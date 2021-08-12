@@ -36,13 +36,13 @@
       </div>
     </div>
     <div class="se-task-explanation-wrapper">
-       <div class="se-taskname">Add an image <span class="icon" id="openPopUp"><img src="img/icon/info.svg" /></span></div>
+       <div class="se-taskname">Add an image <span class="icon" id="openInfoDrawer"><img src="img/icon/info.svg" /></span></div>
        <div class="se-task-difficulty-and-time structured medium"><span class="medium">MEDIUM</span>3 - 5 minutes</div>
        <div class="se-task-short-description">Evaluate whether a machine-suggested image should be used on this article.</div>
      </div>
   </div>
 
-  <div id="PopUp_Drawer" class="drawer">
+  <div id="info_Drawer" class="drawer">
     <!-- Drawer content -->
     <div class="drawer-content">
       <span class="closeDrawer">&times;</span>
@@ -68,28 +68,29 @@
   <script>
     // Pop-up drawer style
     // Get the drawer
-    var drawer = document.getElementById("PopUp_Drawer");
+    var drawer = document.getElementById("info_Drawer");
 
     // Get the button that opens the drawer
-    var popUpBtn = document.getElementById("openPopUp");
+    var popUpBtn = document.getElementById("openInfoDrawer");
 
     // Get the <span> element that closes the drawer
     var span = document.getElementsByClassName("closeDrawer")[0];
 
     // When the user clicks on the button, open the drawer
     popUpBtn.onclick = function() {
-      drawer.style.display = "block";
+      // drawer.style.display = "block"; //
+      $('#info_Drawer').addClass('showDrawer');
     }
 
     // When the user clicks on <span> (x), close the drawer
     span.onclick = function() {
-      drawer.style.display = "none";
+      $('#info_Drawer').removeClass('showDrawer');
     }
 
     // When the user clicks anywhere outside of the drawer, close it
     window.onclick = function(event) {
       if (event.target == drawer) {
-        drawer.style.display = "none";
+        $('#info_Drawer').removeClass('showDrawer');
       }
     }
   </script>

@@ -192,12 +192,12 @@ input.ooui-checkbox:checked + label::after {
 }
 
 .minerva-header {
-  width: calc(100% - 16px);
+  width: 100%;
   background-color: #eaecf0;
   display:flex;
   flex-direction: row;
   align-items: center;
-  padding: 0px 16px 0 0;
+  padding: 0;
   height: 56px;
   left: 0px;
   right: 0px;
@@ -343,6 +343,7 @@ opacity: .71;
   background: linear-gradient(0deg, rgba(234, 243, 255, 0.5), rgba(234, 243, 255, 0.5)), #FFFFFF;
   margin:0;
   padding: 0;
+  overflow: hidden;
 }
 
 .suggested-edits-filters {
@@ -580,6 +581,20 @@ opacity: .71;
   overflow: auto; /* Enable scroll if needed */
   background-color: rgb(0,0,0); /* Fallback color */
   background-color: rgba(0,0,0,0.2); /* Black w/ opacity */
+}
+
+.showDrawer {
+  display:block;
+  overflow: hidden;
+}
+
+.showDrawer .drawer-content {
+  animation: slideUpDrawer 500ms;
+}
+
+@keyframes slideUpDrawer {
+    from { bottom: -500px; }
+      to { bottom: 0px; }
 }
 
 
@@ -1073,7 +1088,7 @@ background-color: rgba(0,0,0,0.2); /* Black w/ opacity */
   margin: 0 16px 16px;
   position: relative;
   bottom:0;
-  width: calc(100vw - 66px);
+  width: calc(100vw - 78px);
   }
 
 .postSubmitDrawer {
@@ -1090,7 +1105,7 @@ background-color: rgba(0,0,0,0.2); /* Black w/ opacity */
   margin:0 16px;
   padding: 0 0 8px;
   position: relative;
-  width:calc(100vw - 32px);
+  width:calc(100vw - 48px);
 }
 
 .postSubmitDrawer h3::after {
