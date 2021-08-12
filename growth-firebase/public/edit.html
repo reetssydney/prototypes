@@ -47,8 +47,8 @@
     </div>
     <div class="se-inspector-question">Add this image to the start of the article?</div>
     <div class="se-inspector-actions">
-      <button class="ooui-btn" onclick="handleImageSelection()"><img src="img/icon/check.svg" />&nbsp;Yes</button>
-      <a id="no" class="flexgrow" href=""><button class="ooui-btn margin8left"><img src="img/icon/close.svg" />&nbsp;No</button></a>
+      <button class="ooui-btn accept-button" onclick="handleImageSelection()"><img src="img/icon/check.svg" />&nbsp;Yes</button>
+      <a id="no" class="flexgrow" href=""><button class="ooui-btn margin8left reject-button"><img src="img/icon/close.svg" />&nbsp;No</button></a>
       <button id="skipButton" class="ooui-btn quiet-neutral">Skip</button>
     </div>
   </div>
@@ -156,9 +156,18 @@
   </script>
   <script src="js/data.js"></script>
   <script src="js/app.js"></script>
+  <script src="js/user-state.js"></script>
   <script type="text/javascript">
     $(document).ready(() => {
       animateClass('se-inspector');
+
+      $('.se-inspector-actions').on('click', '.accept-button', (e) => {
+        setSuggestionAccepted();
+      });
+
+      $('.se-inspector-actions').on('click', '.reject-button', (e) => {
+        setSuggestionRejected();
+      });
     });
   </script>
 

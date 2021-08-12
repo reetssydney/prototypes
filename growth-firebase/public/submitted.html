@@ -36,7 +36,7 @@
   </div>
   <div class="drawerScrim drawerScrim-pre">
     <div class="postSubmitContainer postSubmitContainer-pre">
-      <div class="toastMessage">You’ve published an edit. Thanks and keep going!</div>
+      <div class="toastMessage"></div>
       <div class="postSubmitDrawer">
         <h3 id="drawerHeader">Edit another article</h3>
         <a id="nextEdit" href=""><div class="se-ListItem">
@@ -48,7 +48,7 @@
           </div>
         </div></a>
         <a id="nextSE" href=""><button>View more suggested edits</button></a>
-        <button>Close to view changes (or edit again) </button>
+        <button class="postSubmit-close">Close to view changes (or edit again) </button>
       </div>
     </div>
   </div>
@@ -60,10 +60,19 @@
   </script>
   <script src="js/data.js"></script>
   <script src="js/app.js"></script>
+  <script src="js/user-state.js"></script>
+  <script src="js/messages.js"></script>
   <script type="text/javascript">
     $(document).ready(() => {
       animateClass('drawerScrim');
       animateClass('postSubmitContainer');
+
+      if (isSuggestionRejected()) {
+        $('.postSubmit-close').remove();
+        $('.toastMessage').text(getMessage('postedit-toast-reject'));
+      } else {
+        $('.toastMessage').text(getMessage('postedit-toast-accept'));
+      }
     });
   </script>
 
