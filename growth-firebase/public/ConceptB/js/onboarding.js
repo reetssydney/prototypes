@@ -104,6 +104,8 @@ function createOnboardingItem(content = {}, index) {
 function initializeOnboarding($onboardingContainer) {
   $container = $onboardingContainer;
 
+  $('.onboarding-overlay').addClass('show');
+
   const screens = [
     onboardingScreens.image,
     onboardingScreens.article,
@@ -125,6 +127,7 @@ function initializeOnboarding($onboardingContainer) {
   $container.on('click', '.onboarding-item-button-next', () => {
     if (currentIndex === endIndex || currentIndex > endIndex) {
       closeOnboarding();
+      $('.onboarding-overlay').removeClass('show');
       return;
     }
     currentIndex += 1;
@@ -134,10 +137,12 @@ function initializeOnboarding($onboardingContainer) {
   $container.on('click', '.onboarding-item-button-close', (e) => {
     e.preventDefault();
     closeOnboarding();
+    $('.onboarding-overlay').removeClass('show');
   });
 
   window.showCaptionOnboarding = () => {
     showOnboardingIndex(screens.length - 1);
+    $('.onboarding-overlay').addClass('show');
   };
 }
 
@@ -166,7 +171,7 @@ function getTopPostionValue($target, $onboadingItem, positionOptions={}) {
     // Position guidance above target
     return targetTopOffset - documentScrollTop - $onboadingItem.outerHeight() - offsetOut + offsetIn ;
   }
-  
+
 }
 
 function scrollToTarget(scrollTop, duration=400) {
