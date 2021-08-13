@@ -20,32 +20,32 @@ function updateHtml(page, hash) {
 		}
 	}
 	// add the buttons which are page dependent
-	if (page === 'newcomer_homepage.html') {
-		$('a#openSE').attr("href", `/suggested_edits.html#${hash}`);
-	} else if (page === 'suggested_edits.html') {
-		$('a#backHome').attr("href", `/newcomer_homepage.html#${hash}`);
-		$('a#edit').attr("href", `/edit.html#${hash}`);
-	} else if (page === 'edit.html') {
-		$('a#next').attr("href", `/preview.html#${hash}`);
-		$('a#no').attr("href", `/reject.html#${hash}`);
-		$('a#close').attr("href", `/suggested_edits.html#${hash}`);
-		$('a#openFullscreenImg').attr("href", `/fullscreen-image.html#${hash}`);
-		$('a#openFilepage').attr("href", `/image-filepage.html#${hash}`);
-	} else if (page === 'reject.html') {
-		$('a#back').attr("href", `/edit.html#${hash}`);
-		$('a#done').attr("href", `/submitted.html#${hash}`);
+	if (page === 'ConceptB/newcomer_homepage.html') {
+		$('a#openSE').attr("href", `/ConceptB/suggested_edits.html#${hash}`);
+	} else if (page === 'ConceptB/suggested_edits.html') {
+		$('a#backHome').attr("href", `/ConceptB/newcomer_homepage.html#${hash}`);
+		$('a#edit').attr("href", `/ConceptB/edit.html#${hash}`);
+	} else if (page === 'ConceptB/edit.html') {
+		$('a#next').attr("href", `/ConceptB/preview.html#${hash}`);
+		$('a#no').attr("href", `/ConceptB/reject.html#${hash}`);
+		$('a#close').attr("href", `/ConceptB/suggested_edits.html#${hash}`);
+		$('a#openFullscreenImg').attr("href", `/ConceptB/fullscreen-image.html#${hash}`);
+		$('a#openFilepage').attr("href", `/ConceptB/image-filepage.html#${hash}`);
+	} else if (page === 'ConceptB/reject.html') {
+		$('a#back').attr("href", `/ConceptB/edit.html#${hash}`);
+		$('a#done').attr("href", `/ConceptB/submitted.html#${hash}`);
 		$('#imgCaption').html(`${localStorage.getItem(hash)}`);
-	} else if (page === 'preview.html') {
-		$('a#back').attr("href", `/edit.html#${hash}`);
-		$('a#done').attr("href", `/submitted.html#${hash}`);
+	} else if (page === 'ConceptB/preview.html') {
+		$('a#back').attr("href", `/ConceptB/edit.html#${hash}`);
+		$('a#done').attr("href", `/ConceptB/submitted.html#${hash}`);
 		$('#imgCaption').html(`${localStorage.getItem(hash)}`);
-	} else if (page === 'submitted.html') {
-		$('a#nextEdit').attr("href", `/edit.html#${obj.nextTitleID}`);
-		$('a#nextSE').attr("href", `/suggested_edits.html#${obj.nextTitleID}`);
+	} else if (page === 'ConceptB/submitted.html') {
+		$('a#nextEdit').attr("href", `/ConceptB/edit.html#${obj.nextTitleID}`);
+		$('a#nextSE').attr("href", `/ConceptB/suggested_edits.html#${obj.nextTitleID}`);
 		$('#imgCaption').html(`${localStorage.getItem(hash)}`);
-	} else if (page === 'fullscreen-image.html') {
-			$('a#closeFullscreen').attr("href", `/edit.html#${hash}`);
-			$('a#closeFullscreenImg').attr("href", `/edit.html#${hash}`);
+	} else if (page === 'ConceptB/fullscreen-image.html') {
+			$('a#closeFullscreen').attr("href", `/ConceptB/edit.html#${hash}`);
+			$('a#closeFullscreenImg').attr("href", `/ConceptB/edit.html#${hash}`);
 		}
 }
 

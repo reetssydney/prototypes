@@ -24,10 +24,10 @@ https://www.figma.com/file/ULhJr1isDstRbGE5vjYDsr/Add-images-structured-task-Gro
 - [x] Create article card 'carousel'
 - [x] Fix prev/next button actions
 - [x] 👷 Add swipe gesture
-- [x] Add same swipe animation when prev/next buttons are tapped (low prio)
-
 - [x] Add topic filter modal (low prio)
 - [x] Add task filter modal (low prio)
+- [ ] Add same swipe animation when prev/next buttons are tapped (low prio)
+- [ ] Task info icon drawer is dismissed when tapped outside of it
 
 ***CONCEPT A ONLY****
 
@@ -41,15 +41,20 @@ https://www.figma.com/file/ULhJr1isDstRbGE5vjYDsr/Add-images-structured-task-Gro
 - [x] Add functionality to open the file in new tab
 - [x] 👷 Add onboarding 'guided tour' (style used in Concept B) for making the edit
 - [x] Fix zooming too far in and lack of sticky header when adding caption (iOS device)
-- [ ] Add onboarding for the caption
 - [x] remove help icon from the inspector (maybe add chevron instead)
+- [x] Add onboarding for the caption
+- [ ] ***[High priority]*** Update onboarding so it only appears once and does not come up again after being completed
+- [ ] Image details modal dialog (when "Read more is tapped") and Image metadata drawer (when tapping the placedImage) is dismissed when user taps outside of the modal/drawer [Low prio]
 - ~~[ ] Skip action (low prio)~~
+
 
 ***CONCEPT B ONLY***
 
 - [x] More image info bottom sheet for captions
 - [x] 👷 Interstitial 'Loading image...' screen
 - [ ] Change header when adding a caption to back arrow (add functionality to back arrow)
+- [ ] 🔧 Revise caption design so that it's clearer how to access image metadata
+
 
 ***CONCEPT A ONLY***
 
@@ -86,6 +91,6 @@ https://www.figma.com/file/ULhJr1isDstRbGE5vjYDsr/Add-images-structured-task-Gro
 **OVERALL**
 -----------
 
-- [ ] 🔧 Move Concept B prototype into a 'ConceptB_en' folder in 'Public'
+- [x] Move Concept B prototype into a 'ConceptB_en' folder in 'Public'
 - [ ] Clone and customize completed Concept B instance into Concept A (created in 'ConceptA_en' dir)
 - [ ] Clone and customize completed English Concept A & B into Spanish instances
