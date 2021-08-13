@@ -26,7 +26,7 @@ https://www.figma.com/file/ULhJr1isDstRbGE5vjYDsr/Add-images-structured-task-Gro
 - [x] 👷 Add swipe gesture
 - [x] Add topic filter modal (low prio)
 - [x] Add task filter modal (low prio)
-- [ ] ***BUG*** Wrong article is being opened when prev and next is used.
+- [ ] ***BUG*** Wrong article is being opened when prev and next is used. - see details at https://github.com/reetssydney/prototypes/issues/8
 - [ ] Add same swipe animation when prev/next buttons are tapped (low prio)
 - [ ] Task info icon drawer is dismissed when tapped outside of it
 
