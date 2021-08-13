@@ -86,6 +86,6 @@ https://www.figma.com/file/ULhJr1isDstRbGE5vjYDsr/Add-images-structured-task-Gro
 **OVERALL**
 -----------
 
-- [ ] Move Concept B prototype into a 'ConceptB_en' folder in 'Public'
+- [ ] 🔧 Move Concept B prototype into a 'ConceptB_en' folder in 'Public'
 - [ ] Clone and customize completed Concept B instance into Concept A (created in 'ConceptA_en' dir)
 - [ ] Clone and customize completed English Concept A & B into Spanish instances
