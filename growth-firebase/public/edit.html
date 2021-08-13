@@ -92,6 +92,9 @@
     </div>
   </div>
 
+  <div class="onboarding-overlay">
+  </div>
+
 
   <script
     src="https://code.jquery.com/jquery-3.6.0.min.js"
@@ -168,6 +171,7 @@
   <script src="js/messages.js"></script>
   <script src="js/app.js"></script>
   <script src="js/user-state.js"></script>
+  <script src="js/onboarding.js"></script>
   <script type="text/javascript">
     $(document).ready(() => {
       animateClass('se-inspector');
@@ -179,6 +183,11 @@
       $('.se-inspector-actions').on('click', '.reject-button', (e) => {
         setSuggestionRejected();
       });
+
+      initializeOnboarding($('.onboarding-overlay'));
+      setTimeout(() => {
+        showOnboardingIndex(0);
+      }, 1000);
     });
   </script>
 

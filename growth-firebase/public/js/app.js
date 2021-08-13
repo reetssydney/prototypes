@@ -49,6 +49,12 @@ function updateHtml(page, hash) {
 		}
 }
 
+function showCaptionGuidance() {
+	if (typeof window.showCaptionOnboarding === 'function') {
+		showCaptionOnboarding();
+	}
+}
+
 function showImageLoadingState() {
 	const promise = $.Deferred();
 	$('html, body').animate({ scrollTop: 0 });
@@ -77,6 +83,7 @@ function handleImageSelection() {
 		$('#caption-input').focus();
 		$('#bottom-sheet').hide();
 		$('#next').removeClass('hide');
+		showCaptionGuidance();
 	});
 }
 
