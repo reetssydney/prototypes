@@ -445,7 +445,7 @@ opacity: .71;
   transition: unset;
 }
 
-#se_card_image {
+.se_card_image {
   height:128px;
 /** concept A  image style
   background-color: #EAECF0;
@@ -457,7 +457,7 @@ opacity: .71;
 }
 
 /** concept A image style
-  #se-card-imgScrim {
+  .se-card-imgScrim {
     border: dashed 2px #fff;
     position: absolute;
     margin: 2px;
@@ -467,7 +467,7 @@ opacity: .71;
     border-radius: 2px 2px 0 0;
   }
 
-  #se-card-imgScrim::before {
+  .se-card-imgScrim::before {
     content: url(../img/icon/robot-in-circle-white.svg);
     position: absolute;
     top: 36px;
@@ -476,7 +476,7 @@ opacity: .71;
 **/
 
 /** concept B image style **/
-  #se-card-imgScrim {
+.se-card-imgScrim {
     position: absolute;
     margin: 0px;
     width: 256px;
@@ -486,7 +486,7 @@ opacity: .71;
     opacity: .9;
   }
 
-#se_card_image img {
+.se_card_image img {
   width: 100%;
   height: 100%;
   border-radius: 2px 2px 0px 0px;
@@ -783,7 +783,7 @@ h4.hard::before{
 
 
 /************======== EDIT PAGE ========************/
-#next.hide {
+#next.hide, .fullScreenImage.hide {
   display: none;
 }
 
@@ -1067,6 +1067,19 @@ display: block;
   font-weight: bold;
 }
 
+#fullImageModal .fullScreenImage {
+  position: absolute;
+  top:0;
+  left:0;
+  z-index: 2;
+}
+#fullImageModal button {
+  right: 0;
+  position: absolute;
+  top: 0;
+  filter: drop-shadow(0px 0px 2px rgba(0, 0, 0, 1));
+}
+
 /************======== FULLSCREEN IMAGE PAGE ========************/
 .fullScreenImage {
   background-color: #000;
@@ -1079,6 +1092,7 @@ display: block;
   background-color: transparent;
   box-shadow: none;
   position: absolute;
+  z-index: 3;
 }
 
 #closeFullscreen {

@@ -44,10 +44,10 @@
     <div class="se-inspector-content">
       <p id="suggestion_reason"></p>
       <div id="image-info-wrapper">
-        <a id="openFullscreenImg">
-          <div id="imgFile" class="inspector-image"></div>
+        <span id="openFullscreenImg">
+          <div id="imageThumb" class="inspector-image"></div>
           <span><img src="img/icon/fullScreen.svg" /></span>
-        </a>
+        </span>
         <div class="inspector-imgMetadata">
           <a id="openFilepage" target="_blank"><div id="imgName"></div></a>
           <p id="imgDescription"></p>
@@ -95,6 +95,12 @@
   <div class="onboarding-overlay">
   </div>
 
+  <div class="fullScreenImage hide" id="fullImageModal">
+    <div class="overlay-header">
+      <span class="closeFullscreenImg"><button class="icon"><img src="img/icon/close-white.svg" /></button></span>
+    </div>
+    <span class="closeFullscreenImg"><div id="imgFile" class="fullScreenImage"></div></span>
+  </div>
 
   <script
     src="https://code.jquery.com/jquery-3.6.0.min.js"
@@ -166,6 +172,33 @@
         modal.style.display = "none";
       }
     }
+
+    // fullscreen image modal
+    // Get the modal
+    var fullImageModal = document.getElementById("fullImageModal");
+
+    // Get the button that opens the modal
+    var openImgBtn = document.getElementById("openFullscreenImg");
+
+    // Get the <span> element that closes the modal
+    var closeImgBtn1 = document.getElementsByClassName("closeFullscreenImg")[0];
+    var closeImgBtn2 = document.getElementsByClassName("closeFullscreenImg")[1];
+
+    // When the user clicks on the button, open the modal
+
+    openImgBtn.onclick = function() {
+      $('#fullImageModal').removeClass('hide');
+    }
+
+    // When the user clicks on <span> (x), close the modal
+    closeImgBtn1.onclick = function() {
+      $('#fullImageModal').addClass('hide');
+    }
+    closeImgBtn2.onclick = function() {
+      $('#fullImageModal').addClass('hide');
+    }
+
+
   </script>
   <script src="js/data.js"></script>
   <script src="js/messages.js"></script>

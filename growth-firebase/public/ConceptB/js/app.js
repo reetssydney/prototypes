@@ -29,7 +29,7 @@ function updateHtml(page, hash) {
 		$('a#next').attr("href", `/ConceptB/preview.html#${hash}`);
 		$('a#no').attr("href", `/ConceptB/reject.html#${hash}`);
 		$('a#close').attr("href", `/ConceptB/suggested_edits.html#${hash}`);
-		$('a#openFullscreenImg').attr("href", `/ConceptB/fullscreen-image.html#${hash}`);
+//		$('a#openFullscreenImg').attr("href", `/ConceptB/fullscreen-image.html#${hash}`);
 		$('a#openFilepage').attr("href", `/ConceptB/image-filepage.html#${hash}`);
 	} else if (page === 'ConceptB/reject.html') {
 		$('a#back').attr("href", `/ConceptB/edit.html#${hash}`);
@@ -43,7 +43,7 @@ function updateHtml(page, hash) {
 		$('a#nextEdit').attr("href", `/ConceptB/edit.html#${obj.nextTitleID}`);
 		$('a#nextSE').attr("href", `/ConceptB/suggested_edits.html#${obj.nextTitleID}`);
 		$('#imgCaption').html(`${localStorage.getItem(hash)}`);
-	} else if (page === 'ConceptB/fullscreen-image.html') {
+	} else if (page === 'ConceptB/fullscreen-image.html') {  //can be removed since fullscreen image moved into edit page//
 			$('a#closeFullscreen').attr("href", `/ConceptB/edit.html#${hash}`);
 			$('a#closeFullscreenImg').attr("href", `/ConceptB/edit.html#${hash}`);
 		}
@@ -75,7 +75,7 @@ function showImageLoadingState() {
 // move image and add input
 function handleImageSelection() {
 	$('.ButtonOverImage').prepend(
-		$('#imgFile img').addClass('placedImage')
+		$('#imageThumb img').addClass('placedImage')
 	);
 
 	showImageLoadingState().then(() => {
