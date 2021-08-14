@@ -822,7 +822,7 @@ h4.hard::before{
 }
 
 .placedImage {
-  width: calc(100vw - 48px);
+  width: calc(100vw - 32px);
   text-align: center;
   display: block
 }
