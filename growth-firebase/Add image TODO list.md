@@ -18,7 +18,7 @@ https://www.figma.com/file/ULhJr1isDstRbGE5vjYDsr/Add-images-structured-task-Gro
 - [x] Create newcomer homepage linking to SE module page
 
 
-** SE-module page (formerly known as 'start.html') **
+### **SE-module page (formerly known as 'start.html')**
 
 - [x] Add image task info tooltip pop-up
 - [x] Create article card 'carousel'
@@ -31,8 +31,7 @@ https://www.figma.com/file/ULhJr1isDstRbGE5vjYDsr/Add-images-structured-task-Gro
 - [ ] Dismiss the more info about task drawer when tapping outside of it (low prio)
 
 ***CONCEPT A ONLY****
-
-- [x] styling of the img mocks
+- [ ] styling of the img mocks (see commented out css and html)
 
 ### **Edit page**
 
@@ -54,15 +53,17 @@ https://www.figma.com/file/ULhJr1isDstRbGE5vjYDsr/Add-images-structured-task-Gro
 - [x] More image info bottom sheet for captions
 - [x] 👷 Interstitial 'Loading image...' screen
 - [ ] Change header when adding a caption to back arrow (add functionality to back arrow)
-- [ ] 🔧 Revise caption design so that it's clearer how to access image metadata
+- [x] Revise caption design so that it's clearer how to access image metadata
 
 
 ***CONCEPT A ONLY***
 
+- [ ] Restyle so that suggested image is located at the top of the article prior to "accepting"
 - [ ] Show more image info as a pop-up
 - [ ] Make the caption a full screen modal/dialog
 - [ ] Add a caption tooltip on the full screen modal/dialog
 - [ ] Change disabled next icon in the full-screen caption image to enabled primary icon when a decision is made
+
 
 ### **Preview page**
 - [x] tapping back goes back to edit.html
@@ -70,6 +71,7 @@ https://www.figma.com/file/ULhJr1isDstRbGE5vjYDsr/Add-images-structured-task-Gro
 
 
 ***CONCEPT A ONLY***
+
 - [ ] update styling to reflect concept A summary view.
 
 ### **Submitted page**
@@ -89,9 +91,8 @@ https://www.figma.com/file/ULhJr1isDstRbGE5vjYDsr/Add-images-structured-task-Gro
 - [ ] Selecting rejecting reason goes to the 'preview' page first
 - [ ] Change from checkboxes to radio buttons
 
-**OVERALL**
------------
-
+### **OVERALL**
+---------------
 - [x] Move Concept B prototype into a 'ConceptB_en' folder in 'Public'
 - [ ] Clone and customize completed Concept B instance into Concept A (created in 'ConceptA_en' dir)
 - [ ] Clone and customize completed English Concept A & B into Spanish instances

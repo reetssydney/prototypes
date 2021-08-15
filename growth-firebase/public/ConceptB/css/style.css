@@ -764,7 +764,7 @@ h4.hard::before{
   content: url(../img/icon/expand.svg);
   font-weight: bold;
   position: relative;
-  left:calc(50% - 10px);
+  right:calc(50% - 10px);
 }
 
 .closeModal {
@@ -828,7 +828,40 @@ h4.hard::before{
 }
 
 .placedImage img {
-  width: 100%;
+  width: inherit;
+}
+
+#imgDescription_repeat.placedImage {
+  font-size: 13px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0,0,0,.5);
+  color: #fff;
+  line-height: 1.5;
+  overflow: hidden;
+  height: 40px;
+  padding: 0 8px;
+  text-align: left;
+  width: calc(100% - 16px);
+  margin: 0 0 8px;
+  outline: 8px solid rgba(0,0,0,0.50);
+}
+
+#MoreImageLink  {
+  font-size: 13px;
+  color: #fff;
+  text-align: right;
+  font-weight: bold;
+  text-decoration: underline;
+  position: absolute;
+  bottom:0px;
+  right: 0px;
+  height:20px;
+  width:inherit;
+  background-color: rgba(50,50,50,1);
+  box-shadow: -4px 0 4px 0px rgb(50 50 50);
+  padding: 2px 8px 8px;
 }
 
 .ButtonOverImage {
@@ -848,43 +881,50 @@ h4.hard::before{
 
 .overImage {
   display: grid;
-  grid-template-columns: 32px auto 24px;
-  background-color: rgba(255,255,255,.7);
+  grid-template-columns: auto 20px;
+  background-color: rgba(255,255,255,0);
   padding: 8px 0;
   position: relative;
-  top:-36px;
+  top:0px;
   font-size: 13px;
   line-height: 1.5;
-  margin-bottom: -24px;
+  margin-bottom: 8px;
 }
 
 .overImage p {
 font-weight: bold;
+font-size: 16px;
 }
 
 #article-container textarea {
-  width: 100%;
+  width: calc(100% - 8px);
   min-height: 40px;
   margin: 0;
-  padding: 0 0 8px;
+  padding: 4px 4px 8px;
   background-color: #FFF;
   border-width: 0 0 1px 0;
   border-color: #36c;
   resize: none;
-  grid-column: span 3;
+  grid-column: span 2;
   grid-row: 2;
+  overflow-x: hidden;
 }
 
 #article-container textarea::placeholder {
   font-style: italic;
   color: #72777D;
   background-color: #F4F9FF;
-  padding: 2px 8px 8px 2px;
+  padding: 4px 4px 8px;
   min-height: 40px;
+  width: calc(100% - 4px);
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 #article-container textarea:focus {
-  outline: none;
+  outline: solid 2px #36c;
+  border:none;
 }
 
 #bottom-sheet {
@@ -1007,6 +1047,23 @@ font-weight: bold;
   padding:8px 16px;
 }
 
+#ImageCaptionData_Drawer h4 > img {
+  margin-bottom:-4px;
+  padding-right:8px;
+}
+
+#ImageCaptionData_Drawer h4 {
+border-bottom: 1px solid #eaecf0;
+margin-bottom:8px;
+padding: 0 0 12px;
+}
+
+#ImageCaptionData_Drawer .closeDrawer {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  content: url(../img/icon/close.svg);
+}
 
 #captionHelperInfo p, #captionHelperInfo div, #captionHelperInfo span {
 font-size: 13px;
