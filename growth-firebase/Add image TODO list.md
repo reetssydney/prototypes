@@ -63,6 +63,7 @@ https://www.figma.com/file/ULhJr1isDstRbGE5vjYDsr/Add-images-structured-task-Gro
 - [ ] Show more image info as a pop-up
 - [ ] Make the caption a full screen modal/dialog
 - [ ] Add a caption tooltip on the full screen modal/dialog
+- [ ] Change position and pointer placement for onboarding to match corresponding components in Concept A
 - [ ] Change disabled next icon in the full-screen caption image to enabled primary icon when a decision is made
 
 
