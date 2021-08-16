@@ -120,6 +120,11 @@ function getSwipeHandler(toStart) {
 
 $(document).ready(function() {
   const swipeCard = new SwipePane($('.suggested-edits-card'));
-  swipeCard.setToStartHandler(getSwipeHandler(true));
-  swipeCard.setToEndHandler(getSwipeHandler(false));
+  const onNext = getSwipeHandler(true);
+  const onPrev = getSwipeHandler(false);
+  swipeCard.setToStartHandler(onNext);
+  swipeCard.setToEndHandler(onPrev);
+
+  $('#prev').on('click', onPrev);
+  $('#next').on('click', onNext);
 });

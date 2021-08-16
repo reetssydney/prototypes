@@ -100,7 +100,7 @@ function handleTraverseSuggestions(str) {
 	var hash = window.location.hash.substring(1);
 	var title = window[hash][str];
 	window.location.replace(`suggested_edits.html#${title}`);
-	updateHtml('suggested_edits.html', title);
+	updateHtml('ConceptB/suggested_edits.html', title);
 }
 
 // show/hide the bottom image suggestion 'inspector' panel
