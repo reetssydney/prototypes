@@ -28,7 +28,7 @@ https://www.figma.com/file/ULhJr1isDstRbGE5vjYDsr/Add-images-structured-task-Gro
 - [x] Add task filter modal (low prio)
 - [ ] ***BUG*** Wrong article is being opened when prev and next is used. - see details at https://github.com/reetssydney/prototypes/issues/8
 - [ ] Add same swipe animation when prev/next buttons are tapped (low prio)
-- [ ] Dismiss the more info about task drawer when tapping outside of it (low prio)
+- [x] Dismiss the more info about task drawer when tapping outside of it (low prio)
 
 ***CONCEPT A ONLY****
 - [ ] styling of the img mocks (see commented out css and html)
@@ -44,7 +44,8 @@ https://www.figma.com/file/ULhJr1isDstRbGE5vjYDsr/Add-images-structured-task-Gro
 - [x] remove help icon from the inspector (maybe add chevron instead)
 - [x] Add onboarding for the caption
 - [ ] ***[High priority]*** Update onboarding so it only appears once and does not come up again after being completed
-- [ ] Image details modal dialog (when "Read more is tapped") and Image metadata drawer (when tapping the placedImage) are dismissed respectively when user taps outside of the modal/drawer [Low prio]
+- [x] Image details modal dialog (when "Read more is tapped") is dismissed when user taps outside of the modal [Low prio]
+- [ ] Image metadata drawer (when tapping the placedImage) is dismissed when user taps outside of the drawer [Low prio]
 - ~~[ ] Skip action takes user back to next Suggested edit (low prio)~~
 
 

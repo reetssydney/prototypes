@@ -77,7 +77,6 @@ function handleImageSelection() {
 	$('.ButtonOverImage').prepend(
 		$('#imageThumb img').addClass('placedImage'),
 		$('#imgDescription_repeat').addClass('placedImage'),
-		'<div id="MoreImageLink" class="placedImage">More image details</div>'
 	);
 
 	showImageLoadingState().then(() => {
