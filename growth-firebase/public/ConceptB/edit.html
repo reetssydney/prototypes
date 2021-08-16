@@ -216,10 +216,19 @@
         setSuggestionRejected();
       });
 
+      if (hasSeenImageGuidance() && hasSeenCaptionGuidance()) {
+        $('.onboarding-overlay').removeClass('show');
+        return;
+      }
+
       initializeOnboarding($('.onboarding-overlay'));
-      setTimeout(() => {
-        showOnboardingIndex(0);
-      }, 1000);
+      if (hasSeenCaptionGuidance()) {
+        $('.onboarding-overlay').removeClass('show');
+      } else {
+        setTimeout(() => {
+          showOnboardingIndex(0);
+        }, 1000);
+      }
     });
   </script>
 

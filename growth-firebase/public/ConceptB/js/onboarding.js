@@ -56,7 +56,7 @@ const positionConfigs = {
 };
 
 
-let $container, currentIndex = 0, endIndex = 2; // indices past endIndex can be invoked manually outside of the flow of the in-dialog navigation
+let $container, currentIndex = 0, endIndex = 2, captionIndex; // indices past endIndex can be invoked manually outside of the flow of the in-dialog navigation
 
 function getNavButton(isNext, isCheck) {
   const className = isNext ? 'onboarding-item-button-next' : 'onboarding-item-button-prev';
@@ -112,6 +112,7 @@ function initializeOnboarding($onboardingContainer) {
     onboardingScreens.details,
     onboardingScreens.caption
   ];
+  captionIndex = screens.length - 1;
   screens.forEach((screenData, index) => {
     $container.append(createOnboardingItem(screenData, index));
   });
@@ -124,7 +125,7 @@ function initializeOnboarding($onboardingContainer) {
     showOnboardingIndex(currentIndex);
   });
 
-  $container.on('click', '.onboarding-item-button-next', () => {
+  $container.on('click', '.onboarding-item-button-next', (e) => {
     if (currentIndex === endIndex || currentIndex > endIndex) {
       closeOnboarding();
       $('.onboarding-overlay').removeClass('show');
@@ -140,8 +141,12 @@ function initializeOnboarding($onboardingContainer) {
     $('.onboarding-overlay').removeClass('show');
   });
 
+  $container.on('click', '.onboarding-item-button-check', (e) => {
+    dismissOnboarding();
+  });
+
   window.showCaptionOnboarding = () => {
-    showOnboardingIndex(screens.length - 1);
+    showOnboardingIndex(captionIndex);
     $('.onboarding-overlay').addClass('show');
   };
 }
@@ -152,6 +157,14 @@ function teardownOnboarding() {
 
 function closeOnboarding() {
   $('.onboarding-item-positioned').removeClass('onboarding-item-positioned');
+}
+
+function dismissOnboarding() {
+  if (captionIndex === currentIndex) {
+    setHasSeenImageGuidance();
+  } else {
+    setHasSeenCaptionGuidance();
+  }
 }
 
 function getTopPostionValue($target, $onboadingItem, positionOptions={}) {
