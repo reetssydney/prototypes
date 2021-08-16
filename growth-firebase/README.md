@@ -1,12 +1,14 @@
 # Growth-Add-Image
 This is a set of prototypes used for testing "Add image Iteration 1", a project by the Growth team at the Wikimedia Foundation.
 
-Details about the work can be found here:
+Details and subtasks can be found here:
 https://phabricator.wikimedia.org/T287904
 
 
 ## Contributing
-There is a list of TODOs in the "Add image TODO list.md". Please add a :builder: icon if you are working on a specific task.
+~~There is a list of TODOs in the "Add image TODO list.md". Please add a :builder: icon if you are working on a specific task.~~
+The list of TODO items has been split into subtasks under https://phabricator.wikimedia.org/T287904
+
 Note that there will be 4 prototypes to be completed in the following order:
 1. Concept B in English
 2. Concept A in English - create by cloning and modifying UI of completed Concept B accordingly

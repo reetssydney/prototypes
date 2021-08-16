@@ -31,7 +31,7 @@ https://www.figma.com/file/ULhJr1isDstRbGE5vjYDsr/Add-images-structured-task-Gro
 - [x] Dismiss the more info about task drawer when tapping outside of it (low prio)
 
 ***CONCEPT A ONLY****
-- [ ] styling of the img mocks (see commented out css and html)
+- [ ] Re-style the card per the Concept A img mocks (see commented out css and html) https://phabricator.wikimedia.org/T288999
 
 ### **Edit page**
 
@@ -43,33 +43,34 @@ https://www.figma.com/file/ULhJr1isDstRbGE5vjYDsr/Add-images-structured-task-Gro
 - [x] Fix zooming too far in and lack of sticky header when adding caption (iOS device)
 - [x] remove help icon from the inspector (maybe add chevron instead)
 - [x] Add onboarding for the caption
-- [ ] ***[High priority]*** Update onboarding so it only appears once and does not come up again after being completed
+- [ ] ***[High priority]*** Update onboarding so it only appears once and does not come up again after being completed (https://phabricator.wikimedia.org/T288992)
 - [x] Image details modal dialog (when "Read more is tapped") is dismissed when user taps outside of the modal [Low prio]
-- [ ] Image metadata drawer (when tapping the placedImage) is dismissed when user taps outside of the drawer [Low prio]
-- ~~[ ] Skip action takes user back to next Suggested edit (low prio)~~
+- [ ] Image metadata drawer (when tapping the placedImage) is dismissed when user taps outside of the drawer [Low prio] https://phabricator.wikimedia.org/T288993
 
 
 ***CONCEPT B ONLY***
 
 - [x] More image info bottom sheet for captions
 - [x] 👷 Interstitial 'Loading image...' screen
-- [ ] Change header when adding a caption to back arrow (add functionality to back arrow)
+- [ ] Change header when adding a caption to back arrow (add functionality to back arrow) https://phabricator.wikimedia.org/T288994
 - [x] Revise caption design so that it's clearer how to access image metadata
 
 
 ***CONCEPT A ONLY***
 
-- [ ] Restyle so that suggested image is located at the top of the article prior to "accepting"
-- [ ] Show more image info as a pop-up
-- [ ] Make the caption a full screen modal/dialog
-- [ ] Add a caption tooltip on the full screen modal/dialog
-- [ ] Change position and pointer placement for onboarding to match corresponding components in Concept A
+- [ ] Restyle inspector https://phabricator.wikimedia.org/T289000
+ 1. [ ] Restyle so that suggested image is located at the top of the article prior to "accepting"
+ 2. [ ] Show more image info as a pop-up
+- [ ] Update caption presentation https://phabricator.wikimedia.org/T289002
+ 1. [ ] Make the caption a full screen modal/dialog
+ 2. [ ] Add a caption tooltip pop-up ( on the "i" icon) on the full screen modal/dialog [low priority]
+- [ ] Change position and pointer placement for onboarding (task and caption adding) to match corresponding components in Concept A
 - [ ] Change disabled next icon in the full-screen caption image to enabled primary icon when a decision is made
 
 
 ### **Preview page**
 - [x] tapping back goes back to edit.html
-- [ ] tapping back goes back to edit.html with caption step remembered (low-prio)
+- [ ] tapping back goes back to edit.html with caption step remembered (low-prio) https://phabricator.wikimedia.org/T288995
 
 
 ***CONCEPT A ONLY***
@@ -96,5 +97,6 @@ https://www.figma.com/file/ULhJr1isDstRbGE5vjYDsr/Add-images-structured-task-Gro
 ### **OVERALL**
 ---------------
 - [x] Move Concept B prototype into a 'ConceptB_en' folder in 'Public'
-- [ ] Clone and customize completed Concept B instance into Concept A (created in 'ConceptA_en' dir)
+- [ ] ***[High priority]*** Add es/en dictionary to the prototype to enable faster updating of UI strings https://phabricator.wikimedia.org/T288996
+- [ ] Clone and customize completed Concept B instance into Concept A (created in a 'ConceptA' dir) https://phabricator.wikimedia.org/T288997
 - [ ] Clone and customize completed English Concept A & B into Spanish instances
