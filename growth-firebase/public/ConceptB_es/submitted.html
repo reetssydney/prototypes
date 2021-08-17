@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Add image demo (in Spanish)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/normalize.css">
+</head>
+
+<body>
+  <header class="minerva-header">
+    <button class="icon"><img src="../img/icon/menu.svg" /></button>
+    <h1>%<= wikipedia <sup>[demo-B]</sup></h1>
+    <img src="../img/icon/RHSminerva.svg" />
+  </header>
+  <h2 id="title"  class="articleTitle"></h2>
+  <div class="minervaTabContainer">
+    <ul>
+      <li class="selected">Article (in Spanish)</li>
+      <li>Talk (in Spanish)</li>
+    </ul>
+  </div>
+  <div class="minervaPageActionsMenu">
+    <img src="../img/icon/language.svg" />
+    <img src="../img/icon/download.svg" />
+    <img src="../img/icon/star.svg" />
+    <img src="../img/icon/history.svg" />
+    <img src="../img/icon/edit.svg" />
+  </div>
+
+  <div id="article-container" class="mobilePageWrapper submittedPage">
+    <div id="imgFile" class="placedImage"></div>
+    <p id="imgCaption"></p>
+    <p id="text"></p>
+  </div>
+  <div class="drawerScrim drawerScrim-pre">
+    <div class="postSubmitContainer postSubmitContainer-pre">
+      <div class="toastMessage"></div>
+      <div class="postSubmitDrawer">
+        <h3 id="drawerHeader">Edit another article (in Spanish)</h3>
+        <a id="nextEdit" href=""><div class="se-ListItem">
+          <img id="nextImg" src="../img/icon/imageSE-Add.svg" />
+          <div>
+            <h4 id="nextTitle">NextArticletitle</h4>
+            <p id="nextDescription">some short description</p>
+            <div class="se-task-difficulty-and-time medium"><img src="../img/icon/Levels-Med-16x16.svg" />&nbsp;&nbsp;Add an image (in Spanish)</div>
+          </div>
+        </div></a>
+        <a id="nextSE" href=""><button>View more suggested edits (in Spanish)</button></a>
+        <button class="postSubmit-close">Close to view changes (or edit again) (in Spanish)</button>
+      </div>
+    </div>
+  </div>
+
+  <script
+    src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+    crossorigin="anonymous">
+  </script>
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/user-state.js"></script>
+  <script src="js/messages.js"></script>
+  <script type="text/javascript">
+    $(document).ready(() => {
+      animateClass('drawerScrim');
+      animateClass('postSubmitContainer');
+
+      if (isSuggestionRejected()) {
+        $('.postSubmit-close').remove();
+        $('.toastMessage').text(getMessage('postedit-toast-reject'));
+      } else {
+        $('.toastMessage').text(getMessage('postedit-toast-accept'));
+      }
+    });
+  </script>
+
+</body>
+</html>

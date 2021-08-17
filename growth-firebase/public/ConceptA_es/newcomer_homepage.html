@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Add image demo (in Spanish)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/normalize.css">
+</head>
+
+<body>
+  <header class="minerva-header">
+    <button class="icon"><img src="../img/icon/menu.svg" /></button>
+    <h1>Wikipedia (in Spanish)<sup>[demo-A]</sup></h1>
+    <img src="../img/icon/RHSminerva.svg" />
+  </header>
+  <h2  class="articleTitle">Newbie101 (in Spanish)</h2>
+  <div class="minervaTabContainer">
+    <ul>
+      <li class="selected">Homepage (in Spanish)</li>
+      <li>User page (in Spanish)</li>
+      <li>Discussion (in Spanish)</li>
+    </ul>
+  </div>
+  </div>
+
+  <div id="article-container" class="mobilePageWrapper">
+    <div id="startModule" class="homepageModulePreview">
+        <img src="../img/icon/message.svg" />
+        <span id="emailAddress" class="margin8left"><b>new***@*****.com (in Spanish)</b>&nbsp;&nbsp; (<a id="confirm" class="destructive">Confirm (in Spanish)</a>)</span>
+    </div>
+    <a id="openSE" href=""><div id="seModule" class="homepageModulePreview">
+        <div class="bannerTitle">
+          <img src="../img/icon/SE-general.svg">
+          <h4 class="margin8left">Get started with some Suggested edits (in Spanish)</h4>
+        </div>
+        <p>Help add to the world&#39;s knowledge with some easy fixes on Wikipedia articles. (in Spanish)</p>
+      <button class="ooui-btn primary-progressive">See suggested edits (in Spanish)</button>
+     </div></a>
+    <div id="impactModule" class="homepageModulePreview">
+      <header>Your impact (in Spanish)</header>
+      <div class="bannerTitle">
+        <img src="../img/icon/hearticle.svg">
+        <div><h4 class="margin8left">0 edits so far (in Spanish)</h4>
+        <p class="margin8left">Help extend free knowledge to the world by editing topics that matter most to you. (in Spanish)</p></div>
+      </div>
+      <footer>Once you start editing, you’ll see here how many people are viewing the articles you’ve edited. (in Spanish)</footer>
+    </div>
+    <div id="mentorModule" class="homepageModulePreview">
+      <header>Your mentor (in Spanish)</header>
+      <span>
+        You’ve been assigned an experienced editor to answer your questions about editing. (in Spanish)
+      </span>
+      <div class="bannerTitle">
+        <img src="../img/icon/mentor40x40.svg">
+        <div><h4 class="margin8left">Yoda101 (in Spanish)</h4>
+        <p class="margin8left">Active 2h ago (in Spanish)</p></div>
+      </div>
+    </div>
+    <div id="helpModule" class="homepageModulePreview">
+      <header>Get help with editing (in Spanish)</header>
+      <span>
+        Ask the help desk or read help pages. (in Spanish)
+      </span>
+    </div>
+  </div>
+
+
+  <script
+    src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+    crossorigin="anonymous">
+  </script>
+  <script src="js/data.js"></script>
+  <script src="js/user-state.js"></script>
+  <script src="js/app.js"></script>
+  <script type="text/javascript">
+    $(document).ready(() => {
+      $('#openSE').on('click', () => {
+        clearGuidancePrefs();
+      });
+    })
+  </script>
+
+</body>
+</html>

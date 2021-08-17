@@ -2,7 +2,7 @@
 <html >
 <head>
   <meta charset="UTF-8">
-  <title>Add image demo</title>
+  <title><%= add_image_demo %></title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/normalize.css">
@@ -11,15 +11,15 @@
 <body>
   <header class="minerva-header">
     <button class="icon"><img src="../img/icon/menu.svg" /></button>
-    <h1>Wikipedia<sup>[Demo-B]</sup></h1>
+    <h1><%= wikipedia %><sup><%= prototype_b %></sup></h1>
     <img src="../img/icon/RHSminerva.svg" />
   </header>
-  <h2  class="articleTitle">Newbie101</h2>
+  <h2  class="articleTitle"><%= placeholder_username %></h2>
   <div class="minervaTabContainer">
     <ul>
-      <li class="selected">Homepage</li>
-      <li>User page</li>
-      <li>Discussion</li>
+      <li class="selected"><%= tab_homepage %></li>
+      <li><%= tab_user_page %></li>
+      <li><%= tab_discussion %></li>
     </ul>
   </div>
   </div>
@@ -27,40 +27,40 @@
   <div id="article-container" class="mobilePageWrapper">
     <div id="startModule" class="homepageModulePreview">
         <img src="../img/icon/message.svg" />
-        <span id="emailAddress" class="margin8left"><b>new***@*****.com</b>&nbsp;&nbsp; (<a id="confirm" class="destructive">confirm</a>)</span>
+        <span id="emailAddress" class="margin8left"><b><%= placeholder_email %></b>&nbsp;&nbsp; (<a id="confirm" class="destructive"><%= homepage_confirm_email %></a>)</span>
     </div>
     <a id="openSE" href=""><div id="seModule" class="homepageModulePreview">
         <div class="bannerTitle">
           <img src="../img/icon/SE-general.svg">
-          <h4 class="margin8left">Get started with some Suggested edits</h4>
+          <h4 class="margin8left"><%= homepage_se_get_started %></h4>
         </div>
-        <p>Help add to the world's knowledge with some easy fixes on Wikipedia articles.</p>
-      <button class="ooui-btn primary-progressive">See suggested edits</button>
+        <p><%= homepage_se_description %></p>
+      <button class="ooui-btn primary-progressive"><%= homepage_se_see_edits %></button>
      </div></a>
     <div id="impactModule" class="homepageModulePreview">
-      <header>Your impact</header>
+      <header><%= homepage_impact %></header>
       <div class="bannerTitle">
         <img src="../img/icon/hearticle.svg">
-        <div><h4 class="margin8left">0 edits so far</h4>
-        <p class="margin8left">Help extend free knowledge to the world by editing topics that matter most to you.</p></div>
+        <div><h4 class="margin8left"><%= homepage_impact_edits %></h4>
+        <p class="margin8left"><%= homepage_impact_description %></p></div>
       </div>
-      <footer>Once you start editing, you’ll see here how many people are viewing the articles you’ve edited.</footer>
+      <footer><%= homepage_impact_footer %></footer>
     </div>
     <div id="mentorModule" class="homepageModulePreview">
-      <header>Your mentor</header>
+      <header><%= homepage_mentor %></header>
       <span>
-        You’ve been assigned an experienced editor to answer your questions about editing.
+        <%= homepage_mentor_description %>
       </span>
       <div class="bannerTitle">
         <img src="../img/icon/mentor40x40.svg">
-        <div><h4 class="margin8left">Yoda101</h4>
-        <p class="margin8left">Active 2h ago</p></div>
+        <div><h4 class="margin8left"><%= homepage_mentor_placeholder %></h4>
+        <p class="margin8left"><%= homepage_mentor_last_active %></p></div>
       </div>
     </div>
     <div id="helpModule" class="homepageModulePreview">
-      <header>Get help with editing</header>
+      <header><%= homepage_help %></header>
       <span>
-        Ask the help desk or read help pages.
+        <%= homepage_help_description %>
       </span>
     </div>
   </div>

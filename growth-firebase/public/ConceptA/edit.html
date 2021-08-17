@@ -2,7 +2,7 @@
 <html >
 <head>
   <meta charset="UTF-8">
-  <title>Add image demo</title>
+  <title><%= add_image_demo %></title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/normalize.css">
@@ -12,10 +12,10 @@
   <header class="overlay-header">
     <a id="close" href=""><button class="icon"><img src="../img/icon/close.svg" /></button></a>
     <button class="icon hidden back-caption"><img src="../img/icon/arrowPrevious.svg" /></button>
-    <h1 class="header-suggestions">Suggestions mode</h1>
-    <h1 class="header-caption hidden">Add a caption</h1>
+    <h1 class="header-suggestions"><%= suggestions_mode %></h1>
+    <h1 class="header-caption hidden"><%= add_caption %></h1>
     <div class="header-loading hidden">
-      Loading image preview...
+      <%= loading_image_preview %>
     </div>
     <button class="fake-dropdown-btn"><img src="../img/icon/edit.svg" /></button>
     <a id="next" class="hide" onclick="handleAddComment()" href=""><button class="icon primary disabled"><img src="../img/icon/next-white.svg" /></button></a>
@@ -28,7 +28,7 @@
       <div class="placedImage-loading"></div>
     </div>
     <div class="overImage hidden">
-      <p id="caption">Add caption below</p>
+      <p id="caption"><%= add_caption_below %></p>
       <img id="openPopUp2" src="../img/icon/info.svg" />
       <textarea id="caption-input" placeholder="Write a short caption here to help explain why the image is relevant to the article..." oninput="checkInput()"></textarea>
     </div>
@@ -39,7 +39,7 @@
   <div id="bottom-sheet" class="se-inspector se-inspector-pre">
     <div class="se-inspector-header"  onclick="handleToggleInspector()">
       <button class="icon"><img src="../img/icon/robot.svg" /></button>
-      <h2>1 suggested image found</h2>
+      <h2><%= suggested_image_found %></h2>
       <button id="expand-collapse" class="icon"><img src="../img/icon/expand.svg" /></button>
     </div>
     <div class="se-inspector-content">
@@ -52,15 +52,15 @@
         <div class="inspector-imgMetadata">
           <a id="openFilepage" target="_blank"><div id="imgName"></div></a>
           <p id="imgDescription"></p>
-          <span id="openPopUpModal">Read more</span>
+          <span id="openPopUpModal"><%= read_more %></span>
         </div>
       </div>
     </div>
-    <div class="se-inspector-question">Add this image to the start of the article?</div>
+    <div class="se-inspector-question"><%= image_inspector_question %></div>
     <div class="se-inspector-actions">
-      <button class="ooui-btn accept-button" onclick="handleImageSelection()"><img src="../img/icon/check.svg" />&nbsp;Yes</button>
-      <a id="no" class="flexgrow" href=""><button class="ooui-btn margin8left reject-button"><img src="../img/icon/close.svg" />&nbsp;No</button></a>
-      <button id="skipButton" class="ooui-btn quiet-neutral">Skip</button>
+      <button class="ooui-btn accept-button" onclick="handleImageSelection()"><img src="../img/icon/check.svg" />&nbsp;<%= image_inspector_yes %></button>
+      <a id="no" class="flexgrow" href=""><button class="ooui-btn margin8left reject-button"><img src="../img/icon/close.svg" />&nbsp;<%= image_inspector_no %></button></a>
+      <button id="skipButton" class="ooui-btn quiet-neutral"><%= image_inspector_skip %></button>
     </div>
   </div>
 
@@ -68,9 +68,9 @@
     <!-- Drawer content -->
     <div class="drawer-content">
       <span class="closeDrawer">&nbsp</span>
-      <h4><img src="../img/icon/image.svg" /> Image details</h4>
+      <h4><img src="../img/icon/image.svg" /> <%= image_details %></h4>
       <div id="captionHelperInfo">
-        <p style="color:#59545d">The following details may help with writing a suitable caption.</p>
+        <p style="color:#59545d"><%= image_details_caption_help %></p>
       </div>
     </div>
   </div>
@@ -79,17 +79,17 @@
     <!-- Modal content -->
     <div class="modal-content">
       <div id="imageDetails">
-        <h4>Image details</h4>
-        <p><span class="metadataLabel">Filename:&nbsp;&nbsp;</span><span id="imgName_repeat"></span></p>
-        <p><span class="metadataLabel">Description:&nbsp;&nbsp;</span><span id="imgDescription_repeat"></span></p>
-        <p><span class="metadataLabel">Commons caption:&nbsp;&nbsp;</span><span id="imgCommonsCaption"></span></p>
-        <p><span class="metadataLabel">License:&nbsp;&nbsp;</span><span id="imgLicense"></span></p>
-        <p><span class="metadataLabel">Date:&nbsp;&nbsp;</span><span id="imgDate"></span></p>
-        <p><span class="metadataLabel">Author:&nbsp;&nbsp;</span><span id="imgAuthor"></span></p>
-        <p><span class="metadataLabel">Image tags:&nbsp;&nbsp;</span><span id="imgCommonsCategories"></span></p>
+        <h4><%= image_details %></h4>
+        <p><span class="metadataLabel"><%= image_metadata_filename %>&nbsp;&nbsp;</span><span id="imgName_repeat"></span></p>
+        <p><span class="metadataLabel"><%= image_metadata_description %>&nbsp;&nbsp;</span><span id="imgDescription_repeat"></span></p>
+        <p><span class="metadataLabel"><%= image_metadata_commons_caption %>&nbsp;&nbsp;</span><span id="imgCommonsCaption"></span></p>
+        <p><span class="metadataLabel"><%= image_metadata_license %>&nbsp;&nbsp;</span><span id="imgLicense"></span></p>
+        <p><span class="metadataLabel"><%= image_metadata_date %>&nbsp;&nbsp;</span><span id="imgDate"></span></p>
+        <p><span class="metadataLabel"><%= image_metadata_author %>&nbsp;&nbsp;</span><span id="imgAuthor"></span></p>
+        <p><span class="metadataLabel"><%= image_metadata_image_tags %>&nbsp;&nbsp;</span><span id="imgCommonsCategories"></span></p>
         <p id="suggestion_reason_repeat"></p>
       </div>
-      <button class="closeModal">Close</button>
+      <button class="closeModal"><%= close %></button>
     </div>
   </div>
 

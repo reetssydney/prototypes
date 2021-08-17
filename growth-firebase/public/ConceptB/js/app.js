@@ -5,6 +5,10 @@ function getLocation() {
 	updateHtml(page, hash);
 }
 
+function isPage(currentPage, targetPage) {
+	return currentPage.indexOf(targetPage) !== -1;
+}
+
 // add the appropriate data to the page
 function updateHtml(page, hash) {
 	// get the appropriate object
@@ -20,32 +24,37 @@ function updateHtml(page, hash) {
 		}
 	}
 	// add the buttons which are page dependent
-	if (page === 'ConceptB/newcomer_homepage.html') {
-		$('a#openSE').attr("href", `/ConceptB/suggested_edits.html#${hash}`);
-	} else if (page === 'ConceptB/suggested_edits.html') {
-		$('a#backHome').attr("href", `/ConceptB/newcomer_homepage.html#${hash}`);
-		$('a#edit').attr("href", `/ConceptB/edit.html#${hash}`);
-	} else if (page === 'ConceptB/edit.html') {
-		$('a#next').attr("href", `/ConceptB/preview.html#${hash}`);
-		$('a#no').attr("href", `/ConceptB/reject.html#${hash}`);
-		$('a#close').attr("href", `/ConceptB/suggested_edits.html#${hash}`);
-//		$('a#openFullscreenImg').attr("href", `/ConceptB/fullscreen-image.html#${hash}`);
-		$('a#openFilepage').attr("href", `/ConceptB/image-filepage.html#${hash}`);
-	} else if (page === 'ConceptB/reject.html') {
-		$('a#back').attr("href", `/ConceptB/edit.html#${hash}`);
-		$('a#done').attr("href", `/ConceptB/submitted.html#${hash}`);
+	if (isPage(page, 'newcomer_homepage')) {
+		$('a#openSE').attr("href", `suggested_edits.html#${hash}`);
+
+	} else if (isPage(page, 'suggested_edits')) {
+		$('a#backHome').attr("href", `newcomer_homepage.html#${hash}`);
+		$('a#edit').attr("href", `edit.html#${hash}`);
+
+	} else if (isPage(page, 'edit')) {
+		$('a#next').attr("href", `preview.html#${hash}`);
+		$('a#no').attr("href", `reject.html#${hash}`);
+		$('a#close').attr("href", `suggested_edits.html#${hash}`);
+		$('a#openFilepage').attr("href", `image-filepage.html#${hash}`);
+
+	} else if (isPage(page, 'reject')) {
+		$('a#back').attr("href", `edit.html#${hash}`);
+		$('a#done').attr("href", `submitted.html#${hash}`);
 		$('#imgCaption').html(`${localStorage.getItem(hash)}`);
-	} else if (page === 'ConceptB/preview.html') {
-		$('a#back').attr("href", `/ConceptB/edit.html#${hash}`);
-		$('a#done').attr("href", `/ConceptB/submitted.html#${hash}`);
+
+	} else if (isPage(page, 'preview')) {
+		$('a#back').attr("href", `edit.html#${hash}`);
+		$('a#done').attr("href", `submitted.html#${hash}`);
 		$('#imgCaption').html(`${localStorage.getItem(hash)}`);
-	} else if (page === 'ConceptB/submitted.html') {
-		$('a#nextEdit').attr("href", `/ConceptB/edit.html#${obj.nextTitleID}`);
-		$('a#nextSE').attr("href", `/ConceptB/suggested_edits.html#${obj.nextTitleID}`);
+
+	} else if (isPage(page, 'submitted')) {
+		$('a#nextEdit').attr("href", `edit.html#${obj.nextTitleID}`);
+		$('a#nextSE').attr("href", `suggested_edits.html#${obj.nextTitleID}`);
 		$('#imgCaption').html(`${localStorage.getItem(hash)}`);
-	} else if (page === 'ConceptB/fullscreen-image.html') {  //can be removed since fullscreen image moved into edit page//
-			$('a#closeFullscreen').attr("href", `/ConceptB/edit.html#${hash}`);
-			$('a#closeFullscreenImg').attr("href", `/ConceptB/edit.html#${hash}`);
+
+	} else if (isPage(page, 'fullscreen-image')) {  //can be removed since fullscreen image moved into edit page//
+			$('a#closeFullscreen').attr("href", `edit.html#${hash}`);
+			$('a#closeFullscreenImg').attr("href", `edit.html#${hash}`);
 		}
 }
 
@@ -122,7 +131,7 @@ function handleTraverseSuggestions(str) {
 	var hash = window.location.hash.substring(1);
 	var title = window[hash][str];
 	window.location.replace(`suggested_edits.html#${title}`);
-	updateHtml('ConceptB/suggested_edits.html', title);
+	updateHtml('suggested_edits', title);
 }
 
 // show/hide the bottom image suggestion 'inspector' panel

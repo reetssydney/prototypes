@@ -1,0 +1,15 @@
+{
+  "name": "growth-firebase",
+  "version": "1.0.0",
+  "description": "Add image prototypes",
+  "scripts": {
+    "build-a:en": "./build.sh public/ConceptA en public/i18n/en.json",
+    "build-a:es": "./build.sh public/ConceptA es public/i18n/es.json",
+    "build-b:en": "./build.sh public/ConceptB en public/i18n/en.json",
+    "build-b:es": "./build.sh public/ConceptB es public/i18n/es.json",
+    "build": "npm run build-a:en && npm run build-a:es && npm run build-b:en && npm run build-b:es"
+  },
+  "devDependencies": {
+    "ejs": "^3.1.6"
+  }
+}

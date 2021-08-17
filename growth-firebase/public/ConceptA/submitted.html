@@ -2,7 +2,7 @@
 <html >
 <head>
   <meta charset="UTF-8">
-  <title>Add image demo</title>
+  <title><%= add_image_demo %></title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/normalize.css">
@@ -11,14 +11,14 @@
 <body>
   <header class="minerva-header">
     <button class="icon"><img src="../img/icon/menu.svg" /></button>
-    <h1>Wikipedia<sup>[prototype]</sup></h1>
+    <h1>%<= wikipedia %><sup><%= prototype_a %></sup></h1>
     <img src="../img/icon/RHSminerva.svg" />
   </header>
   <h2 id="title"  class="articleTitle"></h2>
   <div class="minervaTabContainer">
     <ul>
-      <li class="selected">Article</li>
-      <li>Talk</li>
+      <li class="selected"><%= tab_article %></li>
+      <li><%= tab_talk %></li>
     </ul>
   </div>
   <div class="minervaPageActionsMenu">
@@ -38,17 +38,17 @@
     <div class="postSubmitContainer postSubmitContainer-pre">
       <div class="toastMessage"></div>
       <div class="postSubmitDrawer">
-        <h3 id="drawerHeader">Edit another article</h3>
+        <h3 id="drawerHeader"><%= edit_another_article %></h3>
         <a id="nextEdit" href=""><div class="se-ListItem">
           <img id="nextImg" src="../img/icon/imageSE-Add.svg" />
           <div>
             <h4 id="nextTitle">NextArticletitle</h4>
             <p id="nextDescription">some short description</p>
-            <div class="se-task-difficulty-and-time medium"><img src="../img/icon/Levels-Med-16x16.svg" />&nbsp;&nbsp;Add an image</div>
+            <div class="se-task-difficulty-and-time medium"><img src="../img/icon/Levels-Med-16x16.svg" />&nbsp;&nbsp;<%= add_an_image_task %></div>
           </div>
         </div></a>
-        <a id="nextSE" href=""><button>View more suggested edits</button></a>
-        <button class="postSubmit-close">Close to view changes (or edit again) </button>
+        <a id="nextSE" href=""><button><%= view_more_suggested_edits %></button></a>
+        <button class="postSubmit-close"><%= postsubmit_close %></button>
       </div>
     </div>
   </div>
