@@ -10,15 +10,15 @@
 
 <body>
   <header class="overlay-header">
-    <a id="close" href=""><button class="icon"><img src="img/icon/close.svg" /></button></a>
-    <button class="icon hidden back-caption"><img src="img/icon/arrowPrevious.svg" /></button>
+    <a id="close" href=""><button class="icon"><img src="../img/icon/close.svg" /></button></a>
+    <button class="icon hidden back-caption"><img src="../img/icon/arrowPrevious.svg" /></button>
     <h1 class="header-suggestions">Suggestions mode</h1>
     <h1 class="header-caption hidden">Add a caption</h1>
     <div class="header-loading hidden">
       Loading image preview...
     </div>
-    <button class="fake-dropdown-btn"><img src="img/icon/edit.svg" /></button>
-    <a id="next" class="hide" onclick="handleAddComment()" href=""><button class="icon primary disabled"><img src="img/icon/next-white.svg" /></button></a>
+    <button class="fake-dropdown-btn"><img src="../img/icon/edit.svg" /></button>
+    <a id="next" class="hide" onclick="handleAddComment()" href=""><button class="icon primary disabled"><img src="../img/icon/next-white.svg" /></button></a>
   </header>
 
   <h2 id="title" class="articleTitle"></h2>
@@ -29,7 +29,7 @@
     </div>
     <div class="overImage hidden">
       <p id="caption">Add caption below</p>
-      <img id="openPopUp2" src="img/icon/info.svg" />
+      <img id="openPopUp2" src="../img/icon/info.svg" />
       <textarea id="caption-input" placeholder="Write a short caption here to help explain why the image is relevant to the article..." oninput="checkInput()"></textarea>
     </div>
     <!-- End hidden content until image is added -->
@@ -38,16 +38,16 @@
   </div>
   <div id="bottom-sheet" class="se-inspector se-inspector-pre">
     <div class="se-inspector-header"  onclick="handleToggleInspector()">
-      <button class="icon"><img src="img/icon/robot.svg" /></button>
+      <button class="icon"><img src="../img/icon/robot.svg" /></button>
       <h2>1 suggested image found</h2>
-      <button id="expand-collapse" class="icon"><img src="img/icon/expand.svg" /></button>
+      <button id="expand-collapse" class="icon"><img src="../img/icon/expand.svg" /></button>
     </div>
     <div class="se-inspector-content">
       <p id="suggestion_reason"></p>
       <div id="image-info-wrapper">
         <span id="openFullscreenImg">
           <div id="imageThumb" class="inspector-image"></div>
-          <span><img src="img/icon/fullScreen.svg" /></span>
+          <span><img src="../img/icon/fullScreen.svg" /></span>
         </span>
         <div class="inspector-imgMetadata">
           <a id="openFilepage" target="_blank"><div id="imgName"></div></a>
@@ -58,8 +58,8 @@
     </div>
     <div class="se-inspector-question">Add this image to the start of the article?</div>
     <div class="se-inspector-actions">
-      <button class="ooui-btn accept-button" onclick="handleImageSelection()"><img src="img/icon/check.svg" />&nbsp;Yes</button>
-      <a id="no" class="flexgrow" href=""><button class="ooui-btn margin8left reject-button"><img src="img/icon/close.svg" />&nbsp;No</button></a>
+      <button class="ooui-btn accept-button" onclick="handleImageSelection()"><img src="../img/icon/check.svg" />&nbsp;Yes</button>
+      <a id="no" class="flexgrow" href=""><button class="ooui-btn margin8left reject-button"><img src="../img/icon/close.svg" />&nbsp;No</button></a>
       <button id="skipButton" class="ooui-btn quiet-neutral">Skip</button>
     </div>
   </div>
@@ -68,7 +68,7 @@
     <!-- Drawer content -->
     <div class="drawer-content">
       <span class="closeDrawer">&nbsp</span>
-      <h4><img src="img/icon/image.svg" /> Image details</h4>
+      <h4><img src="../img/icon/image.svg" /> Image details</h4>
       <div id="captionHelperInfo">
         <p style="color:#59545d">The following details may help with writing a suitable caption.</p>
       </div>
@@ -98,7 +98,7 @@
 
   <div class="fullScreenImage hide" id="fullImageModal">
     <div class="overlay-header">
-      <span class="closeFullscreenImg"><button class="icon"><img src="img/icon/close-white.svg" /></button></span>
+      <span class="closeFullscreenImg"><button class="icon"><img src="../img/icon/close-white.svg" /></button></span>
     </div>
     <span class="closeFullscreenImg"><div id="imgFile" class="fullScreenImage"></div></span>
   </div>
