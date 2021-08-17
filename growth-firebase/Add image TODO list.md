@@ -64,8 +64,8 @@ https://www.figma.com/file/ULhJr1isDstRbGE5vjYDsr/Add-images-structured-task-Gro
 - ⬜ Update caption presentation https://phabricator.wikimedia.org/T289002
  1. ⬜ Make the caption a full screen modal/dialog
  2. ⬜ Add a caption tooltip pop-up ( on the "i" icon) on the full screen modal/dialog [low priority]
-- ⬜ Change position and pointer placement for onboarding (task and caption adding) to match corresponding components in Concept A
-- ⬜ Change disabled next icon in the full-screen caption image to enabled primary icon when a decision is made
+- ⬜ Change position and pointer placement for onboarding (task and caption adding) to match corresponding components in Concept A https://phabricator.wikimedia.org/T289004
+- ⬜ Change disabled next icon in the full-screen caption image to enabled primary icon when a caption is entered https://phabricator.wikimedia.org/T289005
 
 
 ### **Preview page**
@@ -75,7 +75,7 @@ https://www.figma.com/file/ULhJr1isDstRbGE5vjYDsr/Add-images-structured-task-Gro
 
 ***CONCEPT A ONLY***
 
-- ⬜ update styling to reflect concept A summary view.
+- ⬜ 🔧 update styling to reflect concept A summary view. https://phabricator.wikimedia.org/T289006
 
 ### **Submitted page**
 
@@ -91,8 +91,8 @@ https://www.figma.com/file/ULhJr1isDstRbGE5vjYDsr/Add-images-structured-task-Gro
 
 ***CONCEPT A ONLY***
 
-- ⬜ Selecting rejecting reason goes to the 'preview' page first
-- ⬜ Change from checkboxes to radio buttons
+- ⬜ Selecting rejecting reason goes to the 'preview' page first https://phabricator.wikimedia.org/T289007
+- ⬜ 🔧 Change from checkboxes to radio buttons https://phabricator.wikimedia.org/T289009
 
 ### **OVERALL**
 ---------------
