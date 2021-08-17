@@ -45,7 +45,7 @@ https://www.figma.com/file/ULhJr1isDstRbGE5vjYDsr/Add-images-structured-task-Gro
 - [x] Add onboarding for the caption
 - [x] ***[High priority]*** Update onboarding so it only appears once and does not come up again after being completed (https://phabricator.wikimedia.org/T288992)
 - [x] Image details modal dialog (when "Read more is tapped") is dismissed when user taps outside of the modal [Low prio]
-- [ ] Image metadata drawer (when tapping the placedImage) is dismissed when user taps outside of the drawer [Low prio] https://phabricator.wikimedia.org/T288993
+- [x] Image metadata drawer (when tapping the placedImage) is dismissed when user taps outside of the drawer [Low prio] https://phabricator.wikimedia.org/T288993
 
 
 ***CONCEPT B ONLY***

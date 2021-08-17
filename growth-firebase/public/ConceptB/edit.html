@@ -140,11 +140,9 @@
     }
 
     // When the user clicks anywhere outside of the drawer, close it
-    window.onclick = function(event) {
-      if (event.target == drawer) {
-        $('#ImageCaptionData_Drawer').removeClass('showDrawer');
-      }
-    }
+    $(document).on('click', '.showDrawer', () => {
+      $('#ImageCaptionData_Drawer').removeClass('showDrawer');
+    });
 
     // Pop-up MODAL style
     // Get the modal
