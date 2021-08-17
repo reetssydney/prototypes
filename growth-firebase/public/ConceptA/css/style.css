@@ -250,7 +250,7 @@ input.ooui-checkbox:checked + label::after {
 
 .minerva-header h1 sup {
   font-size: 12px;
-  color:#f0f;
+  color:#90f;
 }
 
 .minervaTabContainer {
@@ -447,20 +447,29 @@ opacity: .71;
 
 .se_card_image {
   height:128px;
-  background: url(../../img/icon/imageSE-Add.svg) #72777D no-repeat 50% 50%;
+  background-color: #EAECF0;
   box-shadow: inset 0 0 2px #c8ccd1;
   border-radius: 2px 2px 0px 0px;
 }
 
-.se-card-imgScrim {
+  .se-card-imgScrim {
+    border: dashed 2px #fff;
     position: absolute;
-    margin: 0px;
-    width: 256px;
-    height: 128px;
-    background: url(../../img/icon/imageSE-Add.svg) #72777D no-repeat 50% 50%;
+    margin: 4px;
+    width: 244px;
+    height: 116px;
+    background-color: rgba(255,255,255,.25);
+    outline: 4px solid rgba(255,255,255,.25);
     border-radius: 2px 2px 0 0;
-    opacity: .9;
   }
+
+  .se-card-imgScrim::before {
+    content: url(../../img/icon/robot-in-circle-white.svg);
+    position: absolute;
+    top: 36px;
+    left: 98px;
+  }
+
 
 .se_card_image img {
   width: 100%;

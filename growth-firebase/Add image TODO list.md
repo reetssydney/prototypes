@@ -31,7 +31,7 @@ https://www.figma.com/file/ULhJr1isDstRbGE5vjYDsr/Add-images-structured-task-Gro
 - ✅ Dismiss the more info about task drawer when tapping outside of it (low prio)
 
 ***CONCEPT A ONLY****
-- ⬜ Re-style the card per the Concept A img mocks (see commented out css and html) https://phabricator.wikimedia.org/T288999
+- ✅ Re-style the card per the Concept A img mocks (see commented out css and html) https://phabricator.wikimedia.org/T288999
 
 ### **Edit page**
 
@@ -98,5 +98,5 @@ https://www.figma.com/file/ULhJr1isDstRbGE5vjYDsr/Add-images-structured-task-Gro
 ---------------
 - ✅ Move Concept B prototype into a 'ConceptB_en' folder in 'Public'
 - ⬜ ***[High priority]*** Add es/en dictionary to the prototype to enable faster updating of UI strings https://phabricator.wikimedia.org/T288996
-- ⬜ Clone and customize completed Concept B instance into Concept A (created in a 'ConceptA' dir) https://phabricator.wikimedia.org/T288997
+- ✅ Clone and customize completed Concept B instance into Concept A (created in a 'ConceptA' dir) https://phabricator.wikimedia.org/T288997
 - ⬜ Clone and customize completed English Concept A & B into Spanish instances
