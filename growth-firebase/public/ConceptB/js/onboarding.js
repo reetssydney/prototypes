@@ -35,7 +35,7 @@ const positionConfigs = {
     targetSelector: '#openFullscreenImg',
     position: 'above',
     scrollTop: 0,
-    offsetIn: 65,
+    offsetIn: 20,
   },
   articleTitle: {
     targetSelector: '.articleTitle',
