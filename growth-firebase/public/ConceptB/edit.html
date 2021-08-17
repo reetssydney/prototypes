@@ -11,7 +11,9 @@
 <body>
   <header class="overlay-header">
     <a id="close" href=""><button class="icon"><img src="img/icon/close.svg" /></button></a>
+    <button class="icon hidden back-caption"><img src="img/icon/arrowPrevious.svg" /></button>
     <h1 class="header-suggestions">Suggestions mode</h1>
+    <h1 class="header-caption hidden">Add a caption</h1>
     <div class="header-loading hidden">
       Loading image preview...
     </div>
@@ -214,6 +216,10 @@
 
       $('.se-inspector-actions').on('click', '.reject-button', (e) => {
         setSuggestionRejected();
+      });
+
+      $('.back-caption').on('click', e => {
+        hideCaptionInput();
       });
 
       if (hasSeenImageGuidance() && hasSeenCaptionGuidance()) {

@@ -52,7 +52,7 @@ https://www.figma.com/file/ULhJr1isDstRbGE5vjYDsr/Add-images-structured-task-Gro
 
 - [x] More image info bottom sheet for captions
 - [x] 👷 Interstitial 'Loading image...' screen
-- [ ] Change header when adding a caption to back arrow (add functionality to back arrow) https://phabricator.wikimedia.org/T288994
+- [x] Change header when adding a caption to back arrow (add functionality to back arrow) https://phabricator.wikimedia.org/T288994
 - [x] Revise caption design so that it's clearer how to access image metadata
 
 

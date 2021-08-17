@@ -64,7 +64,7 @@ function showImageLoadingState() {
 
 	setTimeout(function() {
 		$('.placedImage-loading').addClass('transparent');
-		$('.header-suggestions').text(getMessage('header-add-caption')).removeClass('hidden');
+		$('.header-caption').removeClass('hidden');
 		$('.header-loading').addClass('hidden');
 		promise.resolve();
 	}, 800);
@@ -72,18 +72,40 @@ function showImageLoadingState() {
 	return promise;
 }
 
+function updateCaptionNav() {
+	$('#close').addClass('hidden');
+	$('.back-caption').removeClass('hidden');
+}
+
+function hideCaptionInput() {
+	$('.ButtonOverImage').addClass('hidden');
+	$('.overImage').addClass('hidden');
+	$('#bottom-sheet').css('bottom', 0).show();
+	$('#next').addClass('hide');
+	$('.header-caption').addClass('hidden');
+	$('.header-suggestions').removeClass('hidden');
+	$('.back-caption').addClass('hidden');
+	$('#close').removeClass('hidden');
+}
+
+function showCaptionInput() {
+	updateCaptionNav();
+	$('.ButtonOverImage').removeClass('hidden');
+	$('.overImage').removeClass('hidden');
+	$('#caption-input').focus();
+	$('#bottom-sheet').hide();
+	$('#next').removeClass('hide');
+}
+
 // move image and add input
 function handleImageSelection() {
 	$('.ButtonOverImage').prepend(
-		$('#imageThumb img').addClass('placedImage'),
+		$('#imageThumb img').addClass('placedImage').clone(),
 		$('#imgDescription_repeat').addClass('placedImage'),
 	);
 
 	showImageLoadingState().then(() => {
-		$('.overImage').removeClass('hidden');
-		$('#caption-input').focus();
-		$('#bottom-sheet').hide();
-		$('#next').removeClass('hide');
+		showCaptionInput();
 		showCaptionGuidance();
 	});
 }
