@@ -908,11 +908,13 @@ font-size: 16px;
   grid-column: span 2;
   grid-row: 2;
   overflow-x: hidden;
+  position: relative;
 }
 
-#article-container textarea::placeholder {
+
+#article-container textarea::placeholder, #article-container textarea::-webkit-input-placeholder{
   font-style: italic;
-  color: #72777D;
+  color: #72777d;
   background-color: #F4F9FF;
   padding: 4px 4px 8px;
   min-height: 40px;
