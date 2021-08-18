@@ -144,5 +144,18 @@
 	"suggested_edits_update_articles": "Update articles (bring existing articles up-to-date) (in Spanish)",
 	"suggested_edits_expand_articles": "Expand short articles (in Spanish)",
 	"suggested_edits_create_article": "Create a new article (in Spanish)",
-	"suggested_edits_create_article_help": ">It’s recommended that you try a few hard tasks first before attempting a new article. <u>Learn more</u> about writing a new missing article here (in Spanish)."
+	"suggested_edits_create_article_help": ">It’s recommended that you try a few hard tasks first before attempting a new article. <u>Learn more</u> about writing a new missing article here (in Spanish).",
+	"postedit_toast_accept": "Has publicado una edición. ¡Gracias y a por las siguientes!",
+  	"postedit_toast_reject": "Gracias por revisar las sugerencias. ¡Sigue adelante!",
+  	"guidance_image_header": "Look at the image suggested (in Spanish)",
+  	"guidance_image_body": "The image is suggested by a machine and found from Wikimedia Commons, the free license image repository used by Wikipedia for images. (in Spanish)",
+  	"guidance_article_header": "Is it suitable for this article? (in Spanish)",
+  	"guidance_article_body": "Review the article for which this image is being suggested. Does it seem like the image is suitable and helpful for readers to understand this topic? (in Spanish)",
+  	"guidance_details_header": "Use the image details to help with your decision (in Spanish)",
+  	"guidance_details_body": "To help evaluate the image suitability, review the image by looking at its file name, description, the reason it was suggested, and zooming in to see more details. (in Spanish)",
+  	"guidance_caption_header": "Write a caption that gives context to the image (in Spanish)",
+  	"guidance_caption_body": "Describe the image so it’s clear how it relates to the article. A few guidelines: (in Spanish)",
+  	"guidance_caption_guide_value": "Avoid making value judgements like “good”, “ugly”, or “beautiful”. (in Spanish)",
+  	"guidance_caption_guide_review": "Review the description and filename for information that is relevant to include. (in Spanish)",
+  	"guidance_caption_guide_language": "Write in the language of the Wikipedia you are in. (in Spanish)"
 }

@@ -93,9 +93,6 @@
     </div>
   </div>
 
-  <div class="onboarding-overlay">
-  </div>
-
   <div class="fullScreenImage hide" id="fullImageModal">
     <div class="overlay-header">
       <span class="closeFullscreenImg"><button class="icon"><img src="../img/icon/close-white.svg" /></button></span>
@@ -200,10 +197,8 @@
 
   </script>
   <script src="js/data.js"></script>
-  <script src="js/messages.js"></script>
   <script src="js/app.js"></script>
   <script src="js/user-state.js"></script>
-  <script src="js/onboarding.js"></script>
   <script type="text/javascript">
     $(document).ready(() => {
       animateClass('se-inspector');
@@ -219,20 +214,6 @@
       $('.back-caption').on('click', e => {
         hideCaptionInput();
       });
-
-      if (hasSeenImageGuidance() && hasSeenCaptionGuidance()) {
-        $('.onboarding-overlay').removeClass('show');
-        return;
-      }
-
-      initializeOnboarding($('.onboarding-overlay'));
-      if (hasSeenCaptionGuidance()) {
-        $('.onboarding-overlay').removeClass('show');
-      } else {
-        setTimeout(() => {
-          showOnboardingIndex(0);
-        }, 1000);
-      }
     });
   </script>
 
