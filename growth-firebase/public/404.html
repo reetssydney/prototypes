@@ -12,7 +12,7 @@
       #message h2 { color: #444; font-weight: bold; font-size: 16px; margin: 0 0 8px; }
       #message h1 { font-size: 24px; font-weight: bold; color: rgba(0,0,0,0.87); margin: 0 0 16px;}
       #message p { line-height: 1.5; margin: 16px 0 24px; font-size: 16px; }
-      #message a { display: block; text-align: center; font-weight: bold; text-decoration: none; color: white; padding: 16px; border-radius: 2px; font-size: 1.25em;}
+      #message a { display: block; text-align: center; font-weight: bold; text-decoration: none; color: white; padding: 16px; border-radius: 2px; font-size: 1.25em;margin: 0 8px;}
       .pink {background-color: #f0f; opacity: .8;}
       .purple {background-color: #90f; opacity: .8;}
       #message, #message a { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); }
@@ -26,11 +26,16 @@
   <body>
     <div id="message">
       <h2>404</h2>
-      <h1>Oops, page not found</h1>
-      <p>The specified URL was not found. It may have been moved as this prototype is still a work in progress...</p>
-      <h3>Don't worry, just choose a path below ⬇️</h3>
-      <p><a class="purple" href="../ConceptA/newcomer_homepage.html#article01">Return to demo A</a></p>
-      <p><a class="pink" href="../ConceptB/newcomer_homepage.html#article01">Return to demo B</a></p>
+      <h1>Oops, page not found / <br/> Vaya, página no encontrada</h1>
+      <p>EN: The specified URL was not found. It may have been moved as this prototype is still a work in progress...</p>
+      <p>ES: No se encontró la URL especificada. Es posible que se haya movido ya que este prototipo aún es un trabajo en progreso ...</p>
+      <h3>Don't worry, choose a path below ⬇️</h3>
+      <h3>No se preocupe, elija un camino a continuación ⬇️</h3>
+      <div style="display:grid; grid-template-columns: 50% 50%;">
+      <p><a class="purple" href="../ConceptA_en/newcomer_homepage.html#article01">English demo version A</a></p>
+      <p><a class="purple" href="../ConceptA_es/newcomer_homepage.html#article01">Demo A en español</a></p>
+      <p><a class="pink" href="../ConceptB_en/newcomer_homepage.html#article01">English demo version B</a></p>
+      <p><a class="pink" href="../ConceptB_es/newcomer_homepage.html#article01">Demo B en español</a></p>
         </div>
   </body>
 </html>
