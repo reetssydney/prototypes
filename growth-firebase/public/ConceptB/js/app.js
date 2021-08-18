@@ -119,11 +119,24 @@ function handleImageSelection() {
 	});
 }
 
+function reShowCaption() {
+	handleImageSelection();
+	const existingCaption = getExistingCaption();
+	if (existingCaption) {
+		$('#caption-input').val(existingCaption);
+		$('#next button').removeClass('disabled');
+	}
+}
+
 // add comment to local storage
 function handleAddComment() {
 	var hash = window.location.hash.substring(1);
 	var val = $('#caption-input').val();
 	localStorage.setItem(hash, val);
+}
+
+function getExistingCaption() {
+	return localStorage.getItem(window.location.hash.substring(1));
 }
 
 // prev/next buttons on homepage

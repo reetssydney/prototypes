@@ -206,7 +206,13 @@
   <script src="js/onboarding.js"></script>
   <script type="text/javascript">
     $(document).ready(() => {
-      animateClass('se-inspector');
+
+      if (isBackFromPreview()) {
+        reShowCaption();
+        clearPreviewStates();
+      } else {
+        animateClass('se-inspector');
+      }
 
       $('.se-inspector-actions').on('click', '.accept-button', (e) => {
         setSuggestionAccepted();

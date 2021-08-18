@@ -3,6 +3,7 @@ const ACCEPTANCE_STATE_REJECTED = 'rejected';
 const ACCEPTANCE_STATE_ACCEPTED = 'accepted';
 const HAS_SEEN_IMAGE_GUIDANCE = 'hasSeenImageGuidance';
 const HAS_SEEN_CAPTION_GUIDANCE = 'hasSeenCaptionGuidance';
+const HAS_PREVIEWED = 'hasPreviewed';
 
 function getAcceptance() {
   return localStorage.getItem(ACCEPTANCE_STATE);
@@ -47,4 +48,16 @@ function hasSeenCaptionGuidance() {
 function clearGuidancePrefs() {
   localStorage.removeItem(HAS_SEEN_IMAGE_GUIDANCE);
   localStorage.removeItem(HAS_SEEN_CAPTION_GUIDANCE);
+}
+
+function setHasPreviewed() {
+  localStorage.setItem(HAS_PREVIEWED, true);
+};
+
+function clearPreviewStates() {
+  localStorage.removeItem(HAS_PREVIEWED);
+}
+
+function isBackFromPreview() {
+  return localStorage.getItem(HAS_PREVIEWED);
 }

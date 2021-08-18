@@ -58,8 +58,8 @@
     </div>
     <div class="se-inspector-question">Add this image to the start of the article? (in Spanish)</div>
     <div class="se-inspector-actions">
-      <button class="ooui-btn accept-button" onclick="handleImageSelection()"><img src="../img/icon/check.svg" />&nbsp;Yes (in Spanish)</button>
-      <a id="no" class="flexgrow" href=""><button class="ooui-btn margin8left reject-button"><img src="../img/icon/close.svg" />&nbsp;No (in Spanish)</button></a>
+      <button class="ooui-btn accept-button" onclick="handleImageSelection()"><img src="../img/icon/check.svg" />&nbsp;Si</button>
+      <a id="no" class="flexgrow" href=""><button class="ooui-btn margin8left reject-button"><img src="../img/icon/close.svg" />&nbsp;No</button></a>
       <button id="skipButton" class="ooui-btn quiet-neutral">Skip (in Spanish)</button>
     </div>
   </div>
@@ -201,6 +201,10 @@
   <script src="../scripts/user-state.js"></script>
   <script type="text/javascript">
     $(document).ready(() => {
+
+      // if (isBackFromPreview()) {
+      //   // TODO: show caption
+      // }
       animateClass('se-inspector');
 
       $('.se-inspector-actions').on('click', '.accept-button', (e) => {
