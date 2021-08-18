@@ -23,6 +23,7 @@ function updateHtml(page, hash) {
 			$(`#${element}`).html(obj[element]);
 		}
 	}
+	var acceptanceStatusKey = (hash + '.acceptanceStatus');
 	// add the buttons which are page dependent
 	if (isPage(page, 'newcomer_homepage')) {
 		$('a#openSE').attr("href", `suggested_edits.html#${hash}`);
@@ -36,16 +37,23 @@ function updateHtml(page, hash) {
 		$('a#no').attr("href", `reject.html#${hash}`);
 		$('a#close').attr("href", `suggested_edits.html#${hash}`);
 		$('a#openFilepage').attr("href", `image-filepage.html#${hash}`);
+		setSuggestionAccepted();
 
 	} else if (isPage(page, 'reject')) {
 		$('a#back').attr("href", `edit.html#${hash}`);
-		$('a#done').attr("href", `submitted.html#${hash}`);
+		$('a#done').attr("href", `preview.html#${hash}`);
 		$('#imgCaption').html(`${localStorage.getItem(hash)}`);
-
+		setSuggestionRejected();
 	} else if (isPage(page, 'preview')) {
 		$('a#back').attr("href", `edit.html#${hash}`);
 		$('a#done').attr("href", `submitted.html#${hash}`);
-		$('#imgCaption').html(`${localStorage.getItem(hash)}`);
+		if ( getAcceptance() === 'rejected' ) {
+			$('#imgCaption').addClass('rejected');
+			$('#imgName')
+				.addClass('rejected')
+				.before('<p class="rejection-article-title">' + obj.title + ':</p>');
+			$('#imgFile').addClass('rejected');
+		}
 
 	} else if (isPage(page, 'submitted')) {
 		$('a#nextEdit').attr("href", `edit.html#${obj.nextTitleID}`);
