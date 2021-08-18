@@ -35,3 +35,7 @@ To add a new localized string:
 1. Add a new key-value pair to all the JSON files in `public/i18n`; the key should be all lowercase with no spaces (underscores only), the value should be the corresponding translation
 2. In the HTML, use <%= key %> instead of hard-coding the localized string
 3. Run `npm run build`
+
+## Articles
+
+Article data can be found at `public/i18n/en-articles.js` and `public/i18n/es-articles.js`. During build files, `js/data.js` will be replaced by these language-specific data.

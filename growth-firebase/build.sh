@@ -6,6 +6,7 @@ finalPath="${conceptPath}_${language}";
 
 rm -rf "${finalPath}"
 cp -R "${conceptPath}" "${finalPath}"
+cp "public/i18n/${language}-articles.js" "${finalPath}/js/data.js"
 
 # generate ejs from html
 for i in `find "${finalPath}" -name "*.html"`; do
