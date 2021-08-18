@@ -2,7 +2,7 @@
 <html >
 <head>
   <meta charset="UTF-8">
-  <title>Add image demo</title>
+  <title><$= add_image_demo %></title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/normalize.css">
@@ -11,13 +11,13 @@
 <body class="commons-page">
   <header class="minerva-header">
     <button class="icon"><img src="../img/icon/menu.svg" /></button>
-    <h1>WIKIMEDIA COMMONS<sup>[prototype]</sup></h1>
+    <h1><%= wikimedia_commons %><sup><%= prototype_b %></sup></h1>
     </header>
   <h2 id="imgName"  class="articleTitle"></h2>
   <div class="minervaTabContainer">
     <ul>
-      <li class="selected">File</li>
-      <li>Discussion</li>
+      <li class="selected"><%= tab_file %></li>
+      <li><%= tab_discussion %></li>
     </ul>
   </div>
   <div class="minervaPageActionsMenu">
@@ -26,23 +26,23 @@
     <img src="../img/icon/history.svg" />
     <img src="../img/icon/edit.svg" />
   </div>
-  <p style="color:#f0f;" class="mobilePageWrapper">Note: This is not the real filepage on Wikimedia Commons, but a close approximation for the purposes of this user testing prototype.</p>
+  <p style="color:#f0f;" class="mobilePageWrapper"><%= prototype_note %></p>
   <div id="imgFile"></div>
   <div id="filepageSize" class="mobilePageWrapper"></div>
   <br/>
   <div class="minervaTabContainer">
     <ul>
-      <li class="selected">File information</li>
-      <li>Structured data</li>
+      <li class="selected"><%= file_info %></li>
+      <li><%= structured_data %></li>
     </ul>
   </div>
 
   <div id="article-container" class="mobilePageWrapper">
     <div id="imgCommonsCaption"></div>
-    <h3>Summary</h3>
+    <h3><%= file_summary %></h3>
     <div id="filepageSummary"></div>
     <br/>
-    <h3>Licensing</h3>
+    <h3><%= file_licensing %></h3>
     <div id="filepageLicensing"></div>
     <br/>
   </div>

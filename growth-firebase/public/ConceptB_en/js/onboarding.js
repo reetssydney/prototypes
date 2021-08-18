@@ -1,35 +1,3 @@
-const onboardingScreens = {
-  image: {
-    header: 'Look at the image suggested',
-    body: 'The image is suggested by a machine and found from Wikimedia Commons, the free license image repository used by Wikipedia for images.',
-    position: 'imageSuggestion',
-    pointer: 'bottom',
-  },
-  article: {
-    header: 'Is it suitable for this article?',
-    body: 'Review the article for which this image is being suggested. Does it seem like the image is suitable and helpful for readers to understand this topic?',
-    position: 'articleTitle',
-    pointer: 'top-left',
-  },
-  details: {
-    header: 'Use the image details to help with your decision',
-    body: 'To help evaluate the image suitability, review the image by looking at its file name, description, the reason it was suggested, and zooming in to see more details.',
-    position: 'suggestionReason',
-    pointer: 'bottom'
-  },
-  caption: {
-    header: 'Write a caption that gives context to the image',
-    body: 'Describe the image so it’s clear how it relates to the article.A few guidelines:',
-    list: [
-      'Avoid making value judgements like “good”, “ugly”, or “beautiful".',
-      'Review the description and filename for information that is relevant to include.',
-      'Write in the language of the Wikipedia you are in.',
-    ],
-    position: 'caption',
-    pointer: 'top-left',
-  }
-};
-
 const positionConfigs = {
   imageSuggestion: {
     targetSelector: '#openFullscreenImg',
@@ -101,11 +69,38 @@ function createOnboardingItem(content = {}, index) {
   return $item;
 }
 
-function initializeOnboarding($onboardingContainer) {
-  $container = $onboardingContainer;
-
-  $('.onboarding-overlay').addClass('show');
-
+function initializeGuidanceContent() {
+  const onboardingScreens = {
+    image: {
+      header: getMessage('guidance_image_header'),
+      body: getMessage('guidance_image_body'),
+      position: 'imageSuggestion',
+      pointer: 'bottom',
+    },
+    article: {
+      header: getMessage('guidance_article_header'),
+      body: getMessage('guidance_article_body'),
+      position: 'articleTitle',
+      pointer: 'top-left',
+    },
+    details: {
+      header: getMessage('guidance_details_header'),
+      body: getMessage('guidance_details_body'),
+      position: 'suggestionReason',
+      pointer: 'bottom'
+    },
+    caption: {
+      header: getMessage('guidance_caption_header'),
+      body: getMessage('guidance_caption_body'),
+      list: [
+        getMessage('guidance_caption_guide_value'),
+        getMessage('guidance_caption_guide_review'),
+        getMessage('guidance_caption_guide_language'),
+      ],
+      position: 'caption',
+      pointer: 'top-left',
+    }
+  };
   const screens = [
     onboardingScreens.image,
     onboardingScreens.article,
@@ -149,6 +144,13 @@ function initializeOnboarding($onboardingContainer) {
     showOnboardingIndex(captionIndex);
     $('.onboarding-overlay').addClass('show');
   };
+}
+
+function initializeOnboarding($onboardingContainer) {
+  $container = $onboardingContainer;
+
+  $('.onboarding-overlay').addClass('show');
+  fetchMessages().then(initializeGuidanceContent);
 }
 
 function teardownOnboarding() {

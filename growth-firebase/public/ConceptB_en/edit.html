@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Add image demo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/normalize.css">
+</head>
+
+<body>
+  <header class="overlay-header">
+    <a id="close" href=""><button class="icon"><img src="../img/icon/close.svg" /></button></a>
+    <button class="icon hidden back-caption"><img src="../img/icon/arrowPrevious.svg" /></button>
+    <h1 class="header-suggestions">Suggestions mode</h1>
+    <h1 class="header-caption hidden">Add a caption</h1>
+    <div class="header-loading hidden">
+      Loading image preview...
+    </div>
+    <button class="fake-dropdown-btn"><img src="../img/icon/edit.svg" /></button>
+    <a id="next" class="hide" onclick="handleAddComment()" href=""><button class="icon primary disabled"><img src="../img/icon/next-white.svg" /></button></a>
+  </header>
+
+  <h2 id="title" class="articleTitle"></h2>
+  <div id="article-container" class="mobilePageWrapper">
+    <!--Start hidden until image is added-->
+    <div class="ButtonOverImage" id="openDrawer">
+      <div class="placedImage-loading"></div>
+    </div>
+    <div class="overImage hidden">
+      <p id="caption">Add caption below</p>
+      <img id="openPopUp2" src="../img/icon/info.svg" />
+      <textarea id="caption-input" placeholder="Write a short caption here to help explain why the image is relevant to the article..." oninput="checkInput()"></textarea>
+    </div>
+    <!-- End hidden content until image is added -->
+    <div id="text"></div>
+    <div id="form-container"></div>
+  </div>
+  <div id="bottom-sheet" class="se-inspector se-inspector-pre">
+    <div class="se-inspector-header"  onclick="handleToggleInspector()">
+      <button class="icon"><img src="../img/icon/robot.svg" /></button>
+      <h2>1 suggested image found</h2>
+      <button id="expand-collapse" class="icon"><img src="../img/icon/expand.svg" /></button>
+    </div>
+    <div class="se-inspector-content">
+      <p id="suggestion_reason"></p>
+      <div id="image-info-wrapper">
+        <span id="openFullscreenImg">
+          <div id="imageThumb" class="inspector-image"></div>
+          <span><img src="../img/icon/fullScreen.svg" /></span>
+        </span>
+        <div class="inspector-imgMetadata">
+          <a id="openFilepage" target="_blank"><div id="imgName"></div></a>
+          <p id="imgDescription"></p>
+          <span id="openPopUpModal">Read more</span>
+        </div>
+      </div>
+    </div>
+    <div class="se-inspector-question">Add this image to the start of the article?</div>
+    <div class="se-inspector-actions">
+      <button class="ooui-btn accept-button" onclick="handleImageSelection()"><img src="../img/icon/check.svg" />&nbsp;Yes</button>
+      <a id="no" class="flexgrow" href=""><button class="ooui-btn margin8left reject-button"><img src="../img/icon/close.svg" />&nbsp;No</button></a>
+      <button id="skipButton" class="ooui-btn quiet-neutral">Skip</button>
+    </div>
+  </div>
+
+  <div id="ImageCaptionData_Drawer" class="drawer">
+    <!-- Drawer content -->
+    <div class="drawer-content">
+      <span class="closeDrawer">&nbsp</span>
+      <h4><img src="../img/icon/image.svg" /> Image details</h4>
+      <div id="captionHelperInfo">
+        <p style="color:#59545d">The following details may help with writing a suitable caption.</p>
+      </div>
+    </div>
+  </div>
+
+  <div id="ImageDetails_Modal" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content">
+      <div id="imageDetails">
+        <h4>Image details</h4>
+        <p><span class="metadataLabel">Filename:&nbsp;&nbsp;</span><span id="imgName_repeat"></span></p>
+        <p><span class="metadataLabel">Description:&nbsp;&nbsp;</span><span id="imgDescription_repeat"></span></p>
+        <p><span class="metadataLabel">Commons caption:&nbsp;&nbsp;</span><span id="imgCommonsCaption"></span></p>
+        <p><span class="metadataLabel">License:&nbsp;&nbsp;</span><span id="imgLicense"></span></p>
+        <p><span class="metadataLabel">Date:&nbsp;&nbsp;</span><span id="imgDate"></span></p>
+        <p><span class="metadataLabel">Author:&nbsp;&nbsp;</span><span id="imgAuthor"></span></p>
+        <p><span class="metadataLabel">Image tags:&nbsp;&nbsp;</span><span id="imgCommonsCategories"></span></p>
+        <p id="suggestion_reason_repeat"></p>
+      </div>
+      <button class="closeModal">Close</button>
+    </div>
+  </div>
+
+  <div class="onboarding-overlay">
+  </div>
+
+  <div class="fullScreenImage hide" id="fullImageModal">
+    <div class="overlay-header">
+      <span class="closeFullscreenImg"><button class="icon"><img src="../img/icon/close-white.svg" /></button></span>
+    </div>
+    <span class="closeFullscreenImg"><div id="imgFile" class="fullScreenImage"></div></span>
+  </div>
+
+  <script
+    src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+    crossorigin="anonymous">
+  </script>
+  <script>
+    // Pop-up drawer style
+    // Get the drawer
+    var drawer = document.getElementById("ImageCaptionData_Drawer");
+
+    // Get the button that opens the drawer
+    var drawerBtn = document.getElementById("openDrawer");
+
+    // Get the <span> element that closes the drawer
+    var span = document.getElementsByClassName("closeDrawer")[0];
+
+    // When the user clicks on the button, open the drawer
+    drawerBtn.onclick = function() {
+      $('#ImageCaptionData_Drawer').addClass('showDrawer');
+      $('.ButtonOverImage').addClass('ImgSelected');
+      $('#captionHelperInfo').append(
+        $('#imgName'),
+        $('#imgDescription'),
+        $('#imgCommonsCaption'),
+        $('#imgDate'),
+        $('#imgCommonsCategories'),
+      );
+    }
+
+    // When the user clicks on <span> (x), close the drawer
+    span.onclick = function() {
+      $('#ImageCaptionData_Drawer').removeClass('showDrawer');
+      $('.ButtonOverImage').removeClass('ImgSelected');
+      $('#caption-input').focus();
+    }
+
+    // When the user clicks anywhere outside of the drawer, close it
+    $(document).on('click', '.showDrawer', () => {
+      $('#ImageCaptionData_Drawer').removeClass('showDrawer');
+    });
+
+    // Pop-up MODAL style
+    // Get the modal
+    var modal = document.getElementById("ImageDetails_Modal");
+
+    // Get the button that opens the modal
+    var moreBtn = document.getElementById("openPopUpModal");
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("closeModal")[0];
+
+    // When the user clicks on the button, open the modal
+
+    moreBtn.onclick = function() {
+      modal.style.display = "block";
+    }
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+      modal.style.display = "none";
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+
+    // fullscreen image modal
+    // Get the modal
+    var fullImageModal = document.getElementById("fullImageModal");
+
+    // Get the button that opens the modal
+    var openImgBtn = document.getElementById("openFullscreenImg");
+
+    // Get the <span> element that closes the modal
+    var closeImgBtn1 = document.getElementsByClassName("closeFullscreenImg")[0];
+    var closeImgBtn2 = document.getElementsByClassName("closeFullscreenImg")[1];
+
+    // When the user clicks on the button, open the modal
+
+    openImgBtn.onclick = function() {
+      $('#fullImageModal').removeClass('hide');
+    }
+
+    // When the user clicks on <span> (x), close the modal
+    closeImgBtn1.onclick = function() {
+      $('#fullImageModal').addClass('hide');
+    }
+    closeImgBtn2.onclick = function() {
+      $('#fullImageModal').addClass('hide');
+    }
+
+
+  </script>
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/user-state.js"></script>
+  <script src="../scripts/messages.js"></script>
+  <script src="js/onboarding.js"></script>
+  <script type="text/javascript">
+    $(document).ready(() => {
+      animateClass('se-inspector');
+
+      $('.se-inspector-actions').on('click', '.accept-button', (e) => {
+        setSuggestionAccepted();
+      });
+
+      $('.se-inspector-actions').on('click', '.reject-button', (e) => {
+        setSuggestionRejected();
+      });
+
+      $('.back-caption').on('click', e => {
+        hideCaptionInput();
+      });
+
+      if (hasSeenImageGuidance() && hasSeenCaptionGuidance()) {
+        $('.onboarding-overlay').removeClass('show');
+        return;
+      }
+
+      initializeOnboarding($('.onboarding-overlay'));
+      if (hasSeenCaptionGuidance()) {
+        $('.onboarding-overlay').removeClass('show');
+      } else {
+        setTimeout(() => {
+          showOnboardingIndex(0);
+        }, 1000);
+      }
+    });
+  </script>
+
+</body>
+</html>
