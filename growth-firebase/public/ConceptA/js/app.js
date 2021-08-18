@@ -33,12 +33,16 @@ function updateHtml(page, hash) {
 		$('a#openFilepage').attr("href", `/ConceptA/image-filepage.html#${hash}`);
 	} else if (page === 'ConceptA/reject.html') {
 		$('a#back').attr("href", `/ConceptA/edit.html#${hash}`);
-		$('a#done').attr("href", `/ConceptA/submitted.html#${hash}`);
-		$('#imgCaption').html(`${localStorage.getItem(hash)}`);
+		$('a#done').attr("href", `/ConceptA/preview.html#${hash}`);
+		localStorage.setItem(hash +'.acceptanceStatus', 'rejected');
 	} else if (page === 'ConceptA/preview.html') {
 		$('a#back').attr("href", `/ConceptA/edit.html#${hash}`);
 		$('a#done').attr("href", `/ConceptA/submitted.html#${hash}`);
-		$('#imgCaption').html(`${localStorage.getItem(hash)}`);
+		$('#imgCaption').addClass('rejected');
+		$('#imgName')
+			.addClass('rejected')
+			.before('<p class="rejection-article-title">' + obj.title + ':</p>' );
+		$('#imgFile').addClass('rejected');
 	} else if (page === 'ConceptA/submitted.html') {
 		$('a#nextEdit').attr("href", `/ConceptA/edit.html#${obj.nextTitleID}`);
 		$('a#nextSE').attr("href", `/ConceptA/suggested_edits.html#${obj.nextTitleID}`);
