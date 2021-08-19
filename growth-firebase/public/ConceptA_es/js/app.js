@@ -58,8 +58,8 @@ function updateHtml(page, hash) {
 			$('#imgCaption').addClass('rejected');
 			$('#imgName')
 				.addClass('rejected')
-				.before('<p class="rejection-article-title">' + obj.title + ':</p>');
 			$('#imgFile').addClass('rejected');
+			$('#ReviewChangesFooter').addClass('hide');
 		}
 
 	} else if (isPage(page, 'submitted')) {

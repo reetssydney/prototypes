@@ -1256,6 +1256,31 @@ background-color: #EAECF0;
   border-top: solid 1px #EAECF0;
 }
 
+#ReviewChangesFooter.hide {
+  display: none;
+}
+
+#ReviewChangesFooter {
+position: fixed;
+height: 48px;
+background-color: #FFF;
+width: 100%;
+bottom: 0;
+left: 0;
+filter: drop-shadow(0px -1px 0px #C8CCD1);
+}
+
+span.fakefooterbtn {
+  padding: 16px;
+  vertical-align: top;
+  display: inline-block;
+  height: 100%;
+  background-color: #F8F9FA;
+  box-shadow: 1px 0px 0px #c8ccd1;
+  font-weight: bold;
+}
+
+
 /************======== SUBMITTED PAGE ========************/
 .submittedPage #imgCaption {
   font-size: 13px;
