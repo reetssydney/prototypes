@@ -2,11 +2,17 @@
 function getLocation() {
 	var page = window.location.pathname.substring(1);
 	var hash = window.location.hash.substring(1);
-	updateHtml(page, hash);
+	if (hash) {
+		updateHtml(page, hash);
+	}
 }
 
 function isPage(currentPage, targetPage) {
 	return currentPage.indexOf(targetPage) !== -1;
+}
+
+function getArticleData() {
+	return window[window.location.hash.substring(1)];
 }
 
 // add the appropriate data to the page
@@ -72,66 +78,18 @@ function showCaptionGuidance() {
 	}
 }
 
-function showImageLoadingState() {
-	const promise = $.Deferred();
-	$('html, body').animate({ scrollTop: 0 });
-	$('#bottom-sheet').css('bottom', '-100%');
-	$('.header-suggestions').addClass('hidden');
-	$('.header-loading').removeClass('hidden');
-
-	setTimeout(function() {
-		$('.placedImage-loading').addClass('transparent');
-		$('.header-caption').removeClass('hidden');
-		$('.header-loading').addClass('hidden');
-		promise.resolve();
-	}, 800);
-
-	return promise;
-}
-
-function updateCaptionNav() {
-	$('#close').addClass('hidden');
-	$('.back-caption').removeClass('hidden');
-}
-
-function hideCaptionInput() {
-	$('.ButtonOverImage').addClass('hidden');
-	$('.overImage').addClass('hidden');
-	$('#bottom-sheet').css('bottom', 0).show();
-	$('#next').addClass('hide');
-	$('.header-caption').addClass('hidden');
-	$('.header-suggestions').removeClass('hidden');
-	$('.back-caption').addClass('hidden');
-	$('#close').removeClass('hidden');
-}
-
-function showCaptionInput() {
-	updateCaptionNav();
-	$('.ButtonOverImage').removeClass('hidden');
-	$('.overImage').removeClass('hidden');
-	$('#caption-input').focus();
-	$('#bottom-sheet').hide();
-	$('#next').removeClass('hide');
-}
-
-// move image and add input
+// Show full-screen caption
 function handleImageSelection() {
-	$('.ButtonOverImage').prepend(
-		$('#imageThumb img').addClass('placedImage').clone(),
-		$('#imgDescription_repeat').addClass('placedImage'),
-	);
-
-	showImageLoadingState().then(() => {
-		showCaptionInput();
-		showCaptionGuidance();
-	});
+	location.href = `caption.html${window.location.hash}`;
 }
 
-// add comment to local storage
-function handleAddComment() {
-	var hash = window.location.hash.substring(1);
-	var val = $('#caption-input').val();
-	localStorage.setItem(hash, val);
+function saveCaptionForArticle(caption) {
+	var articleId = window.location.hash.substring(1);
+	localStorage.setItem(articleId, caption);
+}
+
+function getExistingCaption() {
+	return localStorage.getItem(window.location.hash.substring(1));
 }
 
 // prev/next buttons on homepage

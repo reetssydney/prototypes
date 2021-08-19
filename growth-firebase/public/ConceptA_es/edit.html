@@ -18,7 +18,7 @@
       Loading image preview... (in Spanish)
     </div>
     <button class="fake-dropdown-btn"><img src="../img/icon/edit.svg" /></button>
-    <a id="next" class="hide" onclick="handleAddComment()" href=""><button class="icon primary disabled"><img src="../img/icon/next-white.svg" /></button></a>
+    <button class="icon primary disabled"><img src="../img/icon/next-white.svg" /></button>
   </header>
 
   <div id="article-container" class="mobilePageWrapper">
@@ -117,6 +117,7 @@
     crossorigin="anonymous">
   </script>
   <script>
+    /*
     // Pop-up drawer style
     // Get the drawer
     var drawer = document.getElementById("ImageCaptionData_Drawer");
@@ -179,6 +180,7 @@
         modal.style.display = "none";
       }
     }
+    */
 
     // fullscreen image modal
     // Get the modal
@@ -215,10 +217,12 @@
   <script type="text/javascript">
     $(document).ready(() => {
 
-      // if (isBackFromPreview()) {
-      //   // TODO: show caption
-      // }
-      animateClass('se-inspector');
+      if (isBackFromPreview()) {
+        location.href = `caption.html${window.location.hash}`;
+      } else {
+        animateClass('se-inspector');
+      }
+
 
       $('.se-inspector-actions').on('click', '.accept-button', (e) => {
         setSuggestionAccepted();
