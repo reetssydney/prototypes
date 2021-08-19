@@ -21,7 +21,7 @@
 		font-size: 16px;
 		line-height: 16px;
 		color: #3366CC;
-		max-width: 70%;
+		max-width: 100%;
 		overflow: hidden;
 		text-overflow: ellipsis;
 		white-space: nowrap;
@@ -74,9 +74,15 @@
   		background: none;
   	}
   	.caption-page__input-field {
-  		width:  100%;
+  		width: calc(100% - 8px);
   		margin-top: 4px;
+      padding: 4px;
+      min-height:40px;
   	}
+    .caption-page__input-field:focus, .caption-page__input-field:focus-visible {
+      outline-color: #36c;
+    }
+
   	.caption-page__input-description {
   		margin-top: 6px;
   		font-size: 14.8px;

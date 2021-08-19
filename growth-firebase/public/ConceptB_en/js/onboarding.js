@@ -93,6 +93,7 @@ function initializeGuidanceContent() {
       header: getMessage('guidance_caption_header'),
       body: getMessage('guidance_caption_body'),
       list: [
+        getMessage('guidance_caption_guide_relates'),
         getMessage('guidance_caption_guide_value'),
         getMessage('guidance_caption_guide_review'),
         getMessage('guidance_caption_guide_language'),
