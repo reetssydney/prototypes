@@ -36,16 +36,24 @@ function updateHtml(page, hash) {
 		$('a#no').attr("href", `reject.html#${hash}`);
 		$('a#close').attr("href", `suggested_edits.html#${hash}`);
 		$('a#openFilepage').attr("href", `image-filepage.html#${hash}`);
+		setSuggestionAccepted();
 
 	} else if (isPage(page, 'reject')) {
 		$('a#back').attr("href", `edit.html#${hash}`);
-		$('a#done').attr("href", `submitted.html#${hash}`);
+		$('a#done').attr("href", `preview.html#${hash}`);
 		$('#imgCaption').html(`${localStorage.getItem(hash)}`);
-
+		setSuggestionRejected();
 	} else if (isPage(page, 'preview')) {
 		$('a#back').attr("href", `edit.html#${hash}`);
 		$('a#done').attr("href", `submitted.html#${hash}`);
-		$('#imgCaption').html(`${localStorage.getItem(hash)}`);
+		$('#imgCaption').html(`${localStorage.getItem(hash)}`); //not needed in Concept A
+		if ( getAcceptance() === 'rejected' ) {
+			$('#imgCaption').addClass('rejected');
+			$('#imgName')
+				.addClass('rejected')
+				.before('<p class="rejection-article-title">' + obj.title + ':</p>');
+			$('#imgFile').addClass('rejected');
+		}
 
 	} else if (isPage(page, 'submitted')) {
 		$('a#nextEdit').attr("href", `edit.html#${obj.nextTitleID}`);

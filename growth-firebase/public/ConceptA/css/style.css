@@ -1111,12 +1111,13 @@ display: block;
   font-weight: bold;
 }
 
-#fullImageModal .fullScreenImage {
-  position: absolute;
+#fullImageModal.fullScreenImage {
+  position: fixed;
   top:0;
   left:0;
   z-index: 2;
 }
+
 #fullImageModal button {
   right: 0;
   position: absolute;
@@ -1215,6 +1216,15 @@ background-color: #EAECF0;
   color: #54595d;
   border-bottom: solid 1px #EAECF0;
   padding-bottom: 8px;
+  margin-bottom: 16px;  /*concept A only*/
+}
+
+.previewPage #title {
+  padding-bottom: 0;
+}
+
+.previewPage #title::after{
+  content: ':';
 }
 
 .editSummary span {
@@ -1484,10 +1494,11 @@ background-color: #EAECF0;
   margin-bottom: 16px;
 }
 
-.onboarding-item-body {
+.onboarding-item-body, .onboarding-item-body-list li {
   font-size: 14px;
-  line-height: 20px;
+  line-height: 20px
 }
+.onboarding-item-body-list {padding-top:8px;}
 
 .onboarding-item-positioned {
   position: fixed;

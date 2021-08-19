@@ -1102,12 +1102,13 @@ display: block;
   font-weight: bold;
 }
 
-#fullImageModal .fullScreenImage {
-  position: absolute;
+#fullImageModal.fullScreenImage {
+  position: fixed;
   top:0;
   left:0;
   z-index: 2;
 }
+
 #fullImageModal button {
   right: 0;
   position: absolute;

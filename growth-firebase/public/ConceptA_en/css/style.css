@@ -1111,12 +1111,13 @@ display: block;
   font-weight: bold;
 }
 
-#fullImageModal .fullScreenImage {
-  position: absolute;
+#fullImageModal.fullScreenImage {
+  position: fixed;
   top:0;
   left:0;
   z-index: 2;
 }
+
 #fullImageModal button {
   right: 0;
   position: absolute;
@@ -1215,6 +1216,15 @@ background-color: #EAECF0;
   color: #54595d;
   border-bottom: solid 1px #EAECF0;
   padding-bottom: 8px;
+  margin-bottom: 16px;  /*concept A only*/
+}
+
+.previewPage #title {
+  padding-bottom: 0;
+}
+
+.previewPage #title::after{
+  content: ':';
 }
 
 .editSummary span {
@@ -1248,6 +1258,25 @@ background-color: #EAECF0;
   position:absolute;
   top: 10px;
   right: 0;
+}
+
+.previewPage .rejected#imgName::after {
+  content: url(../../img/icon/close-destructive.svg);
+  position:absolute;
+  top: 10px;
+  right: 0;
+}
+
+.previewPage .rejected#imgFile {
+  display: none;
+}
+
+.previewPage .rejected#imgCaption {
+  display: none;
+}
+
+.previewPage .rejection-article-title {
+  padding-top: 0.5em;
 }
 
 .previewPage #imgCaption {

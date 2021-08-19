@@ -70,7 +70,7 @@ https://www.figma.com/file/ULhJr1isDstRbGE5vjYDsr/Add-images-structured-task-Gro
 
 ### **Preview page**
 - ✅ tapping back goes back to edit.html
-- ⬜ tapping back goes back to edit.html with caption step remembered (low-prio) https://phabricator.wikimedia.org/T288995
+- ✅ tapping back goes back to edit.html with caption step remembered (low-prio) https://phabricator.wikimedia.org/T288995
 
 
 ***CONCEPT A ONLY***
@@ -91,12 +91,12 @@ https://www.figma.com/file/ULhJr1isDstRbGE5vjYDsr/Add-images-structured-task-Gro
 
 ***CONCEPT A ONLY***
 
-- ⬜ Selecting rejecting reason goes to the 'preview' page first https://phabricator.wikimedia.org/T289007
+- ✅ Selecting rejecting reason goes to the 'preview' page first https://phabricator.wikimedia.org/T289007
 - ⬜ 🔧 Change from checkboxes to radio buttons https://phabricator.wikimedia.org/T289009
 
 ### **OVERALL**
 ---------------
 - ✅ Move Concept B prototype into a 'ConceptB_en' folder in 'Public'
-- ⬜ ***[High priority]*** Add es/en dictionary to the prototype to enable faster updating of UI strings https://phabricator.wikimedia.org/T288996
+- ✅ ***[High priority]*** Add es/en dictionary to the prototype to enable faster updating of UI strings https://phabricator.wikimedia.org/T288996
 - ✅ Clone and customize completed Concept B instance into Concept A (created in a 'ConceptA' dir) https://phabricator.wikimedia.org/T288997
 - ⬜ Clone and customize completed English Concept A & B into Spanish instances
