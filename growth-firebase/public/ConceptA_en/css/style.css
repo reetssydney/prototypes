@@ -1494,10 +1494,11 @@ background-color: #EAECF0;
   margin-bottom: 16px;
 }
 
-.onboarding-item-body {
+.onboarding-item-body, .onboarding-item-body-list li {
   font-size: 14px;
-  line-height: 20px;
+  line-height: 20px
 }
+.onboarding-item-body-list {padding-top:8px;}
 
 .onboarding-item-positioned {
   position: fixed;

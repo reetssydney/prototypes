@@ -75,7 +75,7 @@ https://www.figma.com/file/ULhJr1isDstRbGE5vjYDsr/Add-images-structured-task-Gro
 
 ***CONCEPT A ONLY***
 
-- ⬜ 🔧 update styling to reflect concept A summary view. https://phabricator.wikimedia.org/T289006
+- ✅ 🔧 update styling to reflect concept A summary view. https://phabricator.wikimedia.org/T289006
 
 ### **Submitted page**
 
