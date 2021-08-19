@@ -73,6 +73,8 @@
 	"reject_reason_subject": "I don’t know this subject (in Spanish)",
 	"reject_reason_language": "I can’t read the language in the image and/or in the description (in Spanish)",
 	"reject_reason_other": "Other (in Spanish)",
+	"rejectA_cancel": "Cancel (in Spanish)",
+	"rejectA_submit": "Submit (in Spanish)",
 	"suggested_edits": "Suggested edits (in Spanish)",
 	"suggested_edits_all_topics": "All topics (in Spanish)",
 	"suggested_edits_difficulty": "Easy, Medium (in Spanish)",

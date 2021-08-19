@@ -8,31 +8,30 @@
   <link rel="stylesheet" href="css/normalize.css">
 </head>
 
-<body>
-  <header class="overlay-header">
-    <a id="back" href=""><button class="icon"><img src="../img/icon/arrowPrevious.svg" /></button></a>
-    <h1><%= reject_reason %></h1>
-    <a id="done" href=""><button class="primary-progressive headerbtn"><%= done %></button></a>
-  </header>
-  <div class="mobilePageWrapper">
+<body id="rejectContainer">
+  <div class="rejectIframe">
     <h4><%= reject_question %></h4>
     <p><%= reject_description %></p>
     <div class="checkboxGroup">
-      <input type="checkbox" class="ooui-checkbox" id="reason1" value="notRelevant">
+      <input type="radio" class="ooui-radio" id="reason1" value="notRelevant" name="rejectreason">
       <label for="reason1"><%= reject_reason_relevance %></label>
-      <input type="checkbox" class="ooui-checkbox" id="reason2" value="noInfo">
+      <input type="radio" class="ooui-radio" id="reason2" value="noInfo" name="rejectreason">
       <label for="reason2"><%= reject_reason_info %></label>
-      <input type="checkbox" class="ooui-checkbox" id="reason3" value="offensive">
+      <input type="radio" class="ooui-radio" id="reason3" value="offensive" name="rejectreason">
       <label for="reason3"><%= reject_reason_offensive %></label>
-      <input type="checkbox" class="ooui-checkbox" id="reason4" value="lowQ">
+      <input type="radio" class="ooui-radio" id="reason4" value="lowQ" name="rejectreason">
       <label for="reason4"><%= reject_reason_quality %></label>
-      <input type="checkbox" class="ooui-checkbox" id="reason5" value="dontKnow">
+      <input type="radio" class="ooui-radio" id="reason5" value="dontKnow" name="rejectreason">
       <label for="reason5"><%= reject_reason_subject %></label>
-      <input type="checkbox" class="ooui-checkbox" id="reason6" value="languageIncorrect">
+      <input type="radio" class="ooui-radio" id="reason6" value="languageIncorrect" name="rejectreason">
       <label for="reason6"><%= reject_reason_language %></label>
-      <input type="checkbox" class="ooui-checkbox" id="reason7" value="other">
+      <input type="radio" class="ooui-radio" id="reason7" value="other" name="rejectreason">
       <label for="reason7"><%= reject_reason_other %></label>
     </div>
+    <footer class="dialog_footer">
+      <a id="back" href=""><button class=""><%= rejectA_cancel %></button></a>
+      <a id="done" href=""><button class="primary-progressive"><%= rejectA_submit %></button></a>
+    </footer>
   </div>
 
   <script

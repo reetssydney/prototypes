@@ -92,7 +92,8 @@ https://www.figma.com/file/ULhJr1isDstRbGE5vjYDsr/Add-images-structured-task-Gro
 ***CONCEPT A ONLY***
 
 - ✅ Selecting rejecting reason goes to the 'preview' page first https://phabricator.wikimedia.org/T289007
-- ⬜ 🔧 Change from checkboxes to radio buttons https://phabricator.wikimedia.org/T289009
+- ✅ 🔧 Change from checkboxes to radio buttons https://phabricator.wikimedia.org/T289009
+- ⬜ Make rejection appear within edit page https://phabricator.wikimedia.org/T289263
 
 ### **OVERALL**
 ---------------

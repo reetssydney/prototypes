@@ -73,6 +73,8 @@
 	"reject_reason_subject": "I don’t know this subject",
 	"reject_reason_language": "I can’t read the language in the image and/or in the description",
 	"reject_reason_other": "Other",
+	"rejectA_cancel": "Cancel",
+	"rejectA_submit": "Submit",
 	"suggested_edits": "Suggested edits",
 	"suggested_edits_all_topics": "All topics",
 	"suggested_edits_difficulty": "Easy, Medium",

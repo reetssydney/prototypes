@@ -103,6 +103,14 @@
     <span class="closeFullscreenImg"><div id="imgFile" class="fullScreenImage"></div></span>
   </div>
 
+<!--start load reject as iframe -->
+  <button id="noIframe">No-iframe</button>
+
+  <div id="rejectContainer" class="hide">
+    <iframe class="rejectIframe" src="reject.html"></iframe>
+  </div>
+<!--end load reject as iframe -->
+
   <script
     src="https://code.jquery.com/jquery-3.6.0.min.js"
     integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
@@ -238,6 +246,15 @@
         }, 1000);
       }
     });
+
+    //open reject as noIframe
+    var frame = document.getElementById("rejectContainer");
+    var btnIframe = document.getElementById("noIframe");
+
+    btnIframe.onclick = function() {
+      $('#rejectContainer').removeClass('hide');
+    }
+
   </script>
 
 </body>

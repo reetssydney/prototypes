@@ -191,6 +191,40 @@ input.ooui-checkbox:checked + label::after {
   content: url(../../img/icon/checkedbox.svg);
 }
 
+.ooui-radio {
+  position: absolute;
+  opacity: 0;
+}
+
+
+.ooui-radio + label::before {
+    content: '';
+    margin-right: 8px;
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    background: #fff;
+    float:left;
+    border-radius: 12px;
+    border:1px solid #72777D;
+  }
+
+  input.ooui-radio:checked + label::before {
+    background-color: #36c;
+    border:1px solid #36c;
+  }
+
+  input.ooui-radio:checked + label::after {
+    position: absolute;
+    left: 6px;
+    top:14px;
+    border-radius: 6px;
+    content: ' ';
+    width: 12px;
+    height: 12px;
+    background-color: #fff;
+  }
+
 
 .fieldHelpText {
   font-size: 13px;
@@ -773,7 +807,7 @@ h4.hard::before{
 
 
 /************======== EDIT PAGE ========************/
-#next.hide, .fullScreenImage.hide {
+#next.hide, .fullScreenImage.hide, #rejectContainer.hide {
   display: none;
 }
 
@@ -1124,6 +1158,53 @@ display: block;
   top: 0;
   filter: drop-shadow(0px 0px 2px rgba(0, 0, 0, 1));
 }
+
+/************======== REJECT IFRAME MODAL (Concept A only) ========************/
+#rejectContainer {
+  position: fixed;
+  z-index: 99;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: rgba(255,255,255,0.5);
+}
+
+.rejectIframe {
+  position: absolute;
+  z-index: 99;
+  top: 56px;
+  left: 32px;
+  width: calc(100vw - 96px);
+  max-height: calc(100vh - 64px);
+  border: solid 1px #A2A9B1;
+  border-radius: 2px;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+  background-color: #fff;
+  padding: 16px 16px 56px;
+}
+
+.dialog_footer {
+  position:absolute;
+  bottom:0;
+  left: 0;
+  height:40px;
+  display: flex;
+  align-items: center;
+  border-top: solid 1px #A2A9B1;
+}
+
+.dialog_footer button {
+  width: calc(50vw - 32px);
+  height: 40px;
+  border: none;
+}
+
+.dialog_footer .primary-progressive button  {
+  background-color: #36c;
+}
+
 
 /************======== FULLSCREEN IMAGE PAGE ========************/
 .fullScreenImage {
