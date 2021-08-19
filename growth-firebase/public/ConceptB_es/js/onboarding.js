@@ -164,9 +164,9 @@ function closeOnboarding() {
 
 function dismissOnboarding() {
   if (captionIndex === currentIndex) {
-    setHasSeenImageGuidance();
-  } else {
     setHasSeenCaptionGuidance();
+  } else {
+    setHasSeenImageGuidance();
   }
 }
 

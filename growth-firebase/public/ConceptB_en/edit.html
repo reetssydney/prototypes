@@ -226,19 +226,19 @@
         hideCaptionInput();
       });
 
-      if (hasSeenImageGuidance() && hasSeenCaptionGuidance()) {
-        $('.onboarding-overlay').removeClass('show');
-        return;
-      }
-
       initializeOnboarding($('.onboarding-overlay'));
-      if (hasSeenCaptionGuidance()) {
+
+      if (hasSeenImageGuidance()) {
         $('.onboarding-overlay').removeClass('show');
       } else {
         setTimeout(() => {
           showOnboardingIndex(0);
         }, 1000);
       }
+
+      $('#openPopUp2').on('click', () => {
+        showCaptionGuidance();
+      });
     });
   </script>
 
