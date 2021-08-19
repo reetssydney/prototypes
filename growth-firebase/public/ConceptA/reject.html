@@ -10,23 +10,25 @@
 
 <body id="rejectContainer">
   <div class="rejectIframe">
-    <h4><%= reject_question %></h4>
-    <p><%= reject_description %></p>
-    <div class="checkboxGroup">
-      <input type="radio" class="ooui-radio" id="reason1" value="notRelevant" name="rejectreason">
-      <label for="reason1"><%= reject_reason_relevance %></label>
-      <input type="radio" class="ooui-radio" id="reason2" value="noInfo" name="rejectreason">
-      <label for="reason2"><%= reject_reason_info %></label>
-      <input type="radio" class="ooui-radio" id="reason3" value="offensive" name="rejectreason">
-      <label for="reason3"><%= reject_reason_offensive %></label>
-      <input type="radio" class="ooui-radio" id="reason4" value="lowQ" name="rejectreason">
-      <label for="reason4"><%= reject_reason_quality %></label>
-      <input type="radio" class="ooui-radio" id="reason5" value="dontKnow" name="rejectreason">
-      <label for="reason5"><%= reject_reason_subject %></label>
-      <input type="radio" class="ooui-radio" id="reason6" value="languageIncorrect" name="rejectreason">
-      <label for="reason6"><%= reject_reason_language %></label>
-      <input type="radio" class="ooui-radio" id="reason7" value="other" name="rejectreason">
-      <label for="reason7"><%= reject_reason_other %></label>
+    <div class="rejectOptions">
+      <h4><%= reject_question %></h4>
+      <p style="font-size:13px; color:#54595d; line-height:1.5;"><%= reject_description %></p>
+      <div class="radioGroup">
+        <input type="radio" class="ooui-radio" id="reason1" value="notRelevant" name="rejectreason">
+        <label for="reason1"><%= reject_reason_relevance %></label>
+        <input type="radio" class="ooui-radio" id="reason2" value="noInfo" name="rejectreason">
+        <label for="reason2"><%= reject_reason_info %></label>
+        <input type="radio" class="ooui-radio" id="reason3" value="offensive" name="rejectreason">
+        <label for="reason3"><%= reject_reason_offensive %></label>
+        <input type="radio" class="ooui-radio" id="reason4" value="lowQ" name="rejectreason">
+        <label for="reason4"><%= reject_reason_quality %></label>
+        <input type="radio" class="ooui-radio" id="reason5" value="dontKnow" name="rejectreason">
+        <label for="reason5"><%= reject_reason_subject %></label>
+        <input type="radio" class="ooui-radio" id="reason6" value="languageIncorrect" name="rejectreason">
+        <label for="reason6"><%= reject_reason_language %></label>
+        <input type="radio" class="ooui-radio" id="reason7" value="other" name="rejectreason">
+        <label for="reason7"><%= reject_reason_other %></label>
+      </div>
     </div>
     <footer class="dialog_footer">
       <a id="back" href=""><button class=""><%= rejectA_cancel %></button></a>

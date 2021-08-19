@@ -151,7 +151,7 @@ button.icon.primary.disabled {
   flex-grow: 1;
 }
 
-.checkboxGroup {
+.checkboxGroup, .radioGroup {
   display:flex;
   flex-direction: column;
 }
@@ -159,6 +159,13 @@ button.icon.primary.disabled {
 .checkboxGroup label {
  margin:0;
  padding: 8px 8px 8px 0px;
+ line-height: 1.5;
+ position: relative;
+}
+
+.radioGroup label {
+ margin:0;
+ padding: 8px 0px 8px 30px;
  line-height: 1.5;
  position: relative;
 }
@@ -207,6 +214,9 @@ input.ooui-checkbox:checked + label::after {
     float:left;
     border-radius: 12px;
     border:1px solid #72777D;
+    position: absolute;
+    left: 0;
+    top: 8px;
   }
 
   input.ooui-radio:checked + label::before {
@@ -1058,6 +1068,7 @@ font-size: 16px;
   border-radius: 2px;
   box-shadow: 0px 1px 2px rgb(0 0 0 / 20%);
   border: 2px dashed #3366CC;
+  margin-bottom: 16px;
 }
 
 .inspector-image {
@@ -1226,13 +1237,20 @@ display: block;
   z-index: 99;
   top: 56px;
   left: 32px;
-  width: calc(100vw - 96px);
-  max-height: calc(100vh - 64px);
+  width: calc(100vw - 64px);
+  max-height: 75vh;
   border: solid 1px #A2A9B1;
   border-radius: 2px;
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
   background-color: #fff;
-  padding: 16px 16px 56px;
+  padding: 0px 0px 40px;
+  overflow: hidden;
+}
+
+.rejectOptions {
+  max-height: 70vh;
+  padding: 16px;
+  overflow: scroll;
 }
 
 .dialog_footer {
