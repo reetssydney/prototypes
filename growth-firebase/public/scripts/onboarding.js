@@ -1,30 +1,5 @@
-const positionConfigs = {
-  imageSuggestion: {
-    targetSelector: '#openFullscreenImg',
-    position: 'above',
-    scrollTop: 0,
-    offsetIn: 20,
-  },
-  articleTitle: {
-    targetSelector: '.articleTitle',
-    position: 'below',
-    scrollTop: 0,
-    offsetOut: 10,
-  },
-  suggestionReason: {
-    targetSelector: '#suggestion_reason',
-    position: 'above',
-    offsetOut: 10,
-  },
-  caption: {
-    targetSelector: '.overImage',
-    position: 'below',
-    scrollTop: 'target',
-  },
-};
-
-
-let $container, currentIndex = 0, endIndex = 2, captionIndex; // indices past endIndex can be invoked manually outside of the flow of the in-dialog navigation
+let $container, positionConfigs,
+  currentIndex = 0, endIndex = 2, captionIndex; // indices past endIndex can be invoked manually outside of the flow of the in-dialog navigation
 
 function getNavButton(isNext, isCheck) {
   const className = isNext ? 'onboarding-item-button-next' : 'onboarding-item-button-prev';
@@ -70,38 +45,8 @@ function createOnboardingItem(content = {}, index) {
 }
 
 function initializeGuidanceContent() {
-  const onboardingScreens = {
-    image: {
-      header: getMessage('guidance_image_header'),
-      body: getMessage('guidance_image_body'),
-      position: 'imageSuggestion',
-      pointer: 'bottom',
-    },
-    article: {
-      header: getMessage('guidance_article_header'),
-      body: getMessage('guidance_article_body'),
-      position: 'articleTitle',
-      pointer: 'top-left',
-    },
-    details: {
-      header: getMessage('guidance_details_header'),
-      body: getMessage('guidance_details_body'),
-      position: 'suggestionReason',
-      pointer: 'bottom'
-    },
-    caption: {
-      header: getMessage('guidance_caption_header'),
-      body: getMessage('guidance_caption_body'),
-      list: [
-        getMessage('guidance_caption_guide_relates'),
-        getMessage('guidance_caption_guide_value'),
-        getMessage('guidance_caption_guide_review'),
-        getMessage('guidance_caption_guide_language'),
-      ],
-      position: 'caption',
-      pointer: 'top-left',
-    }
-  };
+  positionConfigs = getPositionConfigs();
+  const onboardingScreens = getOnboardingScreens();
   const screens = [
     onboardingScreens.image,
     onboardingScreens.article,
@@ -124,7 +69,7 @@ function initializeGuidanceContent() {
   $container.on('click', '.onboarding-item-button-next', (e) => {
     if (currentIndex === endIndex || currentIndex > endIndex) {
       closeOnboarding();
-      $('.onboarding-overlay').removeClass('show');
+      hideOnboardingOverlay();
       return;
     }
     currentIndex += 1;
@@ -134,7 +79,7 @@ function initializeGuidanceContent() {
   $container.on('click', '.onboarding-item-button-close', (e) => {
     e.preventDefault();
     closeOnboarding();
-    $('.onboarding-overlay').removeClass('show');
+    hideOnboardingOverlay();
   });
 
   $container.on('click', '.onboarding-item-button-check', (e) => {
@@ -164,9 +109,9 @@ function closeOnboarding() {
 
 function dismissOnboarding() {
   if (captionIndex === currentIndex) {
-    setHasSeenImageGuidance();
-  } else {
     setHasSeenCaptionGuidance();
+  } else {
+    setHasSeenImageGuidance();
   }
 }
 
@@ -175,7 +120,12 @@ function getTopPostionValue($target, $onboadingItem, positionOptions={}) {
   if (manualTop) {
     return manualTop;
   }
-  const targetTopOffset = $target.offset().top;
+  const targetOffset = $target.offset();
+  if (!targetOffset) {
+    hideOnboardingOverlay();
+    return;
+  }
+  const targetTopOffset = targetOffset.top;
   const documentScrollTop = $(document).scrollTop();
   // TODO: Adjust position if content will extend past viewport
 
@@ -222,4 +172,8 @@ function showOnboardingIndex(index) {
     currentIndex = index;
     positionOnboardingItem($onboadingItem, positionConfig);
   }
+};
+
+function hideOnboardingOverlay() {
+  $('.onboarding-overlay').removeClass('show');
 };

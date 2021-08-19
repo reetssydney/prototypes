@@ -82,8 +82,25 @@
     </div>
   </div>
 
-  <div class="onboarding-overlay">
+  <div id="ImageDetails_Modal" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content">
+      <div id="imageDetails">
+        <h4>Image details (in Spanish)</h4>
+        <p><span class="metadataLabel">Filename: (in Spanish)&nbsp;&nbsp;</span><span id="imgName_repeat"></span></p>
+        <p><span class="metadataLabel">Description: (in Spanish)&nbsp;&nbsp;</span><span id="imgDescription_repeat"></span></p>
+        <p><span class="metadataLabel">Commons caption: (in Spanish)&nbsp;&nbsp;</span><span id="imgCommonsCaption"></span></p>
+        <p><span class="metadataLabel">License: (in Spanish)&nbsp;&nbsp;</span><span id="imgLicense"></span></p>
+        <p><span class="metadataLabel">Date: (in Spanish)&nbsp;&nbsp;</span><span id="imgDate"></span></p>
+        <p><span class="metadataLabel">Author: (in Spanish)&nbsp;&nbsp;</span><span id="imgAuthor"></span></p>
+        <p><span class="metadataLabel">Image tags: (in Spanish)&nbsp;&nbsp;</span><span id="imgCommonsCategories"></span></p>
+        <p id="suggestion_reason_repeat"></p>
+      </div>
+      <button class="closeModal">Cerrar</button>
+    </div>
   </div>
+
+  <div class="onboarding-overlay"></div>
 
   <div class="fullScreenImage hide" id="fullImageModal">
     <div class="overlay-header">
@@ -158,7 +175,8 @@
   <script src="js/data.js"></script>
   <script src="js/app.js"></script>
   <script src="../scripts/messages.js"></script>
-  <script src="js/onboarding.js"></script>
+  <script src="js/onboarding-config.js"></script>
+  <script src="../scripts/onboarding.js"></script>
   <script type="text/javascript">
     $(document).ready(() => {
       if (isBackFromPreview()) {
@@ -180,19 +198,15 @@
         hideCaptionInput();
       });
 
-      if (hasSeenImageGuidance() && hasSeenCaptionGuidance()) {
-        $('.onboarding-overlay').removeClass('show');
+      if (hasSeenImageGuidance()) {
+        hideOnboardingOverlay();
         return;
       }
 
       initializeOnboarding($('.onboarding-overlay'));
-      if (hasSeenCaptionGuidance()) {
-        $('.onboarding-overlay').removeClass('show');
-      } else {
-        setTimeout(() => {
+      setTimeout(() => {
           showOnboardingIndex(0);
-        }, 1000);
-      }
+      }, 1000);
     });
 
   </script>

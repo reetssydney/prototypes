@@ -1058,6 +1058,7 @@ font-size: 16px;
   border-radius: 2px;
   box-shadow: 0px 1px 2px rgb(0 0 0 / 20%);
   border: 2px dashed #3366CC;
+  margin-bottom: 16px;
 }
 
 .inspector-image {
@@ -1606,7 +1607,8 @@ background-color: #EAECF0;
 }
 
 .onboarding-item-pointer-bottom::after,
-.onboarding-item-pointer-top-left::before {
+.onboarding-item-pointer-top-left::before,
+.onboarding-item-pointer-top-center::before {
   content: ' ';
   width:  16px;
   height: 10px;
@@ -1629,6 +1631,9 @@ background-color: #EAECF0;
   top: 21px;
 }
 
+.onboarding-item-pointer-top-center::before {
+  transform: translate(38vw, -30px);
+}
 
 .onboarding-item-button-close {
   display: inline-block;
