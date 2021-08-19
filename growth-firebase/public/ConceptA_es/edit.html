@@ -21,8 +21,13 @@
     <a id="next" class="hide" onclick="handleAddComment()" href=""><button class="icon primary disabled"><img src="../img/icon/next-white.svg" /></button></a>
   </header>
 
-  <h2 id="title" class="articleTitle"></h2>
   <div id="article-container" class="mobilePageWrapper">
+    <div class="conceptA-inspectImgContainer">
+        <div id="imageThumb" class="inspector-image"></div>
+        <span id="conceptA-inspectImgRobot"><img src="../img/icon/robot-A50.svg" /></span>
+        <span id="openFullscreenImg"><img src="../img/icon/fullScreen.svg" style="opacity:.7" /></span>
+        <span id="openPopUpModal"><img src="../img/icon/info.svg" /></span>
+    </div>
     <!--Start hidden until image is added-->
     <div class="ButtonOverImage" id="openDrawer">
       <div class="placedImage-loading"></div>
@@ -45,14 +50,9 @@
     <div class="se-inspector-content">
       <p id="suggestion_reason"></p>
       <div id="image-info-wrapper">
-        <span id="openFullscreenImg">
-          <div id="imageThumb" class="inspector-image"></div>
-          <span><img src="../img/icon/fullScreen.svg" /></span>
-        </span>
         <div class="inspector-imgMetadata">
           <a id="openFilepage" target="_blank"><div id="imgName"></div></a>
           <p id="imgDescription"></p>
-          <span id="openPopUpModal">Read more (in Spanish)</span>
         </div>
       </div>
     </div>
