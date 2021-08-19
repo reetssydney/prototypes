@@ -1012,17 +1012,29 @@ font-size: 16px;
   align-items:flex-start;
 }
 
+
+.conceptA-inspectImgContainer {
+  display: flex;
+  width: calc(100vw - 32px);
+  height: 50vw;
+  max-height: 50vw;
+  position: relative;
+  background-color: #F4F9FF;
+  border-radius: 2px;
+  box-shadow: 0px 1px 2px rgb(0 0 0 / 20%);
+  border: 2px dashed #3366CC;
+}
+
 .inspector-image {
   margin: 0 8px 0 0;
   flex-grow: 1;
-  height:120px;
-  width:160px;
-  background-color: #EAECF0;
+  height:100%;
+  width:calc(100vw - 32px);
 }
 
 .inspector-image img {
-  height: 120px;
-  width:160px;
+  height: inherit;
+  width:inherit;
   object-fit: contain;
 }
 
@@ -1232,21 +1244,43 @@ display: block;
 }
 
 #openFullscreenImg {
-  position: relative;
-}
-
-#openFullscreenImg span {
   position: absolute;
-  bottom:4px;
-  right:12px;
+  bottom:8px;
+  right:8px;
   float: right;
-  padding:8px;
+  padding:4px;
   background-color: rgba(255,255,255,.5);
   border-radius: 2px;
   border:none;
   width:20px;
   height:20px;
 }
+
+#openPopUpModal {
+  position: absolute;
+  bottom:48px;
+  right:8px;
+  float: right;
+  padding:4px;
+  background-color: rgba(255,255,255,.5);
+  border-radius: 2px;
+  border:none;
+  width:20px;
+  height:20px;
+}
+
+#conceptA-inspectImgRobot {
+  position: absolute;
+  top:0px;
+  left:0px;
+  float: right;
+  padding:8px;
+  border:none;
+  width:20px;
+  height:20px;
+}
+
+
 /************======== COMMONS IMAGE FILE PAGE ========************/
 .commons-page h1 {
   font-family: 'Montserrat','Helvetica Neue', Arial, sans-serif;

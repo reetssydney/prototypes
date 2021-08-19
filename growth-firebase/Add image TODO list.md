@@ -58,7 +58,7 @@ https://www.figma.com/file/ULhJr1isDstRbGE5vjYDsr/Add-images-structured-task-Gro
 
 ***CONCEPT A ONLY***
 
-- ⬜ Restyle inspector https://phabricator.wikimedia.org/T289000
+- ⬜ 🔧 Restyle inspector https://phabricator.wikimedia.org/T289000
  1. ⬜ Restyle so that suggested image is located at the top of the article prior to "accepting"
  2. ⬜ Show more image info as a pop-up
 - ⬜ Update caption presentation https://phabricator.wikimedia.org/T289002
