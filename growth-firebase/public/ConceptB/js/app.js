@@ -115,7 +115,9 @@ function handleImageSelection() {
 
 	showImageLoadingState().then(() => {
 		showCaptionInput();
-		showCaptionGuidance();
+		if (!hasSeenCaptionGuidance()) {
+			showCaptionGuidance();
+		}
 	});
 }
 
