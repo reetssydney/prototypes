@@ -1624,7 +1624,8 @@ background-color: #EAECF0;
 }
 
 .onboarding-item-pointer-bottom::after,
-.onboarding-item-pointer-top-left::before {
+.onboarding-item-pointer-top-left::before,
+.onboarding-item-pointer-top-center::before {
   content: ' ';
   width:  16px;
   height: 10px;
@@ -1647,6 +1648,9 @@ background-color: #EAECF0;
   top: 21px;
 }
 
+.onboarding-item-pointer-top-center::before {
+  transform: translate(38vw, -30px);
+}
 
 .onboarding-item-button-close {
   display: inline-block;
