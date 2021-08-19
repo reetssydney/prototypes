@@ -20,6 +20,7 @@
   		font-weight: bold;
 		font-size: 16px;
 		line-height: 16px;
+    height: 18px;
 		color: #3366CC;
 		max-width: 100%;
 		overflow: hidden;
@@ -67,7 +68,8 @@
 		justify-content: space-between;
   	}
   	.caption-page__info {
-  		margin: 0 7px 7px 0;
+      padding: 0;
+      margin: 4px 0 0;
   		width:  16px;
   		height: 16px;
   		border:  none;
@@ -109,7 +111,7 @@
 	  		</div>
 	  	</div>
   		<div class="caption-page__text-preview">
-  			<div class="caption-page__article-header"></div>
+        <a id="openFilepage" target="_blank"><div class="caption-page__article-header"></div></a>
   			<div class="caption-page__article-body"></div>
   		</div>
   	</div>
@@ -118,7 +120,7 @@
   		<div class="caption-page__input-label">
   			Caption (in Spanish)
 
-  			<button class="caption-page__info"><img src="../img/icon/info.svg" /></button>
+  			<button class="caption-page__info"><img src="../img/icon/info.svg" style="width: 16px; height: 16px;" /></button>
   		</div>
 
   		<textarea class="caption-page__input-field"></textarea>
@@ -144,8 +146,8 @@
   		const articleData = getArticleData();
   		const imgSrc = $(articleData.imageThumb).attr('src');
   		$('.caption-page__image').css('background-image', `url('${imgSrc}'`);
-  		$('.caption-page__article-header').text(articleData.title);
-  		$('.caption-page__article-body').html(articleData.description);
+  		$('.caption-page__article-header').text(articleData.imgName);
+  		$('.caption-page__article-body').html(articleData.imgDescription);
 
   		$('.caption-page__input-field').on('input', function() {
   			const captionVal = $(this).val();

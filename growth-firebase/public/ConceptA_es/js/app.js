@@ -66,9 +66,8 @@ function updateHtml(page, hash) {
 		$('a#nextSE').attr("href", `suggested_edits.html#${obj.nextTitleID}`);
 		$('#imgCaption').html(`${localStorage.getItem(hash)}`);
 
-	} else if (isPage(page, 'fullscreen-image')) {  //can be removed since fullscreen image moved into edit page//
-			$('a#closeFullscreen').attr("href", `edit.html#${hash}`);
-			$('a#closeFullscreenImg').attr("href", `edit.html#${hash}`);
+	} else if (isPage(page, 'caption')) {
+		$('a#openFilepage').attr("href", `image-filepage.html#${hash}`);
 		}
 }
 
