@@ -25,10 +25,6 @@ function clearStates() {
   localStorage.removeItem(ACCEPTANCE_STATE);
 }
 
-function setLastGuidanceIndex(index) {
-  localStorage.setItem(LAST_GUIDANCE_INDEX, index);
-}
-
 function setHasSeenImageGuidance() {
   localStorage.setItem(HAS_SEEN_IMAGE_GUIDANCE, true);
 }

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Add image demo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/normalize.css">
+  <style>
+  	.disabled {
+  		pointer-events: none;
+  	}
+  	.caption-page {
+  		padding: 16px;
+  	}
+  	.caption-page__article-preview {
+  		display: flex;
+  	}
+  	.caption-page__article-header {
+  		font-weight: bold;
+		font-size: 16px;
+		line-height: 16px;
+		color: #3366CC;
+		max-width: 70%;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+  	}
+  	.caption-page__article-header::after {
+  		content: ' ';
+  		background: url('../img/icon/linkExternal.svg') no-repeat center;
+  		display: inline-block;
+  		width: 11px;
+    	height: 11px;
+    	margin-left: 8.6px;
+  	}
+  	.caption-page__article-body {
+  		font-size: 13px;
+		line-height: 19px;
+		color: #54595D;
+		margin-top: 4px;
+		overflow: hidden;
+		display: -webkit-box;
+		-webkit-box-orient: vertical;
+		-webkit-line-clamp: 2;
+		max-height: 39px;
+		word-wrap: break-word;
+		white-space: normal;
+  	}
+  	.caption-page__image {
+  		width: 56px;
+    	height: 56px;
+    	background-size: cover;
+    	background-repeat: no-repeat;
+    	border-radius: 2px;
+    	margin-right: 8px
+  	}
+  	.caption-page__input-wrapper {
+  		margin-top: 16px;
+  	}
+  	.caption-page__input-label {
+  		font-weight: bold;
+		font-size: 16px;
+		line-height: 22px;
+		color: #202122;
+		display: flex;
+		justify-content: space-between;
+  	}
+  	.caption-page__info {
+  		margin: 0 7px 7px 0;
+  		width:  16px;
+  		height: 16px;
+  		border:  none;
+  		background: none;
+  	}
+  	.caption-page__input-field {
+  		width:  100%;
+  		margin-top: 4px;
+  	}
+  	.caption-page__input-description {
+  		margin-top: 6px;
+  		font-size: 14.8px;
+		line-height: 22px;
+		color: #54595D;
+  	}
+  </style>
+</head>
+
+<body>
+  <header class="overlay-header">
+    <a id="close" href=""><button class="icon"><img src="../img/icon/close.svg" /></button></a>
+    <h1>Add a caption</h1>
+    <a id="next" href="">
+    	<button class="next-button icon primary disabled">
+    		<img src="../img/icon/check-white.svg" />
+    	</button>
+    </a>
+  </header>
+  <div class="caption-page">
+  	<div class="caption-page__article-preview">
+  		<div class="caption-page__image-preview">
+	  		<div class="caption-page__image">
+	  		</div>
+	  	</div>
+  		<div class="caption-page__text-preview">
+  			<div class="caption-page__article-header"></div>
+  			<div class="caption-page__article-body"></div>
+  		</div>
+  	</div>
+
+  	<div class="caption-page__input-wrapper">
+  		<div class="caption-page__input-label">
+  			Caption
+
+  			<button class="caption-page__info"><img src="../img/icon/info.svg" /></button>
+  		</div>
+
+  		<textarea class="caption-page__input-field"></textarea>
+
+  		<div class="caption-page__input-description">
+  			Write a short caption to be shown below the image, explaining how it’s relevant to the article.
+  			<br/><br/>
+  			<strong>Recommended:</strong> Open the image file page to read details that can help with caption writing.
+  		</div>
+  	</div>
+  </div>
+
+  <script
+    src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+    crossorigin="anonymous">
+  </script>
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+  <script src="../scripts/user-state.js"></script>
+  <script type="text/javascript">
+  	$(document).ready(() => {
+  		const articleData = getArticleData();
+  		const imgSrc = $(articleData.imageThumb).attr('src');
+  		$('.caption-page__image').css('background-image', `url('${imgSrc}'`);
+  		$('.caption-page__article-header').text(articleData.title);
+  		$('.caption-page__article-body').html(articleData.description);
+
+  		$('.caption-page__input-field').on('input', function() {
+  			const captionVal = $(this).val();
+  			$('.next-button').toggleClass('disabled', !captionVal);
+  			saveCaptionForArticle(captionVal);
+  		});
+
+  		const articleHash = window.location.hash;
+  		$('#close').attr('href', `edit.html${articleHash}`);
+  		$('#next').attr('href', `preview.html${articleHash}`);
+
+  		const existingCaption = getExistingCaption();
+  		if (isBackFromPreview() && existingCaption) {
+  			$('.caption-page__input-field').val(existingCaption);
+  		}
+
+  		clearPreviewStates();
+  	});
+  </script>
+</body>
+</html>

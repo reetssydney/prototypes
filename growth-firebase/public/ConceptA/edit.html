@@ -18,21 +18,11 @@
       <%= loading_image_preview %>
     </div>
     <button class="fake-dropdown-btn"><img src="../img/icon/edit.svg" /></button>
-    <a id="next" class="hide" onclick="handleAddComment()" href=""><button class="icon primary disabled"><img src="../img/icon/next-white.svg" /></button></a>
+    <button class="icon primary disabled"><img src="../img/icon/next-white.svg" /></button>
   </header>
 
   <h2 id="title" class="articleTitle"></h2>
   <div id="article-container" class="mobilePageWrapper">
-    <!--Start hidden until image is added-->
-    <div class="ButtonOverImage" id="openDrawer">
-      <div class="placedImage-loading"></div>
-    </div>
-    <div class="overImage hidden">
-      <p id="caption"><%= add_caption_below %></p>
-      <img id="openPopUp2" src="../img/icon/info.svg" />
-      <textarea id="caption-input" placeholder="Write a short caption here to help explain why the image is relevant to the article..." oninput="checkInput()"></textarea>
-    </div>
-    <!-- End hidden content until image is added -->
     <div id="text"></div>
     <div id="form-container"></div>
   </div>
@@ -117,6 +107,7 @@
     crossorigin="anonymous">
   </script>
   <script>
+    /*
     // Pop-up drawer style
     // Get the drawer
     var drawer = document.getElementById("ImageCaptionData_Drawer");
@@ -179,6 +170,7 @@
         modal.style.display = "none";
       }
     }
+    */
 
     // fullscreen image modal
     // Get the modal
@@ -215,10 +207,12 @@
   <script type="text/javascript">
     $(document).ready(() => {
 
-      // if (isBackFromPreview()) {
-      //   // TODO: show caption
-      // }
-      animateClass('se-inspector');
+      if (isBackFromPreview()) {
+        location.href = `caption.html${window.location.hash}`;
+      } else {
+        animateClass('se-inspector');
+      }
+      
 
       $('.se-inspector-actions').on('click', '.accept-button', (e) => {
         setSuggestionAccepted();
