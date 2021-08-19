@@ -1,5 +1,7 @@
 $(document).ready(() => {
-  setHasPreviewed();
+  if (!isSuggestionRejected()) {
+    setHasPreviewed();
+  }
   $('#done').on('click', () => {
     clearPreviewStates();
   });

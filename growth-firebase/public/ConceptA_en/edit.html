@@ -117,43 +117,6 @@
     crossorigin="anonymous">
   </script>
   <script>
-    /*
-    // Pop-up drawer style
-    // Get the drawer
-    var drawer = document.getElementById("ImageCaptionData_Drawer");
-
-    // Get the button that opens the drawer
-    var drawerBtn = document.getElementById("openDrawer");
-
-    // Get the <span> element that closes the drawer
-    var span = document.getElementsByClassName("closeDrawer")[0];
-
-    // When the user clicks on the button, open the drawer
-    drawerBtn.onclick = function() {
-      $('#ImageCaptionData_Drawer').addClass('showDrawer');
-      $('.ButtonOverImage').addClass('ImgSelected');
-      $('#captionHelperInfo').append(
-        $('#imgName'),
-        $('#imgDescription'),
-        $('#imgCommonsCaption'),
-        $('#imgDate'),
-        $('#imgCommonsCategories'),
-      );
-    }
-
-    // When the user clicks on <span> (x), close the drawer
-    span.onclick = function() {
-      $('#ImageCaptionData_Drawer').removeClass('showDrawer');
-      $('.ButtonOverImage').removeClass('ImgSelected');
-      $('#caption-input').focus();
-    }
-
-    // When the user clicks anywhere outside of the drawer, close it
-    $(document).on('click', '.showDrawer', () => {
-      $('#ImageCaptionData_Drawer').removeClass('showDrawer');
-    });
-    */
-
     // Pop-up MODAL style
     // Get the modal
     var modal = document.getElementById("ImageDetails_Modal");
@@ -182,7 +145,6 @@
       }
     }
 
-
     // fullscreen image modal
     // Get the modal
     var fullImageModal = document.getElementById("fullImageModal");
@@ -210,14 +172,13 @@
 
 
   </script>
+  <script src="../scripts/user-state.js"></script>
   <script src="js/data.js"></script>
   <script src="js/app.js"></script>
-  <script src="../scripts/user-state.js"></script>
   <script src="../scripts/messages.js"></script>
   <script src="js/onboarding.js"></script>
   <script type="text/javascript">
     $(document).ready(() => {
-
       if (isBackFromPreview()) {
         location.href = `caption.html${window.location.hash}`;
       } else {

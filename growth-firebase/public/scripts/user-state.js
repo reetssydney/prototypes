@@ -21,10 +21,6 @@ function setSuggestionRejected() {
   localStorage.setItem(ACCEPTANCE_STATE, ACCEPTANCE_STATE_REJECTED);
 }
 
-function clearStates() {
-  localStorage.removeItem(ACCEPTANCE_STATE);
-}
-
 function setHasSeenImageGuidance() {
   localStorage.setItem(HAS_SEEN_IMAGE_GUIDANCE, true);
 }
@@ -52,6 +48,7 @@ function setHasPreviewed() {
 
 function clearPreviewStates() {
   localStorage.removeItem(HAS_PREVIEWED);
+  localStorage.removeItem(ACCEPTANCE_STATE);
 }
 
 function isBackFromPreview() {
