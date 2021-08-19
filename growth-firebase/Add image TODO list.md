@@ -58,9 +58,9 @@ https://www.figma.com/file/ULhJr1isDstRbGE5vjYDsr/Add-images-structured-task-Gro
 
 ***CONCEPT A ONLY***
 
-- ⬜ 🔧 Restyle inspector https://phabricator.wikimedia.org/T289000
- 1. ⬜ Restyle so that suggested image is located at the top of the article prior to "accepting"
- 2. ⬜ Show more image info as a pop-up
+- ✅ 🔧 Restyle inspector https://phabricator.wikimedia.org/T289000
+ 1. ✅ Restyle so that suggested image is located at the top of the article prior to "accepting"
+ 2. ✅ Show more image info as a pop-up
 - ⬜ Update caption presentation https://phabricator.wikimedia.org/T289002
  1. ⬜ Make the caption a full screen modal/dialog
  2. ⬜ Add a caption tooltip pop-up ( on the "i" icon) on the full screen modal/dialog [low priority]

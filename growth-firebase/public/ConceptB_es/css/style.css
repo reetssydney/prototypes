@@ -704,7 +704,7 @@ h4.hard::before{
   padding: 0;
   position: absolute;
   top:calc(50vh - 160px);
-  left:32px;
+  right: 36px;
   width:calc(100vw - 72px);
   overflow: hidden;
 }
@@ -1387,7 +1387,7 @@ background-color: #EAECF0;
   position: absolute;
   width: 100%;
   min-height: 100%;
-  height: 200%;
+  height: 250%;
   top: 0;
   left: 0;
   z-index: 2;

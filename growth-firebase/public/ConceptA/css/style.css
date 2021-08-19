@@ -715,6 +715,10 @@ h4.hard::before{
   background-color: rgba(0,0,0,0.2); /* Black w/ opacity */
 }
 
+#ImageDetails_Modal {
+  background: transparent;
+}
+
 .showDrawer {
   display:block;
   overflow: hidden;
@@ -747,9 +751,29 @@ h4.hard::before{
   padding: 0;
   position: absolute;
   top:calc(50vh - 160px);
-  left:32px;
+  right:36px;
   width:calc(100vw - 72px);
   overflow: hidden;
+}
+
+#ImageDetails_Modal > .modal-content {
+  top:calc(25vh + 48px);
+  right:8px;
+  overflow: visible;
+}
+#ImageDetails_Modal > .modal-content::before {
+content: ' ';
+  width: 16px;
+  height: 10px;
+  display: inline-block;
+  background-image: url(../../img/icon/pointer.svg);
+  transform: translate(10px, -30px);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  top: 22px;
+  right: 30px;
 }
 
 .modal-content p {
@@ -803,6 +827,17 @@ h4.hard::before{
   box-shadow: 0 -1px 0 0 #C8CCD1;
   position: absolute;
   bottom: 0;
+}
+
+.closeModal_conceptA  {
+  width: 40px;
+  border-radius: 0;
+  border:none;
+  height:40px;
+  background-color: #fff;
+  position: absolute;
+  top: 8px;
+  right: 8px;
 }
 
 
@@ -1132,7 +1167,7 @@ display: block;
 
 
 #imageDetails {
-  padding:16px 16px 64px;
+  padding:16px;
   max-height: 280px;
   overflow: scroll;
 }
@@ -1141,15 +1176,18 @@ display: block;
   padding:0 0 16px;
 }
 
-#imageDetails p:nth-child(4), #imageDetails p:nth-child(7) {
+#imageDetails p:nth-child(1) {
+  padding-right: 40px;
+}
+
+#imageDetails p:nth-child(1), #imageDetails p:nth-child(3), #imageDetails p:nth-child(7) {
   padding-bottom: 8px;
 }
 
 #imageDetails p:last-child {
-  margin-top:16px;
+  margin-top:8px;
   padding-top: 4px;
-  font-style: italic;
-  border-top:1px solid #eaecf0;
+  text-decoration: underline;
 }
 
 
@@ -1539,7 +1577,7 @@ background-color: #EAECF0;
   position: absolute;
   width: 100%;
   min-height: 100%;
-  height: 200%;
+  height: 250%;
   top: 0;
   left: 0;
   z-index: 2;
