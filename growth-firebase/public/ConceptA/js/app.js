@@ -23,7 +23,6 @@ function updateHtml(page, hash) {
 			$(`#${element}`).html(obj[element]);
 		}
 	}
-	var acceptanceStatusKey = (hash + '.acceptanceStatus');
 	// add the buttons which are page dependent
 	if (isPage(page, 'newcomer_homepage')) {
 		$('a#openSE').attr("href", `suggested_edits.html#${hash}`);
