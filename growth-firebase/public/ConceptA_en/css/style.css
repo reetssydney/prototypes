@@ -1009,6 +1009,8 @@ font-size: 16px;
   box-shadow: none;
 }
 
+#skipButton {color:#54595d;}
+
 .se-inspector-pre,
 .postSubmitContainer-pre {
   bottom:  -100%;
@@ -1391,7 +1393,8 @@ background-color: #EAECF0;
 }
 
 .previewPage #title {
-  padding-bottom: 0;
+  padding-bottom: 8px;
+  font-weight: bold;
 }
 
 .previewPage #title::after{
@@ -1410,37 +1413,51 @@ background-color: #EAECF0;
   top:4px;
 }
 
-.previewPage #imgName {
-  padding:8px 0;
-  font-weight: bold;
-  position: relative;
+#previewImgConceptA {
+  width: 100%;
+  display: flex;
+  padding: 0;
+  margin: 0;
 }
 
-.previewPage #imgName::before {
-  content: url(../../img/icon/image.svg);
+.previewPage #imgName {
+  padding: 0;
+  position: relative;
+  width: calc(100% - 92px);
+  overflow-wrap: anywhere;
+  font-size: 16px;
+  align-self: center;
+}
+
+.previewPage #imgFile {
   padding-right: 8px;
   position:relative;
-  top: 4px;
+  top: 0;
   left: 0;
+  width: 56px;
+  height: 56px;
+}
+
+.previewPage #imgFile img {
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
 }
 
 .previewPage #imgName::after {
   content: url(../../img/icon/check.svg);
   position:absolute;
-  top: 10px;
-  right: 0;
+  bottom: -4px;
+  right: -28px;
 }
 
 .previewPage .rejected#imgName::after {
   content: url(../../img/icon/close-destructive.svg);
   position:absolute;
-  top: 10px;
-  right: 0;
+  bottom: -4px;
+  right: -28px;
 }
 
-.previewPage .rejected#imgFile {
-  display: none;
-}
 
 .previewPage .rejected#imgCaption {
   display: none;
@@ -1449,6 +1466,7 @@ background-color: #EAECF0;
 .previewPage #imgCaption {
   font-size: 13px;
   line-height: 1.5;
+  padding-top: 16px;
 }
 
 .disclaimer {
@@ -1456,7 +1474,7 @@ background-color: #EAECF0;
   line-height: 1.5;
   color: #54595d;
   padding-top: 16px;
-  margin-top: 16px;
+  margin-top: 8px;
   border-top: solid 1px #EAECF0;
 }
 

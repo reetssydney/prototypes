@@ -56,8 +56,7 @@ function updateHtml(page, hash) {
 		$('#imgCaption').html(`${localStorage.getItem(hash)}`); //not needed in Concept A
 		if ( getAcceptance() === 'rejected' ) {
 			$('#imgCaption').addClass('rejected');
-			$('#imgName')
-				.addClass('rejected')
+			$('#imgName').addClass('rejected')
 			$('#imgFile').addClass('rejected');
 			$('#ReviewChangesFooter').addClass('hide');
 		}

@@ -921,6 +921,8 @@ font-size: 16px;
   box-shadow: none;
 }
 
+#skipButton {color:#54595d;}
+
 .se-inspector-pre,
 .postSubmitContainer-pre {
   bottom:  -100%;
