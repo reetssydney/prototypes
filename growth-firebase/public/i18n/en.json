@@ -32,7 +32,7 @@
 	"wikipedia": "Wikipedia",
 	"prototype_a": "[demo-A]",
 	"prototype_b": "[demo-B]",
-	"prototype_note": "Note: This is not the real filepage on Wikimedia Commons, but a close approximation for the purposes of this user testing prototype.",
+	"prototype_note": "Note: This is not the real filepage on Wikimedia Commons, but a close approximation for the purposes of this test. CLOSE THIS TAB to go back to the main prototype screen",
 	"tab_file": "File",
 	"tab_discussion": "Discussion",
 	"tab_article": "Article",

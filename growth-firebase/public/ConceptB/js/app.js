@@ -36,6 +36,7 @@ function updateHtml(page, hash) {
 		$('a#no').attr("href", `reject.html#${hash}`);
 		$('a#close').attr("href", `suggested_edits.html#${hash}`);
 		$('a#openFilepage').attr("href", `image-filepage.html#${hash}`);
+		$('a#openFilepageFromCaption').attr("href", `image-filepage.html#${hash}`);
 
 	} else if (isPage(page, 'reject')) {
 		$('a#back').attr("href", `edit.html#${hash}`);

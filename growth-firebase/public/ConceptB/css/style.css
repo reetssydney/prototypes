@@ -835,7 +835,7 @@ h4.hard::before{
   content: 'More image details';
   bottom: 2px;
   right: 8px;
-  text-shadow: 0px -2px 2px rgb(0 0 0 / 50%), 4px 0px 2px rgb(0 0 0 / 50%), 0px 2px 2px rgb(0 0 0 / 50%), -4px 0px 2px rgb(0 0 0 / 50%);
+  text-shadow: 0px -2px 2px rgba(0,0,0,.5), 4px 0px 2px rgba(0,0,0,.5), 0px 2px 2px rgba(0,0,0,.5), -4px 0px 2px rgba(0,0,0,.5);
   color: #fff;
   font-weight: bold;
   text-decoration: underline;
@@ -1052,10 +1052,28 @@ line-height: 1.5;
 display: block;
 }
 
+#openFilepageFromCaption {
+  position: relative;
+  width: 100%;
+  top: 18px;
+  left: 0;
+  display: inline-block;
+  opacity: 0;
+}
+
+#captionHelperInfo p:first-child{
+  margin-bottom:-16px;
+}
+
 #captionHelperInfo #imgName {
   color: #36c;
   font-weight: bold;
   padding-bottom: 8px;
+}
+
+#captionHelperInfo #imgName:after {
+  content: url(../../img/icon/linkExternal.svg);
+  padding-left: 8px;
 }
 
 #captionHelperInfo #imgDescription::before {
