@@ -448,6 +448,7 @@ opacity: .71;
   align-items: center;
   height: calc(100vh - 208px);
   overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
 }
 
 #se_count {
