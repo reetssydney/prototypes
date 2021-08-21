@@ -1060,6 +1060,7 @@ font-size: 16px;
   align-items:flex-start;
 }
 
+#article-container #text a, #article-container #text sup  {color:#36c;}  /* Concept A text looks tappable */
 
 .conceptA-inspectImgContainer {
   display: flex;
@@ -1103,6 +1104,14 @@ font-size: 16px;
   text-overflow: ellipsis;
 }
 
+.inspector-imgMetadata #imgName::before {
+  content: url(../../img/icon/logoCommons-A50.svg);
+  padding: 0px 16px 0 0;
+  top: 2px;
+  left: 0px;
+  position: relative;
+}
+
 .inspector-imgMetadata #imgName::after {
   content: url(../../img/icon/linkExternal.svg);
   padding-left: 8px;
@@ -1115,6 +1124,17 @@ font-size: 16px;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 4;
   overflow: hidden;
+  position: relative;
+  padding: 4px 0 0 32px;
+}
+.inspector-imgMetadata #imgDescription::before {
+  content: url(../../img/icon/stripeSummary.svg);
+  padding: 0;
+  position: absolute;
+  top: 8px;
+  left: 0px;
+  margin: 0;
+  display: inline-block;
 }
 
 .se-inspector-question {
