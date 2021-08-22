@@ -149,6 +149,7 @@ button.icon.primary.disabled {
 
 .dropdown-text {
   flex-grow: 1;
+  overflow: hidden;
 }
 
 .checkboxGroup, .radioGroup {
