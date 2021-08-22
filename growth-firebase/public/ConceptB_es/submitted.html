@@ -76,8 +76,12 @@
       if (isSuggestionRejected()) {
         $('.postSubmit-close').remove();
         updateToastMessage('postedit_toast_reject');
+        $('#imgFile').addClass('hide');
+        $('#imgCaption').addClass('hide');
       } else {
         updateToastMessage('postedit_toast_accept');
+        $('#imgFile').removeClass('hide');
+        $('#imgCaption').removeClass('hide');
       }
       clearPreviewStates();
     });

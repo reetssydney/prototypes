@@ -1317,6 +1317,10 @@ span.fakefooterbtn {
   text-align: center;
 }
 
+.submittedPage #imgFile.hide, .submittedPage #imgCaption.hide {
+  display: none;
+}
+
 .drawerScrim{
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
