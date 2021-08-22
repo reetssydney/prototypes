@@ -460,7 +460,7 @@ opacity: .71;
     height: 128px;
     background: url(../../img/icon/imageSE-Add.svg) #72777D no-repeat 50% 50%;
     border-radius: 2px 2px 0 0;
-    opacity: .9;
+    opacity: 0.95;
   }
 
 .se_card_image img {
@@ -972,6 +972,8 @@ font-size: 16px;
   align-items:flex-start;
 }
 
+#article-container #text {overflow-wrap: break-word; }
+
 .inspector-image {
   margin: 0 8px 0 0;
   flex-grow: 1;
@@ -1210,6 +1212,10 @@ display: block;
   color:#36c;
 }
 
+#filepageSummary, #filepageLicensing, #filepageSize {
+  overflow-wrap: break-word;
+  overflow-x: scroll;
+}
 
 /************======== PREVIEW PAGE ========************/
 .previewPage img {
@@ -1363,7 +1369,7 @@ span.fakefooterbtn {
   margin:0 16px;
   padding: 0 0 8px;
   position: relative;
-  width:calc(100vw - 48px);
+  width:calc(100vw - 32px);
 }
 
 .postSubmitDrawer h3::after {

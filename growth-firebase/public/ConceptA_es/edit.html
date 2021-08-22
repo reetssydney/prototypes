@@ -2,7 +2,7 @@
 <html >
 <head>
   <meta charset="UTF-8">
-  <title>Add image demo (in Spanish)</title>
+  <title>Añadir imagen demo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/normalize.css">
@@ -12,10 +12,10 @@
   <header class="overlay-header">
     <a id="close" href=""><button class="icon"><img src="../img/icon/close.svg" /></button></a>
     <button class="icon hidden back-caption"><img src="../img/icon/arrowPrevious.svg" /></button>
-    <h1 class="header-suggestions">Suggestions mode (in Spanish)</h1>
-    <h1 class="header-caption hidden">Add a caption (in Spanish)</h1>
+    <h1 class="header-suggestions">Sugerencias</h1>
+    <h1 class="header-caption hidden">Añadir un pie de foto</h1>
     <div class="header-loading hidden">
-      Loading image preview... (in Spanish)
+      Cargando la vista previa de la imagen...
     </div>
     <button class="fake-dropdown-btn"><img src="../img/icon/edit.svg" /></button>
     <button class="icon primary disabled"><img src="../img/icon/next-white.svg" /></button>
@@ -34,11 +34,11 @@
         <div id="imageDetails">
           <p><span class="metadataLabel"><b><span id="imgName_repeat"></span></b></p>
           <p><span id="imgDescription_repeat"></span></p>
-          <p><span class="metadataLabel">Commons caption: (in Spanish)&nbsp;&nbsp;</span><span id="imgCommonsCaption"></span></p>
-          <p><span class="metadataLabel">License: (in Spanish)&nbsp;&nbsp;</span><span id="imgLicense"></span></p>
-          <p><span class="metadataLabel">Date: (in Spanish)&nbsp;&nbsp;</span><span id="imgDate"></span></p>
-          <p><span class="metadataLabel">Author: (in Spanish)&nbsp;&nbsp;</span><span id="imgAuthor"></span></p>
-          <p><span class="metadataLabel">Image tags: (in Spanish)&nbsp;&nbsp;</span><span id="imgCommonsCategories"></span></p>
+          <p><span class="metadataLabel">Commons leyendas:&nbsp;&nbsp;</span><span id="imgCommonsCaption"></span></p>
+          <p><span class="metadataLabel">Licencia:&nbsp;&nbsp;</span><span id="imgLicense"></span></p>
+          <p><span class="metadataLabel">Fecha:&nbsp;&nbsp;</span><span id="imgDate"></span></p>
+          <p><span class="metadataLabel">Autor:&nbsp;&nbsp;</span><span id="imgAuthor"></span></p>
+          <p><span class="metadataLabel">Etiquetas de la imagen:&nbsp;&nbsp;</span><span id="imgCommonsCategories"></span></p>
           <p><a id="openFilepageFromModal" href="" target="_blank"><span class="metadataLabel">Más detalles en Wikimedia Commons&nbsp;&nbsp;</span></a></p>
         </div>
         <button class="closeModal_conceptA"><img src="../img/icon/close.svg" /></button>
@@ -51,7 +51,7 @@
   <div id="bottom-sheet" class="se-inspector se-inspector-pre">
     <div class="se-inspector-header"  onclick="handleToggleInspector()">
       <button class="icon"><img src="../img/icon/robot.svg" /></button>
-      <h2>1 suggested image found (in Spanish)</h2>
+      <h2>Se ha encontrado 1 imagen sugerida</h2>
       <button id="expand-collapse" class="icon"><img src="../img/icon/expand.svg" /></button>
     </div>
     <div class="se-inspector-content">
@@ -67,7 +67,7 @@
     <div class="se-inspector-actions">
       <button class="ooui-btn accept-button" onclick="handleImageSelection()"><img src="../img/icon/check.svg" />&nbsp;Si</button>
       <a id="no" class="flexgrow" href=""><button class="ooui-btn margin8left reject-button"><img src="../img/icon/close.svg" />&nbsp;No</button></a>
-      <button id="skipButton" class="ooui-btn quiet-neutral">Skip (in Spanish)</button>
+      <button id="skipButton" class="ooui-btn quiet-neutral">Siguiente</button>
     </div>
   </div>
 
@@ -75,9 +75,9 @@
     <!-- Drawer content -->
     <div class="drawer-content">
       <span class="closeDrawer">&nbsp</span>
-      <h4><img src="../img/icon/image.svg" /> Image details (in Spanish)</h4>
+      <h4><img src="../img/icon/image.svg" /> Detalles de la imagen</h4>
       <div id="captionHelperInfo">
-        <p style="color:#59545d">The following details may help with writing a suitable caption. (in Spanish)</p>
+        <p style="color:#59545d">Los siguientes detalles pueden ayudar a escribir un pie de foto adecuado.</p>
       </div>
     </div>
   </div>
@@ -86,14 +86,14 @@
     <!-- Modal content -->
     <div class="modal-content">
       <div id="imageDetails">
-        <h4>Image details (in Spanish)</h4>
-        <p><span class="metadataLabel">Filename: (in Spanish)&nbsp;&nbsp;</span><span id="imgName_repeat"></span></p>
-        <p><span class="metadataLabel">Description: (in Spanish)&nbsp;&nbsp;</span><span id="imgDescription_repeat"></span></p>
-        <p><span class="metadataLabel">Commons caption: (in Spanish)&nbsp;&nbsp;</span><span id="imgCommonsCaption"></span></p>
-        <p><span class="metadataLabel">License: (in Spanish)&nbsp;&nbsp;</span><span id="imgLicense"></span></p>
-        <p><span class="metadataLabel">Date: (in Spanish)&nbsp;&nbsp;</span><span id="imgDate"></span></p>
-        <p><span class="metadataLabel">Author: (in Spanish)&nbsp;&nbsp;</span><span id="imgAuthor"></span></p>
-        <p><span class="metadataLabel">Image tags: (in Spanish)&nbsp;&nbsp;</span><span id="imgCommonsCategories"></span></p>
+        <h4>Detalles de la imagen</h4>
+        <p><span class="metadataLabel">Título de la imagen:&nbsp;&nbsp;</span><span id="imgName_repeat"></span></p>
+        <p><span class="metadataLabel">Descripción:&nbsp;&nbsp;</span><span id="imgDescription_repeat"></span></p>
+        <p><span class="metadataLabel">Commons leyendas:&nbsp;&nbsp;</span><span id="imgCommonsCaption"></span></p>
+        <p><span class="metadataLabel">Licencia:&nbsp;&nbsp;</span><span id="imgLicense"></span></p>
+        <p><span class="metadataLabel">Fecha:&nbsp;&nbsp;</span><span id="imgDate"></span></p>
+        <p><span class="metadataLabel">Autor:&nbsp;&nbsp;</span><span id="imgAuthor"></span></p>
+        <p><span class="metadataLabel">Etiquetas de la imagen:&nbsp;&nbsp;</span><span id="imgCommonsCategories"></span></p>
         <p id="suggestion_reason_repeat"></p>
       </div>
       <button class="closeModal">Cerrar</button>

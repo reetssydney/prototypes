@@ -1060,6 +1060,8 @@ font-size: 16px;
   align-items:flex-start;
 }
 
+#article-container #text {overflow-wrap: break-word; }
+
 #article-container #text a, #article-container #text sup  {color:#36c;}  /* Concept A text looks tappable */
 
 .conceptA-inspectImgContainer {
@@ -1392,6 +1394,10 @@ display: block;
   color:#36c;
 }
 
+#filepageSummary, #filepageLicensing, #filepageSize {
+  overflow-wrap: break-word;
+  overflow-x: scroll;
+}
 
 /************======== PREVIEW PAGE ========************/
 .previewPage img {
@@ -1584,7 +1590,7 @@ span.fakefooterbtn {
   margin:0 16px;
   padding: 0 0 8px;
   position: relative;
-  width:calc(100vw - 48px);
+  width:calc(100vw - 32px);
 }
 
 .postSubmitDrawer h3::after {
