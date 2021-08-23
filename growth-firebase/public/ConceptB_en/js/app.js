@@ -109,10 +109,14 @@ function showCaptionInput() {
 
 // move image and add input
 function handleImageSelection() {
-	$('.ButtonOverImage').prepend(
-		$('#imageThumb img').addClass('placedImage').clone(),
-		$('#imgDescription_repeat').addClass('placedImage'),
-	);
+	if (!$('.ButtonOverImage').hasClass('has-image')) {
+		$('.ButtonOverImage').prepend(
+			$('#imageThumb img').addClass('placedImage').clone(),
+			$('#imgDescription_repeat').addClass('placedImage'),
+		)
+		.addClass('has-image');
+	}
+
 
 	showImageLoadingState().then(() => {
 		showCaptionInput();
