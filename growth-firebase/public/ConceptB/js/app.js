@@ -112,9 +112,10 @@ function handleImageSelection() {
 	if (!$('.ButtonOverImage').hasClass('has-image')) {
 		$('.ButtonOverImage').prepend(
 			$('#imageThumb img').addClass('placedImage').clone(),
-			$('#imgDescription_repeat').addClass('placedImage'),
-		)
-		.addClass('has-image');
+		).addClass('has-image').removeClass('hidden');
+
+		$('.placedImage-description').removeClass('hidden');
+		$('.placedImage-description-text').text($('#imgDescription_repeat').text());
 	}
 
 

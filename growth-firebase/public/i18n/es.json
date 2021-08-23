@@ -170,5 +170,6 @@
 		"prototype_a": "[demo-A]",
 		"prototype_b": "[demo-B]",
 		"preview_submit": "Enviar",
-		"captionA_warning": "Escribe un pie de foto para la sugerencia de imagen aceptada"
+		"captionA_warning": "Escribe un pie de foto para la sugerencia de imagen aceptada",
+		"more_image_details": "Más detalles de la imagen"
 }

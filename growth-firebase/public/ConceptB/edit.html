@@ -24,9 +24,14 @@
   <h2 id="title" class="articleTitle"></h2>
   <div id="article-container" class="mobilePageWrapper">
     <!--Start hidden until image is added-->
-    <div class="ButtonOverImage" id="openDrawer">
+    <div class="ButtonOverImage hidden" id="openDrawer">
       <div class="placedImage-loading"></div>
+      <div class="placedImage-description">
+        <span class="placedImage-description-more"><%= more_image_details %></span>
+        <span class="placedImage-description-text"></span>
+      </div>
     </div>
+
     <div class="overImage hidden">
       <p id="caption"><%= add_caption_below %></p>
       <img id="openPopUp2" src="../img/icon/info.svg" />
@@ -82,7 +87,11 @@
       <div id="imageDetails">
         <h4><%= image_details %></h4>
         <p><span class="metadataLabel"><%= image_metadata_filename %>&nbsp;&nbsp;</span><span id="imgName_repeat"></span></p>
-        <p><span class="metadataLabel"><%= image_metadata_description %>&nbsp;&nbsp;</span><span id="imgDescription_repeat"></span></p>
+        <p>
+          <span class="metadataLabel"><%= image_metadata_description %>&nbsp;&nbsp;</span>
+          TEST
+          <span id="imgDescription_repeat"></span>
+        </p>
         <p><span class="metadataLabel"><%= image_metadata_commons_caption %>&nbsp;&nbsp;</span><span id="imgCommonsCaption"></span></p>
         <p><span class="metadataLabel"><%= image_metadata_license %>&nbsp;&nbsp;</span><span id="imgLicense"></span></p>
         <p><span class="metadataLabel"><%= image_metadata_date %>&nbsp;&nbsp;</span><span id="imgDate"></span></p>
