@@ -10,6 +10,6 @@
     "build": "npm run build-a:en && npm run build-a:es && npm run build-b:en && npm run build-b:es"
   },
   "devDependencies": {
-    "ejs": "^3.1.6"
+    "ejs": "^3.1.7"
   }
 }
