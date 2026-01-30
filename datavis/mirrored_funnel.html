@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wikipedia Audience Funnel - Mirrored Chart</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #202122;
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            color: #54595d;
+            margin-bottom: 30px;
+            font-size: 14px;
+        }
+        #chartContainer {
+            position: relative;
+            height: 700px;
+            margin-top: 20px;
+        }
+        .controls {
+            margin-bottom: 20px;
+            display: flex;
+            gap: 25px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .control-group {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            padding: 10px 15px;
+            background: #f8f9fa;
+            border-radius: 6px;
+            border: 1px solid #e0e0e0;
+        }
+        label {
+            font-weight: 500;
+            color: #202122;
+        }
+        input[type="checkbox"] {
+            margin-left: 5px;
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+        }
+        .row-controls {
+            margin-top: 20px;
+            padding: 0;
+            background: #f8f9fa;
+            border-radius: 6px;
+            border: 1px solid #e0e0e0;
+            overflow: hidden;
+        }
+        .row-controls-header {
+            padding: 15px 20px;
+            background: #e9ecef;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+        }
+        .row-controls-header:hover {
+            background: #dee2e6;
+        }
+        .row-controls-header h3 {
+            margin: 0;
+            font-size: 16px;
+            color: #202122;
+        }
+        .collapse-icon {
+            font-size: 20px;
+            transition: transform 0.3s ease;
+        }
+        .collapse-icon.collapsed {
+            transform: rotate(-90deg);
+        }
+        .row-controls-content {
+            padding: 20px;
+            max-height: 400px;
+            overflow-y: auto;
+            transition: max-height 0.3s ease;
+        }
+        .row-controls-content.collapsed {
+            max-height: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        .row-checkboxes {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-bottom: 15px;
+        }
+        .row-checkbox {
+            display: flex;
+            align-items: center;
+            padding: 5px;
+        }
+        .row-checkbox input {
+            margin-right: 8px;
+        }
+        .row-checkbox label {
+            font-weight: normal;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        .control-buttons {
+            margin-top: 15px;
+            display: flex;
+            gap: 10px;
+        }
+        .control-buttons button {
+            padding: 8px 16px;
+            border: 1px solid #0645ad;
+            background: white;
+            color: #0645ad;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        .control-buttons button:hover {
+            background: #f0f5ff;
+        }
+        .group-label {
+            position: absolute;
+            font-size: 18px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #202122;
+        }
+        .group-label-left {
+            left: 10%;
+            top: 40px;
+        }
+        .group-label-right {
+            right: 10%;
+            top: 40px;
+        }
+        .legend {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            margin-top: 20px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 6px;
+        }
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .legend-color {
+            width: 24px;
+            height: 24px;
+            border-radius: 4px;
+        }
+        .legend-text {
+            font-weight: 500;
+            color: #202122;
+        }
+        .tooltip {
+            position: absolute;
+            background: rgba(0, 0, 0, 0.9);
+            color: white;
+            padding: 12px 16px;
+            border-radius: 6px;
+            font-size: 13px;
+            line-height: 1.5;
+            max-width: 400px;
+            pointer-events: none;
+            z-index: 1000;
+            display: none;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        }
+        .tooltip-title {
+            font-weight: bold;
+            margin-bottom: 6px;
+            font-size: 14px;
+        }
+        .tooltip-value {
+            color: #4fc3f7;
+            margin-bottom: 6px;
+        }
+        .tooltip-desc {
+            color: #e0e0e0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Wikipedia Audience Funnel</h1>
+        <p class="subtitle">User journey split by Beyond the Wikis (left) and Onwiki Audiences (right)</p>
+        
+        <div class="controls">
+            <div class="control-group">
+                <label>
+                    <input type="checkbox" id="logScaleLeft" checked> Left Side: Use Logarithmic Scale
+                </label>
+            </div>
+            <div class="control-group">
+                <label>
+                    <input type="checkbox" id="logScaleRight" checked> Right Side: Use Logarithmic Scale
+                </label>
+            </div>
+        </div>
+
+        <div class="row-controls">
+            <div class="row-controls-header" id="rowControlsToggle">
+                <h3>Show/Hide Rows</h3>
+                <span class="collapse-icon" id="collapseIcon">▼</span>
+            </div>
+            <div class="row-controls-content" id="rowControlsContent">
+                <div class="row-checkboxes" id="rowCheckboxes"></div>
+                <div class="control-buttons">
+                    <button id="selectAll">Select All</button>
+                    <button id="deselectAll">Deselect All</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="chartContainer" style="position: relative;">
+            <div class="group-label group-label-left">BEYOND THE WIKIS</div>
+            <div class="group-label group-label-right">ONWIKI AUDIENCES</div>
+            <canvas id="funnelChart"></canvas>
+        </div>
+
+        <div class="legend">
+            <div class="legend-item">
+                <div class="legend-color" style="background: #000000;"></div>
+                <span class="legend-text">Left Side: All Audiences (Black)</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: #2196F3;"></div>
+                <span class="legend-text">Right Side: Readers (Blue)</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: #4CAF50;"></div>
+                <span class="legend-text">Right Side: Donors (Green)</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: #F44336;"></div>
+                <span class="legend-text">Right Side: Editors (Red)</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="tooltip" id="tooltip">
+        <div class="tooltip-title" id="tooltipTitle"></div>
+        <div class="tooltip-value" id="tooltipValue"></div>
+        <div class="tooltip-desc" id="tooltipDesc"></div>
+    </div>
+
+    <script>
+        const data = [
+            { label: 'Internet users', value: 5.5e9, group: 'beyond', color: '#000000', 
+              description: 'Source: United Nations Social Development Network, 2024' },
+            { label: 'Consumes reused wiki content', value: 5.0e9, group: 'beyond', color: '#000000',
+              description: '90% of 5.5B - conservative estimate based on internet users using Search Engines, and Google Search (which we know uses Wikipedia frequently in search results) accounting for ~90% of SE market in 2024, according to statcounter and hubspot' },
+            { label: 'Knows Wikipedia', value: 3.3e9, group: 'beyond', color: '#000000',
+              description: '60% of 5.5b - Conservative estimate based on the Brand Health Tracker which mentions that 60% of people were exposed to WP recently, July 2025' },
+            { label: 'Readers*', value: 1.5e9, group: 'readers', color: '#2196F3',
+              description: 'Unique devices as proxy (2025)' },
+            { label: 'New or Sporadic readers', value: 892e6, group: 'readers', color: '#2196F3',
+              description: 'Unique devices that did not return within 3 weeks (2025)' },
+            { label: 'Retained (Casual) Readers', value: 431e6, group: 'readers', color: '#2196F3',
+              description: 'Unique devices that return within three weeks (excluding active readers)' },
+            { label: 'Active Readers', value: 176e6, group: 'readers', color: '#2196F3',
+              description: 'Unique devices that return the next day' },
+            { label: 'Donors', value: 7.7e6, group: 'donors', color: '#4CAF50',
+              description: 'Source: FY2425 Revenue Year in Review - Advancement Salon, 2024-2025' },
+            { label: 'Recurring donors', value: 1.0e6, group: 'donors', color: '#4CAF50',
+              description: 'Source: FY2425 Revenue Year in Review - Advancement Salon, 2024-2025' },
+            { label: 'Editors*', value: 273e3, group: 'editors', color: '#F44336',
+              description: 'Estimate based on Registered editors + 10% unregistered edits from unregistered editors' },
+            { label: 'Registered editors', value: 248e3, group: 'editors', color: '#F44336',
+              description: 'FY24-25 average monthly registered editors for all Wikipedias (excluding known bots), Source: Movement metrics - Registered editors' },
+            { label: 'Junior Editors', value: 43e3, group: 'editors', color: '#F44336',
+              description: 'Registered active editors who made less than 100 edits, FY2024-25' },
+            { label: 'Experienced Editors', value: 40e3, group: 'editors', color: '#F44336',
+              description: 'Registered active editors who more than 100 edits, FY2024-25 (Experienced: 100-299 edits + Very Experienced: 300+ edits) Source: Movement metrics, Dec 2025' },
+            { label: 'Unregistered editors', value: 25e3, group: 'editors', color: '#F44336',
+              description: 'Estimated 10% additional editors who made an edit without logging in' },
+            { label: 'Admins/Users with Extended Rights', value: 2e3, group: 'editors', color: '#F44336',
+              description: 'Active admins are users who make at least one action changing user blocks, page protection levels, page deletion status, or the rights of other users in an average month, source: Movement metrics, Dec 2025' }
+        ];
+
+        // Track visibility state for each row
+        const visibility = data.map(() => true);
+
+        // Track log scale state for each side
+        let useLogScaleLeft = true;
+        let useLogScaleRight = true;
+
+        // Function to format large numbers
+        function formatNumber(num) {
+            if (num >= 1e9) return (num / 1e9).toFixed(1) + 'B';
+            if (num >= 1e6) return (num / 1e6).toFixed(1) + 'M';
+            if (num >= 1e3) return (num / 1e3).toFixed(1) + 'K';
+            return num.toString();
+        }
+
+        // Apply logarithmic transformation
+        function applyLogTransform(value, useLog) {
+            if (value === null || value === 0) return 0;
+            const sign = value < 0 ? -1 : 1;
+            const absValue = Math.abs(value);
+            if (useLog) {
+                // Use log scale
+                return sign * Math.log10(absValue);
+            } else {
+                // Use linear scale but normalize to similar range as log
+                // Map linearly to a range similar to log scale
+                const maxLinear = 5.5e9; // Maximum value in dataset
+                const maxLog = Math.log10(maxLinear); // ~9.74
+                // Normalize linear values to fit in similar range
+                return sign * (absValue / maxLinear) * maxLog;
+            }
+        }
+
+        // Get filtered data based on visibility
+        function getFilteredData() {
+            return data.filter((item, index) => visibility[index]);
+        }
+
+        // Create datasets for mirrored chart
+        function createChartData() {
+            const filteredData = getFilteredData();
+            const allLabels = filteredData.map(d => d.label);
+
+            // Left side (negative) - show all as black
+            const leftValues = allLabels.map(label => {
+                const item = filteredData.find(d => d.label === label);
+                if (!item) return null;
+                const value = item.value;
+                return applyLogTransform(-value, useLogScaleLeft);
+            });
+
+            // Right side (positive) - show only Onwiki with original colors
+            const rightValues = allLabels.map(label => {
+                const item = filteredData.find(d => d.label === label);
+                if (!item || item.group === 'beyond') return null;
+                return applyLogTransform(item.value, useLogScaleRight);
+            });
+
+            // Left side all black
+            const leftColors = allLabels.map(label => {
+                const item = filteredData.find(d => d.label === label);
+                return item ? '#000000' : 'transparent';
+            });
+
+            // Right side with original colors (only Onwiki)
+            const rightColors = allLabels.map(label => {
+                const item = filteredData.find(d => d.label === label);
+                return item && item.group !== 'beyond' ? item.color : 'transparent';
+            });
+
+            // Create labels - show Beyond labels on left, Onwiki labels on right
+            const leftLabels = allLabels.map(label => {
+                const item = filteredData.find(d => d.label === label);
+                return item && item.group === 'beyond' ? label : '';
+            });
+
+            const rightLabels = allLabels.map(label => {
+                const item = filteredData.find(d => d.label === label);
+                return item && item.group !== 'beyond' ? label : '';
+            });
+
+            return {
+                labels: allLabels,
+                leftValues,
+                rightValues,
+                leftColors,
+                rightColors,
+                leftLabels,
+                rightLabels,
+                filteredData
+            };
+        }
+
+        // Create checkboxes for each row IN ORDER
+        const checkboxContainer = document.getElementById('rowCheckboxes');
+        data.forEach((item, index) => {
+            const div = document.createElement('div');
+            div.className = 'row-checkbox';
+            
+            const checkbox = document.createElement('input');
+            checkbox.type = 'checkbox';
+            checkbox.id = `row-${index}`;
+            checkbox.checked = true;
+            checkbox.addEventListener('change', function() {
+                visibility[index] = this.checked;
+                updateChart();
+            });
+            
+            const checkboxLabel = document.createElement('label');
+            checkboxLabel.htmlFor = `row-${index}`;
+            checkboxLabel.textContent = item.label;
+            
+            div.appendChild(checkbox);
+            div.appendChild(checkboxLabel);
+            checkboxContainer.appendChild(div);
+        });
+
+        // Collapse/expand functionality
+        const rowControlsToggle = document.getElementById('rowControlsToggle');
+        const rowControlsContent = document.getElementById('rowControlsContent');
+        const collapseIcon = document.getElementById('collapseIcon');
+        
+        rowControlsToggle.addEventListener('click', function() {
+            rowControlsContent.classList.toggle('collapsed');
+            collapseIcon.classList.toggle('collapsed');
+        });
+
+        // Select/Deselect all buttons
+        document.getElementById('selectAll').addEventListener('click', function() {
+            visibility.fill(true);
+            data.forEach((_, index) => {
+                document.getElementById(`row-${index}`).checked = true;
+            });
+            updateChart();
+        });
+
+        document.getElementById('deselectAll').addEventListener('click', function() {
+            visibility.fill(false);
+            data.forEach((_, index) => {
+                document.getElementById(`row-${index}`).checked = false;
+            });
+            updateChart();
+        });
+
+        const ctx = document.getElementById('funnelChart').getContext('2d');
+        
+        const initialChartData = createChartData();
+
+        const config = {
+            type: 'bar',
+            data: {
+                labels: initialChartData.labels,
+                datasets: [
+                    {
+                        label: 'Left Side (All Audiences)',
+                        data: initialChartData.leftValues,
+                        backgroundColor: initialChartData.leftColors,
+                        borderColor: initialChartData.leftColors,
+                        borderWidth: 1,
+                        barPercentage: 0.85,
+                        categoryPercentage: 1.0,
+                        yAxisID: 'y'
+                    },
+                    {
+                        label: 'Right Side (Onwiki Audiences)',
+                        data: initialChartData.rightValues,
+                        backgroundColor: initialChartData.rightColors,
+                        borderColor: initialChartData.rightColors,
+                        borderWidth: 1,
+                        barPercentage: 0.85,
+                        categoryPercentage: 1.0,
+                        yAxisID: 'y'
+                    }
+                ]
+            },
+            options: {
+                indexAxis: 'y',
+                responsive: true,
+                maintainAspectRatio: false,
+                layout: {
+                    padding: {
+                        top: 60,
+                        left: 10,
+                        right: 10
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                        enabled: false
+                    }
+                },
+                scales: {
+                    x: {
+                        type: 'linear',
+                        position: 'bottom',
+                        title: {
+                            display: true,
+                            text: 'Beyond the Wikis (log) ← | → Onwiki Audiences (log)',
+                            font: {
+                                size: 14,
+                                weight: 'bold'
+                            }
+                        },
+                        ticks: {
+                            callback: function(value) {
+                                if (value === 0) return '0';
+                                // Determine which scale to use based on sign
+                                const isLeft = value < 0;
+                                const useLog = isLeft ? useLogScaleLeft : useLogScaleRight;
+                                
+                                if (useLog) {
+                                    // Using log scale - convert back from log
+                                    const originalValue = Math.pow(10, Math.abs(value));
+                                    return formatNumber(originalValue);
+                                } else {
+                                    // Using linear scale - convert back from normalized value
+                                    const maxLinear = 5.5e9;
+                                    const maxLog = Math.log10(maxLinear);
+                                    const originalValue = (Math.abs(value) / maxLog) * maxLinear;
+                                    return formatNumber(originalValue);
+                                }
+                            }
+                        },
+                        grid: {
+                            drawOnChartArea: true,
+                            color: function(context) {
+                                if (context.tick.value === 0) {
+                                    return 'rgba(0, 0, 0, 0.3)';
+                                }
+                                return 'rgba(0, 0, 0, 0.05)';
+                            },
+                            lineWidth: function(context) {
+                                if (context.tick.value === 0) {
+                                    return 2;
+                                }
+                                return 1;
+                            }
+                        }
+                    },
+                    y: {
+                        type: 'category',
+                        position: 'left',
+                        offset: true,
+                        title: {
+                            display: false
+                        },
+                        ticks: {
+                            callback: function(value, index) {
+                                // Show Beyond labels on left
+                                return initialChartData.leftLabels[index] || '';
+                            },
+                            font: {
+                                size: 11
+                            },
+                            autoSkip: false
+                        },
+                        grid: {
+                            display: false,
+                            offset: true
+                        }
+                    },
+                    y2: {
+                        type: 'category',
+                        position: 'right',
+                        offset: true,
+                        labels: initialChartData.labels,
+                        title: {
+                            display: false
+                        },
+                        ticks: {
+                            callback: function(value, index) {
+                                // Show Onwiki labels on right
+                                return initialChartData.rightLabels[index] || '';
+                            },
+                            font: {
+                                size: 11
+                            },
+                            autoSkip: false
+                        },
+                        grid: {
+                            display: false,
+                            offset: true
+                        }
+                    }
+                },
+                onHover: (event, activeElements) => {
+                    const canvas = event.native.target;
+                    canvas.style.cursor = activeElements.length > 0 ? 'pointer' : 'default';
+                }
+            }
+        };
+
+        const chart = new Chart(ctx, config);
+
+        // Update chart with filtered data
+        function updateChart() {
+            const chartData = createChartData();
+            chart.data.labels = chartData.labels;
+            chart.data.datasets[0].data = chartData.leftValues;
+            chart.data.datasets[1].data = chartData.rightValues;
+            chart.data.datasets[0].backgroundColor = chartData.leftColors;
+            chart.data.datasets[0].borderColor = chartData.leftColors;
+            chart.data.datasets[1].backgroundColor = chartData.rightColors;
+            chart.data.datasets[1].borderColor = chartData.rightColors;
+            
+            // Update axis labels
+            chart.options.scales.y.ticks.callback = function(value, index) {
+                return chartData.leftLabels[index] || '';
+            };
+            chart.options.scales.y2.ticks.callback = function(value, index) {
+                return chartData.rightLabels[index] || '';
+            };
+            
+            // Update title based on log scale states
+            let titleText = 'Beyond the Wikis';
+            titleText += useLogScaleLeft ? ' (log)' : ' (linear)';
+            titleText += ' ← | → Onwiki Audiences';
+            titleText += useLogScaleRight ? ' (log)' : ' (linear)';
+            chart.options.scales.x.title.text = titleText;
+            
+            chart.update();
+        }
+
+        // Custom tooltip
+        const canvas = document.getElementById('funnelChart');
+        const tooltip = document.getElementById('tooltip');
+        const tooltipTitle = document.getElementById('tooltipTitle');
+        const tooltipValue = document.getElementById('tooltipValue');
+        const tooltipDesc = document.getElementById('tooltipDesc');
+
+        canvas.addEventListener('mousemove', (e) => {
+            const elements = chart.getElementsAtEventForMode(e, 'nearest', { intersect: true }, true);
+            
+            if (elements.length > 0) {
+                const element = elements[0];
+                const index = element.index;
+                const filteredData = getFilteredData();
+                const item = filteredData[index];
+                
+                if (item) {
+                    tooltipTitle.textContent = item.label;
+                    tooltipValue.textContent = 'Size: ' + formatNumber(item.value);
+                    tooltipDesc.textContent = item.description;
+                    
+                    tooltip.style.display = 'block';
+                    tooltip.style.left = (e.clientX + 15) + 'px';
+                    tooltip.style.top = (e.clientY + 15) + 'px';
+                }
+            } else {
+                tooltip.style.display = 'none';
+            }
+        });
+
+        canvas.addEventListener('mouseleave', () => {
+            tooltip.style.display = 'none';
+        });
+
+        // Toggle log scale for left side
+        document.getElementById('logScaleLeft').addEventListener('change', function(e) {
+            useLogScaleLeft = e.target.checked;
+            updateChart();
+        });
+
+        // Toggle log scale for right side
+        document.getElementById('logScaleRight').addEventListener('change', function(e) {
+            useLogScaleRight = e.target.checked;
+            updateChart();
+        });
+    </script>
+</body>
+</html>
